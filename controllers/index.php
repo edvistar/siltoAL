@@ -4,7 +4,6 @@ class Index extends Controller{
     function __construct(){
         parent::__construct();
         //$this->view->mensaje = "Hay un error al cargar el recurso";
-        
         //echo "<p>Controlador Index</p>";
     }
 
@@ -12,8 +11,8 @@ class Index extends Controller{
         $this->view->render('index/index');
     }
 
-    function saludo(){
-        echo "<p>Hola a todos<p>";
+    function login(){
+        $this->view->render('index/login');
     }
 }
 
