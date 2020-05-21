@@ -8,7 +8,7 @@ items.forEach(item => {
         const confirm = window.confirm("Deseas eliminar el elemento?");
 
         if(confirm){
-            httpRequest("http://localhost/siltoWapv/"+controlador+"/"+accion+"/" + id, function(e){
+            httpRequest("http://localhost/leteme/"+controlador+"/"+accion+"/" + id, function(e){
                 console.log(this.responseText);
                 const tbody = document.querySelector("#tbody-data");
                 const fila  = document.querySelector("#fila-" + id);
@@ -29,7 +29,7 @@ items1.forEach(item => {
         const confirm = window.confirm("Deseas eliminar el elemento?");
 
         if(confirm){
-            httpRequest("http://localhost/siltoWapv/"+controlador+"/"+accion+"/" + key, function(e){
+            httpRequest("http://localhost/leteme/"+controlador+"/"+accion+"/" + key, function(e){
                 console.log(this.responseText);
                 const tbody = document.querySelector("#tbody-data");
                 const fila  = document.querySelector("#fila-" + id);
