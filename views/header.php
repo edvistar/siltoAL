@@ -84,8 +84,10 @@
                             <ul class="submenu-angle" aria-expanded="true">
                                 <li><a title="registro" href="registrar-usuario-admin.php"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Usuario</span></a></li>
                                 <li><a title="ver-usuarios" href="ver-usuarios-admin.php"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Usuarios</span></a></li>
-                                <li><a title="registro" href="<?php echo constant('URL'); ?>views/centros/registro-ca.php"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar CA</span></a></li>
-                                <li><a title="ver-usuarios" href="ver-usuarios-admin.php"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista CA</span></a></li>
+
+                            <li><a title="registro" href="<?php echo constant('URL'); ?>centro/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar CA</span></a></li>
+
+                                <li><a title="ver-centros" href="<?php echo constant('URL'); ?>centro"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista CA</span></a></li>
 
                                 <li><a title="registro" href="registro-vehiculo.php"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Vehiculo</span></a></li>
                                 <li><a title="ver-usuarios" href="ver-usuarios-admin.php"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Vehiculos</span></a></li>

@@ -7,7 +7,7 @@
         <div><?php echo $this->mensaje; ?></div>
         <h1 class="center">Nuevo Centro</h1>
         <div class="col-sm-6 offset-sm-3">
-        <form action="<?php echo constant('URL'); ?>centro/crear" method="POST">
+        <form action="<?php echo constant('URL'); ?>/centro/crear" method="POST">
             <!-- <div class="form-group">
                 <label for="nroprograma">Nro Programa</label>
                 <input type="text" class="form-control" name="nroprograma" id="nroprograma">
