@@ -1,0 +1,142 @@
+#header-home{
+    position: relative;
+    width: 100%;
+    margin-bottom: 50px;
+    background-size: 100%;
+    background:url("../img/unnamed.jpg")no-repeat;
+    background-size: cover;
+   
+}
+
+#heade.nav ul{
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+    display:inline-block;
+
+}
+
+#header-home .nav ul li{
+    list-style: none;
+    display:inline-block ;
+    margin: 4px 20px 4px 5px;
+    margin-top: 20px;
+    padding-left: 20px;
+
+}
+
+#header-home .nav ul li a{
+    color: rgb(191, 73, 20);
+    font-size:20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 4px 4px;
+    transition: 3s;
+}
+
+#header-home .nav ul li a:hover{
+    border-top: 2px solid;
+    text-decoration: none;
+
+
+}
+
+#header-home .hd-slider{
+    margin: 0;
+    padding: 0;
+    /* background:url("../img/unnamed.jpg")no-repeat;
+    background-size: cover; */
+}
+.hd-slider{
+    position: relative;
+    width: 100%;
+    height: 1050px;
+    opacity:rgb(191, 73, 20);
+}
+
+#header-home .hd-slider .hero{
+    color: brown;
+    margin-top: 30%;
+    color: rgb(191, 73, 20);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    font-size:40px;
+    opacity: 75%;
+
+}
+.h1{
+    margin: 15px;
+    color: rgb(191, 73, 20);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    font-size:50px;
+}
+
+.quienes{
+    margin: auto;
+    text-align: center;
+    font-size: 18px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.mision-vision{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+.tama{
+    padding: 2px;
+    width: 500px;
+    height: 300px;
+    background-color: rgb(191, 73, 20);
+    opacity: 60% ;
+    justify-content: space-around;
+}
+.leter{
+    position: absolute;
+    top: 110px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    color: rgba(255, 0, 0, 0.6);
+    z-index: 2;
+    justify-content: space-around;
+}
+
+.avatar{
+
+    width: 150px;
+    height: 150px;
+    text-align: center;
+
+}
+#rectangulo{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background: rgba(191, 73, 20, 0.85);
+    opacity: 75%;
+}
+
+#rectangulo  .conta{
+    color: #ffff;
+    background-size: cover;
+
+}
+
+#rectangulo ul{
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+    display:inline-block;
+
+}
+
+#rectangulo ul li{
+    list-style: none;
+    display:inline-block ;
+    margin: 5px;
+    text-decoration: none;
+}
