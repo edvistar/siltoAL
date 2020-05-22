@@ -18,7 +18,6 @@
                     $this->view->centros = $centros;
                     $this->view->render('admin/indexcentro');
                 }else{
-                    
                     $this->view->mensaje = "El centro ya existe 1";
                     $this->view->render('admin/indexcentro');
                 }
@@ -29,11 +28,10 @@
         function leer($param = null){
             $id_centro = $param[0];
             $centro = $this->model->readById($id_centro);
-    
+
             session_start();
             $_SESSION["id_verCentro"] = $centro->id_centro;
-            
-    
+
             $this->view->centro = $centro;
             $this->view->render('admin/editarcentro');
         }
@@ -41,7 +39,7 @@
             session_start();
             $id = $_SESSION["id_verCentro"];
             unset($_SESSION['id_verCentro']);
-    
+
             if($this->model->update($_POST)){
                 $centro = new CentroDAO();
 
@@ -55,8 +53,7 @@
                 $centro->ciudad        = $_POST['ciudad'];
                 $centro->encargado     = $_POST['encargado'];
                 $centro->lugar         = $_POST['lugar'];
-    
-    
+
                 $this->view->centro = $centro;
                 $this->view->mensaje = "Centro actualizado correctamente";
             }else{
