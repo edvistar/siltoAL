@@ -1,6 +1,68 @@
-<div id="footer">
-© Vida MRR
-</div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<div class="footer-copyright-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer-copy-right">
+                            <p>Realizacion SENA  CDA Chia <a href="https://colorlib.com/wp/templates/">WAPV </a> All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jquery
+            ============================================ -->
+            <script src="<?php echo constant('URL'); ?>public/js/vendor/jquery-1.11.3.min.js"></script>
+            <!-- bootstrap JS
+                ============================================ -->
+            <script src="<?php echo constant('URL'); ?>public/js/bootstrap.min.js"></script>
+            <!-- wow JS
+                ============================================ -->
+            <script src="<?php echo constant('URL'); ?>public/js/wow.min.js"></script>
+            <!-- price-slider JS
+                ============================================ -->
+            <script src="<?php echo constant('URL'); ?>public/js/jquery-price-slider.js"></script>
+            <!-- meanmenu JS
+                ============================================ -->
+            <script src="<?php echo constant('URL'); ?>public/js/jquery.meanmenu.js"></script>
+            <!-- owl.carousel JS
+                ============================================ -->
+            <script src="<?php echo constant('URL'); ?>public/js/owl.carousel.min.js"></script>
+            <!-- sticky JS
+                ============================================ -->
+            <script src="<?php echo constant('URL'); ?>public/js/jquery.sticky.js"></script>
+            <!-- scrollUp JS
+                ============================================ -->
+            <script src="<?php echo constant('URL'); ?>public/js/jquery.scrollUp.min.js"></script>
+            <!-- mCustomScrollbar JS
+                ============================================ -->
+            <script src="<?php echo constant('URL'); ?>public/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+            <script src="<?php echo constant('URL'); ?>public/js/scrollbar/mCustomScrollbar-active.js"></script>
+            <!-- metisMenu JS
+                ============================================ -->
+            <script src="<?php echo constant('URL'); ?>public/js/metisMenu/metisMenu.min.js"></script>
+            <script src="<?php echo constant('URL'); ?>public/js/metisMenu/metisMenu-active.js"></script>
+            <!-- morrisjs JS
+                ============================================ -->
+            <script src="<?php echo constant('URL'); ?>public/js/morrisjs/raphael-min.js"></script>
+            <script src="<?php echo constant('URL'); ?>public/js/morrisjs/morris.js"></script>
+            <script src="<?php echo constant('URL'); ?>public/js/morrisjs/morris-active.js"></script>
+            <!-- morrisjs JS
+                ============================================ -->
+            <script src="<?php echo constant('URL'); ?>public/js/sparkline/jquery.sparkline.min.js"></script>
+            <script src="<?php echo constant('URL'); ?>public/js/sparkline/jquery.charts-sparkline.js"></script>
+            <!-- calendar JS
+                ============================================ -->
+            <script src="<?php echo constant('URL'); ?>public/js/calendar/moment.min.js"></script>
+            <script src="<?php echo constant('URL'); ?>public/js/calendar/fullcalendar.min.js"></script>
+            <script src="<?php echo constant('URL'); ?>public/js/calendar/fullcalendar-active.js"></script>
+            <!-- plugins JS
+                ============================================ -->
+            <script src="<?php echo constant('URL'); ?>public/js/plugins.js"></script>
+            <!-- main JS
+                ============================================ -->
+            <script src="<?php echo constant('URL'); ?>public/js/main.js"></script>
+            <script src="<?php echo constant('URL'); ?>public/js/main1.js"></script>
+    </body>
+    </body>
+</html>
