@@ -36,11 +36,22 @@
                 <input type="number" class="form-control" value="<?php echo $this->centro->telefono; ?>" name="telefono" id="telefono">
                 <small id="telefonoHelp" class="form-text text-muted">Diligencie el numero del Centro</small>
             </div>
-            <div class="form-group">
-                <label for="whatsapp">Whatsapp</label>
-                <input type="number" class="form-control" value="<?php echo $this->centro->whatsapp; ?>" name="whatsapp" id="whatsapp">
-                <small id="whatasppHelp" class="form-text text-muted">Tiene whatsapp</small>
-            </div>
+            <label class="form-text text-muted">WHATSAPP</label>
+            <?php 
+                $arr_whatsapp=explode('.',$this->centro->whatsapp);
+                
+                $whatsapp;
+                foreach($arr_whatsapp as $item){
+                    $whatsapp[$item]='checked="checked"';
+                }
+            ?>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="whatsapp1" name="whatsapp"  value="1" class="custom-control-input"<?php echo (isset($whatsapp["1"])?$whatsapp["1"]:""); ?> value="1" class="radio-check-input">
+                <label class="custom-control-label" for="whatsapp1">SI</label>
+                </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="whatsapp2" name="whatsapp" value="0" class="custom-control-input"<?php echo (isset($whatsapp["0"])?$whatsapp["0"]:""); ?> value="0" class="radio-check-input">
+                <label class="custom-control-label" for="whatsapp2">NO</label>
             <div class="form-group">
                 <label for="departamento">Departamento</label>
                 <input type="text" class="form-control" value="<?php echo $this->centro->departamento; ?>" name="departamento" id="departamento">

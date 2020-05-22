@@ -8,11 +8,11 @@
         <h1 class="center">Nuevo Centro</h1>
         <div class="col-sm-6 offset-sm-3">
         <form action="<?php echo constant('URL'); ?>/centro/crear" method="POST">
-            <!-- <div class="form-group">
-                <label for="nroprograma">Nro Programa</label>
-                <input type="text" class="form-control" name="nroprograma" id="nroprograma">
-                <small id="nroprogramaHelp" class="form-text text-muted">Ingrese el número del programa</small>
-            </div> -->
+            <div class="form-group">
+                <label for="id_centro">Id Centro</label>
+                <input type="number" class="form-control" name="id_centro" id="id_centro">
+                <small id="id_centroHelp" class="form-text text-muted">Ingrese el número de Id Centro</small>
+            </div>
 
             <div class="form-group">
                 <label for="nombre">Nombre</label>
@@ -30,9 +30,10 @@
                 <small id="telefonoHelp" class="form-text text-muted">Diligencie el numero del Centro</small>
             </div>
             <div class="form-group">
-                <label for="whatsapp">Whatsapp</label>
-                <input type="number" class="form-control" name="whatsapp" id="whatsapp">
-                <small id="whatasppHelp" class="form-text text-muted">Tiene whatsapp</small>
+            <label for="whatsapp">whatsapp</label><br>
+            <input type="radio"  name="whatsapp" id="whatsapp" value="si" checked> SI<br>
+            <input type="radio"  name="whatsapp" id="whatsapp" value="no" checked> NO
+            <small id="whatsappHelp" class="form-text text-muted">El numero indicado tiene whatsapp</small>
             </div>
             <div class="form-group">
                 <label for="departamento">Departamento</label>
