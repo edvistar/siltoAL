@@ -7,7 +7,7 @@
 
         function render(){
             $centros = $this->view->datos = $this->model->read();
-        $this->view->centros = $centros;
+            $this->view->centros = $centros;
             $this->view->render('admin/indexcentro');
         }
         function crear(){
