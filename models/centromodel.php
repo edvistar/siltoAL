@@ -8,12 +8,13 @@ class CentroModel extends Model{
     public function create($datos = null){
         // insertar
         //if(!isset($datos)){
-            $sentenceSQL="INSERT INTO centro( nombre, email, telefono, whatsapp,departamento, ciudad, encargado, lugar) VALUES( :nombre, :email, :telefono, :whatsapp, :departamento, :ciudad, :encargado, :lugar)";
+            $sentenceSQL="INSERT INTO centro( id_centro, nombre, email, telefono, whatsapp,departamento, ciudad, encargado, lugar) VALUES( :id_centro, :nombre, :email, :telefono, :whatsapp, :departamento, :ciudad, :encargado, :lugar)";
             $connexionDB=$this->db->connect();
             $query = $connexionDB->prepare($sentenceSQL);
             
             try{
                 $query->execute([
+                                'id_centro'    =>$datos['id_centro'], 
                                 'nombre'       => $datos['nombre'],
                                 'email'        => $datos['email'],
                                 'telefono'     => $datos['telefono'],
