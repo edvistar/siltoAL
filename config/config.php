@@ -1,6 +1,7 @@
 <?php
 
 define('URL', 'http://localhost/siltoWapv/');
+define('NOMBRESITIO', 'SILTO');
 
 define('HOST', 'localhost');
 define('DB', 'silto');

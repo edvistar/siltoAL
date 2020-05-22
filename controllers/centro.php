@@ -7,8 +7,8 @@
 
         function render(){
             $centros = $this->view->datos = $this->model->read();
-        $this->view->centros = $centros;
-            $this->view->render('centro/index');
+            $this->view->centros = $centros;
+            $this->view->render('admin/indexcentro');
         }
         function crear(){
             if(isset($_POST["nombre"])){
@@ -16,14 +16,14 @@
                     $this->view->mensaje = "Centro creado correctamente";
                     $centros = $this->view->datos = $this->model->read();
                     $this->view->centros = $centros;
-                    $this->view->render('centro/index');
+                    $this->view->render('admin/indexcentro');
                 }else{
                     
                     $this->view->mensaje = "El centro ya existe 1";
-                    $this->view->render('centro/index');
+                    $this->view->render('admin/indexcentro');
                 }
             }else{
-                $this->view->render('centro/crear');
+                $this->view->render('admin/crearcentro');
             }
         }
         function leer($param = null){
@@ -35,7 +35,7 @@
             
     
             $this->view->centro = $centro;
-            $this->view->render('centro/editar');
+            $this->view->render('admin/editarcentro');
         }
         function editar($param = null){
             session_start();
@@ -64,7 +64,7 @@
             }
             $centros = $this->view->datos = $this->model->read();
             $this->view->centros = $centros;
-            $this->view->render('centro/index');
+            $this->view->render('admin/indexcentro');
         }
         function eliminar($param = null){
             $id = $param[0];
