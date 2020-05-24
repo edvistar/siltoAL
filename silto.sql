@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-05-2020 a las 02:49:27
+-- Tiempo de generación: 24-05-2020 a las 19:30:58
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.7
 
@@ -33,12 +33,20 @@ CREATE TABLE `centro` (
   `nombre` text COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Nombre  de centro',
   `email` varchar(50) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Email centro',
   `telefono` bigint(20) NOT NULL COMMENT 'Numero cel centro',
-  `whatsapp` tinyint(1) NOT NULL COMMENT 'Whatsapp de centro',
+  `whatsapp` tinyint(1) DEFAULT NULL COMMENT 'Whatsapp de centro',
   `departamento` text COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Departamento de centro',
   `ciudad` text COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Ciudad de centro',
   `encargado` text COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Encargado de centro.',
   `lugar` text COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Lugar de centro o bodega'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `centro`
+--
+
+INSERT INTO `centro` (`id_centro`, `nombre`, `email`, `telefono`, `whatsapp`, `departamento`, `ciudad`, `encargado`, `lugar`) VALUES
+(2234, 'Ocatipiedras', 'wamora22@misena.edu.co', 3138252764, 0, 'Cundinamarca', 'bogota', 'Jose', 'Barranquilla'),
+(7899, 'OcatiCotas', 'OcatiCota@gmail.com', 3138252764, 0, 'Medellin', 'bogota', 'Jhonatan Lopez lopez', 'Bogota');
 
 -- --------------------------------------------------------
 
@@ -58,7 +66,8 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`id_producto`, `nombre`, `peso`, `costo`) VALUES
-(1324, 'manzana', '10', 10000);
+(23, 'aguacate', '40', 10000),
+(1324, 'Piña colada', '40', 10000);
 
 -- --------------------------------------------------------
 
@@ -123,13 +132,13 @@ CREATE TABLE `vehiculo` (
   `placa` varchar(11) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Placa de vehiculo',
   `capacidad` varchar(15) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Capacidad de cargue vehiculo',
   `seguro` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Seguro de vehiculo',
-  `tecnomecanica` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Tecnomecanica vehiculo',
+  `tecnomecanica` varchar(11) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Tecnomecanica vehiculo',
   `tipo_vehiculo` text COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Tipo de vehiculo de carga.',
   `conductor` text COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Nombre de conductor de vehiculo.',
   `costo_flete` int(11) NOT NULL COMMENT 'Costo de plete por carga',
   `gps` varchar(50) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'GPS de vehiculo',
-  `estado` text COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Estao de vehiculo en la empresa propiedad o contratista.',
-  `fecha_registro` datetime NOT NULL DEFAULT current_timestamp() COMMENT 'Fecha del registro'
+  `estado` varchar(11) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Estao de vehiculo en la empresa propiedad o contratista.',
+  `fecha_registro` varchar(11) CHARACTER SET ucs2 COLLATE ucs2_spanish2_ci NOT NULL COMMENT 'Fecha del registro'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
@@ -137,7 +146,8 @@ CREATE TABLE `vehiculo` (
 --
 
 INSERT INTO `vehiculo` (`placa`, `capacidad`, `seguro`, `tecnomecanica`, `tipo_vehiculo`, `conductor`, `costo_flete`, `gps`, `estado`, `fecha_registro`) VALUES
-('a3423', '20', 'resguard', 'si', 'camion', 'jhonatan', 50000, 'si', 'optimo', '2020-05-19 22:56:45');
+('AD3435', '10', 'Resguard', '2020-05-19', 'Furgon', 'Victor', 200000, 'si', 'Bueno', '2020-05-29'),
+('AD34356', '10', 'Omega 3', '2020-05-21', 'camion', 'Eduardo', 200000, 'si', 'Bueno', '2020-05-25');
 
 --
 -- Índices para tablas volcadas
@@ -182,12 +192,6 @@ ALTER TABLE `vehiculo`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
-
---
--- AUTO_INCREMENT de la tabla `centro`
---
-ALTER TABLE `centro`
-  MODIFY `id_centro` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id de centro';
 
 --
 -- AUTO_INCREMENT de la tabla `rutas`
