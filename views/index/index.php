@@ -15,7 +15,7 @@
     <header id="header-home">
         <div class="container-fluid nav">
             <div class="container">
-                <div class="row">
+                <div class="row barra">
                     <div class="col-lg-2">
                         <a href="index.php">
                             <img  width="300" height="90" src="public/img/SILTO.png" alt="logo de la pagina">
