@@ -23,7 +23,7 @@
                         <div class="row">
                             <div class="form-group col-lg-12">
                                 <label for="id_producto">Id</label>
-                                <input type="number" name="id_producto"  id="id_producto" class="form-control" value="<?php echo $this->centro->id_producto; ?>" readonly>
+                                <input type="number" name="id_producto"  id="id_producto" class="form-control" value="<?php echo $this->producto->id_producto; ?>" readonly>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label for="nombre">Nombre</label>
@@ -39,7 +39,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <button class="btn btn-info">Registrar</button>
+                            <button class="btn btn-info">Actualizar</button>
                             <button class="btn btn-danger">Cancel</button>
                         </div>
                     </form>
