@@ -10,18 +10,7 @@
              $this->view->centros = $centros;
             $this->view->render('admin/indexcentro');
         }
-        
-        function leer($param = null){
-            $id_centro = $param[0];
-            $centro = $this->model->readById($id_centro);
-    
-            // session_start();
-            // $_SESSION["id_verCentro"] = $centro->id_centro;
-            
-    
-            $this->view->centro = $centro;
-            $this->view->render('admin/editarcentro');
-        }
+
 
         function crear(){
             if(isset($_POST["nombre"])){
@@ -39,10 +28,21 @@
                 $this->view->render('admin/crearcentro');
             }
         }
+        function leer($param = null){
+            $id_centro = $param[0];
+            $centro = $this->model->readById($id_centro);
+    
+            session_start();
+            $_SESSION["id_verCentro"] = $centro->id_centro;
+            
+    
+            $this->view->centro = $centro;
+            $this->view->render('admin/editarcentro');
+        }
         function editar($param = null){
-            // session_start();
-            // $id = $_SESSION["id_verCentro"];
-            // unset($_SESSION['id_verCentro']);
+            session_start();
+            $id = $_SESSION["id_verCentro"];
+            unset($_SESSION['id_verCentro']);
     
             if($this->model->update($_POST)){
                 $centro = new CentroDAO();
