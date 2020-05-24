@@ -5,8 +5,15 @@
     background-size: 100%;
     background:url("../img/unnamed.jpg")no-repeat;
     background-size: cover;
-   
 }
+.barra{
+    position: fixed;
+    z-index: 999;
+    background: #ffff;
+    opacity: 80%;
+
+}
+
 
 #heade.nav ul{
     padding: 0;

@@ -36,6 +36,7 @@
     <!-- main CSS
 		============================================ -->
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/main.css">
+    <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/main1.css">
     <!-- morrisjs CSS
 		============================================ -->
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/morrisjs/morris.css">
@@ -82,19 +83,26 @@
                                 <span class="mini-click-non">Administrador</span>
 							</a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="registro" href="registrar-usuario-admin.php"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Usuario</span></a></li>
-                                <li><a title="ver-usuarios" href="ver-usuarios-admin.php"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Usuarios</span></a></li>
-
-                            <li><a title="registro" href="<?php echo constant('URL'); ?>centro/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar CA</span></a></li>
-
-                                <li><a title="ver-centros" href="<?php echo constant('URL'); ?>centro"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista CA</span></a></li>
-
-                                <li><a title="registro" href="registro-vehiculo.php"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Vehiculo</span></a></li>
-                                <li><a title="ver-usuarios" href="ver-usuarios-admin.php"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Vehiculos</span></a></li>
-                                <li><a title="registro" href="registro-producto.php"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Producto</span></a></li>
-                                <li><a title="ver-usuarios" href="admin/list.php"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Productos</span></a></li>
+                            <!-- //crud usuario -->
+                                <li><a title="registro" href="<?php echo constant('URL'); ?>usuario/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Usuario</span></a></li>
+                                <li><a title="ver-usuarios" href="<?php echo constant('URL'); ?>usuario"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Usuarios</span></a></li>
+                                <!-- crud centro -->
+                                <li><a title="registro" href="<?php echo constant('URL'); ?>centro/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Centros</span></a></li>
+                                <li><a title="ver-usuarios" href="<?php echo constant('URL'); ?>centro"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Centros</span></a></li>
+                                <!-- crud vehiculo -->
+                                <li><a title="registro" href="<?php echo constant('URL'); ?>vehiculo/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Vehiculo</span></a></li>
+                                <li><a title="ver-usuarios" href="<?php echo constant('URL'); ?>vehiculo"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Vehiculos</span></a></li>
+                                <!-- crud producto -->
+                                <li><a title="registro" href="<?php echo constant('URL'); ?>producto/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Producto</span></a></li>
+                                <li><a title="ver-usuarios" href="<?php echo constant('URL'); ?>producto"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Productos</span></a></li>
+                                <!-- crud solicitud -->
+                                <li><a title="registro" href="<?php echo constant('URL'); ?>solicitud/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Solicitud</span></a></li>
+                                <li><a title="ver-usuarios" href="<?php echo constant('URL'); ?>solicitud"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Solicitudes</span></a></li>
+                                <!-- crud rutas -->
+                                <li><a title="registro" href="<?php echo constant('URL'); ?>rutas/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Rutas</span></a></li>
+                                <li><a title="ver-usuarios" href="<?php echo constant('URL'); ?>rutas"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Rutas</span></a></li>
                             </ul>
-                        <li><a title="Landing Page" href="../index.php" aria-expanded="false"><i class="fa fa-bookmark icon-wrap sub-icon-mg" aria-hidden="true"></i> <span class="mini-click-non">Landing Page</span></a></li>
+                        <li><a title="Landing Page" href="<?php echo constant('URL'); ?>" aria-expanded="false"><i class="fa fa-bookmark icon-wrap sub-icon-mg" aria-hidden="true"></i> <span class="mini-click-non">Landing Page</span></a></li>
                     </ul>
                 </nav>
             </div>
