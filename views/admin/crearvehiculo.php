@@ -35,7 +35,7 @@
             </div>
 
             <div class="form-group">
-                <label for="nombre">tecnomecanica del vehiculo</label>
+                <label for="tecnomecanica">tecnomecanica del vehiculo</label>
                 <input type="date" class="form-control" name="tecnomecanica" id="tecnomecanica">
                 <small id="tecnomecanicaHelp" class="form-text text-muted">fecha de vencimiento del la tecnomecanica del vehiculo</small>
             </div>
@@ -68,6 +68,12 @@
                 <label for="nombre">estado</label>
                 <input type="text" class="form-control" name="estado" id="estado">
                 <small id="estadoHelp" class="form-text text-muted">estado</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="fecha_registro">Fecha registro</label>
+                <input type="date" class="form-control" name="fecha_registro" id="fecha_registro">
+                <small id=fecha_registroHelp" class="form-text text-muted">fecha de Registro</small>
             </div>
             
 

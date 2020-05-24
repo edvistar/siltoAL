@@ -38,7 +38,7 @@
             include_once 'models/vehiculo.php';
             if(count($this->vehiculos)>0){
                 foreach ($this->vehiculos as $row) {
-                    $vehiculo= new vehiculoDAO();
+                    $vehiculo = new VehiculoDAO();
                     $vehiculo = $row;
         ?>
                     <tr id="fila-<?php echo $vehiculo->placa; ?>">

@@ -1,14 +1,13 @@
 <?php
 
-class vehiculoDAO{
+class VehiculoDAO{
     public $placa;
     public $capacidad;
     public $seguro;
-    public $tecnomecanica;
+    public $tecnomecamica;
     public $tipo_vehiculo;
     public $conductor;
     public $costo_flete;
-    public $gps;
     public $estado;
     public $fecha_registro;
 }

@@ -1,6 +1,7 @@
 <?php
 include_once('models/vehiculo.php');
-class vehiculoModel extends Model{
+
+class VehiculoModel extends Model{
     function __construct(){
         parent::__construct();
     }
@@ -8,21 +9,22 @@ class vehiculoModel extends Model{
     public function create($datos = null){
         // insertar
         //if(!isset($datos)){
-            $sentenceSQL="INSERT INTO vehiculo (placa, capacidad, seguro, tecnomecanica, tipo_vehiculo, conductor, costo_flete, gps, estado) VALUES( :placa, :capacidad, :seguro, :tecnomecanica, :tipo_vehiculo, :conductor, :costo_flete, :gps, :estado)";
+            $sentenceSQL="INSERT INTO vehiculo (placa, capacidad, seguro, tecnomecanica, tipo_vehiculo, conductor, costo_flete, gps, estado, fecha_registro) VALUES( :placa, :capacidad, :seguro, :tecnomecanica, :tipo_vehiculo, :conductor, :costo_flete, :gps, :estado,  :fecha_registro)";
             $connexionDB=$this->db->connect();
             $query = $connexionDB->prepare($sentenceSQL);
            
             try{
                 $query->execute([
-                                'placa' => $datos['placa'],
-                                'capacidad' => $datos['capacidad'],
-                                'seguro' => $datos['seguro'],
-                                'tecnomecanica' => $datos['tecnomecanica'],
-                                'tipo_vehiculo' => $datos['tipo_vehiculo'],
-                                'conductor' => $datos['conductor'],
-                                'costo_flete' => $datos['costo_flete'],
-                                'gps' => $datos['gps'],
-                                'estado'=>$datos['estado']
+                                'placa'          => $datos['placa'],
+                                'capacidad'      => $datos['capacidad'],
+                                'seguro'         => $datos['seguro'],
+                                'tecnomecanica'  => $datos['tecnomecanica'],
+                                'tipo_vehiculo'  => $datos['tipo_vehiculo'],
+                                'conductor'      => $datos['conductor'],
+                                'costo_flete'    => $datos['costo_flete'],
+                                'gps'            => $datos['gps'],
+                                'estado'         =>$datos['estado'],
+                                'fecha_registro' =>$datos['fecha_registro']
                                 
                 ]);
                 return true;
@@ -47,7 +49,7 @@ class vehiculoModel extends Model{
             
             while($row = $query->fetch()){
                 $item = new vehiculoDAO();
-                //aguanta una calvacera bien zampada!!!//por que  donde esta el error
+                
                 $item->placa           = $row['placa'];
                 $item->capacidad       = $row['capacidad'];
                 $item->seguro          = $row['seguro'];
@@ -78,14 +80,15 @@ class vehiculoModel extends Model{
             $query->execute(['id' => $id]);
             
             while($row = $query->fetch()){
-                $item->placa         = $row['placa']; 
-                $item->capacidad     = $row['capacidad'];
-                $item->seguro        = $row['seguro']; 
-                $item->tecnomecanica = $row['tecnomecanica'];
-                $item->tipo_vehiculo = $row['tipo_vehiculo'];
-                $item->conductor     = $row['conductor'];
-                $item->gps           = $row['gps'];
-                $item->estado        = $row['estado'];
+                $item->placa           = $row['placa']; 
+                $item->capacidad       = $row['capacidad'];
+                $item->seguro          = $row['seguro']; 
+                $item->tecnomecanica   = $row['tecnomecanica'];
+                $item->tipo_vehiculo   = $row['tipo_vehiculo'];
+                $item->conductor       = $row['conductor'];
+                $item->costo_flete     = $row['costo_flete'];
+                $item->gps             = $row['gps'];
+                $item->estado          = $row['estado'];
                 $item->fecha_registro  = $row['fecha_registro'];
             }
             return $item;
@@ -96,21 +99,21 @@ class vehiculoModel extends Model{
             return null;
         }
     }
-
     public function update($item){
-        $query = $this->db->connect()->prepare('UPDATE vehiculo SET placa = :placa, capacidad = :capacidad, seguro = :seguro, tecnomecanica = :tecnomecanica, tipo_vehiculo = :tipo_vehiculo, conductor = :conductor, costo_flete = :costo_flete, gps = :gps, fecha_registro = :fecha_registro WHERE placa = :placa');
+        $query = $this->db->connect()->prepare('UPDATE vehiculo SET capacidad = :capacidad, seguro = :seguro, tecnomecanica = :tecnomecanica, tipo_vehiculo = :tipo_vehiculo, conductor = :conductor, costo_flete = :costo_flete, gps = :gps, estado = :estado, fecha_registro = :fecha_registro WHERE placa = :placa ');
+
         try{
             $query->execute([
-                'placa '        => $item['placa'],
-                'capacidad'     => $item['capacidad'],
+                'placa'    => $item['placa'],
+                'capacidad'       => $item['capacidad'],
                 'seguro'        => $item['seguro'],
-                'tecnomecanica' => $item['tecnomecanica'],
-                'tipo_vehiculo' => $item['tipo_vehiculo'],
-                'conductor'     => $item['conductor'],
-                'costo_flete'   => $item['costo_flete'],
-                'gps'           => $item['gps'],
-                'estado'        =>$item['estado']
-                
+                'tecnomecanica'     => $item['tecnomecanica'],
+                'tipo_vehiculo'     => $item['tipo_vehiculo'],
+                'conductor' => $item['conductor'],
+                'costo_flete'       => $item['costo_flete'],
+                'gps'    => $item['gps'],
+                'estado'        => $item['estado'],
+                'fecha_registro'        => $item['fecha_registro']
             ]);
             return true;
         }catch(PDOException $e){
@@ -120,6 +123,8 @@ class vehiculoModel extends Model{
             return false;
         }
     }
+
+   
 
     public function delete($id){
         $query = $this->db->connect()->prepare('DELETE FROM vehiculo WHERE placa = :id');

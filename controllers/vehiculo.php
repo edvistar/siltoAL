@@ -6,16 +6,16 @@
         }
 
         function render(){
-            $vehiculo = $this->view->datos = $this->model->read();
-        $this->view->vehiculos = $vehiculo;
+            $vehiculos = $this->view->datos = $this->model->read();
+        $this->view->vehiculos = $vehiculos;
             $this->view->render('admin/listavehiculo');
         }
         function crear(){
             if(isset($_POST["placa"])){
                 if($this->model->create($_POST)){
                     $this->view->mensaje = "registro correctamente el vehiculo";
-                    $vehiculo = $this->view->datos = $this->model->read();
-                    $this->view->vehiculo = $vehiculo;
+                    $vehiculos = $this->view->datos = $this->model->read();
+                    $this->view->vehiculos = $vehiculos;
                     $this->view->render('admin/listavehiculo');
                 }else{
                     
@@ -31,46 +31,47 @@
             $placa = $param[0];
             $vehiculo = $this->model->readById($placa);
     
-            // session_start();
-            // $_SESSION["id_Vervehiculo"] = $vehiculo->placa;
+            session_start();
+            $_SESSION["id_verVehiculo"] = $vehiculo->placa;
     
             $this->view->vehiculo = $vehiculo;
             $this->view->render('admin/editarvehiculo');
         }
 
         function editar($param = null){
-            // session_start();
-            // $placa = $_SESSION["id_Vervehiculo"];
-            // unset($_SESSION['id_Vervehiculo']);  
-    
+            session_start();
+            $id = $_SESSION["id_verVehiculo"];
+            unset($_SESSION["id_verVehiculo"]);
+
             if($this->model->update($_POST)){
-                $vehiculo = new vehiculoDAO();
-                $vehiculo->placa= $id;
+                $vehiculo = new VehiculoDao();
+
+                $vehiculo->placa = $id;
                 $vehiculo->placa = $_POST['placa'];
                 $vehiculo->capacidad = $_POST['capacidad'];
                 $vehiculo->seguro = $_POST['seguro'];
                 $vehiculo->tecnomecanica = $_POST['tecnomecanica'];
                 $vehiculo->tipo_vehiculo = $_POST['tipo_vehiculo'];
                 $vehiculo->conductor = $_POST['conductor'];
-                $vehiculo->costo_flete = $costo_flete['costo_flete'];
+                $vehiculo->costo_flete = $_POST['costo_flete'];
                 $vehiculo->gps = $_POST['gps'];
-                
-                
-    
-    
+                $vehiculo->estado = $_POST['estado'];
+                $vehiculo->fecha_registro = $_POST['fecha_registro'];
+
                 $this->view->vehiculo = $vehiculo;
-                $this->view->mensaje = "vehiculo actualizado correctamente";
+                $this->view->mensaje = "Centro actualizado correctamente";
             }else{
-                $this->view->mensaje = "No se pudo actualizar el registro de el vehiculo";
+                $this->view->mensaje = "No se pudo actualizar al centro";
             }
-            $vehiculo = $this->view->datos = $this->model->read();
-            $this->view->vehiculo = $vehiculo;
+            $vehiculos = $this->view->datos = $this->model->read();
+            $this->view->vehiculos = $vehiculos;
             $this->view->render('admin/listavehiculo');
         }
+        
         function eliminar($param = null){
             $id = $param[0];
     
-            if($this->model->delete($placa)){
+            if($this->model->delete($id)){
                 $mensaje ="vehiculo eliminado correctamente";
                 //$this->view->mensaje = "Alumno eliminado correctamente";
             }else{
