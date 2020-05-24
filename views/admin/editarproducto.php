@@ -39,7 +39,11 @@
                             </div>
                         </div>
                         <div class="text-center">
+<<<<<<< HEAD
                             <button class="btn btn-info">Actualizar</button>
+=======
+                            <button class="btn btn-info">actualizar</button>
+>>>>>>> f2bb0a861ebeb1d0c0c079f9bf6a531b2b72667d
                             <button class="btn btn-danger">Cancel</button>
                         </div>
                     </form>

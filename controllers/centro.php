@@ -11,8 +11,6 @@
             $this->view->render('admin/indexcentro');
         }
         
-       
-
         function crear(){
             if(isset($_POST["nombre"])){
                 if($this->model->create($_POST)){
@@ -34,7 +32,7 @@
             $centro = $this->model->readById($id_centro);
     
             session_start();
-            
+
             $_SESSION["id_verCentro"] = $centro->id_centro;
             
     

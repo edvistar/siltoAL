@@ -45,9 +45,15 @@
             if($this->model->update($_POST)){
                 $producto = new ProductoDAO();
 
+
                 session_start();
             $id = $_SESSION["id_verProducto"];
             unset($_SESSION['id_verProducto']);
+
+            session_start();
+            $id = $_SESSION["id_verProducto"];
+            unset($_SESSION['id_verProducto']);
+
 
                 $producto->id_producto = $id;
                 $producto->id_producto = $_POST['id_producto'];
