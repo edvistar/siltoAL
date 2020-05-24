@@ -91,7 +91,7 @@
                 <div class="hpanel">
                   <div class="panel-body">
                     <h1>INICIA SESION</h1>
-                        <form action="<?php echo constant('URL'); ?>controllers/programa.php"  method="POST">
+                        <form action="<?php echo constant('URL'); ?>main"  method="POST">
                             <div class="form-group">
                                 <label class="control-label" for="email">USUARIO</label>                              <input type="email" placeholder="example@gmail.com" title="Please enter you username" required="" value="" name="email" id="email" class="form-control">               <span class="help-block small">Escriba su usuario</span>
                             </div>

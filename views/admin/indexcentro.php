@@ -52,7 +52,7 @@
                         <td><?php echo $centro->encargado; ?>
                         <td><?php echo $centro->lugar; ?>
                         <td><a href="<?php echo constant('URL') . 'centro/leer/' . $centro->id_centro; ?>">Actualizar</a></td>
-                        <td><button class="bEliminar" data-controlador="centro" data-accion="eliminar" data-id="<?php echo $centro->id_centro; ?>">Eliminar</button></td> 
+                        <td><button class="bEliminar" data-controlador="centro" data-accion="eliminar" data-id="<?php echo $centro->id_centro; ?>">Eliminar</button></td>
                     </tr>
         <?php   
                 } 
