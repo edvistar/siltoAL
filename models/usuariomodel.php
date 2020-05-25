@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 include_once('models/usuariodao.php');
+=======
+include_once('models/usuario.php');
+>>>>>>> wapv
 
 class UsuarioModel extends Model{
     public function __construct(){
@@ -7,7 +11,11 @@ class UsuarioModel extends Model{
     }
 
 
+<<<<<<< HEAD
     public function guardar($datos = null){
+=======
+    public function create($datos = null){
+>>>>>>> wapv
         $sentenceSQL="INSERT INTO usuario (identificacion, nombre, apellido, email, pass, telefono, whatsapp, cargo, estado) VALUES (:identificacion, :nombre, :apellido, :email, :pass, :telefono, :whatsapp, :cargo, :estado)";
         $connexionDB=$this->db->connect();
         $query = $connexionDB->prepare($sentenceSQL);

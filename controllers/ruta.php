@@ -22,7 +22,11 @@
                     $this->view->render('admin/listaruta');
                 }
             }else{
+<<<<<<< HEAD
                 $this->view->render('admin/formruta');
+=======
+                $this->view->render('admin/crearruta');
+>>>>>>> wapv
             }
         }
         function leer($param = null){

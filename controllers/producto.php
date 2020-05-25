@@ -25,7 +25,7 @@
                     $this->view->render('admin/listaproducto');
                 }
             }else{
-                $this->view->render('admin/formproducto');
+                $this->view->render('admin/crearproducto');
             }
         }
          //funcion de leer datos de la base de datos con ayuda de  readbyid

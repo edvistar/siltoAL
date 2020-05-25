@@ -15,11 +15,19 @@ class Usuario extends Controller{
 
     function crear(){
         if(isset($_POST["identificacion"])){
+<<<<<<< HEAD
             if($this->model->guardar($_POST)){
                 $this->view->mensaje = "Usuario creado correctamente";
                 $usuarios = $this->view->datos['usuarios'] = $this->model->read();
                 $this->view->usuarios = $usuarios;
                 $this->view->render('admin/listasuario');
+=======
+            if($this->model->create($_POST)){
+                $this->view->mensaje = "Usuario creado correctamente";
+                $usuarios = $this->view->datos['usuarios'] = $this->model->read();
+                $this->view->usuarios = $usuarios;
+                $this->view->render('admin/listausuario');
+>>>>>>> wapv
             }else{
                 
                 $this->view->mensaje = "El Usuario ya existe";
@@ -57,6 +65,7 @@ class Usuario extends Controller{
             $usuario = new usuarioDAO();
             $usuario->identificacion = $id;
             $usuario->identificacion = $_POST['identificacion'];
+<<<<<<< HEAD
             $usuario->nombre = $_POST['nombre'];
             $usuario->apellido = $_POST['apellido'];
             $usuario->email = $_POST['email'];
@@ -65,6 +74,16 @@ class Usuario extends Controller{
             $usuario->whatsapp = $_POST['whatsapp'];
             $usuario->cargo = $_POST['cargo'];
             $usuario->estado = $_POST['estado'];
+=======
+            $usuario->nombre         = $_POST['nombre'];
+            $usuario->apellido       = $_POST['apellido'];
+            $usuario->email          = $_POST['email'];
+            $usuario->pass           = $_POST['pass'];
+            $usuario->telefono       = $_POST['telefono'];
+            $usuario->whatsapp       = $_POST['whatsapp'];
+            $usuario->cargo          = $_POST['cargo'];
+            $usuario->estado         = $_POST['estado'];
+>>>>>>> wapv
 
             $this->view->usuario = $usuario;
             $this->view->mensaje = "Usuario actualizado correctamente";
