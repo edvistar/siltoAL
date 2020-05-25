@@ -50,7 +50,7 @@
         ?>
             </tbody>
         </table>
-        <button type="button" class="btn btn-info" onClick='window.location.assign("<?php echo constant('URL'); ?>solicitud/crear")'>Crear Centro</button><br>
+        <button type="button" class="btn btn-info" onClick='window.location.assign("<?php echo constant('URL'); ?>solicitud/crear")'>Crear Solicitud</button><br>
     </div>
 
     <?php require 'views/footer.php'; ?>

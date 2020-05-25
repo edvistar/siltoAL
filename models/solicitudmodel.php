@@ -1,7 +1,7 @@
 <?php
-include_once('models/centro.php');
+include_once('models/solicitud.php');
 
-class CentroModel extends Model{
+class SolicitudModel extends Model{
     function __construct(){
         parent::__construct();
     }
@@ -42,8 +42,8 @@ class CentroModel extends Model{
 
                 $item->id_solicitud     = $row['id_solicitud'];
                 $item->solicitud        = $row['solicitud'];
-                $item->descripcion         = $row['descripcion'];
-                $item->cantidad_kilos      = $row['cantidad_kilos'];
+                $item->descripcion      = $row['descripcion'];
+                $item->cantidad_kilos   = $row['cantidad_kilos'];
 
                 array_push($items, $item);
             }
@@ -65,8 +65,8 @@ class CentroModel extends Model{
             while($row = $query->fetch()){
                 $item->id_solicitud     = $row['id_solicitud'];
                 $item->solicitud        = $row['solicitud'];
-                $item->descripcion         = $row['descripcion'];
-                $item->cantidad_kilos      = $row['cantidad_kilos'];
+                $item->descripcion      = $row['descripcion'];
+                $item->cantidad_kilos   = $row['cantidad_kilos'];
             }
             return $item;
         }catch(PDOException $e){
@@ -82,8 +82,8 @@ class CentroModel extends Model{
             $query->execute([
                 'id_solicitud'    => $item['id_solicitud'],
                 'solicitud'       => $item['solicitud'],
-                'descripcion'        => $item['descripcion'],
-                'cantidad_kilos'     => $item['cantidad_kilos']
+                'descripcion'     => $item['descripcion'],
+                'cantidad_kilos'  => $item['cantidad_kilos']
             ]);
             return true;
         }catch(PDOException $e){

@@ -33,7 +33,7 @@
 
             <tbody id="tbody-data">
                 <?php
-                    include_once 'models/usuariodao.php';
+                    include_once 'models/usuario.php';
                     if(count($this->usuarios)>0){
                         foreach ($this->usuarios as $row){
                             $usuario = new UsuarioDAO();

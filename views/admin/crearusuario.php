@@ -32,7 +32,7 @@
                                         <div class="center"><?php echo $this->mensaje;?></div>
                                         <div class="hpanel">
                                             <div class="panel-body">
-                                                <form action="<?php echo constant('URL'); ?>usuario/registrar" method="POST" id="loginForm">
+                                                <form action="<?php echo constant('URL'); ?>usuario/crear" method="POST" id="loginForm">
                                                     <div class="row">
                                                         <div class="form-group col-lg-6">
                                                             <label>Identificación</label>

@@ -20,7 +20,7 @@
 
             <div class="form-group">
                 <label for="solicitud">Solicitud</label>
-                <input type="text" class="form-control" name="solicitud" id="solicitud">
+                <input type="date" class="form-control" name="solicitud" id="solicitud">
                 <small id="solicitudHelp" class="form-text text-muted">Diligencie la solicitud de ruta</small>
             </div>
             <div class="form-group">
@@ -33,7 +33,7 @@
                 <input type="number" class="form-control" name="cantidad_kilos" id="cantidad_kilos">
                 <small id="cantidad_kilosHelp" class="form-text text-muted">Diligencie la cantidad de kilos a trasportar.</small>
             </div>
-            <input type="submit" class="btn btn-info" value="Crear centro">
+            <input type="submit" class="btn btn-info" value="Crear Solicitud">
         </form>
         </div>
     </div>
