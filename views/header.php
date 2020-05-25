@@ -99,8 +99,8 @@
                                 <li><a title="registro" href="<?php echo constant('URL'); ?>solicitud/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Solicitud</span></a></li>
                                 <li><a title="ver-usuarios" href="<?php echo constant('URL'); ?>solicitud"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Solicitudes</span></a></li>
                                 <!-- crud rutas -->
-                                <li><a title="registro" href="<?php echo constant('URL'); ?>rutas/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Rutas</span></a></li>
-                                <li><a title="ver-usuarios" href="<?php echo constant('URL'); ?>rutas"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Rutas</span></a></li>
+                                <li><a title="registro" href="<?php echo constant('URL'); ?>ruta/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Rutas</span></a></li>
+                                <li><a title="ver-usuarios" href="<?php echo constant('URL'); ?>ruta"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Rutas</span></a></li>
                             </ul>
                         <li><a title="Landing Page" href="<?php echo constant('URL'); ?>" aria-expanded="false"><i class="fa fa-bookmark icon-wrap sub-icon-mg" aria-hidden="true"></i> <span class="mini-click-non">Landing Page</span></a></li>
                     </ul>

@@ -8,7 +8,7 @@
         function render(){
             $centros = $this->view->datos = $this->model->read();
              $this->view->centros = $centros;
-            $this->view->render('admin/indexcentro');
+            $this->view->render('admin/listacentro');
         }
         
         function crear(){
@@ -17,11 +17,11 @@
                     $this->view->mensaje = "Centro creado correctamente";
                     $centros = $this->view->datos = $this->model->read();
                     $this->view->centros = $centros;
-                    $this->view->render('admin/indexcentro');
+                    $this->view->render('admin/listacentro');
                 }else{
                     
-                    $this->view->mensaje = "El centro ya existe 1";
-                    $this->view->render('admin/indexcentro');
+                    $this->view->mensaje = "El centro ya existe ";
+                    $this->view->render('admin/listacentro');
                 }
             }else{
                 $this->view->render('admin/crearcentro');
@@ -66,7 +66,7 @@
             }
             $centros = $this->view->datos = $this->model->read();
             $this->view->centros = $centros;
-            $this->view->render('admin/indexcentro');
+            $this->view->render('admin/listacentro');
         }
         function eliminar($param = null){
             $id = $param[0];
