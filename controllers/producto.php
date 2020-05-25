@@ -34,6 +34,7 @@
             $producto = $this->model->readById($id_producto);
 
             session_start();
+            
             $_SESSION["id_verProducto"] = $producto->id_producto;
 
             $this->view->producto = $producto;
@@ -43,6 +44,11 @@
         function editar($param = null){
             if($this->model->update($_POST)){
                 $producto = new ProductoDAO();
+
+
+                session_start();
+            $id = $_SESSION["id_verProducto"];
+            unset($_SESSION['id_verProducto']);
 
             session_start();
             $id = $_SESSION["id_verProducto"];
@@ -62,7 +68,7 @@
             }
             $productos = $this->view->datos = $this->model->read();
             $this->view->productos = $productos;
-            $this->view->render('admin/editarproducto');
+            $this->view->render('admin/listaproducto');
         }
         //Funcion de eliminar registros de la base de datos.
         function eliminar($param = null){
