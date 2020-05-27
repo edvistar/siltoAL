@@ -33,11 +33,7 @@
 
             <tbody id="tbody-data">
                 <?php
-<<<<<<< HEAD
-                    include_once 'models/usuariodao.php';
-=======
                     include_once 'models/usuario.php';
->>>>>>> wapv
                     if(count($this->usuarios)>0){
                         foreach ($this->usuarios as $row){
                             $usuario = new UsuarioDAO();
@@ -67,11 +63,7 @@
                 ?>
             </tbody>
         </table>
-<<<<<<< HEAD
-        <button type="button" class="btn btn-success loginbtn" onClick='window.location.assign("<?php echo constant('URL'); ?>/usuario/crear")'>Registrar Usuario</button>
-=======
         <button type="button" class="btn btn-success loginbtn" onClick='window.location.assign("<?php echo constant('URL'); ?>/usuario/registrar")'>Registrar Usuario</button>
->>>>>>> wapv
     </div>
 
     <?php require 'views/footer.php'; ?>

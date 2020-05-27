@@ -5,7 +5,7 @@
 
     <div id="container" class="container">
         <div><?php echo $this->mensaje; ?></div>
-        <h1 class="center"><?php echo strtoupper($this->ruta->destino); ?>Nueva Ruta</h1>
+        <h1 class="center"><?php echo strtoupper($this->ruta->destino); ?></h1>
         <div class="col-sm-6 offset-sm-3">
         <form action="<?php echo constant('URL'); ?>ruta/editar" method="POST">
             <div class="form-group">
