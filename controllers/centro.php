@@ -10,7 +10,6 @@
              $this->view->centros = $centros;
             $this->view->render('admin/listacentro');
         }
-        
         function crear(){
             if(isset($_POST["nombre"])){
                 if($this->model->create($_POST)){
@@ -19,7 +18,6 @@
                     $this->view->centros = $centros;
                     $this->view->render('admin/listacentro');
                 }else{
-                    
                     $this->view->mensaje = "El centro ya existe ";
                     $this->view->render('admin/listacentro');
                 }
@@ -30,12 +28,10 @@
         function leer($param = null){
             $id_centro = $param[0];
             $centro = $this->model->readById($id_centro);
-    
-            session_start();
 
+            session_start();
             $_SESSION["id_verCentro"] = $centro->id_centro;
-            
-    
+
             $this->view->centro = $centro;
             $this->view->render('admin/editarcentro');
         }
@@ -78,9 +74,8 @@
                 $mensaje = "No se pudo eliminar el Centro";
                 $this->view->mensaje = "No se pudo eliminar el centro";
             }
-    
             //$this->render();
-    
             echo $mensaje;
         }
     }
+?>

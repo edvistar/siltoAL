@@ -17,7 +17,7 @@
                     $this->view->rutas = $rutas;
                     $this->view->render('admin/listaruta');
                 }else{
-                    
+
                     $this->view->mensaje = "La ruta ya existe 1";
                     $this->view->render('admin/listaruta');
                 }
@@ -28,11 +28,10 @@
         function leer($param = null){
             $id_ruta = $param[0];
             $ruta = $this->model->readById($id_ruta);
-    
+
             session_start();
             $_SESSION["id_verRuta"] = $ruta->id_ruta;
-            
-    
+
             $this->view->ruta = $ruta;
             $this->view->render('admin/editarruta');
         }
@@ -40,7 +39,7 @@
             session_start();
             $id = $_SESSION["id_verRuta"];
             unset($_SESSION['id_verRuta']);
-    
+
             if($this->model->update($_POST)){
                 $ruta = new RutaDAO();
 
@@ -56,8 +55,7 @@
                 $ruta->identificacion = $_POST['identificacion'];
                 $ruta->placa          = $_POST['placa'];
                 $ruta->id_centro      = $_POST['id_centro'];
-    
-    
+
                 $this->view->ruta = $ruta;
                 $this->view->mensaje = "Ruta actualizada correctamente";
             }else{
@@ -69,7 +67,7 @@
         }
         function eliminar($param = null){
             $id = $param[0];
-    
+
             if($this->model->delete($id)){
                 $mensaje ="Ruta eliminado correctamente";
                 //$this->view->mensaje = "Alumno eliminado correctamente";
@@ -77,10 +75,9 @@
                 $mensaje = "No se pudo eliminar la ruta";
                 $this->view->mensaje = "No se pudo eliminar la ruta";
             }
-    
             //$this->render();
-    
             echo $mensaje;
         }
-        
+
     }
+?>

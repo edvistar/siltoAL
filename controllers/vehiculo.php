@@ -18,7 +18,7 @@
                     $this->view->vehiculos = $vehiculos;
                     $this->view->render('admin/listavehiculo');
                 }else{
-                    
+
                     $this->view->mensaje = "El vehiculo  ya existe 1";
                     $this->view->render('admin/crearvehiculo');
                 }
@@ -26,14 +26,14 @@
                 $this->view->render('admin/crearvehiculo');
             }
         }
-        
+
         function leer($param = null){
             $placa = $param[0];
             $vehiculo = $this->model->readById($placa);
-    
+
             session_start();
             $_SESSION["id_verVehiculo"] = $vehiculo->placa;
-    
+
             $this->view->vehiculo = $vehiculo;
             $this->view->render('admin/editarvehiculo');
         }
@@ -67,10 +67,9 @@
             $this->view->vehiculos = $vehiculos;
             $this->view->render('admin/listavehiculo');
         }
-        
+
         function eliminar($param = null){
-            $id = $param[0];
-    
+
             if($this->model->delete($id)){
                 $mensaje ="vehiculo eliminado correctamente";
                 //$this->view->mensaje = "Alumno eliminado correctamente";
@@ -78,9 +77,6 @@
                 $mensaje = "No se pudo eliminar el vehiculo";
                 //$this->view->mensaje = "No se pudo eliminar al alumno";
             }
-    
-            //$this->render();
-    
             echo $mensaje;
         }
     }

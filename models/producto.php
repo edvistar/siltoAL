@@ -1,9 +1,9 @@
 <?php
-class ProductoDAO{
-    public $id_producto;
-    public $nombre;
-    public $peso;
-    public $costo;
-}
+    class ProductoDAO{
+        public $id_producto;
+        public $nombre;
+        public $peso;
+        public $costo;
+    }
 
 ?>
