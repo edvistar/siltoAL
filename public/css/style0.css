@@ -5,12 +5,16 @@
     background-size: 100%;
     background:url("../img/unnamed.jpg")no-repeat;
     background-size: cover;
-}
+} 
+/* barra menu estatica */
 .barra{
+    padding:5px 5px;
+    margin: 2px ;
     position: fixed;
     z-index: 999;
     background: #ffff;
-    opacity: 80%;
+    left:0;
+    right:0;
 
 }
 
@@ -37,7 +41,7 @@
     font-size:20px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     padding: 4px 4px;
-    transition: 3s;
+    transition: 20s;
 }
 
 #header-home .nav ul li a:hover{
@@ -91,7 +95,7 @@
     font-size: 18px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-
+/* tamaño de imagenes */
 
 .tama{
     padding: 2px;
@@ -101,6 +105,7 @@
     opacity: 60% ;
     justify-content: space-around;
 }
+/* letra sentrada */
 .leter{
     position: absolute;
     top: 110px;
@@ -112,38 +117,65 @@
     justify-content: space-around;
 }
 
-.avatar{
-
-    width: 150px;
-    height: 150px;
-    text-align: center;
+.cargo{
+    text-decoration: rgba(191, 73, 20, 0.85);
+    justify-content: space-around;
 
 }
+
+
+/* equipo */
+.avatar{
+
+    width: 111px;
+    height: 150px;
+    text-align: center;
+    border-radius: 2px;
+    border-image-slice: initial;
+
+}
+#equipo .h3 a{
+    /* margin: 15px; */
+    color: rgb(191, 73, 20);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    font-size:16px;
+}
+/* sector del footer */
 #rectangulo{
-    padding: 0;
-    margin: 0;
     width: 100%;
     background: rgba(191, 73, 20, 0.85);
     opacity: 75%;
 }
-
-#rectangulo  .conta{
-    color: #ffff;
-    background-size: cover;
+#rectangulo .map{
+    padding: 10px;
+    margin-top: 10px;
 
 }
 
-#rectangulo ul{
-    padding: 0;
-    margin: 0;
+#rectangulo .contacto{
+    padding: 10px;
     margin-top: 10px;
+    color: #ffff;
+    background-size: cover;
+}
+
+#rectangulo ul{
+    padding: 10px;
+    margin: 10px;
     display:inline-block;
 
 }
 
 #rectangulo ul li{
     list-style: none;
+    margin: 10px;
     display:inline-block ;
-    margin: 5px;
     text-decoration: none;
+}
+
+.redes{
+   margin: 5px;
+   padding: 5px;
+
 }

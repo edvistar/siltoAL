@@ -1,59 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php  echo constant('NOMBRESITIO'); ?></title>
+<title><?php  echo constant('NOMBRESITIO'); ?></title>
+</head>
 </head>
 <body>
-<?php require 'views/header.php'; ?>
 
-    <!-- Formulario de registro -->
-<div class="container-fluid">
+    <?php require 'views/header.php'; ?>
+
+    <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
-        <div class="col-md-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
+        <div class="col-md-8 col-md-8 col-sm-8 col-xs-12">
             <div class="text-center custom-login mt-20px">
-            <h1 class="center"><?php echo strtoupper($this->producto->id_producto); ?></h1>
-        <div><?php echo $this->mensaje; ?></div>
+                <h3><i class="fa fa-edit" aria-hidden="true"></i> Editar Producto</h3>
+                <p>Todos los campos son obligatorios</p>
             </div>
+            <h1><?php echo strtoupper($this->producto->nombre); ?></h1>
+            <div><?php echo $this->mensaje; ?></div>
             <div class="hpanel">
                 <div class="panel-body">
-                    <form action="<?php  echo constant('URL'); ?>producto/editar" method="POST">
+                <form action="<?php  echo constant('URL'); ?>producto/editar" method="POST">
                         <div class="row">
-                            <div class="form-group col-lg-12">
+                            <div class="form-group col-md-6">
                                 <label for="id_producto">Id</label>
                                 <input type="number" name="id_producto"  id="id_producto" class="form-control" value="<?php echo $this->producto->id_producto; ?>" readonly>
+                                <small id="id_productoHelp" class="form-text text-muted">Ingrese el Id del producto</small>
                             </div>
-                            <div class="form-group col-lg-12">
+                            <div class="form-group col-md-6">
                                 <label for="nombre">Nombre</label>
                                 <input type="text" name="nombre" id="nombre" class="form-control" value="<?php echo $this->producto->nombre; ?>" >
+                                <small id="nombreHelp" class="form-text text-muted">Ingrese el nombre del producto</small>
                             </div>
-                            <div class="form-group col-lg-12">
-                                <label for="peso">Peso</label>
+                            <div class="form-group col-md-6">
+                                <label for="peso">Peso kl</label>
                                 <input type="text" name="peso" id="peso" class="form-control" value="<?php echo $this->producto->peso; ?>" >
+                                <small id="pesoHelp" class="form-text text-muted">Ingrese peso del producto por kilo</small>
                             </div>
-                            <div class="form-group col-lg-12">
+                            <div class="form-group col-md-6">
                                 <label for="costo">Costo</label>
                                 <input type="text" name="costo" id="costo" class="form-control" value="<?php echo $this->producto->costo; ?>" >
+                                <small id="costoHelp" class="form-text text-muted">Ingrese el costo del producto por kilo</small>
                             </div>
                         </div>
                         <div class="text-center">
-<<<<<<< HEAD
-                            <button class="btn btn-info">Actualizar</button>
-=======
-                            <button class="btn btn-info">actualizar</button>
->>>>>>> f2bb0a861ebeb1d0c0c079f9bf6a531b2b72667d
-                            <button class="btn btn-danger">Cancel</button>
+                            <input type="submit" class="btn btn-info" value="Actualizar Producto" >
+                            <input type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>producto")' value="Cancelar">
                         </div>
                     </form>
-                </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
     </div>
 </div><br>
-<?php require 'views/footer.php'; ?>
 
+    <?php require 'views/footer.php'; ?>
+    
 </body>
 </html>

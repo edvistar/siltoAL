@@ -16,8 +16,7 @@
             $solicitud = $this->model->readById($id_solicitud);
 
             session_start();
-    
-                $_SESSION["id_verSolicitud"] = $solicitud->id_solicitud;
+            $_SESSION["id_verSolicitud"] = $solicitud->id_solicitud;
 
             $this->view->solicitud = $solicitud;
             $this->view->render('admin/editarsolicitud');
@@ -26,7 +25,7 @@
             session_start();
             $id = $_SESSION["id_verSolicitud"];
             unset($_SESSION['id_verSolicitud']);
-          
+
             if($this->model->update($_POST)){
                 $solicitud = new SolicitudDAO();
 
@@ -64,18 +63,15 @@
             function leer($param = null){
                 $id_solicitud = $param[0];
                 $solicitud = $this->model->readById($id_solicitud);
-        
-                
-                
-        
+
                 $this->view->solicitud = $solicitud;
                 $this->view->render('admin/editarsolicitud');
             }
         }
-        
+
         function eliminar($param = null){
             $id = $param[0];
-    
+
             if($this->model->delete($id)){
                 $mensaje ="Solicitud eliminada correctamente";
                 //$this->view->mensaje = "Alumno eliminado correctamente";
@@ -83,9 +79,8 @@
                 $mensaje = "No se pudo eliminar la solicitud";
                 $this->view->mensaje = "No se pudo eliminar la solicitud";
             }
-    
             //$this->render();
-    
             echo $mensaje;
         }
     }
+?>

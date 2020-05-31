@@ -1,7 +1,7 @@
 <?php
 
 define('URL', 'http://localhost/siltoWapv/');
-define('NOMBRESITIO', 'SILTO');
+define('NOMBRESITIO', 'SILTO'); //url para poner el las vistas
 
 define('HOST', 'localhost');
 define('DB', 'silto');

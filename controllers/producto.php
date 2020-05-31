@@ -11,7 +11,6 @@
             $this->view->productos = $productos;
             $this->view->render('admin/listaproducto');
         }
-       
         //funcion de crear registros en base de datos
         function crear(){
             if(isset($_POST["nombre"])){
@@ -34,7 +33,6 @@
             $producto = $this->model->readById($id_producto);
 
             session_start();
-            
             $_SESSION["id_verProducto"] = $producto->id_producto;
 
             $this->view->producto = $producto;
@@ -49,11 +47,6 @@
                 session_start();
             $id = $_SESSION["id_verProducto"];
             unset($_SESSION['id_verProducto']);
-
-            session_start();
-            $id = $_SESSION["id_verProducto"];
-            unset($_SESSION['id_verProducto']);
-
 
                 $producto->id_producto = $id;
                 $producto->id_producto = $_POST['id_producto'];

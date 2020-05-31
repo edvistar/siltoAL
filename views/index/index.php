@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SILTO</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="public/css/style0.css">
+    <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/style0.css">
 
 </head>
 <body>
@@ -18,18 +18,18 @@
                 <div class="row barra">
                     <div class="col-lg-2">
                         <a href="index.php">
-                            <img  width="300" height="90" src="public/img/SILTO.png" alt="logo de la pagina">
+                            <img  width="300" height="90" src="<?php echo constant('URL'); ?>public/img/SILTO.png" alt="logo de la pagina">
                         </a>
                     </div>
                     <div class="col-lg-1"></div>
                     <div class="col-lg-9">
                         <ul class="text-center">
-                            <li><a href="index.php">Inicio</a></li>
-                            <li><a href="#quehacemos">Que Hacemos</a></li>
-                            <li><a href="#Servicios">Servicios</a></li>
-                            <li><a href="#Equipo">Equipo</a></li>
-                            <li><a href="#Contacto">Contacto</a></li>
-                            <li><a href="index/login">Ingreso</a></li>
+                            <li><a href="<?php echo constant('URL'); ?>index.php">Inicio</a></li>
+                            <li><a href="<?php echo constant('URL'); ?>#quehacemos">Que Hacemos</a></li>
+                            <li><a href="<?php echo constant('URL'); ?>#Servicios">Servicios</a></li>
+                            <li><a href="<?php echo constant('URL'); ?>#Equipo">Equipo</a></li>
+                            <li><a href="<?php echo constant('URL'); ?>#Contacto">Contacto</a></li>
+                            <li><a href="<?php echo constant('URL'); ?>index/Autenticar?auth=1">Ingreso</a></li>
 
                             <!-- <li><a href="" data-toggle="modal" data-target="#login">Ingreso</a></li> -->
                         </ul>
@@ -55,11 +55,11 @@
                                 </h2>
                             </div>
                             </div>
-                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <a class="carousel-control-prev" href="<?php echo constant('URL'); ?>#carouselExampleControls" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                             </a>
-                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <a class="carousel-control-next" href="<?php echo constant('URL'); ?>#carouselExampleControls" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                             </a>
@@ -121,7 +121,7 @@
             <div class="row">
                 <!--rol-->
                 <div class="col-lg-6 text-center">
-                    <a class="btn " data-toggle="collapse" href="#rol" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Rol Usuario</h1>
+                    <a class="btn " data-toggle="collapse" href=<?php echo constant('URL'); ?>"#rol" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Rol Usuario</h1>
                         <img class="tama" src="public/img/oper.png" alt="imagen Misión"></a>
                     <div class="collapse " id="rol">
                         <div class="card card-body">
@@ -131,7 +131,7 @@
                 </div>
                 <!--solicitud-->
                 <div class="col-lg-6 text-center">
-                    <a class="btn " data-toggle="collapse" href="#solicitud" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Solicitud de Pedidos</h1><img  class="tama" src="public/img/8869.jpg" alt="imagen Misión"></a>
+                    <a class="btn " data-toggle="collapse" href="<?php echo constant('URL'); ?>#solicitud" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Solicitud de Pedidos</h1><img  class="tama" src="public/img/8869.jpg" alt="imagen Misión"></a>
                     <div class="collapse " id="solicitud">
                         <div class="card card-body">
                             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
@@ -142,7 +142,7 @@
             <!--Planeamiento-->
             <div class="row">
                 <div class="col-lg-6">
-                    <a class="btn " data-toggle="collapse" href="#planeamiento" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Planeamiento</h1>
+                    <a class="btn " data-toggle="collapse" href=<?php echo constant('URL'); ?>"#planeamiento" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Planeamiento</h1>
                     <img class="tama" src="public/img/subcontratacion-servicios-logistica-770x367m.jpg" alt="imagen Misión"></a>
                     <div class="collapse " id="planeamiento">
                         <div class="card card-body">
@@ -152,7 +152,7 @@
                 </div>
             <!--rutas-->
                 <div class="col-lg-6">
-                    <a class="btn " data-toggle="collapse" href="#ruta" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Rutas</h1>
+                    <a class="btn " data-toggle="collapse" href="<?php echo constant('URL'); ?>#ruta" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Rutas</h1>
                     <img class="tama" src="public/img/camion-carretera-contenedor-importacion-exportacion-transporte-logistico_42493-29.jpg" alt="imagen Misión"></a>
                     <div class="collapse " id="ruta">
                         <div class="card card-body">
@@ -170,7 +170,7 @@
                 <div class="col-md-4">
                     <div class="modal-bootstrap">
                             <div class="modal-area-button">
-                                <a class="Primary mg-b-10" href="#" data-toggle="modal" data-target="#castro"><h3>Alexandra Castro </h3>
+                                <a class="Primary mg-b-10" href="<?php echo constant('URL'); ?>#" data-toggle="modal" data-target="#castro"><h3>Alexandra Castro </h3>
                                 <img class="avatar"src="public/img/estudiante.png"></a>
                             </div>
                         </div>
@@ -179,7 +179,7 @@
                 <div class="col-md-4">
                     <div class="modal-bootstrap">
                         <div class="modal-area-button">
-                            <a class="Information Information-color mg-b-10" href="#" data-toggle="modal" data-target="#lopez"><h3>Jhonatan Lopez</h3><img class="avatar" src="public/img/militar.png"></a>
+                            <a class="Information Information-color mg-b-10" href="<?php echo constant('URL'); ?>#" data-toggle="modal" data-target="#lopez"><h3>Jhonatan Lopez</h3><img class="avatar" src="public/img/militar.png"></a>
                         </div>
                     </div>
                 </div>
@@ -187,7 +187,7 @@
                 <div class="col-md-4">
                     <div class="modal-bootstrap">
                         <div class="modal-area-button">
-                            <a class="Primary mg-b-10" href="#" data-toggle="modal" data-target="#lara"><h3>Lida Patricia Lara</h3><img class="avatar" src="public/img/estudiante.png"></a>
+                            <a class="Primary mg-b-10" href="<?php echo constant('URL'); ?>#" data-toggle="modal" data-target="#lara"><h3>Lida Patricia Lara</h3><img class="avatar" src="public/img/estudiante.png"></a>
                         </div>
                     </div>
                 </div>
@@ -198,7 +198,7 @@
                 <div class="col-md-4">
                     <div class="modal-bootstrap">
                         <div class="modal-area-button">
-                            <a class="Primary mg-b-10" href="#" data-toggle="modal" data-target="#alarcon"><h3>Mauricio Alarcon </h3><img class="avatar" src="public/img/militar.png"></a>
+                            <a class="Primary mg-b-10" href="<?php echo constant('URL'); ?>#" data-toggle="modal" data-target="#alarcon"><h3>Mauricio Alarcon </h3><img class="avatar" src="public/img/militar.png"></a>
                         </div>
                     </div>
                 </div>
@@ -206,7 +206,7 @@
                 <div class="col-md-4">
                     <div class="modal-bootstrap">
                         <div class="modal-area-button">
-                            <a class="Primary mg-b-10" href="#" data-toggle="modal" data-target="#hoyos"><h3>Victor Hoyos</h3><img class="avatar" src="public/img/militar.png"></a>
+                            <a class="Primary mg-b-10" href="<?php echo constant('URL'); ?>#" data-toggle="modal" data-target="#hoyos"><h3>Victor Hoyos</h3><img class="avatar" src="public/img/militar.png"></a>
                         </div>
                     </div>
                 </div>

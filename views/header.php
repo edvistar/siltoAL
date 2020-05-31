@@ -72,7 +72,7 @@
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-            <a href="views/main/index.php"><img width="150px" height="100px" class="main-logo" src="<?php echo constant('URL'); ?>public/img/logo.png" alt="" /></a><strong><img src="<?php echo constant('URL'); ?>public/img/logo.png" alt="" /></strong>
+            <a href=""><img width="150px" height="100px" class="main-logo" src="<?php echo constant('URL'); ?>public/img/logo.png" alt="" /></a><strong><img src="<?php echo constant('URL'); ?>public/img/logo.png" alt="" /></strong>
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
@@ -84,23 +84,23 @@
 							</a>
                             <ul class="submenu-angle" aria-expanded="true">
                             <!-- //crud usuario -->
-                                <li><a title="registro" href="<?php echo constant('URL'); ?>usuario/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Usuario</span></a></li>
-                                <li><a title="ver-usuarios" href="<?php echo constant('URL'); ?>usuario"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Usuarios</span></a></li>
+                                <li><a title="Registro Usuario" href="<?php echo constant('URL'); ?>usuario/crear"><i class="fa fa-user" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Usuario</span></a></li>
+                                <li><a title="Ver Usuarios" href="<?php echo constant('URL'); ?>usuario"><i class="fa fa-users nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Usuarios</span></a></li>
                                 <!-- crud centro -->
-                                <li><a title="registro" href="<?php echo constant('URL'); ?>centro/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Centros</span></a></li>
-                                <li><a title="ver-usuarios" href="<?php echo constant('URL'); ?>centro"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Centros</span></a></li>
+                                <li><a title="Registro Centro" href="<?php echo constant('URL'); ?>centro/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Centros</span></a></li>
+                                <li><a title="Lista Centros" href="<?php echo constant('URL'); ?>centro"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Centros</span></a></li>
                                 <!-- crud vehiculo -->
-                                <li><a title="registro" href="<?php echo constant('URL'); ?>vehiculo/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Vehiculo</span></a></li>
-                                <li><a title="ver-usuarios" href="<?php echo constant('URL'); ?>vehiculo"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Vehiculos</span></a></li>
+                                <li><a title="Registro Vehiculo" href="<?php echo constant('URL'); ?>vehiculo/crear"><i class="fa fa-truck" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Vehiculo</span></a></li>
+                                <li><a title="Lista Vehiculos" href="<?php echo constant('URL'); ?>vehiculo"><i class="fa fa-car nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Vehiculos</span></a></li>
                                 <!-- crud producto -->
-                                <li><a title="registro" href="<?php echo constant('URL'); ?>producto/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Producto</span></a></li>
-                                <li><a title="ver-usuarios" href="<?php echo constant('URL'); ?>producto"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Productos</span></a></li>
+                                <li><a title="Registro Producto" href="<?php echo constant('URL'); ?>producto/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Producto</span></a></li>
+                                <li><a title="Lista productos" href="<?php echo constant('URL'); ?>producto"><i class="fa fa-shopping-cart nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Productos</span></a></li>
                                 <!-- crud solicitud -->
-                                <li><a title="registro" href="<?php echo constant('URL'); ?>solicitud/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Solicitud</span></a></li>
-                                <li><a title="ver-usuarios" href="<?php echo constant('URL'); ?>solicitud"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Solicitudes</span></a></li>
+                                <li><a title="Registro Solicitud " href="<?php echo constant('URL'); ?>solicitud/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Solicitud</span></a></li>
+                                <li><a title="Lista de solicitudes" href="<?php echo constant('URL'); ?>solicitud"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Solicitudes</span></a></li>
                                 <!-- crud rutas -->
-                                <li><a title="registro" href="<?php echo constant('URL'); ?>ruta/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Rutas</span></a></li>
-                                <li><a title="ver-usuarios" href="<?php echo constant('URL'); ?>ruta"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Rutas</span></a></li>
+                                <li><a title="Registro Ruta" href="<?php echo constant('URL'); ?>ruta/crear"><i class="fa fa-map-marker" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Rutas</span></a></li>
+                                <li><a title="Lista de rutas" href="<?php echo constant('URL'); ?>ruta"><i class="fa fa-map nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Rutas</span></a></li>
                             </ul>
                         <li><a title="Landing Page" href="<?php echo constant('URL'); ?>" aria-expanded="false"><i class="fa fa-bookmark icon-wrap sub-icon-mg" aria-hidden="true"></i> <span class="mini-click-non">Landing Page</span></a></li>
                     </ul>
@@ -114,7 +114,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="logo-pro">
-                        <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
+                        <a href="<?php echo constant('URL'); ?>index"><img class="main-logo" src=<?php echo constant('URL'); ?>"img/logo/logo.png" alt="" /></a>
                     </div>
                 </div>
             </div>
@@ -219,7 +219,7 @@
                                                         </li>
                                                         <li><a href="#"><span class="fa fa-cog author-log-ic"></span>Settings</a>
                                                         </li>
-                                                        <li><a href="login.html"><span class="fa fa-lock author-log-ic"></span>Log Out</a>
+                                                        <li><a href="<?php echo constant('URL'); ?>index/logout"><span class="fa fa-lock author-log-ic"></span>Cerrar Sesion</a>
                                                         </li>
                                                     </ul>
                                                 </li>
@@ -429,25 +429,28 @@
                             <div class="mobile-menu">
                                 <nav id="dropdown">
                                     <ul class="mobile-menu-nav">
-                                        <li><a data-toggle="collapse" data-target="#Charts" href="#">Home <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        <li><a data-toggle="collapse" data-target="#Charts" href="#">Administrador<span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                             <ul class="collapse dropdown-header-top">
-                                                <li><a href="index.html">Dashboard v.1</a></li>
-                                                <li><a href="index-1.html">Dashboard v.2</a></li>
-                                                
+                                                <li><a title="Registro Usuario" href="<?php echo constant('URL'); ?>usuario/crear"><i class="fa fa-user" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Usuario</span></a></li>
+                                                <li><a title="Ver Usuarios" href="<?php echo constant('URL'); ?>usuario"><i class="fa fa-users nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Usuarios</span></a></li>
+                                                <!-- crud centro -->
+                                                <li><a title="Registro Centro" href="<?php echo constant('URL'); ?>centro/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Centros</span></a></li>
+                                                <li><a title="Lista Centros" href="<?php echo constant('URL'); ?>centro"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Centros</span></a></li>
+                                                <!-- crud vehiculo -->
+                                                <li><a title="Registro Vehiculo" href="<?php echo constant('URL'); ?>vehiculo/crear"><i class="fa fa-truck" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Vehiculo</span></a></li>
+                                                <li><a title="Lista Vehiculos" href="<?php echo constant('URL'); ?>vehiculo"><i class="fa fa-car nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Vehiculos</span></a></li>
+                                                <!-- crud producto -->
+                                                <li><a title="Registro Producto" href="<?php echo constant('URL'); ?>producto/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Producto</span></a></li>
+                                                <li><a title="Lista productos" href="<?php echo constant('URL'); ?>producto"><i class="fa fa-shopping-cart nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Productos</span></a></li>
+                                                <!-- crud solicitud -->
+                                                <li><a title="Registro Solicitud " href="<?php echo constant('URL'); ?>solicitud/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Solicitud</span></a></li>
+                                                <li><a title="Lista de solicitudes" href="<?php echo constant('URL'); ?>solicitud"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Solicitudes</span></a></li>
+                                                <!-- crud rutas -->
+                                                <li><a title="Registro Ruta" href="<?php echo constant('URL'); ?>ruta/crear"><i class="fa fa-map-marker" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Rutas</span></a></li>
+                                                <li><a title="Lista de rutas" href="<?php echo constant('URL'); ?>ruta"><i class="fa fa-map nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Rutas</span></a></li>
                                             </ul>
                                         </li>
-                                        <li><a data-toggle="collapse" data-target="#Pagemob" href="#">Pages <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="Pagemob" class="collapse dropdown-header-top">
-                                                <li><a href="login.html">Login</a>
-                                                </li>
-                                                <li><a href="register.html">Register</a>
-                                                </li>
-                                                <li><a href="lock.html">Lock</a>
-                                                </li>
-                                                <li><a href="password-recovery.html">Password Recovery</a>
-                                                </li>
-                                            </ul>
-                                        </li>
+                                        <li><a title="Landing Page" href="<?php echo constant('URL'); ?>" aria-expanded="false"><i class="fa fa-bookmark icon-wrap sub-icon-mg" aria-hidden="true"></i> <span class="mini-click-non">Landing Page</span></a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -476,7 +479,7 @@
                                         <ul class="breadcome-menu">
                                             <li><a href="#">Home</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">Dashboard V.2</span>
+                                            <li><span class="bread-blod">SILTO</span>
                                             </li>
                                         </ul>
                                     </div>

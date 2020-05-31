@@ -7,46 +7,68 @@ class App{
     function __construct(){
         $url = isset($_GET['url'])? $_GET['url']: null;
         $url = rtrim($url, '/');
-        $url = explode('/', $url);
+        if(!isset($_REQUEST['auth'])){
+            $_SESSION['url'] = explode('/', $url);
+        }
+        
 
-        if(empty($url[0])){
+        if(isset($_SESSION['auth']) && $_SESSION['auth']==true){
+            if(empty($_SESSION['url'][0])){
+                $archivoController = 'controllers/main.php';
+                require $archivoController;
+                $controller = new Main();
+                $controller->render();
+                //$controller->loadModel('index');
+                return false;
+            }else{
+                $archivoController = 'controllers/' . $_SESSION['url'][0] . '.php';
+            }
+    
+            if(file_exists($archivoController)){
+                require $archivoController;
+
+                $controller = new $_SESSION['url'][0];
+                $controller->loadModel($_SESSION['url'][0]);
+
+                // Se obtienen el número de param
+                $nparam = sizeof($_SESSION['url']);
+                // si se llama a un método
+                if($nparam > 1){
+                    // hay parámetros
+                    if($nparam > 2){
+                        $param = [];
+                        for($i = 2; $i < $nparam; $i++){
+                            array_push($param, $_SESSION['url'][$i]);
+                        }
+                        $controller->{$_SESSION['url'][1]}($param);
+                    }else{
+                        // solo se llama al método
+                        $controller->{$_SESSION['url'][1]}();
+                    }
+                }else{
+                    // si se llama a un controlador
+                    $controller->render();  
+                }
+            }else{
+                $controller = new Errores();
+            }
+        }else{
             $archivoController = 'controllers/index.php';
             require $archivoController;
             $controller = new Index();
-            $controller->render();
-            $controller->loadModel('index');
-            return false;
-        }else{
-            $archivoController = 'controllers/' . $url[0] . '.php';
-        }
- 
-        if(file_exists($archivoController)){
-            require $archivoController;
-
-            $controller = new $url[0];
-            $controller->loadModel($url[0]);
-
-            // Se obtienen el número de param
-            $nparam = sizeof($url);
-            // si se llama a un método
-            if($nparam > 1){
-                // hay parámetros
-                if($nparam > 2){
-                    $param = [];
-                    for($i = 2; $i < $nparam; $i++){
-                        array_push($param, $url[$i]);
-                    }
-                    $controller->{$url[1]}($param);
-                }else{
-                    // solo se llama al método
-                    $controller->{$url[1]}();
-                }
+            if(isset($_REQUEST['auth']) && $_REQUEST['auth']==1){
+                $controller->Autenticar();
+                
             }else{
-                // si se llama a un controlador
-                $controller->render();  
+                if(isset($_REQUEST['auth'])){
+                    $controller->loadModel('index');
+                    $controller->ValidarUsuario();
+                }else{
+                    $controller->render();
+                }
             }
-        }else{
-            $controller = new Errores();
+            //$controller->loadModel('index');
+            return false;       
         }
     }
     

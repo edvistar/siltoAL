@@ -91,12 +91,13 @@
                 <div class="hpanel">
                   <div class="panel-body">
                     <h1>INICIA SESION</h1>
-                        <form action="<?php echo constant('URL'); ?>main"  method="POST">
+                        <form action="<?php echo constant('URL'); ?>main" method="POST">
                             <div class="form-group">
                                 <label class="control-label" for="email">USUARIO</label>                              <input type="email" placeholder="example@gmail.com" title="Please enter you username" required="" value="" name="email" id="email" class="form-control">               <span class="help-block small">Escriba su usuario</span>
                             </div>
                             <div class="form-group">
-                                <label class="control-label" for="password">CONTRASEÑA</label>                      <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="pass" id="password" class="form-control"><span class="help-block small">Escriba su contraseña</span>
+                                <label class="control-label" for="password">CONTRASEÑA</label>                      <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="password" id="password" class="form-control"><span class="help-block small">Escriba su contraseña</span>
+                                <input type="hidden" name="auth" value="auth"/>
                             </div>
                             <button class="btn btn-success btn-block loginbtn">Ingresar</button>
                        </form>

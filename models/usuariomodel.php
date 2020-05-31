@@ -17,14 +17,14 @@ class UsuarioModel extends Model{
         
                 #'fecha_crea' => $datos['fecha_crea']
                 'identificacion'=> $datos['identificacion'],
-                'nombre'=> $datos['nombre'],
-                'apellido'=> $datos['apellido'],
-                'email'=> $datos['email'],
-                'pass'=> $datos['pass'],
-                'telefono'=> $datos['telefono'],
-                'whatsapp'=> $datos['whatsapp'],
-                'cargo'=> $datos['cargo'],
-                'estado'=> $datos['estado']
+                'nombre'        => $datos['nombre'],
+                'apellido'      => $datos['apellido'],
+                'email'         => $datos['email'],
+                'pass'          => md5($datos['pass']),
+                'telefono'      => $datos['telefono'],
+                'whatsapp'      => $datos['whatsapp'],
+                'cargo'         => $datos['cargo'],
+                'estado'        => $datos['estado']
             ]);
             return true;
 
@@ -45,14 +45,14 @@ class UsuarioModel extends Model{
             while($row = $query->fetch()){
                 $item = new UsuarioDAO();
                 $item->identificacion = $row['identificacion'];
-                $item->nombre = $row['nombre'];
-                $item->apellido = $row['apellido'];
-                $item->email = $row['email'];
-                $item->telefono = $row['telefono'];
-                // $item->pass = $row['pass'];
-                $item->whatsapp = $row['whatsapp'];
-                $item->cargo = $row['cargo'];
-                $item->estado = $row['estado'];
+                $item->nombre         = $row['nombre'];
+                $item->apellido       = $row['apellido'];
+                $item->email          = $row['email'];
+                $item->telefono       = $row['telefono'];
+                // $item->pass        = $row['pass'];
+                $item->whatsapp       = $row['whatsapp'];
+                $item->cargo          = $row['cargo'];
+                $item->estado         = $row['estado'];
                 $item->fecha_ingreso  = $row['fecha_ingreso'];
                 // $item-> = $row[''];
               
@@ -76,14 +76,14 @@ class UsuarioModel extends Model{
             
             while($row = $query->fetch()){
                 $item->identificacion = $row['identificacion'];
-                $item->nombre = $row['nombre'];
-                $item->apellido = $row['apellido'];
-                $item->email = $row['email'];
-                $item->telefono = $row['telefono'];
-                $item->pass = $row['pass'];
-                $item->whatsapp = $row['whatsapp'];
-                $item->cargo = $row['cargo'];
-                $item->estado = $row['estado'];
+                $item->nombre         = $row['nombre'];
+                $item->apellido       = $row['apellido'];
+                $item->email          = $row['email'];
+                $item->telefono       = $row['telefono'];
+                $item->pass           = $row['pass'];
+                $item->whatsapp       = $row['whatsapp'];
+                $item->cargo          = $row['cargo'];
+                $item->estado         = $row['estado'];
                 $item->fecha_ingreso  = $row['fecha_ingreso'];
             }
             return $item;
@@ -100,15 +100,15 @@ class UsuarioModel extends Model{
         try{
             $query->execute([
 
-                'identificacion'=> $item['identificacion'],
-                'nombre'=> $item['nombre'],
-                'apellido'=> $item['apellido'],
-                'email'=> $item['email'],
-                'pass'=> $item['pass'],
-                'telefono'=> $item['telefono'],
-                'whatsapp'=> $item['whatsapp'],
-                'cargo'=> $item['cargo'],
-                'estado'=> $item['estado'],
+                'identificacion' => $item['identificacion'],
+                'nombre'         => $item['nombre'],
+                'apellido'       => $item['apellido'],
+                'email'          => $item['email'],
+                'pass'           => $item['pass'],
+                'telefono'       => $item['telefono'],
+                'whatsapp'       => $item['whatsapp'],
+                'cargo'          => $item['cargo'],
+                'estado'         => $item['estado'],
             ]);
             return true;
         }catch(PDOException $e){
