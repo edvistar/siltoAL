@@ -75,13 +75,16 @@
 
 }
 .h1{
-    margin: 15px;
+    margin: 20px;
+    
     color: rgb(191, 73, 20);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
     font-size:50px;
 }
-
+#servicios,#equipo{
+    margin-bottom: 50px;
+}
 .quienes{
     margin: auto;
     text-align: center;
@@ -125,6 +128,12 @@
 
 
 /* equipo */
+.equipoS a h3.equipoN{
+    color: rgb(191, 73, 20);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
 .avatar{
 
     width: 111px;
