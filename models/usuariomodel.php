@@ -8,14 +8,16 @@ class UsuarioModel extends Model{
 
 
     public function create($datos = null){
-        $sentenceSQL="INSERT INTO usuario (identificacion, nombre, apellido, email, pass, telefono, whatsapp, cargo, estado) VALUES (:identificacion, :nombre, :apellido, :email, :pass, :telefono, :whatsapp, :cargo, :estado)";
+        $sentenceSQL="INSERT INTO usuario (identificacion, nombre, apellido, email, pass, telefono, whatsapp, cargo, estado, foto) VALUES (:identificacion, :nombre, :apellido, :email, :pass, :telefono, :whatsapp, :cargo, :estado, :foto)";
         $connexionDB=$this->db->connect();
         $query = $connexionDB->prepare($sentenceSQL);
+
+        $foto= "public/img/contact/".$_FILES['foto']['name'];
+        move_uploaded_file($_FILES["foto"]["tmp_name"], $foto);
             
         try{
             $query->execute([
-        
-                #'fecha_crea' => $datos['fecha_crea']
+    
                 'identificacion'=> $datos['identificacion'],
                 'nombre'        => $datos['nombre'],
                 'apellido'      => $datos['apellido'],
@@ -24,7 +26,8 @@ class UsuarioModel extends Model{
                 'telefono'      => $datos['telefono'],
                 'whatsapp'      => $datos['whatsapp'],
                 'cargo'         => $datos['cargo'],
-                'estado'        => $datos['estado']
+                'estado'        => $datos['estado'],
+                'foto'          => "public/img/contact/".$_FILES['foto']['name'],
             ]);
             return true;
 
@@ -49,12 +52,11 @@ class UsuarioModel extends Model{
                 $item->apellido       = $row['apellido'];
                 $item->email          = $row['email'];
                 $item->telefono       = $row['telefono'];
-                // $item->pass        = $row['pass'];
                 $item->whatsapp       = $row['whatsapp'];
                 $item->cargo          = $row['cargo'];
                 $item->estado         = $row['estado'];
                 $item->fecha_ingreso  = $row['fecha_ingreso'];
-                // $item-> = $row[''];
+                $item->foto           = $row['foto'];
               
                 array_push($items, $item);
             }
@@ -85,6 +87,7 @@ class UsuarioModel extends Model{
                 $item->cargo          = $row['cargo'];
                 $item->estado         = $row['estado'];
                 $item->fecha_ingreso  = $row['fecha_ingreso'];
+                $item->foto           = $row['foto'];
             }
             return $item;
         }catch(PDOException $e){
@@ -96,7 +99,19 @@ class UsuarioModel extends Model{
     }
 
     public function update($item){
-        $query = $this->db->connect()->prepare('UPDATE usuario SET nombre = :nombre, apellido = :apellido, email = :email, pass = :pass, telefono = :telefono, whatsapp = :whatsapp, cargo = :cargo, estado = :estado WHERE identificacion = :identificacion');
+        $query = $this->db->connect()->prepare('UPDATE usuario SET nombre = :nombre, apellido = :apellido, email = :email, pass = :pass, telefono = :telefono, whatsapp = :whatsapp, cargo = :cargo, estado = :estado, foto = :foto WHERE identificacion = :identificacion');
+
+        $foto = $_FILES['foto']['name'];
+        $fotoriginal=$_POST['fotoriginal'];
+
+        if (empty($foto)) {
+            $foto = $fotoriginal;
+        } else {
+            $foto="public/img/contact/".$foto;
+            move_uploaded_file($_FILES["foto"]["tmp_name"], $foto);
+            unlink($fotoriginal);
+        }      
+        
         try{
             $query->execute([
 
@@ -104,11 +119,12 @@ class UsuarioModel extends Model{
                 'nombre'         => $item['nombre'],
                 'apellido'       => $item['apellido'],
                 'email'          => $item['email'],
-                'pass'           => $item['pass'],
+                'pass'           => md5($item['pass']), 
                 'telefono'       => $item['telefono'],
                 'whatsapp'       => $item['whatsapp'],
                 'cargo'          => $item['cargo'],
                 'estado'         => $item['estado'],
+                'foto'           => $foto,
             ]);
             return true;
         }catch(PDOException $e){
