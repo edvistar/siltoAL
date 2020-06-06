@@ -23,6 +23,8 @@
                     $this->view->render('admin/crearvehiculo');
                 }
             }else{
+                $usuarios = $this->view->datos['ddl_usuarios'] = $this->model->cargarConductor();
+                $this->view->ddl_usuarios = $usuarios;
                 $this->view->render('admin/crearvehiculo');
             }
         }

@@ -8,17 +8,6 @@
 
     <?php require 'views/header.php'; ?>
 
-<<<<<<< HEAD
-    <div id="container" class="container">
-        <div><?php echo $this->mensaje; ?></div>
-        <h1 class="center"><?php echo strtoupper($this->ruta->destino); ?></h1>
-        <div class="col-sm-6 offset-sm-3">
-        <form action="<?php echo constant('URL'); ?>ruta/editar" method="POST">
-            <div class="form-group">
-                <label for="id_ruta">Id Ruta</label>
-                <input type="number" class="form-control" value="<?php echo $this->ruta->id_ruta; ?>" name="id_ruta" id="id_ruta">
-                <small id="id_rutaHelp" class="form-text text-muted">Ingrese el número de Id Ruta</small>
-=======
     <div class="container-fluid">
     <div class="row">
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
@@ -26,7 +15,6 @@
             <div class="text-center custom-login mt-20px">
                 <h3><i class="fa fa-edit" aria-hidden="true"></i> Editar Ruta</h3>
                 <p>Todos los campos son obligatorios</p>
->>>>>>> 05bb412f6230143c6997955889d206663657e5ab
             </div>
             <h1><?php echo strtoupper($this->ruta->id_ruta); ?></h1>
             <div><?php echo $this->mensaje; ?></div>

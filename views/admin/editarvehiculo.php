@@ -54,14 +54,8 @@
 
                         <div class="form-group col-md-6">
                             <label for="conductor">Nombre del conductor </label>
-                            <input type="text" class="form-control" value="<?php echo $this->vehiculo->conductor; ?>" name="conductor" id="conductor">
+                            <input type="text" class="form-control" value="<?php echo $this->vehiculo->identificacion; ?>" name="conductor" id="conductor">
                             <small id="nombreHelp" class="form-text text-muted">Nombre del conductor</small>
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <label for="costo_flete">Costo del flete</label>
-                            <input type="text" class="form-control" value="<?php echo $this->vehiculo->costo_flete; ?>" name="costo_flete" id="costo_flete">
-                            <small id="fleteHelp" class="form-text text-muted">Valor del flete</small>
                         </div>
 
                         <div class="form-group col-md-6">

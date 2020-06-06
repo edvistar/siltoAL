@@ -28,12 +28,9 @@
             }
         }
          //funcion de leer datos de la base de datos con ayuda de  readbyid
-         function leer($param = null){
+        function leer($param = null){
             $id_producto = $param[0];
-            $producto = $this->model->readById($id_producto);
-
-            session_start();
-            $_SESSION["id_verProducto"] = $producto->id_producto;
+            $producto = $this->model->readById($id);
 
             $this->view->producto = $producto;
             $this->view->render('admin/editarproducto');
@@ -43,15 +40,9 @@
             if($this->model->update($_POST)){
                 $producto = new ProductoDAO();
 
-
-                session_start();
-            $id = $_SESSION["id_verProducto"];
-            unset($_SESSION['id_verProducto']);
-
-                $producto->id_producto = $id;
+                // $producto->id_producto = $id;
                 $producto->id_producto = $_POST['id_producto'];
                 $producto->nombre      = $_POST['nombre'];
-                $producto->peso        = $_POST['peso'];
                 $producto->costo       = $_POST['costo'];
 
                 $this->view->producto  = $producto;

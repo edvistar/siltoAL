@@ -34,15 +34,21 @@
                             <small id="solicitudHelp" class="form-text text-muted">Diligencie la solicitud de ruta</small>
                         </div>
                         <div class="form-group col-md-6">
+                            <label for="id_centro">Centro Solicitante</label>
+                            <input type="number" class="form-control" value="<?php echo $this->solicitud->id_centro; ?>" name="id_centro" id="id_centro">
+                            <small id="id_centroHelp" class="form-text text-muted">Diligencie la cantidad de kilos a trasportar.</small>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="identificacion">Encargado</label>
+                            <input type="number" class="form-control" value="<?php echo $this->solicitud->identificacion; ?>" name="identificacion" id="identificacion">
+                            <small id="identificacionHelp" class="form-text text-muted">Diligencie encargado de centro.</small>
+                        </div>
+                        <div class="form-group col-md-6">
                             <label for="descripcion">Descripciòn</label>
                             <input type="text" class="form-control" value="<?php echo $this->solicitud->descripcion; ?>" name="descripcion" id="descripcion">
                             <small id="descripcionHelp" class="form-text text-muted">Diligencie el descripcion de la solicitud.</small>
                         </div>
-                        <div class="form-group col-md-6">
-                            <label for="cantidad_kilos">Cantidad kilos</label>
-                            <input type="number" class="form-control" value="<?php echo $this->solicitud->cantidad_kilos; ?>" name="cantidad_kilos" id="cantidad_kilos">
-                            <small id="cantidad_kilosHelp" class="form-text text-muted">Diligencie la cantidad de kilos a trasportar.</small>
-                        </div>
+                        
                     </div>
                     <div class="text-center">
                         <input type="submit" class="btn btn-info" value="Actualizar centro" >

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Login SILTO</title>
+    <title><?php  echo constant('NOMBRESITIO'); ?></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -90,14 +90,13 @@
             <div class="col-md-4 col-md-4 col-sm-4 col-xs-6">
                 <div class="hpanel">
                   <div class="panel-body">
-                    <h1>INICIA SESION</h1>
-                        <form action="<?php echo constant('URL'); ?>main" method="POST">
+                    <h1>INICIA SESIóN</h1>
+                        <form action="<?php echo constant('URL'); ?>main"  method="POST">
                             <div class="form-group">
-                                <label class="control-label" for="email">USUARIO</label>                              <input type="email" placeholder="example@gmail.com" title="Please enter you username" required="" value="" name="email" id="email" class="form-control">               <span class="help-block small">Escriba su usuario</span>
+                                <label class="control-label" for="email">USUARIO</label>                        <input type="email" placeholder="example@gmail.com" title="Please enter you username" required="" value="" name="email" id="email" class="form-control">   <span class="help-block small">Escriba su usuario</span>
                             </div>
                             <div class="form-group">
-                                <label class="control-label" for="password">CONTRASEÑA</label>                      <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="password" id="password" class="form-control"><span class="help-block small">Escriba su contraseña</span>
-                                <input type="hidden" name="auth" value="auth"/>
+                                <label class="control-label" for="password">CONTRASEÑA</label>                 <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="pass" id="password" class="form-control"><span class="help-block small">Escriba su contraseña</span>
                             </div>
                             <button class="btn btn-success btn-block loginbtn">Ingresar</button>
                        </form>

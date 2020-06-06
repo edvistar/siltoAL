@@ -4,6 +4,8 @@
         public $id_solicitud;
         public $solicitud;
         public $descripcion;
-        public $cantidad_kilos;
+        public $id_centro;
+        public $identificacion;
+
     }
 ?>

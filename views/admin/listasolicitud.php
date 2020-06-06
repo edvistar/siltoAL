@@ -21,7 +21,8 @@
                                             <th  scope="col">ID</th>
                                             <th  scope="col">Solicitud</th>
                                             <th  scope="col">Descripciòn</th>
-                                            <th  scope="col">Cantidad kilos</th>
+                                            <th  scope="col">Centro</th>
+                                            <th  scope="col">Encargado</th>
                                             <th  scope="col" colspan="2">Acciones</th>
                                         </tr>
                                     </thead>
@@ -36,8 +37,10 @@
                                             <tr id="fila-<?php echo $solicitud->id_solicitud; ?>">
                                                 <td><?php echo $solicitud->id_solicitud; ?></td>
                                                 <td><?php echo $solicitud->solicitud; ?></td>
-                                                <td><?php echo $solicitud->descripcion; ?>
-                                                <td><?php echo $solicitud->cantidad_kilos; ?>
+                                                <td><?php echo $solicitud->descripcion; ?></td>
+                                                <td><?php echo $solicitud->id_centro; ?></td>
+                                                <td><?php echo $solicitud->identificacion; ?></td>
+
                                                 <td><a href="<?php echo constant('URL') . 'solicitud/leer/' . $solicitud->id_solicitud; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a></td>
                                                 <td><button class="bEliminar" data-controlador="solicitud" data-accion="eliminar" data-id="<?php echo $solicitud->id_solicitud; ?>"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</button></td>
                                             </tr>
@@ -51,8 +54,7 @@
                                 ?>
                                     </tbody>
                                 </table>
-                            </div>
-                            <div class="custom-pagination">
+                                <div class="custom-pagination">
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination">
                                         <li class="page-item"><a class="page-link" href="#">Previous</a></li>
@@ -63,6 +65,8 @@
                                     </ul>
                                 </nav>
                             </div>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
