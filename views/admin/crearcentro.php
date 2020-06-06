@@ -42,8 +42,8 @@
                             </div>
                             <div class="form-group col-lg-6">
                                 <label for="whatsapp">Whatsapp</label><br>
-                                <input type="radio"  name="whatsapp" id="whatsapp" value="si" checked> SI
-                                <input type="radio"  name="whatsapp" id="whatsapp" value="no" checked> NO <br>
+                                <input type="radio"  name="whatsapp" id="whatsapp1" value="1" checked> SI
+                                <input type="radio"  name="whatsapp" id="whatsapp2" value="2" checked> NO <br>
                                 <small id="whatsappHelp" class="form-text text-muted">El numero indicado tiene whatsapp</small>
                             </div>
                             <div class="col-lg-12" style="padding-top: 8px;">
