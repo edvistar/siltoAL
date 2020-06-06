@@ -11,12 +11,12 @@ function listarDepartamentos(){
               cadena +="<option value='"+data[i][0]+","+data[i][1]+"'>"+data[i][1]+"</option>"     
                
            }
-           $("#departamento").html(cadena);
-           var iddepartamento = $("#departamento").val();
+           $("#departamentos").html(cadena);
+           var iddepartamento = $("#departamentos").val();
            listarCiudades(iddepartamento);
        }else{
         cadena +="<option value=''>'NO HAY REGISTROS'</option>" 
-           $("#departamento").html(cadena);
+           $("#departamentos").html(cadena);
        }
 
     })
@@ -42,12 +42,12 @@ function listarCiudades(iddepartamento){
               cadena +="<option value='"+data[i][1]+"'>"+data[i][1]+"</option>"     
                
            }
-           $("#ciudad").html(cadena);
-           var iddepartamento = $("#departamento").val();
+           $("#ciudades").html(cadena);
+           var iddepartamento = $("#departamentos").val();
            listarCiudades(iddepartamento);
        }else{
         cadena +="<option value=''>'NO HAY REGISTROS'</option>" 
-           $("#ciudad").html(cadena);
+           $("#ciudades").html(cadena);
        }
 
     })

@@ -72,7 +72,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="encargado">Encargado</label>
-                            <input type="text" class="form-control" value="<?php echo $this->centro->encargado; ?>" name="encargado" id="encargado">
+                            <input type="text" class="form-control" value="<?php echo $this->centro->identificacion; ?>" name="encargado" id="encargado">
                             <small id="encargadoHelp" class="form-text text-muted">Persona encargada</small>
                         </div>
                         <div class="form-group col-md-6">

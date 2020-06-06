@@ -22,6 +22,9 @@
                     $this->view->render('admin/listacentro');
                 }
             }else{
+                $usuarios = $this->view->datos['ddl_usuarios'] = $this->model->cargarEncargado();
+                $this->view->ddl_usuarios = $usuarios;
+               
                 $this->view->render('admin/crearcentro');
             }
         }
@@ -51,7 +54,7 @@
                 $centro->whatsapp      = $_POST['whatsapp'];
                 $centro->departamento  = $_POST['departamento'];
                 $centro->ciudad        = $_POST['ciudad'];
-                $centro->encargado     = $_POST['encargado'];
+                $centro->identificacion     = $_POST['identificacion'];
                 $centro->lugar         = $_POST['lugar'];
     
     

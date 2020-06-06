@@ -42,11 +42,11 @@
                             </div>
                             <div class="form-group col-lg-6">
                                 <label for="whatsapp">Whatsapp</label><br>
-                                <input type="radio"  name="whatsapp" id="whatsapp1" value="1" checked> SI
-                                <input type="radio"  name="whatsapp" id="whatsapp2" value="2" checked> NO <br>
+                                <input type="radio"  name="whatsapp" id="whatsapp1" value="si" checked> SI
+                                <input type="radio"  name="whatsapp" id="whatsapp2" value="no" checked> NO <br>
                                 <small id="whatsappHelp" class="form-text text-muted">El numero indicado tiene whatsapp</small>
                             </div>
-                            <div class="col-lg-12" style="padding-top: 8px;">
+                            <div class="col-lg-12"">
                                 <div class="card">
                                     <div class="card-header">
                                     Seleccione Departamento y Ciudad
@@ -56,25 +56,48 @@
                                         <div class="row">
                                                 <div class="col-lg-6">
                                                     <label for="">Departamento</label>
-                                                    <select class="js-example-basic-single" name="departamento" id="departamento" style="width: 100%;">  
+                                                    <select class="" name="departamento" id="departamentos" style="width: 100%;">  
                                                     </select>
                                                 </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <label for="">Ciudad</label>
-                                                <select class="js-example-basic-single" name="ciudad" id="ciudad" style="width: 100%;">  
+                                                <select class="" name="ciudad" id="ciudades" style="width: 100%;">  
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group col-lg-6">
+                            
+                            <!-- <div class="form-group col-lg-6">
                                 <label for="encargado">Encargado</label>
                                 <input type="text" class="form-control" name="encargado" id="encargado">
                                 <small id="encargadoHelp" class="form-text text-muted">Persona encargada</small>
-                            </div>
+                            </div> -->
+                            <div class="form-group col-md-6">
+                            <label for="identificacion">Encargado</label>
+                                <select class="custom-select" id="identificacion" name="identificacion" style="width:100%">
+                                    <option selected value="">seleccione...</option>
+                                                <small id="encargadoHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                                        <?php
+                                            include_once 'models/usuario.php';
+
+                                            if(count($this->ddl_usuarios)>0){
+                                                foreach ($this->ddl_usuarios as $usuario) {
+                                                $ddl_usuario = new UsuarioDAO();
+                                                $ddl_usuario = $usuario;
+                                        ?>
+                                                <option  value="<?php echo $ddl_usuario->identificacion; ?>"><?php echo $ddl_usuario->nombre;?>-<?php echo $ddl_usuario->apellido;?>-<?php echo $ddl_usuario->cargo;?></option>
+                                                <?php
+                                                }
+                                            }
+                                                ?>
+                                </select>
+                                    <small id="encargadoHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                                </div>
+                               
                             <div class="form-group col-lg-6">
                                 <label for="lugar">Lugar</label>
                                 <input type="text" class="form-control" name="lugar" id="lugar">
