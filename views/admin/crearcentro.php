@@ -46,15 +46,29 @@
                                 <input type="radio"  name="whatsapp" id="whatsapp" value="no" checked> NO <br>
                                 <small id="whatsappHelp" class="form-text text-muted">El numero indicado tiene whatsapp</small>
                             </div>
-                            <div class="form-group col-lg-6">
-                                <label for="departamento">Departamento</label>
-                                <input type="text" class="form-control" name="departamento" id="departamento">
-                                <small id="departamentoeHelp" class="form-text text-muted">Departamento</small>
-                            </div>
-                            <div class="form-group col-lg-6">
-                                <label for="ciudad">Ciudad</label>
-                                <input type="text" class="form-control" name="ciudad" id="ciudad">
-                                <small id="ciudadHelp" class="form-text text-muted">Ciudad</small>
+                            <div class="col-lg-12" style="padding-top: 8px;">
+                                <div class="card">
+                                    <div class="card-header">
+                                    Seleccione Departamento y Ciudad
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="row">
+                                                <div class="col-lg-6">
+                                                    <label for="">Departamento</label>
+                                                    <select class="js-example-basic-single" name="departamento" id="departamento" style="width: 100%;">  
+                                                    </select>
+                                                </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <label for="">Ciudad</label>
+                                                <select class="js-example-basic-single" name="ciudad" id="ciudad" style="width: 100%;">  
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group col-lg-6">
                                 <label for="encargado">Encargado</label>
