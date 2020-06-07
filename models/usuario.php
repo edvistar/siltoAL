@@ -11,6 +11,7 @@ class UsuarioDAO{
     public $cargo;
     public $estado;
     public $fecha_ingreso;
+    public $foto;
 }
 
 ?>
