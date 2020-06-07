@@ -43,7 +43,7 @@
         public function read(){
             $items = [];
             try{
-                $query = $this->db->connect()->query('SELECT * FROM centro');
+                $query = $this->db->connect()->query('SELECT id_centro, nombre, email, telefono, whatsapp, d.departamento, ciudad, lugar, identificacion FROM centro as c INNER JOIN departamentos as d on d.idDepa=c.departamento');
 
                 while($row = $query->fetch()){
                     $item = new CentroDAO();

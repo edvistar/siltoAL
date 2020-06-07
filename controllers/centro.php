@@ -32,14 +32,14 @@
             $id_centro = $param[0];
             $centro = $this->model->readById($id_centro);
 
-            session_start();
+            //session_start();
             $_SESSION["id_verCentro"] = $centro->id_centro;
 
             $this->view->centro = $centro;
             $this->view->render('admin/editarcentro');
         }
         function editar($param = null){
-            session_start();
+            //session_start();
             $id = $_SESSION["id_verCentro"];
             unset($_SESSION['id_verCentro']);
     
