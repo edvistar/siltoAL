@@ -32,7 +32,7 @@
             $id_producto = $param[0];
             $producto = $this->model->readById($id_producto);
 
-            session_start();
+            //session_start();
             $_SESSION["id_verProducto"] = $producto->id_producto;
 
             $this->view->producto = $producto;
@@ -44,7 +44,7 @@
                 $producto = new ProductoDAO();
 
 
-                session_start();
+                //session_start();
             $id = $_SESSION["id_verProducto"];
             unset($_SESSION['id_verProducto']);
 

@@ -31,7 +31,7 @@
             $placa = $param[0];
             $vehiculo = $this->model->readById($placa);
 
-            session_start();
+            //session_start();
             $_SESSION["id_verVehiculo"] = $vehiculo->placa;
 
             $this->view->vehiculo = $vehiculo;
@@ -39,7 +39,7 @@
         }
 
         function editar($param = null){
-            session_start();
+            //session_start();
             $id = $_SESSION["id_verVehiculo"];
             unset($_SESSION["id_verVehiculo"]);
 

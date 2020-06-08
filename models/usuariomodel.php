@@ -8,7 +8,7 @@ class UsuarioModel extends Model{
 
 
     public function create($datos = null){
-        $sentenceSQL="INSERT INTO usuario (identificacion, nombre, apellido, email, pass, telefono, whatsapp, cargo, estado) VALUES (:identificacion, :nombre, :apellido, :email, :pass, :telefono, :whatsapp, :cargo, :estado)";
+        $sentenceSQL="INSERT INTO usuario (identificacion, nombreUsuario, apellidoUsuario, emailUsuario, pass, telefonoUsuario, whatsappUsuario, cargo, estado) VALUES (:identificacion, :nombreUsuario, :apellidoUsuario, :emailUsuario, :pass, :telefono, :whatsappUsuario, :cargo, :estado)";
         $connexionDB=$this->db->connect();
         $query = $connexionDB->prepare($sentenceSQL);
             
@@ -17,12 +17,12 @@ class UsuarioModel extends Model{
         
                 #'fecha_crea' => $datos['fecha_crea']
                 'identificacion'=> $datos['identificacion'],
-                'nombre'        => $datos['nombre'],
-                'apellido'      => $datos['apellido'],
-                'email'         => $datos['email'],
+                'nombreUsuario'        => $datos['nombreUsuario'],
+                'apellidoUsuario'      => $datos['apellidoUsuario'],
+                'emailUsuario'         => $datos['emailUsuario'],
                 'pass'          => md5($datos['pass']),
                 'telefono'      => $datos['telefono'],
-                'whatsapp'      => $datos['whatsapp'],
+                'whatsappUsuario'      => $datos['whatsappUsuario'],
                 'cargo'         => $datos['cargo'],
                 'estado'        => $datos['estado']
             ]);

@@ -7,9 +7,9 @@ class IndexModel extends Model{
     function consultarUsuario($email,$password){
         $result="";
         try{
-            $query = $this->db->connect()->prepare('SELECT * FROM usuario WHERE email = :email and pass=:clave');
+            $query = $this->db->connect()->prepare('SELECT * FROM usuario WHERE emailUsuario = :emailUsuario and pass=:clave');
 
-            $query->execute(['email' => $email,
+            $query->execute(['emailUsuario' => $email,
                              'clave'=>  md5($password)
                             ]);
             
