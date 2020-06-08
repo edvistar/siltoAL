@@ -19,34 +19,39 @@
                 <div class="panel-body">
                     <form action="<?php echo constant('URL'); ?>centro/crear" method="POST">
                         <div class="row">
-                            <div class="form-group col-lg-6">
+                            <div class="form-group col-md-6">
                                 <label for="id_centro">Id Centro</label>
                                 <input type="number" class="form-control" name="id_centro" id="id_centro">
                                 <small id="id_centroHelp" class="form-text text-muted">Ingrese el número de Id Centro</small>
                             </div>
 
-                            <div class="form-group col-lg-6">
+                            <div class="form-group col-md-6">
                                 <label for="nombre">Nombre</label>
                                 <input type="text" class="form-control" name="nombre" id="nombre">
                                 <small id="nombreHelp" class="form-text text-muted">Diligencie el nombre del Centro</small>
                             </div>
-                            <div class="form-group col-lg-6">
+                            <div class="form-group col-md-6">
                                 <label for="email">Email</label>
                                 <input type="email" class="form-control" name="email" id="email">
                                 <small id="emailHelp" class="form-text text-muted">Diligencie el email del Centro</small>
                             </div>
-                            <div class="form-group col-lg-6">
+                            <div class="form-group col-md-6">
                                 <label for="telefono">Telefono</label>
                                 <input type="number" class="form-control" name="telefono" id="telefono">
                                 <small id="telefonoHelp" class="form-text text-muted">Diligencie el numero del Centro</small>
                             </div>
-                            <div class="form-group col-lg-6">
+                            <div class="form-group col-md-6">
                                 <label for="whatsapp">Whatsapp</label><br>
                                 <input type="radio"  name="whatsapp" id="whatsapp1" value="si" checked> SI
                                 <input type="radio"  name="whatsapp" id="whatsapp2" value="no" checked> NO <br>
                                 <small id="whatsappHelp" class="form-text text-muted">El numero indicado tiene whatsapp</small>
                             </div>
-                            <div class="col-lg-12"">
+                            <div class="form-group col-lg-6">
+                                <label for="lugar">Lugar</label>
+                                <input type="text" class="form-control" name="lugar" id="lugar">
+                                <small id="lugarHelp" class="form-text text-muted">Lugar de ubicacion</small>
+                            </div>
+                            <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-header">
                                     Seleccione Departamento y Ciudad
@@ -54,31 +59,23 @@
 
                                     <div class="card-body">
                                         <div class="row">
-                                                <div class="col-lg-6">
+                                                <div class="col-md-6">
                                                     <label for="">Departamento</label>
-                                                    <select class="" name="departamento" id="departamentos" style="width: 100%;">  
+                                                    <select class="form-control" name="departamento" id="departamentos" style="width: 100%;">
                                                     </select>
                                                 </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-6">
+                                                <div class="col-md-6">
                                                 <label for="">Ciudad</label>
-                                                <select class="" name="ciudad" id="ciudades" style="width: 100%;">  
+                                                <select class="form-control" name="ciudad" id="ciudades" style="width: 100%;">
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <!-- <div class="form-group col-lg-6">
-                                <label for="encargado">Encargado</label>
-                                <input type="text" class="form-control" name="encargado" id="encargado">
-                                <small id="encargadoHelp" class="form-text text-muted">Persona encargada</small>
-                            </div> -->
                             <div class="form-group col-md-6">
-                            <label for="identificacion">Encargado</label>
-                                <select class="custom-select" id="identificacion" name="identificacion" style="width:100%">
+                                <label for="identificacion">Encargado</label>
+                                <select class="form-control" id="identificacion" name="identificacion" style="width:100%">
                                     <option selected value="">seleccione...</option>
                                                 <small id="encargadoHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
                                         <?php
@@ -95,13 +92,6 @@
                                             }
                                                 ?>
                                 </select>
-                                    <small id="encargadoHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
-                                </div>
-                               
-                            <div class="form-group col-lg-6">
-                                <label for="lugar">Lugar</label>
-                                <input type="text" class="form-control" name="lugar" id="lugar">
-                                <small id="lugarHelp" class="form-text text-muted">Lugar de ubicacion</small>
                             </div>
                         </div>
                         <div class="text-center ">

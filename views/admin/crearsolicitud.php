@@ -34,7 +34,7 @@
                         
                         <div class="form-group col-md-6">
                             <label for="id_centro">Centro Solicitantel</label>
-                                <select class="custom-select" id="id_centro" name="id_centro" style="width:100%">
+                                <select class="form-control" id="id_centro" name="id_centro" style="width:100%">
                                     <option selected value="">seleccione...</option>
                                     <small id="centroHelp" class="form-text text-muted">Diligencie el centro solicitante.</small>
                                         <?php
@@ -51,13 +51,12 @@
                                             }
                                                 ?>
                                 </select>
-                                    <small id="encargadoHelp" class="form-text text-muted">Diligencie el centro solicitante.</small>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="identificacion">identificacion</label>
-                                <select class="custom-select" id="identificacion" name="identificacion" style="width:100%">
+                            <label for="identificacion">Encargado</label>
+                                <select class="form-control" id="identificacion" name="identificacion" style="width:100%">
                                     <option selected value="">seleccione...</option>
-                                                <small id="encargadoHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                                        <small id="encargadoHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
                                         <?php
                                             include_once 'models/usuario.php';
 
@@ -72,8 +71,6 @@
                                             }
                                                 ?>
                                 </select>
-                                    <small id="encargadoHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
-
                         </div>
                         <div class="form-group col-md-6">
                             <label for="descripcion">Descripciòn</label>

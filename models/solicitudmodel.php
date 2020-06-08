@@ -36,7 +36,9 @@
         public function read(){
             $items = [];
             try{
-                $query = $this->db->connect()->query('SELECT * FROM solicitud');
+                $query = $this->db->connect()->query('SELECT id_solicitud, solicitud, descripcion, cen.id_centro, usu.identificacion FROM solicitud as solicitud
+                INNER JOIN centro as cen on cen.id_centro = solicitud.id_centro
+                INNER JOIN usuario as usu on usu.identificacion = solicitud.identificacion');
 
                 while($row = $query->fetch()){
                     $item = new SolicitudDAO();
