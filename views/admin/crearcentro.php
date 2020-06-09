@@ -74,10 +74,10 @@
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="identificacion">Encargado</label>
-                                <select class="form-control" id="identificacion" name="identificacion" style="width:100%">
+                                <label for="nombreUsuario">Encargado</label>
+                                <select class="form-control" id="nombreUsuario" name="nombreUsuario" style="width:100%">
                                     <option selected value="">seleccione...</option>
-                                                <small id="encargadoHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                                                <small id="nombreUsuarioHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
                                         <?php
                                             include_once 'models/usuario.php';
 
@@ -86,7 +86,7 @@
                                                 $ddl_usuario = new UsuarioDAO();
                                                 $ddl_usuario = $usuario;
                                         ?>
-                                                <option  value="<?php echo $ddl_usuario->identificacion; ?>"><?php echo $ddl_usuario->nombre;?>-<?php echo $ddl_usuario->apellido;?>-<?php echo $ddl_usuario->cargo;?></option>
+                                                <option  value="<?php echo $ddl_usuario->identificacion;?>"><?php echo $ddl_usuario->identificacion;?>-<?php echo $ddl_usuario->nombreUsuario;?>-<?php echo $ddl_usuario->apellidoUsuario; ?>-<?php echo $ddl_usuario->cargo; ?></option>
                                                 <?php
                                                 }
                                             }

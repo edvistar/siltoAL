@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-06-2020 a las 20:39:01
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.2.31
+-- Tiempo de generación: 09-06-2020 a las 02:34:03
+-- Versión del servidor: 10.3.16-MariaDB
+-- Versión de PHP: 7.3.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,8 +19,18 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `relaciones`
+-- Base de datos: `silto`
 --
+
+DELIMITER $$
+--
+-- Procedimientos
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_LISTARCIUDADES` (IN `IDDEPARTAMENTO` INT)  SELECT * FROM CIUDADES WHERE idDEPA=IDDEPARTAMENTO$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_LISTARDEPARTAMENTOS` ()  SELECT * FROM departamentos$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -36,16 +47,108 @@ CREATE TABLE `centro` (
   `departamento` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Departamento de centro',
   `ciudad` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Ciudad de centro',
   `lugar` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Lugar de centro o bodega',
-  `identificacion` bigint(20) NOT NULL,
-  `id_producto` int(11) NOT NULL
+  `nombreUsuario` varchar(20) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+-- --------------------------------------------------------
+
 --
--- Volcado de datos para la tabla `centro`
+-- Estructura de tabla para la tabla `ciudades`
 --
 
-INSERT INTO `centro` (`id_centro`, `nombre`, `email`, `telefono`, `whatsapp`, `departamento`, `ciudad`, `lugar`, `identificacion`, `id_producto`) VALUES
-(90, 'manizalez', 'manizalezgmail.com', 987654, 1, 'caldas', 'manizalez', 'bodega principal', 1070007809, 78);
+CREATE TABLE `ciudades` (
+  `idCiud` int(5) NOT NULL DEFAULT 0,
+  `ciudad` varchar(50) NOT NULL,
+  `idDepa` varchar(5) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `ciudades`
+--
+
+INSERT INTO `ciudades` (`idCiud`, `ciudad`, `idDepa`) VALUES
+(1, 'Leticia', '1'),
+(2, 'Medellín', '2'),
+(3, 'Arauca', '3'),
+(4, 'Barranquilla', '4'),
+(5, 'Cartagena', '5'),
+(6, 'Tunja', '6'),
+(7, 'Manizales', '7'),
+(8, 'Florencia', '8'),
+(9, 'Yopal', '9'),
+(10, 'Popayán', '10'),
+(11, 'Valledupar', '11'),
+(12, 'Quibdó', '12'),
+(13, 'Montería', '13'),
+(14, 'Bogotá', '14'),
+(15, 'Puerto Inírida', '15'),
+(16, 'San José del Guaviare', '16'),
+(17, 'Neiva', '17'),
+(18, 'Riohacha', '18'),
+(19, 'Santa Marta', '19'),
+(20, 'Villavicencio', '20'),
+(21, 'Pasto', '21'),
+(22, 'Cúcuta', '22'),
+(23, 'Mocoa', '23'),
+(24, 'Armenia', '24'),
+(25, 'Pereira', '25'),
+(32, 'Puerto Carreño', '32'),
+(31, 'Mitú', '31'),
+(30, 'Cali', '30'),
+(29, 'Ibagué', '29'),
+(28, 'Sincelejo', '28'),
+(27, 'Bucaramanga', '27'),
+(26, 'San Andrés', '26'),
+(33, 'chia', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `departamentos`
+--
+
+CREATE TABLE `departamentos` (
+  `idDepa` int(11) NOT NULL,
+  `departamento` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `departamentos`
+--
+
+INSERT INTO `departamentos` (`idDepa`, `departamento`) VALUES
+(1, 'Amazonas'),
+(2, 'Antioquia'),
+(3, 'Arauca'),
+(4, 'Atlántico'),
+(5, 'Bolívar'),
+(6, 'Boyacá'),
+(7, 'Caldas'),
+(8, 'Caquetá'),
+(9, 'Casanaré'),
+(10, 'Cauca'),
+(11, 'Cesar'),
+(12, 'Chocó'),
+(13, 'Córdoba'),
+(14, 'Cundinamarca'),
+(15, 'Guainía'),
+(16, 'Guaviare'),
+(17, 'Huila'),
+(18, 'La Guajira'),
+(19, 'Magdalena'),
+(20, 'Meta'),
+(21, 'Nariño'),
+(22, 'Norte de Santander'),
+(23, 'Putumayo'),
+(24, 'Quindío'),
+(25, 'Risaralda'),
+(26, 'San Andrés y Providencia'),
+(27, 'Santander'),
+(28, 'Sucre'),
+(29, 'Tolima'),
+(30, 'Valle del Cauca'),
+(31, 'Vaupés'),
+(32, 'Vichada');
 
 -- --------------------------------------------------------
 
@@ -111,11 +214,11 @@ CREATE TABLE `solicitud` (
 
 CREATE TABLE `usuario` (
   `identificacion` bigint(20) NOT NULL COMMENT 'Identificacion de user',
-  `nombre` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Nombre de user',
-  `apellido` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Apellido  de user',
-  `email` varchar(50) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Email de user',
-  `telefono` int(20) NOT NULL COMMENT 'Numero de celular',
-  `whatsapp` tinyint(1) NOT NULL COMMENT 'Whatsapp',
+  `nombreUsuario` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Nombre de user',
+  `apellidoUsuario` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Apellido  de user',
+  `emailUsuario` varchar(50) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Email de user',
+  `telefonoUsuario` int(20) NOT NULL COMMENT 'Numero de celular',
+  `whatsappUsuario` tinyint(1) NOT NULL COMMENT 'Whatsapp',
   `cargo` varchar(15) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Rol de user',
   `estado` text COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Estado del User',
   `fecha_ingreso` datetime NOT NULL DEFAULT current_timestamp() COMMENT 'Fecha de ingreso user',
@@ -127,10 +230,8 @@ CREATE TABLE `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`identificacion`, `nombre`, `apellido`, `email`, `telefono`, `whatsapp`, `cargo`, `estado`, `fecha_ingreso`, `foto`, `pass`) VALUES
-(10783, 'carlos', 'castro clavijoas', 'victorha@gmail.com', 111, 0, 'conductor', 'activo', '2020-06-06 10:13:33', '', '1234567º'),
-(1070007809, 'alexa', 'castro', 'la@gmail.com', 87654321, 1, 'administrador', 'activo', '2020-05-31 17:29:37', '', '123456789'),
-(77878787887, 'Alejandro', 'castro', 'colombia@gmail.com', 2147483647, 0, 'conductor', 'activo', '2020-06-06 10:39:11', '', '12345679');
+INSERT INTO `usuario` (`identificacion`, `nombreUsuario`, `apellidoUsuario`, `emailUsuario`, `telefonoUsuario`, `whatsappUsuario`, `cargo`, `estado`, `fecha_ingreso`, `foto`, `pass`) VALUES
+(16838095, 'eduardo', 'sando', 'victorhoyoscolombia@gmail.com', 2147483647, 1, 'administrador', 'activo', '2020-06-08 18:30:20', 'public/img/contact/20200312_083547.jpg', 'a490da78e8784686af31bf0f2dab83c6');
 
 -- --------------------------------------------------------
 
@@ -168,9 +269,19 @@ INSERT INTO `vehiculo` (`placa`, `capacidad`, `seguro`, `tecnomecanica`, `tipo_v
 -- Indices de la tabla `centro`
 --
 ALTER TABLE `centro`
-  ADD PRIMARY KEY (`id_centro`),
-  ADD UNIQUE KEY `id_producto` (`id_producto`),
-  ADD UNIQUE KEY `identificacion` (`identificacion`);
+  ADD PRIMARY KEY (`id_centro`);
+
+--
+-- Indices de la tabla `ciudades`
+--
+ALTER TABLE `ciudades`
+  ADD PRIMARY KEY (`idCiud`);
+
+--
+-- Indices de la tabla `departamentos`
+--
+ALTER TABLE `departamentos`
+  ADD PRIMARY KEY (`idDepa`);
 
 --
 -- Indices de la tabla `producto`
@@ -215,40 +326,16 @@ ALTER TABLE `vehiculo`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `departamentos`
+--
+ALTER TABLE `departamentos`
+  MODIFY `idDepa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+--
 -- AUTO_INCREMENT de la tabla `solicitud`
 --
 ALTER TABLE `solicitud`
   MODIFY `id_solicitud` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id de la solicitud para la ruta.';
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `centro`
---
-ALTER TABLE `centro`
-  ADD CONSTRAINT `centro_ibfk_1` FOREIGN KEY (`identificacion`) REFERENCES `usuario` (`identificacion`),
-  ADD CONSTRAINT `centro_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`);
-
---
--- Filtros para la tabla `rutas`
---
-ALTER TABLE `rutas`
-  ADD CONSTRAINT `rutas_ibfk_1` FOREIGN KEY (`id_solicitud`) REFERENCES `solicitud` (`id_solicitud`);
-
---
--- Filtros para la tabla `solicitud`
---
-ALTER TABLE `solicitud`
-  ADD CONSTRAINT `solicitud_ibfk_1` FOREIGN KEY (`id_centro`) REFERENCES `centro` (`id_centro`),
-  ADD CONSTRAINT `solicitud_ibfk_2` FOREIGN KEY (`identificacion`) REFERENCES `usuario` (`identificacion`);
-
---
--- Filtros para la tabla `vehiculo`
---
-ALTER TABLE `vehiculo`
-  ADD CONSTRAINT `vehiculo_ibfk_1` FOREIGN KEY (`identificacion`) REFERENCES `usuario` (`identificacion`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

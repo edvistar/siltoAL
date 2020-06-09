@@ -29,19 +29,19 @@
                                     <small id="identificacionHelp" class="form-text text-muted">Diligencie el numero de identificación del usuario</small>
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label for="nombre">Nombres</label>
-                                    <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ej: Luis Felipe">
-                                    <small id="nombreHelp" class="form-text text-muted">Diligencie el nombre del usuario</small>
+                                    <label for="nombreUsuario">Nombres</label>
+                                    <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control" placeholder="Ej: Luis Felipe">
+                                    <small id="nombreUsuarioHelp" class="form-text text-muted">Diligencie el nombre del usuario</small>
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label for="apellido">Apellidos</label>
-                                    <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Ej: Agudelo Restrepo">
-                                    <small id="apellidoHelp" class="form-text text-muted">Diligencie los apellidos del usuario</small>
+                                    <label for="apellidoUsuario">Apellidos</label>
+                                    <input type="text" name="apellidoUsuario" id="apellidoUsuario" class="form-control" placeholder="Ej: Agudelo Restrepo">
+                                    <small id="apellidoUsuarioHelp" class="form-text text-muted">Diligencie los apellidos del usuario</small>
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label for="email">Email</label>
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="Ej: usuario@gmail.com">
-                                    <small id="emailHelp" class="form-text text-muted">Diligencie el email del usuario</small>
+                                    <label for="emailUsuario">Email</label>
+                                    <input type="email" name="emailUsuario" id="emailUsuario" class="form-control" placeholder="Ej: usuario@gmail.com">
+                                    <small id="emailUsuarioHelp" class="form-text text-muted">Diligencie el email del usuario</small>
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label for="pass">Password</label>
@@ -49,15 +49,15 @@
                                     <small id="passHelp" class="form-text text-muted">Diligencie la contraseña del email</small>
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label for="telefono">Numero Telefonico</label>
-                                    <input type="tel" name="telefono" id="telefono" class="form-control" placeholder="Ej: 304123456">
-                                    <small id="telefonoHelp" class="form-text text-muted">Diligencie el numero de telefono del usuario</small>
+                                    <label for="telefonoUsuario">Numero Telefonico</label>
+                                    <input type="number" name="telefonoUsuario" id="telefonoUsuario" class="form-control" placeholder="Ej: 304123456">
+                                    <small id="telefonoUsuarioHelp" class="form-text text-muted">Diligencie el numero de telefono del usuario</small>
                                 </div>
                                 <div class="custom-control custom-radio col-md-6">
                                     <label for="">Whatsapp</label><br>
-                                    <input class="custom-control-input" type="radio" name="whatsapp" id="whatsapp1" value="1">
+                                    <input class="custom-control-input" type="radio" name="whatsappUsuario" id="whatsapp1" value="1">
                                     <label class="custom-control-label" for="whatsapp1">Si</label>
-                                    <input class="custom-control-input" type="radio" name="whatsapp" id="whatsapp2" value="0">
+                                    <input class="custom-control-input" type="radio" name="whatsappUsuario" id="whatsapp2" value="0">
                                     <label class="custom-control-label" for="whatsapp2">No</label><br>
                                     <small id="whatsappHelp" class="form-text text-muted">Confirme si tiene whatsapp el numero telefonico ingresado</small>
                                 </div>

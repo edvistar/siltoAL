@@ -31,21 +31,21 @@
                                 </div> -->
 
                                 <div class="form-group col-lg-6">
-                                    <label for="nombre">Nombres</label>
-                                    <input type="text" name="nombre" id="nombre" class="form-control" value="<?php echo $this->usuario->nombre; ?>" placeholder="Ej: Luis Felipe" required>
-                                    <small id="nombreHelp" class="form-text text-muted">Diligencie el nombre del usuario</small>
+                                    <label for="nombreUsuario">Nombres</label>
+                                    <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control" value="<?php echo $this->usuario->nombreUsuario; ?>" placeholder="Ej: Luis Felipe" required>
+                                    <small id="nombreUsuarioHelp" class="form-text text-muted">Diligencie el nombre del usuario</small>
                                 </div>
 
                                 <div class="form-group col-lg-6">
-                                    <label for="apellido">Apellidos</label>
-                                    <input type="text" name="apellido" id="apellido" class="form-control" value="<?php echo $this->usuario->apellido; ?>" placeholder="Ej: Agudelo Restrepo" required>
-                                    <small id="apellidoHelp" class="form-text text-muted">Diligencie los apellidos del usuario</small>
+                                    <label for="apellidoUsuario">Apellidos</label>
+                                    <input type="text" name="apellidoUsuario" id="apellidoUsuario" class="form-control" value="<?php echo $this->usuario->apellidoUsuario; ?>" placeholder="Ej: Agudelo Restrepo" required>
+                                    <small id="apellidoUsuarioHelp" class="form-text text-muted">Diligencie los apellidos del usuario</small>
                                 </div>
 
                                 <div class="form-group col-lg-6">
-                                    <label for="email">Email</label>
-                                    <input type="email" name="email" id="email" class="form-control" value="<?php echo $this->usuario->email; ?>" placeholder="Ej: usuario@gmail.com" required>
-                                    <small id="emailHelp" class="form-text text-muted">Diligencie el email del usuario</small>
+                                    <label for="emailUsuario">Email</label>
+                                    <input type="email" name="emailUsuario" id="emailUsuario" class="form-control" value="<?php echo $this->usuario->emailUsuario; ?>" placeholder="Ej: usuario@gmail.com" required>
+                                    <small id="emailUsuarioHelp" class="form-text text-muted">Diligencie el email del usuario</small>
                                 </div>
 
                                 <div class="form-group col-lg-6">
@@ -55,8 +55,8 @@
                                 </div>
 
                                 <div class="form-group col-lg-6">
-                                    <label for="telefono">Numero Telefonico</label>
-                                    <input type="tel" name="telefono" id="telefono" class="form-control" value="<?php echo $this->usuario->telefono; ?>" placeholder="Ej: 3040000000" required>
+                                    <label for="telefonoUsuario">Numero Telefonico</label>
+                                    <input type="number" name="telefonoUsuario" id="telefonoUsuario" class="form-control" value="<?php echo $this->usuario->telefonoUsuario; ?>" placeholder="Ej: 3040000000" required>
                                     <small id="telefonoHelp" class="form-text text-muted">Diligencie el numero de telefono del usuario</small>
                                 </div>
 
@@ -72,10 +72,10 @@
                                 </div>
 
                                 <div class=" form-check form-check-inline col-lg-6">
-                                    <label for="whatsapp">Whatsapp</label><br>
-                                    <input class="custom-control-input" type="radio" name="whatsapp" id="whatsapp1" value="1" checked>
+                                    <label for="whatsappUsuario">Whatsapp</label><br>
+                                    <input class="custom-control-input" type="radio" name="whatsappUsuario" id="whatsapp1" value="1" checked>
                                     <label class="custom-control-label" for="whatsapp1">Si</label>
-                                    <input class="custom-control-input" type="radio" name="whatsapp" id="whatsapp2" value="0">
+                                    <input class="custom-control-input" type="radio" name="whatsappUsuario" id="whatsapp2" value="0">
                                     <label class="custom-control-label" for="whatsapp2">No</label><br>
                                     <small id="whatsappHelp" class="form-text text-muted">Confirme si tiene whatsapp el numero de telefono ingresado</small>
                                 </div>
