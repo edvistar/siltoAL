@@ -39,7 +39,7 @@ function listarCiudades(iddepartamento){
        var cadena = "";
        if(data.length>0){
            for (var i = 0; i < data.length; i++) {
-              cadena +="<option value='"+data[i][1]+"'>"+data[i][1]+"</option>"     
+              cadena +="<option value='"+data[i][0]+"'>"+data[i][1]+"</option>"     
                
            }
            $("#ciudades").html(cadena);
