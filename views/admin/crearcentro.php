@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title><?php  echo constant('NOMBRESITIO'); ?></title>
+<?php require 'views/head.php'; ?>
 </head>
 <body>
 
@@ -48,8 +48,13 @@
                             </div>
                             <div class="form-group col-lg-6">
                                 <label for="lugar">Lugar</label>
-                                <input type="text" class="form-control" name="lugar" id="lugar">
+                                <select class="form-control" id="lugar" name="lugar" style="width:100%">
+                                    <option selected value="">seleccione...</option>
+                                    <option  value="Centro">Centro Acopio</option>
+                                    <option  value="Bodega">Bodega Principal</option>
                                 <small id="lugarHelp" class="form-text text-muted">Lugar de ubicacion</small>
+
+                                </select>
                             </div>
                             <div class="col-lg-12">
                                 <div class="card">

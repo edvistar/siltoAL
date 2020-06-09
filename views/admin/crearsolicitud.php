@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title><?php  echo constant('NOMBRESITIO'); ?></title>
+<?php require 'views/head.php'; ?>
 </head>
 <body>
 
@@ -20,18 +20,6 @@
                 <div class="panel-body">
                 <form action="<?php echo constant('URL'); ?>solicitud/crear" method="POST">
                     <div class="row">
-                        <div class="form-group col-md-6">
-                            <label for="id_solicitud">Id solicitud</label>
-                            <input type="number" class="form-control" name="id_solicitud" id="id_solicitud" >
-                            <small id="id_solicitudHelp" class="form-text text-muted">Ingrese el Id de la solicitud</small>
-                        </div>
-                        <div class="form-group col-md-6">
-                                <label for="solicitud">Fecha de Solicitud</label>
-                                <input type="date" class="form-control" name="solicitud" id="solicitud">
-                                <small id="solicitudHelp" class="form-text text-muted">Diligencie la solicitud de ruta</small>
-                            </div>
-
-                        
                         <div class="form-group col-md-6">
                             <label for="id_centro">Centro Solicitantel</label>
                                 <select class="form-control" id="id_centro" name="id_centro" style="width:100%">
@@ -72,9 +60,9 @@
                                                 ?>
                                 </select>
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             <label for="descripcion">Descripciòn</label>
-                            <input type="text-area" class="form-control" name="descripcion" id="descripcion">
+                            <textarea  class="form-control" name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
                             <small id="descripcionHelp" class="form-text text-muted">Diligencie el descripcion de la solicitud.</small>
                         </div>
                     </div>

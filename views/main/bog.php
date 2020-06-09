@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title><?php  echo constant('NOMBRESITIO'); ?></title>
+<?php require 'views/head.php'; ?>
 </head>
 <body>
 <?php require 'views/header.php'; ?>

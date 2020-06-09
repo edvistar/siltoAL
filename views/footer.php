@@ -3,7 +3,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="footer-copy-right">
-                            <p>Realizacion SENA  CDA Chia <a href="https://colorlib.com/wp/templates/">WAPV </a> All rights reserved.</p>
+                            <p>Realizacion SENA  CDA Chia <a href="#">WAPV </a> All rights reserved.</p>
                         </div>
                     </div>
                 </div>

@@ -9,16 +9,16 @@
         public function create($datos = null){
             // insertar
             //if(!isset($datos)){
-                $sentenceSQL="INSERT INTO solicitud ( id_solicitud, solicitud, descripcion, id_centro, identificacion) VALUES( :id_solicitud, :solicitud, :descripcion, :id_centro, :identificacion)";
+                $sentenceSQL="INSERT INTO solicitud ( solicitud, descripcion, centro, nombreUsuario) VALUES( :solicitud, :descripcion, :centro, :nombreUsuario)";
                 $connexionDB=$this->db->connect();
                 $query = $connexionDB->prepare($sentenceSQL);
                 try{
                     $query->execute([
-                        'id_solicitud'    =>$datos['id_solicitud'],
-                        'solicitud'       =>$datos['solicitud'],
+                        //'id_solicitud'    =>$datos['id_solicitud'],
+                        'solicitud'       =>date("Y/m/d"),//$datos['solicitud'],
                         'descripcion'     =>$datos['descripcion'],
-                        'id_centro'       =>$datos['id_centro'],
-                        'identificacion'  =>$datos['identificacion']
+                        'centro'          =>$datos['centro'],
+                        'nombreUsuario'   => $datos['nombreUsuario']
                     ]);
                     return true;
                 }catch(PDOException $e){
@@ -36,18 +36,16 @@
         public function read(){
             $items = [];
             try{
-                $query = $this->db->connect()->query('SELECT id_solicitud, solicitud, descripcion, cen.id_centro, usu.identificacion FROM solicitud as solicitud
-                INNER JOIN centro as cen on cen.id_centro = solicitud.id_centro
-                INNER JOIN usuario as usu on usu.identificacion = solicitud.identificacion');
+                $query = $this->db->connect()->query('SELECT solicitud.id_solicitud as ID, solicitud.solicitud as Solicitud, solicitud.descripcion as Descripcion, cen.nombre as Centro, usu.nombreUsuario as Usuario FROM solicitud as solicitud  INNER JOIN centro as cen on cen.id_centro = solicitud.centro INNER JOIN usuario as usu on usu.identificacion = solicitud.nombreUsuario');
 
                 while($row = $query->fetch()){
                     $item = new SolicitudDAO();
 
-                    $item->id_solicitud     = $row['id_solicitud'];
-                    $item->solicitud        = $row['solicitud'];
-                    $item->descripcion      = $row['descripcion'];
-                    $item->id_centro        = $row['id_centro'];
-                    $item->identificacion        = $row['identificacion'];
+                    $item->id_solicitud     = $row['ID'];
+                    $item->solicitud        = date("Y-m-d", strtotime($row['Solicitud']));
+                    $item->descripcion      = $row['Descripcion'];
+                    $item->centro        = $row['Centro'];
+                    $item->nombreUsuario        = $row['Usuario'];
 
                     array_push($items, $item);
                 }
@@ -63,16 +61,16 @@
         public function readById($id){
             $item = new SolicitudDAO();
             try{
-                $query = $this->db->connect()->prepare('SELECT * FROM solicitud WHERE id_solicitud = :id');
+                $query = $this->db->connect()->prepare('SELECT solicitud.id_solicitud as ID, solicitud.solicitud as Solicitud, solicitud.descripcion as Descripcion, cen.nombre as Centro, usu.nombreUsuario as Usuario FROM solicitud as solicitud  INNER JOIN centro as cen on cen.id_centro = solicitud.centro INNER JOIN usuario as usu on usu.identificacion = solicitud.nombreUsuario where solicitud.id_solicitud=:id');
 
                 $query->execute(['id' => $id]);
 
                 while($row = $query->fetch()){
-                    $item->id_solicitud     = $row['id_solicitud'];
-                    $item->solicitud        = $row['solicitud'];
-                    $item->descripcion      = $row['descripcion'];
-                    $item->id_centro        = $row['id_centro'];
-                    $item->identificacion    = $row['identificacion'];
+                    $item->id_solicitud     = $row['ID'];
+                    $item->solicitud        = date("Y-m-d", strtotime($row['Solicitud']));
+                    $item->descripcion      = $row['Descripcion'];
+                    $item->centro        = $row['Centro'];
+                    $item->nombreUsuario    = $row['Usuario'];
 
                 }
                 return $item;
