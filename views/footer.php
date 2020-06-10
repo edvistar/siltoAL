@@ -63,6 +63,26 @@
                 ============================================ -->
             <script src="<?php echo constant('URL'); ?>public/js/main.js"></script>
             <script src="<?php echo constant('URL'); ?>public/js/main1.js"></script>
+
+            <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="<?php echo constant('URL'); ?>public/js/select.js"></script>
+  <script>
+      
+      // In your Javascript (external .js resource or <script> tag)
+    $(document).ready(function() {
+        $('.js-example-basic-single').select2();
+        listarDepartamentos();
+    });
+    $("#sel_departamento").change(function(){
+            var iddepartamento = $("#sel_departamento").val();
+            listarCiudades(iddepartamento);
+        })
+  </script>
     </body>
     </body>
 </html>

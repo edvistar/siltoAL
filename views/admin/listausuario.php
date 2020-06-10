@@ -16,7 +16,7 @@
                         <div id="main">
                             <div><?php echo $this->mensaje; ?></div>
                             <h1 class="text-center"><i class="fa fa-users" aria-hidden="true"></i> Listado de Usuarios</h1>
-                            <button type="button" class="btn btn-success loginbtn" onClick='window.location.assign("<?php echo constant('URL'); ?>/usuario/registrar")'>Crear Usuario</button><br>
+                            <button type="button" class="btn btn-success loginbtn" onClick='window.location.assign("<?php echo constant('URL'); ?>/usuario/crear")'>Crear Usuario</button><br>
                             <table id="tabla" class="table table-hover">
                                 <thead class="thead-dark">
                                     <tr>
@@ -29,6 +29,7 @@
                                         <th scope="col">Cargo</th>
                                         <th scope="col">Estado</th>
                                         <th scope="col">Fecha de ingreso</th>
+                                        <th scope="col">Foto</th>
                                         <th scope="col" colspan="2">Acciones</th>
                                     </tr>
                                 </thead>
@@ -41,14 +42,16 @@
                                                 $usuario = $row;
                                     ?>
                                     <tr id="fila-<?php echo $usuario->identificacion; ?>">
-                                        <td><?php echo $usuario->identificacion; ?></td>                     <td><?php echo $usuario->nombre; ?></td>
-                                        <td><?php echo $usuario->apellido; ?></td>
-                                        <td><?php echo $usuario->email; ?></td>
-                                        <td><?php echo $usuario->telefono; ?></td>
-                                        <td><?php echo $usuario->whatsapp; ?></td>
+                                        <td><?php echo $usuario->identificacion; ?></td>
+                                        <td><?php echo $usuario->nombreUsuario; ?></td>                     
+                                        <td><?php echo $usuario->apellidoUsuario; ?></td>
+                                        <td><?php echo $usuario->emailUsuario; ?></td>
+                                        <td><?php echo $usuario->telefonoUsuario; ?></td>
+                                        <td><?php echo $usuario->whatsappUsuario; ?></td>
                                         <td><?php echo $usuario->cargo; ?></td>
                                         <td><?php echo $usuario->estado; ?></td>
                                         <td><?php echo $usuario->fecha_ingreso; ?></td>
+                                        <td><img src="<?php echo constant('URL') . $usuario->foto; ?>" alt="imagen usuario" width="100" height="100"> </td>
                                         <td><a href="<?php echo constant('URL') . 'usuario/leer/' . $usuario->identificacion; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a></td> <!--url/controlador/metodo-->
                                         <td><button class="bEliminar" data-controlador="usuario" data-accion="eliminar" data-id="<?php echo $usuario->identificacion; ?>"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</button></td> 
                                     </tr>
