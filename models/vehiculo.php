@@ -6,7 +6,8 @@
         public $seguro;
         public $tecnomecamica;
         public $tipo_vehiculo;
-        public $identificacion;
+        public $conductor;
+        public $costo_flete;
         public $estado;
         public $fecha_registro;
     }

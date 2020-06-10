@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<?php require 'views/head.php'; ?>
+    <title><?php echo constant ('NOMBRESITIO');?></title>
 </head>
 <body>
 
@@ -25,6 +25,7 @@
                                             <th  scope="col">Tecnomecánica</th>
                                             <th  scope="col">Tipo vehiculo</th>
                                             <th  scope="col">Conductor</th>
+                                            <th  scope="col">Costo flete</th>
                                             <th  scope="col">GPS</th>
                                             <th  scope="col">Estado</th>
                                             <th  scope="col">Fecha registro</th>
@@ -45,7 +46,8 @@
                                                 <td><?php echo $vehiculo->seguro;?></td>
                                                 <td><?php echo $vehiculo->tecnomecanica; ?></td>
                                                 <td><?php echo $vehiculo->tipo_vehiculo;?></td>
-                                                <td><?php echo $vehiculo->identificacion;?></td>
+                                                <td><?php echo $vehiculo->conductor;?></td>
+                                                <td><?php echo $vehiculo->costo_flete;?></td>
                                                 <td><?php echo $vehiculo->gps;?></td>
                                                 <td><?php echo $vehiculo->estado;?></td>
                                                 <td><?php echo $vehiculo->fecha_registro;?></td>

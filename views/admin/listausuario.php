@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-<?php require 'views/head.php'; ?>
+<title><?php  echo constant('NOMBRESITIO'); ?></title>
 </head>
 
 <body>

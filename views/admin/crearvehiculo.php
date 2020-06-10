@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<?php require 'views/head.php'; ?>
+    <title><?php echo constant ('NOMBRESITIO');?></title>
 </head>
 <body>
 
@@ -48,42 +48,28 @@
                             <input type="text" class="form-control" name="tipo_vehiculo" id="tipo_vehiculo">
                             <small id="tipo_vehiculoHelp" class="form-text text-muted">Tipo de vehículo</small>
                         </div>
+
                         <div class="form-group col-md-6">
-                            <label for="gps" >GPS</label><br>
-                            <input class="custom-control-input"required type="radio" name="gps" id="gps1" value="1">                                    <label class="custom-control-label" for="gps1">Si</label>
-                            <input class="custom-control-input" type="radio" name="gps" id="gps0" value="0">
-                            <label class="custom-control-label"required for="gps0">No</label><br>
-                            <small id="whatsappHelp" class="form-text text-muted">Diligencie si el vehiculo tiene gps</small>
+                            <label for="conductor">Nombre del conductor </label>
+                            <input type="text" class="form-control" name="conductor" id="conductor">
+                            <small id="nombreHelp" class="form-text text-muted">Nombre del conductor</small>
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="identificacion">Nombre Conductor</label>
-                            <select class="custom-select" id="identificacion" name="identificacion" style="width:100%">
-                                <option selected value="">seleccione...</option>
-                                            <small id="identificacionHelp" class="form-text text-muted">Diligencie el Nombre del conductor.</small>
-                                    <?php
-                                        include_once 'models/usuario.php';
-
-                                        if(count($this->ddl_usuarios)>0){
-                                            foreach ($this->ddl_usuarios as $usuario) {
-                                            $ddl_usuario = new UsuarioDAO();
-                                            $ddl_usuario = $usuario;
-                                    ?>
-                                            <option  value="<?php echo $ddl_usuario->identificacion; ?>"><?php echo $ddl_usuario->nombre;?>-<?php echo $ddl_usuario->apellido;?>-<?php echo $ddl_usuario->cargo;?></option>
-                                            <?php
-                                            }
-                                        }
-                                            ?>
-                            </select>
+                            <label for="costo_flete">Costo del flete</label>
+                            <input type="text" class="form-control" name="costo_flete" id="costo_flete">
+                            <small id="fleteHelp" class="form-text text-muted">Valor del flete</small>
                         </div>
-                        <div id="estado" class="form-group col-md-6">
-                            <label for="estado">estado</label>
-                            <select id="estado" required name="estado" class="form-control">
-                                <option>--Seleccione un estado--</option>
-                                <option value="si">activo</option>
-                                <option value="no">inactivo</option>
-                            </select>
-                            <small id="cargopHelp" class="form-text text-muted">Diligencie el campo en el estado del vehiculo si esta ocupado o no</small>
+
+                        <div class="form-group col-md-6">
+                            <label for="gps">GPS</label>
+                            <input type="text" class="form-control" name="gps" id="gps">
+                            <small id="gpsHelp" class="form-text text-muted">GPS incorporado en el vehículo</small>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="estado">Estado</label>
+                            <input type="text" class="form-control" name="estado" id="estado">
+                            <small id="estadoHelp" class="form-text text-muted">Estado del vehículo en la empresa</small>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="fecha_registro">Fecha registro</label>

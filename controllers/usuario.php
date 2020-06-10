@@ -55,16 +55,16 @@ class Usuario extends Controller{
         if($this->model->update($_POST)){
             
             $usuario = new usuarioDAO();
-            $usuario->identificacion  = $id;
-            $usuario->identificacion  = $_POST['identificacion'];
-            $usuario->nombreUsuario   = $_POST['nombreUsuario'];
-            $usuario->apellidoUsuario = $_POST['apellidoUsuario'];
-            $usuario->emailUsuario           = $_POST['emailUsuario'];
-            $usuario->pass            = $_POST['pass'];
-            $usuario->telefonoUsuario = $_POST['telefonoUsuario'];
-            $usuario->whatsappUsuario = $_POST['whatsappUsuario'];
-            $usuario->cargo           = $_POST['cargo'];
-            $usuario->estado          = $_POST['estado'];
+            $usuario->identificacion = $id;
+            $usuario->identificacion = $_POST['identificacion'];
+            $usuario->nombre         = $_POST['nombre'];
+            $usuario->apellido       = $_POST['apellido'];
+            $usuario->email          = $_POST['email'];
+            $usuario->pass           = $_POST['pass'];
+            $usuario->telefono       = $_POST['telefono'];
+            $usuario->whatsapp       = $_POST['whatsapp'];
+            $usuario->cargo          = $_POST['cargo'];
+            $usuario->estado         = $_POST['estado'];
 
             $this->view->usuario = $usuario;
             $this->view->mensaje = "Usuario actualizado correctamente";

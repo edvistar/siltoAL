@@ -67,14 +67,56 @@
 </head>
 
 <body>
-    <?php require 'views/menuadmin.php'; ?>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <div class="left-sidebar-pro">
+        <nav id="sidebar" class="">
+            <div class="sidebar-header">
+            <a href=""><img width="150px" height="100px" class="main-logo" src="<?php echo constant('URL'); ?>public/img/logo.png" alt="" /></a><strong><img src="<?php echo constant('URL'); ?>public/img/logo.png" alt="" /></strong>
+            </div>
+            <div class="left-custom-menu-adp-wrap comment-scrollbar">
+                <nav class="sidebar-nav left-sidebar-menu-pro">
+                    <ul class="metismenu" id="menu1">
+                        <li class="active">
+                            <a class="has-arrow" href="index.php">
+                                <i class="fa big-icon fa-home icon-wrap"></i>
+                                <span class="mini-click-non">Administrador</span>
+							</a>
+                            <ul class="submenu-angle" aria-expanded="true">
+                            <!-- //crud usuario -->
+                                <li><a title="Registro Usuario" href="<?php echo constant('URL'); ?>usuario/crear"><i class="fa fa-user" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Usuario</span></a></li>
+                                <li><a title="Ver Usuarios" href="<?php echo constant('URL'); ?>usuario"><i class="fa fa-users nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Usuarios</span></a></li>
+                                <!-- crud centro -->
+                                <li><a title="Registro Centro" href="<?php echo constant('URL'); ?>centro/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Centros</span></a></li>
+                                <li><a title="Lista Centros" href="<?php echo constant('URL'); ?>centro"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Centros</span></a></li>
+                                <!-- crud vehiculo -->
+                                <li><a title="Registro Vehiculo" href="<?php echo constant('URL'); ?>vehiculo/crear"><i class="fa fa-truck" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Vehiculo</span></a></li>
+                                <li><a title="Lista Vehiculos" href="<?php echo constant('URL'); ?>vehiculo"><i class="fa fa-car nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Vehiculos</span></a></li>
+                                <!-- crud producto -->
+                                <li><a title="Registro Producto" href="<?php echo constant('URL'); ?>producto/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Producto</span></a></li>
+                                <li><a title="Lista productos" href="<?php echo constant('URL'); ?>producto"><i class="fa fa-shopping-cart nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Productos</span></a></li>
+                                <!-- crud solicitud -->
+                                <li><a title="Registro Solicitud " href="<?php echo constant('URL'); ?>solicitud/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Solicitud</span></a></li>
+                                <li><a title="Lista de solicitudes" href="<?php echo constant('URL'); ?>solicitud"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Solicitudes</span></a></li>
+                                <!-- crud rutas -->
+                                <li><a title="Registro Ruta" href="<?php echo constant('URL'); ?>ruta/crear"><i class="fa fa-map-marker" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Rutas</span></a></li>
+                                <li><a title="Lista de rutas" href="<?php echo constant('URL'); ?>ruta"><i class="fa fa-map nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Rutas</span></a></li>
+                            </ul>
+                        <li><a title="Landing Page" href="<?php echo constant('URL'); ?>" aria-expanded="false"><i class="fa fa-bookmark icon-wrap sub-icon-mg" aria-hidden="true"></i> <span class="mini-click-non">Landing Page</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </nav>
+    </div>
     <!-- Start Welcome area -->
     <div class="all-content-wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="logo-pro">
-                        <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
+                        <a href="<?php echo constant('URL'); ?>index"><img class="main-logo" src=<?php echo constant('URL'); ?>"img/logo/logo.png" alt="" /></a>
                     </div>
                 </div>
             </div>
@@ -171,7 +213,7 @@
 															<i class="fa fa-angle-down adminpro-icon adminpro-down-arrow"></i>
 														</a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                        <li><a href="<?php echo constant('URL'); ?>usuario/crear"><span class="fa fa-home author-log-ic"></span>Register</a>
+                                                        <li><a href="register.html"><span class="fa fa-home author-log-ic"></span>Register</a>
                                                         </li>
                                                         <li><a href="#"><span class="fa fa-user author-log-ic"></span>My Profile</a>
                                                         </li>
@@ -179,7 +221,7 @@
                                                         </li>
                                                         <li><a href="#"><span class="fa fa-cog author-log-ic"></span>Settings</a>
                                                         </li>
-                                                        <li><a href="<?php echo constant('URL'); ?>"><span class="fa fa-lock author-log-ic"></span>Salir</a>
+                                                        <li><a href="<?php echo constant('URL'); ?>index/logout"><span class="fa fa-lock author-log-ic"></span>Cerrar Sesion</a>
                                                         </li>
                                                     </ul>
                                                 </li>
@@ -450,3 +492,75 @@
                 </div>
             </div>
         </div><br>
+        <!-- <div class="section-admin container-fluid res-mg-t-15">
+            <div class="row admin text-center">
+                <div class="col-md-12">
+                    <div class="row">
+                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <div class="admin-content analysis-progrebar-ctn">
+                                <h4 class="text-left text-uppercase"><b>Orders</b></h4>
+                                <div class="row vertical-center-box vertical-center-box-tablet">
+                                    <div class="col-xs-3 mar-bot-15 text-left">
+                                        <label class="label bg-green">30% <i class="fa fa-level-up" aria-hidden="true"></i></label>
+                                    </div>
+                                    <div class="col-xs-9 cus-gh-hd-pro">
+                                        <h2 class="text-right no-margin">10,000</h2>
+                                    </div>
+                                </div>
+                                <div class="progress progress-mini">
+                                    <div style="width: 78%;" class="progress-bar bg-green"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" style="margin-bottom:1px;">
+                            <div class="admin-content analysis-progrebar-ctn res-mg-t-30">
+                                <h4 class="text-left text-uppercase"><b>Tax Deduction</b></h4>
+                                <div class="row vertical-center-box vertical-center-box-tablet">
+                                    <div class="text-left col-xs-3 mar-bot-15">
+                                        <label class="label bg-red">15% <i class="fa fa-level-down" aria-hidden="true"></i></label>
+                                    </div>
+                                    <div class="col-xs-9 cus-gh-hd-pro">
+                                        <h2 class="text-right no-margin">5,000</h2>
+                                    </div>
+                                </div>
+                                <div class="progress progress-mini">
+                                    <div style="width: 38%;" class="progress-bar progress-bar-danger bg-red"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <div class="admin-content analysis-progrebar-ctn res-mg-t-30">
+                                <h4 class="text-left text-uppercase"><b>Revenue</b></h4>
+                                <div class="row vertical-center-box vertical-center-box-tablet">
+                                    <div class="text-left col-xs-3 mar-bot-15">
+                                        <label class="label bg-blue">50% <i class="fa fa-level-up" aria-hidden="true"></i></label>
+                                    </div>
+                                    <div class="col-xs-9 cus-gh-hd-pro">
+                                        <h2 class="text-right no-margin">$70,000</h2>
+                                    </div>
+                                </div>
+                                <div class="progress progress-mini">
+                                    <div style="width: 60%;" class="progress-bar bg-blue"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <div class="admin-content analysis-progrebar-ctn res-mg-t-30">
+                                <h4 class="text-left text-uppercase"><b>Yearly Sales</b></h4>
+                                <div class="row vertical-center-box vertical-center-box-tablet">
+                                    <div class="text-left col-xs-3 mar-bot-15">
+                                        <label class="label bg-purple">80% <i class="fa fa-level-up" aria-hidden="true"></i></label>
+                                    </div>
+                                    <div class="col-xs-9 cus-gh-hd-pro">
+                                        <h2 class="text-right no-margin">$100,000</h2>
+                                    </div>
+                                </div>
+                                <div class="progress progress-mini">
+                                    <div style="width: 60%;" class="progress-bar bg-purple"></div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div> -->

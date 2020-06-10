@@ -29,11 +29,11 @@
             if($this->model->update($_POST)){
                 $solicitud = new SolicitudDAO();
 
+                $solicitud->id_solicitud     = $id;
                 $solicitud->id_solicitud     = $_POST['id_solicitud'];
                 $solicitud->solicitud        = $_POST['solicitud'];
                 $solicitud->descripcion      = $_POST['descripcion'];
-                $solicitud->id_centro      = $_POST['id_centro'];
-                $solicitud->identificacion      = $_POST['identificacion'];
+                $solicitud->cantidad_kilos   = $_POST['cantidad_kilos'];
 
                 $this->view->solicitud = $solicitud;
                 $this->view->mensaje = "Solicitud actualizado correctamente";
@@ -49,7 +49,7 @@
             if(isset($_POST["id_solicitud"])){
                 if($this->model->create($_POST)){
                     $this->view->mensaje = "Centro creado correctamente";
-                    $solicitudes = $this->view->datos['solicitudes'] = $this->model->read();
+                    $solicitudes = $this->view->datos = $this->model->read();
                     $this->view->solicitudes = $solicitudes;
                     $this->view->render('admin/listasolicitud');
                 }else{
@@ -58,11 +58,14 @@
                     $this->view->render('admin/listasolicitud');
                 }
             }else{
-                $centros = $this->view->datos['ddl_centros'] = $this->model->cargarCentro();
-                $this->view->ddl_centros = $centros;
-                $usuarios = $this->view->datos['ddl_usuarios'] = $this->model->cargarEncargado();
-                $this->view->ddl_usuarios = $usuarios;
                 $this->view->render('admin/crearsolicitud');
+            }
+            function leer($param = null){
+                $id_solicitud = $param[0];
+                $solicitud = $this->model->readById($id_solicitud);
+
+                $this->view->solicitud = $solicitud;
+                $this->view->render('admin/editarsolicitud');
             }
         }
 

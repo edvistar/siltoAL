@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php require 'views/head.php'; ?>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php  echo constant('NOMBRESITIO'); ?></title>
 </head>
 <body>
 <?php require 'views/header.php'; ?>
@@ -29,6 +31,11 @@
                                 <label for="nombre">Nombre</label>
                                 <input type="text" name="nombre" id="nombre" class="form-control" required>
                                 <small id="nombreHelp" class="form-text text-muted">Ingrese el nombre del producto</small>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="peso">Peso kl</label>
+                                <input type="text" name="peso" id="peso" class="form-control" required>
+                                <small id="pesoHelp" class="form-text text-muted">Ingrese peso del producto por kilo</small>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="costo">Costo kl</label>
