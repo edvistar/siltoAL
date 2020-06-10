@@ -13,12 +13,18 @@
 
         function leer($param = null){
             $id_solicitud = $param[0];
-            $solicitud = $this->model->readById($id);
+            $solicitud = $this->model->readById($id_solicitud);
+
+            //session_start();
+            $_SESSION["id_verSolicitud"] = $solicitud->id_solicitud;
 
             $this->view->solicitud = $solicitud;
             $this->view->render('admin/editarsolicitud');
         }
         function editar($param = null){
+            //session_start();
+            $id = $_SESSION["id_verSolicitud"];
+            unset($_SESSION['id_verSolicitud']);
 
             if($this->model->update($_POST)){
                 $solicitud = new SolicitudDAO();

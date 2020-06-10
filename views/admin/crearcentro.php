@@ -98,6 +98,48 @@
                                                 ?>
                                 </select>
                             </div>
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                    Seleccione Departamento y Ciudad
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="row">
+                                                <div class="col-md-6">
+                                                    <label for="">Departamento</label>
+                                                    <select class="form-control" name="departamento" id="departamentos" style="width: 100%;">
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6">
+                                                <label for="">Ciudad</label>
+                                                <select class="form-control" name="ciudad" id="ciudades" style="width: 100%;">
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="nombreUsuario">Encargado</label>
+                                <select class="form-control" id="nombreUsuario" name="nombreUsuario" style="width:100%">
+                                    <option selected value="">seleccione...</option>
+                                                <small id="nombreUsuarioHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                                        <?php
+                                            include_once 'models/usuario.php';
+
+                                            if(count($this->ddl_usuarios)>0){
+                                                foreach ($this->ddl_usuarios as $usuario) {
+                                                $ddl_usuario = new UsuarioDAO();
+                                                $ddl_usuario = $usuario;
+                                        ?>
+                                                <option  value="<?php echo $ddl_usuario->identificacion;?>"><?php echo $ddl_usuario->identificacion;?>-<?php echo $ddl_usuario->nombreUsuario;?>-<?php echo $ddl_usuario->apellidoUsuario; ?>-<?php echo $ddl_usuario->cargo; ?></option>
+                                                <?php
+                                                }
+                                            }
+                                                ?>
+                                </select>
+                            </div>
                         </div>
                         <div class="text-center ">
                             <button type="submit" class="btn btn-info">Registrar centro</button>

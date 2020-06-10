@@ -63,10 +63,8 @@
                 ============================================ -->
             <script src="<?php echo constant('URL'); ?>public/js/main.js"></script>
             <script src="<?php echo constant('URL'); ?>public/js/main1.js"></script>
-    </body>
-    </body>
-</html>
-<!-- Optional JavaScript -->
+
+            <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
@@ -80,5 +78,11 @@
         $('.js-example-basic-single').select2();
         listarDepartamentos();
     });
+    $("#sel_departamento").change(function(){
+            var iddepartamento = $("#sel_departamento").val();
+            listarCiudades(iddepartamento);
+        })
   </script>
- 
+    </body>
+    </body>
+</html>

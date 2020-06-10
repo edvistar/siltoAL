@@ -38,7 +38,7 @@ class Usuario extends Controller{
         $identificacion = $param[0];
         $usuario = $this->model->readById($identificacion);
 
-        session_start();
+        //session_start();
         $_SESSION["identificacion"] = $usuario->identificacion;
 
         $this->view->usuario = $usuario;
@@ -47,7 +47,7 @@ class Usuario extends Controller{
 
 
     function editar($param = null){
-        session_start();
+        //session_start();
         $id = $_SESSION["identificacion"];
         //$_POST["identificacion"]=$id;
         unset($_SESSION['identificacion']);

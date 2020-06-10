@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-06-2020 a las 02:34:03
+-- Tiempo de generación: 10-06-2020 a las 05:19:04
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.7
 
@@ -30,6 +30,11 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_LISTARCIUDADES` (IN `IDDEPARTAME
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_LISTARDEPARTAMENTOS` ()  SELECT * FROM departamentos$$
 
+<<<<<<< HEAD
+=======
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_LISTARSECTORES` (IN `IDCIUDAD` INT)  SELECT * FROM sectores WHERE idCiud=IDCIUDAD$$
+
+>>>>>>> 7e4f95eb55723baf1c9442b2e892a5e25000ea1b
 DELIMITER ;
 
 -- --------------------------------------------------------
@@ -103,6 +108,64 @@ INSERT INTO `ciudades` (`idCiud`, `ciudad`, `idDepa`) VALUES
 
 -- --------------------------------------------------------
 
+<<<<<<< HEAD
+=======
+INSERT INTO `centro` (`id_centro`, `nombre`, `email`, `telefono`, `whatsapp`, `departamento`, `ciudad`, `lugar`, `nombreUsuario`) VALUES
+(34545, 'OcatiCotas', 'lavaca@gmail.com', 3138252764, 0, '21', '21', 'Chia', '22656626');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ciudades`
+--
+
+CREATE TABLE `ciudades` (
+  `idCiud` int(5) NOT NULL DEFAULT 0,
+  `ciudad` varchar(50) NOT NULL,
+  `idDepa` varchar(5) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `ciudades`
+--
+
+INSERT INTO `ciudades` (`idCiud`, `ciudad`, `idDepa`) VALUES
+(1, 'El Encanto', '1'),
+(2, 'La Chorrera', '1'),
+(3, 'La Pedrera', '1'),
+(4, 'La Victoria', '1'),
+(5, 'Leticia', '1'),
+(6, 'Miriti-Paraná', '1'),
+(7, 'Puerto Alegría', '1'),
+(8, 'Puerto Arica', '1'),
+(9, 'Puerto Nariño', '1'),
+(10, 'Puerto Santander', '1'),
+(11, 'Tarapacá', '1'),
+(12, 'Medellin', '2'),
+(13, 'Bello', '2'),
+(14, 'Bogotá', '14'),
+(15, 'Puerto Inírida', '15'),
+(16, 'San José del Guaviare', '16'),
+(17, 'Neiva', '17'),
+(18, 'Riohacha', '18'),
+(19, 'Santa Marta', '19'),
+(20, 'Villavicencio', '20'),
+(21, 'Pasto', '21'),
+(22, 'Cúcuta', '22'),
+(23, 'Mocoa', '23'),
+(24, 'Armenia', '24'),
+(25, 'Pereira', '25'),
+(32, 'Puerto Carreño', '32'),
+(31, 'Mitú', '31'),
+(30, 'Cali', '30'),
+(29, 'Ibagué', '29'),
+(28, 'Sincelejo', '28'),
+(27, 'Bucaramanga', '27'),
+(26, 'San Andrés', '26');
+
+-- --------------------------------------------------------
+
+>>>>>>> 7e4f95eb55723baf1c9442b2e892a5e25000ea1b
 --
 -- Estructura de tabla para la tabla `departamentos`
 --
@@ -192,6 +255,29 @@ CREATE TABLE `rutas` (
   `id_solicitud` int(11) NOT NULL COMMENT 'id de solicitud'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+<<<<<<< HEAD
+=======
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sectores`
+--
+
+CREATE TABLE `sectores` (
+  `idSect` int(5) NOT NULL,
+  `sector` varchar(50) NOT NULL,
+  `idCiud` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `sectores`
+--
+
+INSERT INTO `sectores` (`idSect`, `sector`, `idCiud`) VALUES
+(1, 'chia', 1),
+(2, 'Cerca de Piedra', 1);
+
+>>>>>>> 7e4f95eb55723baf1c9442b2e892a5e25000ea1b
 -- --------------------------------------------------------
 
 --
@@ -231,7 +317,12 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`identificacion`, `nombreUsuario`, `apellidoUsuario`, `emailUsuario`, `telefonoUsuario`, `whatsappUsuario`, `cargo`, `estado`, `fecha_ingreso`, `foto`, `pass`) VALUES
+<<<<<<< HEAD
 (16838095, 'eduardo', 'sando', 'victorhoyoscolombia@gmail.com', 2147483647, 1, 'administrador', 'activo', '2020-06-08 18:30:20', 'public/img/contact/20200312_083547.jpg', 'a490da78e8784686af31bf0f2dab83c6');
+=======
+(22656626, 'Victor Eduardo', 'Hoyos Sandoval', 'victorhoyoscolombia@gmail.com', 2147483647, 1, 'coordinador', 'activo', '2020-06-09 21:46:40', 'public/img/contact/', 'fcea920f7412b5da7be0cf42b8c93759'),
+(1683809522, 'luis', 'joder', 'luisjoder@gmail.com', 2123252764, 1, 'supervisor', 'activo', '2020-06-22 00:00:00', '', '1234567');
+>>>>>>> 7e4f95eb55723baf1c9442b2e892a5e25000ea1b
 
 -- --------------------------------------------------------
 
@@ -248,7 +339,11 @@ CREATE TABLE `vehiculo` (
   `costo_flete` int(11) NOT NULL COMMENT 'Costo de plete por carga',
   `gps` tinyint(4) NOT NULL COMMENT 'GPS de vehiculo',
   `estado` varchar(11) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Estao de vehiculo en la empresa propiedad o contratista.',
+<<<<<<< HEAD
   `identificacion` bigint(20) NOT NULL COMMENT 'Nombre de conductor.',
+=======
+  `conductor` bigint(20) NOT NULL COMMENT 'Nombre de conductor.',
+>>>>>>> 7e4f95eb55723baf1c9442b2e892a5e25000ea1b
   `fecha_registro` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'Fecha del registro'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
@@ -256,7 +351,11 @@ CREATE TABLE `vehiculo` (
 -- Volcado de datos para la tabla `vehiculo`
 --
 
+<<<<<<< HEAD
 INSERT INTO `vehiculo` (`placa`, `capacidad`, `seguro`, `tecnomecanica`, `tipo_vehiculo`, `costo_flete`, `gps`, `estado`, `identificacion`, `fecha_registro`) VALUES
+=======
+INSERT INTO `vehiculo` (`placa`, `capacidad`, `seguro`, `tecnomecanica`, `tipo_vehiculo`, `costo_flete`, `gps`, `estado`, `conductor`, `fecha_registro`) VALUES
+>>>>>>> 7e4f95eb55723baf1c9442b2e892a5e25000ea1b
 ('678ty', '15 tonelads', 'hgfdsa', '2020-06-05', 'contratista', 4545555, 0, 'furgon', 1070007809, '2020-06-13 05:00:00'),
 ('ghy56', '15 tonelads', 'hgfdsa', '2020-06-27', 'contratista', 4545555, 0, 'furgon', 10783, '2020-06-26 05:00:00'),
 ('yui32', '7', 'hgfdsa', '2020-06-25', 'contratista', 4545555, 0, 'furgon', 77878787887, '2020-06-25 05:00:00');
@@ -299,6 +398,15 @@ ALTER TABLE `rutas`
   ADD UNIQUE KEY `id_solicitud` (`id_solicitud`),
   ADD UNIQUE KEY `id_producto` (`id_producto`),
   ADD UNIQUE KEY `identificacion` (`identificacion`);
+<<<<<<< HEAD
+=======
+
+--
+-- Indices de la tabla `sectores`
+--
+ALTER TABLE `sectores`
+  ADD PRIMARY KEY (`idSect`);
+>>>>>>> 7e4f95eb55723baf1c9442b2e892a5e25000ea1b
 
 --
 -- Indices de la tabla `solicitud`
@@ -318,8 +426,12 @@ ALTER TABLE `usuario`
 -- Indices de la tabla `vehiculo`
 --
 ALTER TABLE `vehiculo`
+<<<<<<< HEAD
   ADD PRIMARY KEY (`placa`),
   ADD UNIQUE KEY `identificacion` (`identificacion`);
+=======
+  ADD PRIMARY KEY (`placa`);
+>>>>>>> 7e4f95eb55723baf1c9442b2e892a5e25000ea1b
 
 --
 -- AUTO_INCREMENT de las tablas volcadas

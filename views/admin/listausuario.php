@@ -16,7 +16,7 @@
                         <div id="main">
                             <div><?php echo $this->mensaje; ?></div>
                             <h1 class="text-center"><i class="fa fa-users" aria-hidden="true"></i> Listado de Usuarios</h1>
-                            <button type="button" class="btn btn-success loginbtn" onClick='window.location.assign("<?php echo constant('URL'); ?>/usuario/registrar")'>Crear Usuario</button><br>
+                            <button type="button" class="btn btn-success loginbtn" onClick='window.location.assign("<?php echo constant('URL'); ?>/usuario/crear")'>Crear Usuario</button><br>
                             <table id="tabla" class="table table-hover">
                                 <thead class="thead-dark">
                                     <tr>

@@ -29,14 +29,14 @@
             $id_ruta = $param[0];
             $ruta = $this->model->readById($id_ruta);
 
-            session_start();
+            //session_start();
             $_SESSION["id_verRuta"] = $ruta->id_ruta;
 
             $this->view->ruta = $ruta;
             $this->view->render('admin/editarruta');
         }
         function editar($param = null){
-            session_start();
+            //session_start();
             $id = $_SESSION["id_verRuta"];
             unset($_SESSION['id_verRuta']);
 

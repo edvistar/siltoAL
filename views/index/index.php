@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?php  echo constant('NOMBRESITIO'); ?></title>
+    <title>SILTO</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="public/css/style0.css">
+    <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/style0.css">
 
 </head>
-<body class="font">
+<body>
 <!--menu-->
 
     <header id="header-home">
@@ -18,18 +18,20 @@
                 <div class="row barra">
                     <div class="col-lg-2">
                         <a href="index.php">
-                            <img  width="200" height="60" src="public/img/SILTO.png" alt="logo de la pagina">
+                            <img  width="300" height="90" src="<?php echo constant('URL'); ?>public/img/SILTO.png" alt="logo de la pagina">
                         </a>
                     </div>
                     <div class="col-lg-1"></div>
                     <div class="col-lg-9">
                         <ul class="text-center">
-                            <li><a href="index.php">Inicio</a></li>
-                            <li><a href="#quehacemos">Que Hacemos</a></li>
-                            <li><a href="#Servicios">Servicios</a></li>
-                            <li><a href="#Equipo">Equipo</a></li>
-                            <li><a href="#Contacto">Contacto</a></li>
-                            <li><a href="index/login">Ingreso</a></li>
+                            <li><a href="<?php echo constant('URL'); ?>index.php">Inicio</a></li>
+                            <li><a href="<?php echo constant('URL'); ?>#quehacemos">Que Hacemos</a></li>
+                            <li><a href="<?php echo constant('URL'); ?>#Servicios">Servicios</a></li>
+                            <li><a href="<?php echo constant('URL'); ?>#Equipo">Equipo</a></li>
+                            <li><a href="<?php echo constant('URL'); ?>#Contacto">Contacto</a></li>
+                            <li><a href="<?php echo constant('URL'); ?>index/Autenticar?auth=1">Ingreso</a></li>
+
+                            <!-- <li><a href="" data-toggle="modal" data-target="#login">Ingreso</a></li> -->
                         </ul>
                     </div>
                 </div>
@@ -46,18 +48,18 @@
                             <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <h2>
-                                <p class="mySlides" >“No hay nada más común que encontrar consideraciones sobre el suministro que afecten a las líneas estratégicas de una campaña y de una guerra”.<br>  Sun Tzu </p>
-                                <p class="mySlides" >“No sé qué demonio es eso de la “logística” de la que Marshall siempre está hablando, pero quiero un poco de ella”. <br>  George S. Patton </p>
-                                <p class="mySlides" >“La historia de la guerra demuestra que, nueve de cada diez veces,<br> un ejército es derrotado porque sus líneas de suministros fueron cortadas”. <br>  Adolf Hitler</p>
-                                <p class="mySlides" >“Por mi experiencia en tiempos de guerra, soy insistente con que el saber hacer de la logística se debe preservar, en que no hay nada más importante en la guerra que la logística”. <br> General Douglas MacArthur</p>
+                                <p class="mySlides" >“No hay nada más común que encontrar consideraciones sobre el suministro que afecten a las líneas estratégicas de una campaña y de una guerra”.  Sun Tzu </p>
+                                <p class="mySlides" >“No sé qué demonio es eso de la “logística” de la que Marshall siempre está hablando, pero quiero un poco de ella”.   George S. Patton </p>
+                                <p class="mySlides" >“La historia de la guerra demuestra que, nueve de cada diez veces,<br> un ejército es derrotado porque sus líneas de suministros fueron cortadas”.   Adolf Hitler</p>
+                                <p class="mySlides" >“Por mi experiencia en tiempos de guerra, soy insistente con que el saber hacer de la logística se debe preservar, en que no hay nada más importante en la guerra que la logística”.  General Douglas MacArthur</p>
                                 </h2>
                             </div>
                             </div>
-                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <a class="carousel-control-prev" href="<?php echo constant('URL'); ?>#carouselExampleControls" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                             </a>
-                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <a class="carousel-control-next" href="<?php echo constant('URL'); ?>#carouselExampleControls" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                             </a>
@@ -82,7 +84,7 @@
                         <h1 class="h1">
                             QUE HACEMOS
                         </h1>
-                        <p>Optimizar sus servicios logisticos, monitoreando y controlando sus despachos, interactuando en tiempo real y generando reportes en la plataforma.
+                        <p>Optimizar sus servicios logisticos, monitoreando y controlando sus despachos, interactuando en tiempo real y generando reportes en una plataforma.
                         </p>
                     </div>
                 </div>
@@ -94,7 +96,7 @@
                             <h1 class="h1">
                                 MISIÓN
                             </h1>
-                            <p>Somos un equipo de tecnológos dedicados al desarrollo de plataformas web a medida, ofreciendo soluciones  informáticas a ninel nacional.
+                            <p>Somos un equipo de tecnológos dedicados al desarrollo web a medida, ofreciendo soluciones  informáticas a ninel nacional.
 
                             </p>
                         </div>
@@ -106,7 +108,7 @@
                                 VISIÓN
                             </h1>
                             <p>
-                                Pretedemos estar el año 2022 a la vanguardia de los mejores proveedores de      desarrollos informáticos, ofreciendo sevicios en el mercado nacional, innovando de acuerdo a los cambios generados por los avances tecnológicos.
+                                Pretedemos estar el año 2022 ala vanguardia de los mejores proveedores de                     desarrolos informáticos, ofreciendo sevicios en el mercado nacional, innovando de acuerdo a los cambios generados por los avances tecnológicos.
                             </p>
                         </div>
                     </div>
@@ -115,27 +117,24 @@
         </section>
     <!--main seccion 2-->
         <section class="container " >
-            <h1 class="h1" id="servicios" >NUESTROS SERVICIOS</h1>
+            <h1 class="h1" >NUESTROS SERVICIOS</h1>
             <div class="row">
                 <!--rol-->
                 <div class="col-lg-6 text-center">
-                    <a class="btn " data-toggle="collapse" href="#rol" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Cargo Usuario</h1>
+                    <a class="btn " data-toggle="collapse" href=<?php echo constant('URL'); ?>"#rol" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Rol Usuario</h1>
                         <img class="tama" src="public/img/oper.png" alt="imagen Misión"></a>
                     <div class="collapse " id="rol">
                         <div class="card card-body">
-                        <strong>
-                            <p class="">La plataforma tendra diferentes cargos para los usuarios en los cuales se encuentran los siguientes: <br>1. Administrador es el encargado del sistema y tendra los permisos para el manejo de la plataforma. <br>2. Coordinador es el encargado de las solicitudes de los bodegueros y las rutas. <br>3. Bodeguero es el encargado de realizar solicitudes y llenar registros de las rutas en los centro de acopio y bodega principal.</p>
-                            </strong>
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
                         </div>
                     </div>
                 </div>
                 <!--solicitud-->
                 <div class="col-lg-6 text-center">
-                    <a class="btn " data-toggle="collapse" href="#solicitud" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Solicitud de Pedidos</h1><img  class="tama" src="public/img/8869.jpg" alt="imagen Misión"></a>
+                    <a class="btn " data-toggle="collapse" href="<?php echo constant('URL'); ?>#solicitud" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Solicitud de Pedidos</h1><img  class="tama" src="public/img/8869.jpg" alt="imagen Misión"></a>
                     <div class="collapse " id="solicitud">
                         <div class="card card-body">
-                            <p><b>La solicitud de las rutas  es realizada apartir de pedidos de los centros de acopio, oficinas para el trasporte de mercancioa o de documentacion de la empresa, o de personal solicitado en diferentes puntos.</b>
-                            </p>
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
                         </div>
                     </div>
                 </div>
@@ -143,42 +142,36 @@
             <!--Planeamiento-->
             <div class="row">
                 <div class="col-lg-6">
-                    <a class="btn " data-toggle="collapse" href="#planeamiento" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Planeamiento</h1>
+                    <a class="btn " data-toggle="collapse" href=<?php echo constant('URL'); ?>"#planeamiento" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Planeamiento</h1>
                     <img class="tama" src="public/img/subcontratacion-servicios-logistica-770x367m.jpg" alt="imagen Misión"></a>
                     <div class="collapse " id="planeamiento">
                         <div class="card card-body">
-                                <p>
-                               <b> El planeamiento es realizado apartir de las solicitudes que se encuentren activas en la plataforma y asi la coordinadora podra planear la logistica para que se cumplan a totalidad las solicitudes realizadas anteriormente.</b>
-                                </p>
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
                         </div>
                     </div>
                 </div>
             <!--rutas-->
                 <div class="col-lg-6">
-                    <a class="btn " data-toggle="collapse" href="#ruta" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Rutas</h1>
+                    <a class="btn " data-toggle="collapse" href="<?php echo constant('URL'); ?>#ruta" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Rutas</h1>
                     <img class="tama" src="public/img/camion-carretera-contenedor-importacion-exportacion-transporte-logistico_42493-29.jpg" alt="imagen Misión"></a>
                     <div class="collapse " id="ruta">
                         <div class="card card-body">
-                            <strong>
-                                <p>
-                                    Las rutas son planeadas de acuerdo a las solocitudes y son efectuadas dependiendo la cantidad de pedido que hay  en los centros de acopio de la empresa, este sera realizado por los contratistas o los vehículos de propiedad de la empresa .
-                                </p>
-                            </strong>
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
                         </div>
                     </div>
                 </div>
             </div>
         </section><br>
 <!-- Seccion de equipo -->
-        <section class="container text-center equipoS ">
-            <h1 class="h1" id="equipo">EQUIPO</h1>
+        <section class="container text-center">
+            <h1 class="h1" id="Equipo">EQUIPO</h1>
             <div class="row">
                 <!-- integrante 1 -->
                 <div class="col-md-4">
                     <div class="modal-bootstrap">
                             <div class="modal-area-button">
-                                <a class="Primary mg-b-10" href="#" data-toggle="modal" data-target="#castro"><h3 class="equipoN">Alexandra Castro </h3>
-                                <img class="avatar"src="public/img/fotoAle.png"></a>
+                                <a class="Primary mg-b-10" href="<?php echo constant('URL'); ?>#" data-toggle="modal" data-target="#castro"><h3>Alexandra Castro </h3>
+                                <img class="avatar"src="public/img/estudiante.png"></a>
                             </div>
                         </div>
                     </div>
@@ -186,7 +179,7 @@
                 <div class="col-md-4">
                     <div class="modal-bootstrap">
                         <div class="modal-area-button">
-                            <a class="Information Information-color mg-b-10" href="#" data-toggle="modal" data-target="#lopez"><h3 class="equipoN">Jhonatan Lopez</h3><img class="avatar" src="public/img/jhonatan.png"></a>
+                            <a class="Information Information-color mg-b-10" href="<?php echo constant('URL'); ?>#" data-toggle="modal" data-target="#lopez"><h3>Jhonatan Lopez</h3><img class="avatar" src="public/img/militar.png"></a>
                         </div>
                     </div>
                 </div>
@@ -194,7 +187,7 @@
                 <div class="col-md-4">
                     <div class="modal-bootstrap">
                         <div class="modal-area-button">
-                            <a class="Primary mg-b-10" href="#" data-toggle="modal" data-target="#lara"><h3 class="equipoN">Lida Patricia Lara</h3><img class="avatar" src="public/img/lida.jpg"></a>
+                            <a class="Primary mg-b-10" href="<?php echo constant('URL'); ?>#" data-toggle="modal" data-target="#lara"><h3>Lida Patricia Lara</h3><img class="avatar" src="public/img/estudiante.png"></a>
                         </div>
                     </div>
                 </div>
@@ -205,7 +198,7 @@
                 <div class="col-md-4">
                     <div class="modal-bootstrap">
                         <div class="modal-area-button">
-                            <a class="Primary mg-b-10" href="#" data-toggle="modal" data-target="#alarcon"><h3 class="equipoN">Mauricio Alarcon </h3><img class="avatar" src="public/img/mauro.png"></a>
+                            <a class="Primary mg-b-10" href="<?php echo constant('URL'); ?>#" data-toggle="modal" data-target="#alarcon"><h3>Mauricio Alarcon </h3><img class="avatar" src="public/img/militar.png"></a>
                         </div>
                     </div>
                 </div>
@@ -213,7 +206,7 @@
                 <div class="col-md-4">
                     <div class="modal-bootstrap">
                         <div class="modal-area-button">
-                            <a class="Primary mg-b-10" href="#" data-toggle="modal" data-target="#hoyos"><h3 class="equipoN">Victor Hoyos</h3><img class="avatar" src="public/img/victor.jpg"></a>
+                            <a class="Primary mg-b-10" href="<?php echo constant('URL'); ?>#" data-toggle="modal" data-target="#hoyos"><h3>Victor Hoyos</h3><img class="avatar" src="public/img/militar.png"></a>
                         </div>
                     </div>
                 </div>
@@ -229,30 +222,34 @@
     <div id="rectangulo">
     <div class="container-fluid">
         <div class="container">
-            <div class="row">
+            <div class="row" id="Contacto">
                 <!-- seccion mapa -->
-                <div class="col-md-5 map">
+                <div class="col-md-5">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d127257.47050688774!2d-74.066258!3d4.630461!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1589858547133!5m2!1ses!2sco" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                 </div>
                 <div class="col-md-5">
-                    <div class="contacto">
+                    <div class="center conta">
                         <h2 >CONTACTO </h2>
                         <p><h3>Tel: 1234567890 ext 000<br>
                         Direccion: CDA Chia Sena <br>
-                        Correo: siltoadsi@gmail.com</h3>
+                        Correo: adsi2020@silto.com</h3>
                         </p>
 
                     </div>
                 </div>
                 <!-- seccion de redes sociales-->
-                <div class="col-md-1 redes">
+                <div class="col-md-1">
                     <div>
                         <ul>
-                            <li><a href="https://twitter.com/Silto16">
+                            <li><a href="https://twitter.com/explore">
                                     <img width="50" height="50" src="public/img/043-twitter.png" alt="imagen de twitter">
                                 </a>
+                                </li>
+                                <li><a href="https://www.instagram.com/?hl=es-la">
+                                    <img width="50" height="50" src="public/img/025-instagram.png" alt="imagen de instagram">
+                                </a>
                             </li>
-                            <li><a href="https://www.facebook.com/groups/1653448328150890/?ref=share">
+                            <li><a href="https://es-la.facebook.com/">
                                     <img width="50" height="50" src="public/img/021-facebook.png" alt="imagen de facebook">
                                 </a>
                             </li>
@@ -269,6 +266,61 @@
     </div>
     </div>
 </footer>
+<!-- Modal Login -->
+<!-- <div id="login" class="modal modal-adminpro-general default-popup-PrimaryModal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header header-color-modal bg-color-1">
+                <h4 class="modal-title h1">INICIO SESION</h4>
+                <div class="modal-close-area modal-close-df">
+                    <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                </div>
+            </div>
+            <div class="modal-body">
+                <i class="fa fa-check modal-check-pro"></i>
+                <header id="header-home">
+                    <div class="hero">
+                        <div class="container-fluid">
+                        <div class="container-log">
+                            <div class="row-log">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-6">
+                                    <div class="hpanel">
+                                        <div class="panel-body">
+                                            <form action="<?php echo constant('URL'); ?>/main/main.php"  method="POST">
+                                                <div class="form-group">
+                                                    <label class="control-label" for="email">USUARIO</label>
+                                                    <input type="email" placeholder="example@gmail.com" title="Please enter you username" required="" value="" name="email" id="email" class="form-control">
+                                                    <span class="help-block small">Tu Usuario</span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label" for="password">CONTRASEÑA</label>
+                                                    <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="pass" id="password" class="form-control">
+                                                    <span class="help-block small">Tu contraseña</span>
+                                                </div>
+                                                <div class="checkbox login-checkbox">
+                                                    <label>
+                                                    <input type="checkbox" class="i-checks"> Remember me </label>
+                                                </div>
+                                                <button class="btn btn-info ">Entrar</button>
+                                                <button class="btn btn-danger ">Cerrar</button><br>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        </>
+                    </div>
+                </header>
+            </div>
+            <div class="modal-footer">
+                <a data-dismiss="modal" href="#">Cerrar</a>
+            </div>
+        </div>
+    </div>
+</div> -->
+
 <!-- Modal Alexandra Castro Clavijo -->
 <div id="castro" class="modal modal-adminpro-general default-popup-PrimaryModal fade" role="dialog">
     <div class="modal-dialog">
@@ -281,14 +333,9 @@
             </div>
             <div class="modal-body">
                 <i class="fa fa-check modal-check-pro"></i>
-                <img class="avatar" src="public/img/fotoAle.png">
+                <img class="avatar" src="public/img/estudiante.png">
                 <h4>Tecnologa ADSI</h4>
-                <p>Analista de sistemas bases de datos, programadora PHP, HTML5, Bootstrap 4, desarrolladora encargada del FROND-END de aplicación y colaboración en el BACK-END de la misma.<br>
-                Contacto<br>
-                Email: jacastro9087@misena.edu.co<br>
-                Email: laflacalex9@gmail.com<br>
-                Cel:312 317 3124<br>
-                </p>
+                <p>Analista y cumplo con el desarrollo de bases de datos desarrollo en Front-end  y back end</p>
             </div>
             <div class="modal-footer">
                 <a data-dismiss="modal" href="#">Cerrar</a>
@@ -307,9 +354,9 @@
                 </div>
             </div>
             <div class="modal-body">
-                <img class="avatar" src="public/img/jhonatan.png">
+                <img class="avatar" src="public/img/militar.png">
                 <h4>Tecnologo ADSI</h4>
-                <p>Desarrollador frond-end apoyo en back-end de la aplicacion.</p>
+                <p>Analista y cumplo con el desarrollo de bases de datos desarrollo en Front-end, Back-end</p>
             </div>
             <div class="modal-footer">
                 <a data-dismiss="modal" href="#">Cerrar</a>
@@ -328,9 +375,9 @@
                 </div>
             </div>
             <div class="modal-body">
-                <img class="avatar" src="public/img/lida.jpg">
+                <img class="avatar" src="public/img/estudiante.png">
                 <h4>Tecnologa ADSI</h4>
-                <p></p>
+                <p>Analista y cumplo con el desarrollo de bases de datos desarrollo en Front-end, Back-end</p>
             </div>
             <div class="modal-footer">
                 <a data-dismiss="modal" href="#">Cerrar</a>
@@ -349,9 +396,9 @@
                 </div>
             </div>
             <div class="modal-body">
-                <img class="avatar" src="public/img/mauro.png">
+                <img class="avatar" src="public/img/militar.png">
                 <h4>Tecnologo ADSI</h4>
-                <p>Analista y desarrollador, apoyo de con el desarrollo  BACK-END  de la aplicacion.</p>
+                <p>Analista y cumplo con el desarrollo de bases de datos desarrollo en Front-end, Back-end</p>
             </div>
             <div class="modal-footer">
                 <a data-dismiss="modal" href="#">Cerrar</a>
@@ -370,9 +417,9 @@
                 </div>
             </div>
             <div class="modal-body">
-                <img class="avatar" src="public/img/victor.jpg">
+                <img class="avatar" src="public/img/militar.png">
                 <h4>Tecnologo ADSI</h4>
-                <p>Analista y desarrollador, encargado del BACK-END de la aplicacion. Lider de proyecto a cargo de la aplicaciòn.</p>
+                <p>Analista y cumplo con el desarrollo de bases de datos desarrollo en Front-end, Back-end</p>
             </div>
             <div class="modal-footer">
                 <a data-dismiss="modal" href="#">Cerrar</a>
@@ -395,7 +442,7 @@ function carousel() {
   myIndex++;
   if (myIndex > x.length) {myIndex = 1}
   x[myIndex-1].style.display = "block";
-  setTimeout(carousel, 10000); // Change image every 10 seconds
+  setTimeout(carousel, 2000); // Change image every 2 seconds
 }
 </script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
