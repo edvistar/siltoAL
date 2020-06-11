@@ -22,6 +22,16 @@
                     $this->view->render('admin/listaruta');
                 }
             }else{
+                $usuarios = $this->view->datos['ddl_usuarios'] = $this->model->cargarEncargado();
+                $this->view->ddl_usuarios = $usuarios;
+                $vehiculos = $this->view->datos['ddl_vehiculos'] = $this->model->cargarVehiculo();
+                $this->view->ddl_vehiculos = $vehiculos;
+                $centros = $this->view->datos['ddl_centros'] = $this->model->cargarCentro();
+                $this->view->ddl_centros = $centros;
+                $solicitudes = $this->view->datos['ddl_solicitudes'] = $this->model->cargarSolicitud();
+                $this->view->ddl_solicitudes = $solicitudes;
+                $productos = $this->view->datos['ddl_productos'] = $this->model->cargarProducto();
+                $this->view->ddl_productos = $productos;
                 $this->view->render('admin/crearruta');
             }
         }

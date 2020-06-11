@@ -71,9 +71,12 @@ class Index extends Controller{
     }
     function Logout(){
         $_SESSION['auth']=false;
+        session_unset();
+        session_destroy();
         $this->view->mensaje = "Sesión terminada.";
         //$this->view->render('index/login?auth=1');
-        $this->view->render('index/index');
+        //$this->view->render('index/index');
+        header("location: ../index.php");
     }
 }
 

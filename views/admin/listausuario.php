@@ -43,11 +43,11 @@
                                     ?>
                                     <tr id="fila-<?php echo $usuario->identificacion; ?>">
                                         <td><?php echo $usuario->identificacion; ?></td>
-                                        <td><?php echo $usuario->nombreUsuario; ?></td>                     
-                                        <td><?php echo $usuario->apellidoUsuario; ?></td>
-                                        <td><?php echo $usuario->emailUsuario; ?></td>
-                                        <td><?php echo $usuario->telefonoUsuario; ?></td>
-                                        <td><?php echo $usuario->whatsappUsuario; ?></td>
+                                        <td><?php echo $usuario->nombre; ?></td>                     
+                                        <td><?php echo $usuario->apellido; ?></td>
+                                        <td><?php echo $usuario->email; ?></td>
+                                        <td><?php echo $usuario->telefono; ?></td>
+                                        <td><?php echo $usuario->whatsapp; ?></td>
                                         <td><?php echo $usuario->cargo; ?></td>
                                         <td><?php echo $usuario->estado; ?></td>
                                         <td><?php echo $usuario->fecha_ingreso; ?></td>

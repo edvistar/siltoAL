@@ -49,11 +49,31 @@
                             <small id="tipo_vehiculoHelp" class="form-text text-muted">Tipo de vehículo</small>
                         </div>
 
-                        <div class="form-group col-md-6">
+                        <!-- <div class="form-group col-md-6">
                             <label for="conductor">Nombre del conductor </label>
                             <input type="text" class="form-control" name="conductor" id="conductor">
                             <small id="nombreHelp" class="form-text text-muted">Nombre del conductor</small>
-                        </div>
+                        </div> -->
+                        <div class="form-group col-md-6">
+                                <label for="identificacion">Encargado</label>
+                                <select class="form-control" id="identificacion" name="identificacion" style="width:100%">
+                                    <option selected value="">seleccione...</option>
+                                                <small id="identificacionHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                                        <?php
+                                            include_once 'models/usuario.php';
+
+                                            if(count($this->ddl_usuarios)>0){
+                                                foreach ($this->ddl_usuarios as $usuario) {
+                                                $ddl_usuario = new UsuarioDAO();
+                                                $ddl_usuario = $usuario;
+                                        ?>
+                                                <option  value="<?php echo $ddl_usuario->identificacion;?>"><?php echo $ddl_usuario->identificacion;?>-<?php echo $ddl_usuario->nombre;?>-<?php echo $ddl_usuario->apellido; ?>-<?php echo $ddl_usuario->cargo; ?></option>
+                                                <?php
+                                                }
+                                            }
+                                                ?>
+                                </select>
+                            </div>
 
                         <div class="form-group col-md-6">
                             <label for="costo_flete">Costo del flete</label>

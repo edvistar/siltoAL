@@ -8,16 +8,19 @@
         public function create($datos = null){
             // insertar
             //if(!isset($datos)){
-                $sentenceSQL="INSERT INTO solicitud ( id_solicitud, solicitud, descripcion, cantidad_kilos) VALUES( :id_solicitud, :solicitud, :descripcion, :cantidad_kilos)";
+                $sentenceSQL="INSERT INTO solicitud (solicitud, descripcion, id_centro, identificacion) VALUES( :solicitud, :descripcion, :id_centro, :identificacion)";
                 $connexionDB=$this->db->connect();
                 $query = $connexionDB->prepare($sentenceSQL);
                 
                 try{
                     $query->execute([
-                                    'id_solicitud'    =>$datos['id_solicitud'],
-                                    'solicitud'       => $datos['solicitud'],
+                                    //'id_solicitud'    =>$datos['id_solicitud'],
+                                    'solicitud'       => date('Y-m-d H:i:s'),
                                     'descripcion'     => $datos['descripcion'],
-                                    'cantidad_kilos'  => $datos['cantidad_kilos']
+                                    'id_centro'       => $datos['id_centro'],
+                                    'identificacion'  => $datos['identificacion']
+                                    
+
 
                     ]);
                     return true;
@@ -32,10 +35,58 @@
             // }
 
         }
+        public function cargarEncargado(){
+            $items = [];
+            try {
+                $query = $this->db->connect()->query('SELECT identificacion, nombre, apellido, cargo FROM usuario');
+                include_once('models/usuario.php');
+                while ($row = $query->fetch()) {
+                    $item = new UsuarioDAO();
+                    $item->identificacion = $row['identificacion'];
+                    $item->nombre = $row['nombre'];
+                    $item->apellido = $row['apellido'];
+                    $item->cargo = $row['cargo'];
+                   
+                    array_push($items, $item);
+                }
+                return $items;
+            } catch (PDOException $e) {
+                if (constant("DEBUG")) {
+                    echo $e->getMessage();
+                }
+                return [];
+            }
+        }
+        public function cargarCentro(){
+            $items = [];
+            try {
+                $query = $this->db->connect()->query('SELECT id_centro, nombre FROM centro');
+                include_once('models/centro.php');
+                while ($row = $query->fetch()) {
+                    $item = new CentroDAO();
+                    $item->id_centro = $row['id_centro'];
+                    $item->nombre = $row['nombre'];
+                    
+                   
+                    array_push($items, $item);
+                }
+                return $items;
+            } catch (PDOException $e) {
+                if (constant("DEBUG")) {
+                    echo $e->getMessage();
+                }
+                return [];
+            }
+        }
         public function read(){
             $items = [];
             try{
-                $query = $this->db->connect()->query('SELECT * FROM solicitud');
+                $query = $this->db->connect()->query('SELECT sol.id_solicitud, sol.solicitud, sol.descripcion, 
+                cent.nombre as nombreCentro, usu.nombre as nombreUsuario
+                FROM solicitud as sol
+                INNER JOIN centro as cent on cent.id_centro=cent.id_centro
+                INNER JOIN usuario as usu on usu.identificacion=cent.identificacion
+                ');
 
                 while($row = $query->fetch()){
                     $item = new SolicitudDAO();
@@ -43,7 +94,8 @@
                     $item->id_solicitud     = $row['id_solicitud'];
                     $item->solicitud        = $row['solicitud'];
                     $item->descripcion      = $row['descripcion'];
-                    $item->cantidad_kilos   = $row['cantidad_kilos'];
+                    $item->id_centro        = $row['nombreCentro'];
+                    $item->identificacion   = $row['nombreUsuario'];
 
                     array_push($items, $item);
                 }
@@ -66,7 +118,8 @@
                     $item->id_solicitud     = $row['id_solicitud'];
                     $item->solicitud        = $row['solicitud'];
                     $item->descripcion      = $row['descripcion'];
-                    $item->cantidad_kilos   = $row['cantidad_kilos'];
+                    $item->id_centro   = $row['id_centro'];
+                    $item->identificacion   = $row['identificacion'];
                 }
                 return $item;
             }catch(PDOException $e){
@@ -83,7 +136,9 @@
                     'id_solicitud'    => $item['id_solicitud'],
                     'solicitud'       => $item['solicitud'],
                     'descripcion'     => $item['descripcion'],
-                    'cantidad_kilos'  => $item['cantidad_kilos']
+                    'cantidad_kilos'  => $item['cantidad_kilos'],
+                    'id_centro'       => $item['id_centro'],
+                    'identificacion'   => $item['identificacion']
                 ]);
                 return true;
             }catch(PDOException $e){

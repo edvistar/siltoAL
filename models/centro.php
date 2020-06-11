@@ -8,7 +8,7 @@
         public $whatsapp;
         public $departamento;
         public $ciudad;
-        public $encargado;
+        public $identificacion;
         public $lugar;
     }
 ?>

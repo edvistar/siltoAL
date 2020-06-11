@@ -2,7 +2,6 @@
 
     class RutaDAO{
         public $id_ruta;
-        public $destino;
         public $fecha_ruta;
         public $hora_salida;
         public $hora_llegada;
@@ -12,6 +11,8 @@
         public $identificacion;
         public $placa;
         public $id_centro;
+        public $id_producto;
+        public $id_solicitud;
     }
 
 ?>

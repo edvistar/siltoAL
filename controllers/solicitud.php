@@ -33,7 +33,8 @@
                 $solicitud->id_solicitud     = $_POST['id_solicitud'];
                 $solicitud->solicitud        = $_POST['solicitud'];
                 $solicitud->descripcion      = $_POST['descripcion'];
-                $solicitud->cantidad_kilos   = $_POST['cantidad_kilos'];
+                $solicitud->id_centro   = $_POST['id_centro'];
+                $solicitud->identificacion   = $_POST['identificacion'];
 
                 $this->view->solicitud = $solicitud;
                 $this->view->mensaje = "Solicitud actualizado correctamente";
@@ -46,7 +47,7 @@
         }
 
         function crear(){
-            if(isset($_POST["id_solicitud"])){
+            if(isset($_POST["descripcion"])){
                 if($this->model->create($_POST)){
                     $this->view->mensaje = "Centro creado correctamente";
                     $solicitudes = $this->view->datos = $this->model->read();
@@ -58,6 +59,10 @@
                     $this->view->render('admin/listasolicitud');
                 }
             }else{
+                $usuarios = $this->view->datos['ddl_usuarios'] = $this->model->cargarEncargado();
+                $this->view->ddl_usuarios = $usuarios;
+                $centros = $this->view->datos['ddl_centros'] = $this->model->cargarCentro();
+                $this->view->ddl_centros = $centros;
                 $this->view->render('admin/crearsolicitud');
             }
             function leer($param = null){

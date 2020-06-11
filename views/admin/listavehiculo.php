@@ -46,7 +46,7 @@
                                                 <td><?php echo $vehiculo->seguro;?></td>
                                                 <td><?php echo $vehiculo->tecnomecanica; ?></td>
                                                 <td><?php echo $vehiculo->tipo_vehiculo;?></td>
-                                                <td><?php echo $vehiculo->conductor;?></td>
+                                                <td><?php echo $vehiculo->identificacion;?></td>
                                                 <td><?php echo $vehiculo->costo_flete;?></td>
                                                 <td><?php echo $vehiculo->gps;?></td>
                                                 <td><?php echo $vehiculo->estado;?></td>
