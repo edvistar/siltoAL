@@ -16,8 +16,7 @@
                     
                     $item->id_producto = $row['id_producto'];
                     $item->nombre      = $row['nombre'];
-                    $item->peso        = $row['peso'];
-                    $item->costo       = $row['costo'];
+                    $item->peso       = $row['peso'];
 
                     array_push($items, $item);
                 }
@@ -41,7 +40,7 @@
                     $item->id_producto = $row['id_producto'];
                     $item->nombre      = $row['nombre'];
                     $item->peso        = $row['peso'];
-                    $item->costo       = $row['costo'];
+                    
                 }
                 return $item;
             }catch(PDOException $e){
@@ -54,7 +53,7 @@
         public function create($datos = null){
             // insertar
             //if(!isset($datos)){
-                $sentenceSQL="INSERT INTO producto( id_producto, nombre, peso, costo) VALUES( :id_producto, :nombre, :peso, :costo)";
+                $sentenceSQL="INSERT INTO producto( id_producto, nombre, peso,) VALUES( :id_producto, :nombre, :peso, )";
                 $connexionDB=$this->db->connect();
                 $query = $connexionDB->prepare($sentenceSQL);
 
@@ -62,8 +61,8 @@
                     $query->execute([
                                     'id_producto' => $datos['id_producto'],
                                     'nombre'      => $datos['nombre'],
-                                    'peso'        => $datos['peso'],
-                                    'costo'       => $datos['costo']
+                                    'peso'        => $datos['peso']
+                                    
                     ]);
                     return true;
                 }catch(PDOException $e){
@@ -78,13 +77,13 @@
         }
 
         public function update($item){
-            $query = $this->db->connect()->prepare('UPDATE producto SET nombre = :nombre,peso = :peso, costo = :costo WHERE id_producto = :id_producto');
+            $query = $this->db->connect()->prepare('UPDATE producto SET nombre = :nombre, peso = :peso WHERE id_producto = :id_producto');
             try{
                 $query->execute([
                     'id_producto' => $item['id_producto'],
                     'nombre'      => $item['nombre'],
                     'peso'        => $item['peso'],
-                    'costo'       => $item['costo']
+                    
                 ]);
                 return true;
             }catch(PDOException $e){

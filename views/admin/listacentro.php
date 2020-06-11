@@ -48,7 +48,7 @@
                                                 <td><?php echo $centro->whatsapp; ?>
                                                 <td><?php echo $centro->departamento; ?>
                                                 <td><?php echo $centro->ciudad; ?>
-                                                <td><?php echo $centro->nombreUsuario; ?>
+                                                <td><?php echo $centro->identificacion; ?>
                                                 <td><?php echo $centro->lugar; ?>
                                                 <td><a href="<?php echo constant('URL') . 'centro/leer/' . $centro->id_centro; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a></td>
                                                 <td><button class="bEliminar" data-controlador="centro" data-accion="eliminar" data-id="<?php echo $centro->id_centro; ?>"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</button></td>

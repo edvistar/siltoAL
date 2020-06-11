@@ -54,7 +54,7 @@
                 $centro->whatsapp      = $_POST['whatsapp'];
                 $centro->departamento  = $_POST['departamento'];
                 $centro->ciudad        = $_POST['ciudad'];
-                $centro->nombreUsuario = $_POST['nombreUsuario'];
+                $centro->identificacion = $_POST['identificacion'];
                 $centro->lugar         = $_POST['lugar'];
     
     

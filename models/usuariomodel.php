@@ -8,7 +8,7 @@ class UsuarioModel extends Model{
 
 
     public function create($datos = null){
-        $sentenceSQL="INSERT INTO usuario (identificacion, nombreUsuario, apellidoUsuario, emailUsuario, pass, telefonoUsuario, whatsappUsuario, cargo, estado, foto) VALUES (:identificacion, :nombreUsuario, :apellidoUsuario, :emailUsuario, :pass, :telefonoUsuario, :whatsappUsuario, :cargo, :estado, :foto)";
+        $sentenceSQL="INSERT INTO usuario (identificacion, nombre, apellido, email, pass, telefono, whatsapp, cargo, estado, foto) VALUES (:identificacion, :nombre, :apellido, :email, :pass, :telefono, :whatsapp, :cargo, :estado, :foto)";
         $connexionDB=$this->db->connect();
         $query = $connexionDB->prepare($sentenceSQL);
 
@@ -19,12 +19,12 @@ class UsuarioModel extends Model{
             $query->execute([
     
                 'identificacion'   => $datos['identificacion'],
-                'nombreUsuario'    => $datos['nombreUsuario'],
-                'apellidoUsuario'  => $datos['apellidoUsuario'],
-                'emailUsuario'     => $datos['emailUsuario'],
+                'nombre'    => $datos['nombre'],
+                'apellido'  => $datos['apellido'],
+                'email'     => $datos['email'],
                 'pass'             => md5($datos['pass']),
-                'telefonoUsuario'  => $datos['telefonoUsuario'],
-                'whatsappUsuario'  => $datos['whatsappUsuario'],
+                'telefono'  => $datos['telefono'],
+                'whatsapp'  => $datos['whatsapp'],
                 'cargo'            => $datos['cargo'],
                 'estado'           => $datos['estado'],
                 'foto'             => "public/img/contact/".$_FILES['foto']['name']
@@ -48,11 +48,11 @@ class UsuarioModel extends Model{
             while($row = $query->fetch()){
                 $item = new UsuarioDAO();
                 $item->identificacion    = $row['identificacion'];
-                $item->nombreUsuario     = $row['nombreUsuario'];
-                $item->apellidoUsuario   = $row['apellidoUsuario'];
-                $item->emailUsuario      = $row['emailUsuario'];
-                $item->telefonoUsuario   = $row['telefonoUsuario'];
-                $item->whatsappUsuario   = $row['whatsappUsuario'];
+                $item->nombre     = $row['nombre'];
+                $item->apellido   = $row['apellido'];
+                $item->email      = $row['email'];
+                $item->telefono   = $row['telefono'];
+                $item->whatsapp   = $row['whatsapp'];
                 $item->cargo             = $row['cargo'];
                 $item->estado            = $row['estado'];
                 $item->fecha_ingreso     = $row['fecha_ingreso'];
@@ -78,12 +78,12 @@ class UsuarioModel extends Model{
             
             while($row = $query->fetch()){
                 $item->identificacion    = $row['identificacion'];
-                $item->nombreUsuario     = $row['nombreUsuario'];
-                $item->apellidoUsuario   = $row['apellidoUsuario'];
-                $item->emailUsuario      = $row['emailUsuario'];
-                $item->telefonoUsuario   = $row['telefonoUsuario'];
+                $item->nombre     = $row['nombre'];
+                $item->apellido   = $row['apellido'];
+                $item->email      = $row['email'];
+                $item->telefono   = $row['telefono'];
                 $item->pass              = $row['pass'];
-                $item->whatsappUsuario   = $row['whatsappUsuario'];
+                $item->whatsapp   = $row['whatsapp'];
                 $item->cargo             = $row['cargo'];
                 $item->estado            = $row['estado'];
                 $item->fecha_ingreso     = $row['fecha_ingreso'];
@@ -99,7 +99,7 @@ class UsuarioModel extends Model{
     }
 
     public function update($item){
-        $query = $this->db->connect()->prepare('UPDATE usuario SET nombreUsuario = :nombreUsuario, apellidoUsuario = :apellidoUsuario, emailUsuario = :emailUsuario, pass = :pass, telefonoUsuario = :telefonoUsuario, whatsappUsuario = :whatsappUsuario, cargo = :cargo, estado = :estado, foto = :foto WHERE identificacion = :identificacion');
+        $query = $this->db->connect()->prepare('UPDATE usuario SET nombre = :nombre, apellido = :apellido, email = :email, pass = :pass, telefono = :telefono, whatsapp = :whatsapp, cargo = :cargo, estado = :estado, foto = :foto WHERE identificacion = :identificacion');
 
         $foto = $_FILES['foto']['name'];
         $fotoriginal=$_POST['fotoriginal'];
@@ -116,12 +116,12 @@ class UsuarioModel extends Model{
             $query->execute([
 
                 'identificacion'  => $item['identificacion'],
-                'nombreUsuario'          => $item['nombreUsuario'],
-                'apellidoUsuario'        => $item['apellidoUsuario'],
-                'emailUsuario'    => $item['emailUsuario'],
+                'nombre'          => $item['nombre'],
+                'apellido'        => $item['apellido'],
+                'email'    => $item['email'],
                 'pass'            => md5($item['pass']), 
-                'telefonoUsuario' => $item['telefonoUsuario'],
-                'whatsappUsuario' => $item['whatsappUsuario'],
+                'telefono' => $item['telefono'],
+                'whatsapp' => $item['whatsapp'],
                 'cargo'           => $item['cargo'],
                 'estado'          => $item['estado'],
                 'foto'            => $foto,
