@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title><?php  echo constant('NOMBRESITIO'); ?></title>
+<?php require 'views/head.php'; ?>
 </head>
 <body>
 
@@ -20,12 +20,6 @@
                 <div class="panel-body">
                 <form action="<?php echo constant('URL'); ?>ruta/crear" method="POST">
                     <div class="row">
-                        <!-- <div class="form-group col-md-6">
-                            <label for="id_ruta">Id Ruta</label>
-                            <input type="number" class="form-control" name="id_ruta" id="id_ruta">
-                            <small id="id_rutaHelp" class="form-text text-muted">Ingrese el número de Id Ruta</small>
-                        </div> -->
-                       
 
                         <div class="form-group col-md-6">
                             <label for="destino">Destino</label>
@@ -84,11 +78,6 @@
                                 </select>
                             </div>
 
-                        <!-- <div class="form-group col-md-6">
-                            <label for="placa">Placa</label>
-                            <input type="text" class="form-control" name="placa" id="placa">
-                            <small id="placaHelp" class="form-text text-muted">Placa</small>
-                        </div> -->
                         <div class="form-group col-md-6">
                                 <label for="placa">Placa</label>
                                 <select class="form-control" id="placa" name="placa" style="width:100%">
@@ -109,11 +98,6 @@
                                                 ?>
                                 </select>
                             </div>
-                        <!-- <div class="form-group col-md-6">
-                            <label for="id_centro">Id Centro</label>
-                            <input type="text" class="form-control" name="id_centro" id="id_centro">
-                            <small id="id_centroHelp" class="form-text text-muted">Id Centro</small>
-                        </div> -->
                          <div class="form-group col-md-6">
                                 <label for="id_centro">Centro Solicitante</label>
                                 <select class="form-control" id="id_centro" name="id_centro" style="width:100%">

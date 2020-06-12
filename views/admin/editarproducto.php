@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title><?php  echo constant('NOMBRESITIO'); ?></title>
+<?php require 'views/head.php'; ?>
 </head>
 </head>
 <body>
@@ -53,8 +53,6 @@
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
     </div>
 </div><br>
-
     <?php require 'views/footer.php'; ?>
-    
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title><?php  echo constant('NOMBRESITIO'); ?></title>
+<?php require 'views/head.php'; ?>
 </head>
 <body>
 
@@ -53,8 +53,7 @@
                                 ?>
                                     </tbody>
                                 </table>
-                            </div>
-                            <div class="custom-pagination">
+                                <div class="custom-pagination">
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination">
                                         <li class="page-item"><a class="page-link" href="#">Previous</a></li>
@@ -65,12 +64,12 @@
                                     </ul>
                                 </nav>
                             </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     <?php require 'views/footer.php'; ?>
-    <script src="<?php echo constant('URL'); ?>public/js/main.js"></script>
 </body>
 </html>

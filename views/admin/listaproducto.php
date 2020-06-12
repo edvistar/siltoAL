@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title><?php  echo constant('NOMBRESITIO'); ?></title></head>
+<?php require 'views/head.php'; ?>
 <body>
 
     <?php require 'views/header.php'; ?>
@@ -36,7 +36,6 @@
                                             <td><?php echo $producto->id_producto; ?>
                                             <td><?php echo $producto->nombre; ?>
                                             <td><?php echo $producto->peso; ?>
-                                           
                                             <td><a href="<?php echo constant('URL') . 'producto/leer/' . $producto->id_producto; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a></td>
                                             <td><button class="bEliminar" data-controlador="producto" data-accion="eliminar" data-id="<?php echo $producto->id_producto; ?>"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</button></td>
                                         </tr>
@@ -50,18 +49,18 @@
                             ?>
                                 </tbody>
                             </table><br>
-                        </div>
-                        <!-- paginacion de las hojas -->
-                        <div class="custom-pagination">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination">
-                                    <li class="page-item"><a class="page-link" href="">Previous</a></li>
-                                    <li class="page-item"><a class="page-link" href="">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="">Next</a></li>
-                                </ul>
-                            </nav>
+                            <!-- paginacion de las hojas -->
+                            <div class="custom-pagination">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination">
+                                        <li class="page-item"><a class="page-link" href="">Previous</a></li>
+                                        <li class="page-item"><a class="page-link" href="">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="">Next</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -69,6 +68,5 @@
         </div>
     </div>
     <?php require 'views/footer.php'; ?>
-    <script src="<?php echo constant('URL'); ?>/public/js/main.js"></script>
 </body>
 </html>

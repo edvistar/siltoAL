@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title><?php echo constant ('NOMBRESITIO');?></title>
+<?php require 'views/head.php'; ?>
 </head>
 <body>
 
@@ -42,20 +42,28 @@
                             <input type="date" class="form-control" name="tecnomecanica" id="tecnomecanica">
                             <small id="tecnomecanicaHelp" class="form-text text-muted">Fecha de vencimiento del la tecnomecánica del vehículo</small>
                         </div>
-
                         <div class="form-group col-md-6">
                             <label for="tipo_vehiculo">Tipo de vehículo</label>
-                            <input type="text" class="form-control" name="tipo_vehiculo" id="tipo_vehiculo">
+                            <select  class="form-control" name="tipo_vehiculo" id="tipo_vehiculo" required>
+                                <option selected value="">Seleccione tipo de vehiculo</option>
+                                <option value="furgon">Furgon</option>
+                                <option value="tractocaminon">Tractocamion</option>
+                                <option value="estaca">Estacas</option>
+                            </select>
                             <small id="tipo_vehiculoHelp" class="form-text text-muted">Tipo de vehículo</small>
                         </div>
-
-                        <!-- <div class="form-group col-md-6">
-                            <label for="conductor">Nombre del conductor </label>
-                            <input type="text" class="form-control" name="conductor" id="conductor">
-                            <small id="nombreHelp" class="form-text text-muted">Nombre del conductor</small>
-                        </div> -->
                         <div class="form-group col-md-6">
-                                <label for="identificacion">Encargado</label>
+                            <label for="estado">Estado en la empresa</label>
+                            <select id="estado"  name="estado" class="form-control" required>
+                                <option selected value="">Seleccione estado</option>
+                                <option value="contratista">Contratista</option>
+                                <option value="propiedad">Propiedad</option>
+                            </select>
+                            <small id="estadopHelp" class="form-text text-muted">Diligencie el el estado del vehiculo en la empresa</small>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                                <label for="identificacion">Conductor</label>
                                 <select class="form-control" id="identificacion" name="identificacion" style="width:100%">
                                     <option selected value="">seleccione...</option>
                                                 <small id="identificacionHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
@@ -75,26 +83,17 @@
                                 </select>
                             </div>
 
-                        <div class="form-group col-md-6">
+                        <!-- <div class="form-group col-md-6">
                             <label for="costo_flete">Costo del flete</label>
                             <input type="text" class="form-control" name="costo_flete" id="costo_flete">
                             <small id="fleteHelp" class="form-text text-muted">Valor del flete</small>
-                        </div>
+                        </div> -->
 
                         <div class="form-group col-md-6">
-                            <label for="gps">GPS</label>
-                            <input type="text" class="form-control" name="gps" id="gps">
-                            <small id="gpsHelp" class="form-text text-muted">GPS incorporado en el vehículo</small>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="estado">Estado</label>
-                            <input type="text" class="form-control" name="estado" id="estado">
-                            <small id="estadoHelp" class="form-text text-muted">Estado del vehículo en la empresa</small>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="fecha_registro">Fecha registro</label>
-                            <input type="date" class="form-control" name="fecha_registro" id="fecha_registro">
-                            <small id=fecha_registroHelp" class="form-text text-muted">Fecha de Registro</small>
+                            <label for="gps" >GPS</label><br>
+                            <input class="custom-control-input"required type="radio" name="gps" id="gps1" value="si" checked>SI
+                            <input class="custom-control-input" type="radio" name="gps" id="gps0" value="no">NO<br>
+                            <small id="whatsappHelp" class="form-text text-muted">Diligencie si el vehiculo tiene gps</small>
                         </div>
                     </div>
                     <div class="text-center ">
