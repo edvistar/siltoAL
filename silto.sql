@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-06-2020 a las 00:03:12
+-- Tiempo de generación: 12-06-2020 a las 20:25:09
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.7
 
@@ -45,7 +45,7 @@ CREATE TABLE `centro` (
   `nombre` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Nombre  de centro',
   `email` varchar(50) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Email centro',
   `telefono` bigint(20) NOT NULL COMMENT 'Numero cel centro',
-  `whatsapp` tinyint(1) DEFAULT NULL COMMENT 'Whatsapp de centro',
+  `whatsapp` varchar(2) COLLATE utf8_spanish2_ci DEFAULT NULL COMMENT 'Whatsapp de centro',
   `departamento` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Departamento de centro',
   `ciudad` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Ciudad de centro',
   `lugar` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Lugar de centro o bodega',
@@ -57,7 +57,7 @@ CREATE TABLE `centro` (
 --
 
 INSERT INTO `centro` (`id_centro`, `nombre`, `email`, `telefono`, `whatsapp`, `departamento`, `ciudad`, `lugar`, `identificacion`) VALUES
-(34545, 'OcatiCotas', 'lavaca@gmail.com', 3138252764, 0, '21', '21', 'Chia', 22656626);
+(34545, 'OcatiCotas', 'miguelpam6@gmail.com', 3138252764, 'SI', '23', '23', 'Chia', 1078371526);
 
 -- --------------------------------------------------------
 
@@ -188,8 +188,8 @@ INSERT INTO `producto` (`id_producto`, `nombre`, `peso`) VALUES
 CREATE TABLE `rutas` (
   `id_ruta` int(11) NOT NULL COMMENT 'Identificación de ruta',
   `fecha_ruta` date NOT NULL COMMENT 'Fecha de ruta',
-  `hora_salida` date NOT NULL COMMENT 'hora de salida de vehículo de centro',
-  `hora_llegada` date NOT NULL COMMENT 'hora de llegada de vehículo a centro',
+  `hora_salida` time NOT NULL COMMENT 'hora de salida de vehículo de centro',
+  `hora_llegada` time NOT NULL COMMENT 'hora de llegada de vehículo a centro',
   `descripcion` varchar(255) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Descripción de la ruta',
   `tipo_ruta` varchar(15) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Tipo de ruta solocitada.',
   `precinto` varchar(20) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Numero de presinto del tipo de ruta solicitada.',
@@ -205,8 +205,7 @@ CREATE TABLE `rutas` (
 --
 
 INSERT INTO `rutas` (`id_ruta`, `fecha_ruta`, `hora_salida`, `hora_llegada`, `descripcion`, `tipo_ruta`, `precinto`, `identificacion`, `placa`, `id_centro`, `id_producto`, `id_solicitud`) VALUES
-(1, '2020-06-11', '0000-00-00', '0000-00-00', 'Carga especial', 'Nacional', '123456', 20199375, 'AD343', 34545, 78, 1),
-(2, '2020-06-11', '0000-00-00', '0000-00-00', 'Carga especial', 'Local', '1234567', 1683809522, 'AD343', 34545, 78, 4);
+(4, '2020-06-12', '09:13:00', '13:17:00', 'Carga especial', 'Nacional', '5555', 20199375, 'AD343', 34545, 78, 4);
 
 -- --------------------------------------------------------
 
@@ -264,7 +263,7 @@ CREATE TABLE `usuario` (
   `apellido` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Apellido  de user',
   `email` varchar(50) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Email de user',
   `telefono` int(20) NOT NULL COMMENT 'Numero de celular',
-  `whatsapp` tinyint(1) NOT NULL COMMENT 'Whatsapp',
+  `whatsapp` varchar(2) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Whatsapp',
   `cargo` varchar(15) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Rol de user',
   `estado` text COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Estado del User',
   `fecha_ingreso` datetime NOT NULL DEFAULT current_timestamp() COMMENT 'Fecha de ingreso user',
@@ -277,9 +276,11 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`identificacion`, `nombre`, `apellido`, `email`, `telefono`, `whatsapp`, `cargo`, `estado`, `fecha_ingreso`, `foto`, `pass`) VALUES
-(20199375, 'Patricia lara', 'Lara Dimate', 'lida@gmail.com', 2147483647, 1, 'Seleccionar', 'activo', '2020-06-11 06:45:03', '', '8459d70c344917c311aeac9216969e3b'),
-(22656626, 'Victor Eduardo', 'Hoyos Sandoval', 'victorhoyoscolombia@gmail.com', 2147483647, 1, 'coordinador', 'activo', '2020-06-09 21:46:40', 'public/img/contact/', 'fcea920f7412b5da7be0cf42b8c93759'),
-(1683809522, 'luis', 'joder', 'luisjoder@gmail.com', 2123252764, 1, 'supervisor', 'activo', '2020-06-22 00:00:00', '', '1234567');
+(20199375, 'Patricia lara', 'Lara Dimate', 'lida@gmail.com', 2147483647, 'NO', 'Seleccionar', 'activo', '2020-06-11 06:45:03', '', 'ed7bf4b59cd04ac01b0dfc3664769a73'),
+(22656626, 'Victor Eduardo', 'Hoyos Sandoval', 'victorhoyoscolombia@gmail.com', 2147483647, 'SI', 'conductor', 'activo', '2020-06-09 21:46:40', 'public/img/contact/', 'fcea920f7412b5da7be0cf42b8c93759'),
+(1070007809, 'Alexandra ', 'Castro Clavijo', 'jacastro9087@misena.edu.co', 2147483647, 'SI', 'administrador', 'activo', '2020-06-11 19:16:19', 'public/img/contact/alexa.png', '866b425d671cb40b206e02673b199b92'),
+(1078371526, 'Jhonatan', 'Lopez Gonzalez', 'jrlopez62@misena.edu.co', 2147483647, 'SI', 'administrador', 'activo', '2020-06-11 19:19:35', 'public/img/contact/lopez.jpg', '1f32aa4c9a1d2ea010adcf2348166a04'),
+(1683809522, 'luis', 'joder', 'luisjoder@gmail.com', 2123252764, 'SI', 'supervisor', 'activo', '2020-06-22 00:00:00', '', 'fcea920f7412b5da7be0cf42b8c93759');
 
 -- --------------------------------------------------------
 
@@ -294,7 +295,7 @@ CREATE TABLE `vehiculo` (
   `tecnomecanica` varchar(11) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Tecnomecanica vehiculo',
   `tipo_vehiculo` varchar(11) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Tipo de vehiculo de carga.',
   `costo_flete` int(11) NOT NULL COMMENT 'Costo de plete por carga',
-  `gps` tinyint(4) NOT NULL COMMENT 'GPS de vehiculo',
+  `gps` varchar(2) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'GPS de vehiculo',
   `estado` varchar(11) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Estao de vehiculo en la empresa propiedad o contratista.',
   `identificacion` bigint(20) NOT NULL COMMENT 'Nombre de conductor.',
   `fecha_registro` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'Fecha del registro'
@@ -305,7 +306,8 @@ CREATE TABLE `vehiculo` (
 --
 
 INSERT INTO `vehiculo` (`placa`, `capacidad`, `seguro`, `tecnomecanica`, `tipo_vehiculo`, `costo_flete`, `gps`, `estado`, `identificacion`, `fecha_registro`) VALUES
-('AD343', '10', 'Omega', '2020-06-11', 'Furgon', 200000, 0, 'excelente', 1683809522, '2020-06-11 05:00:00');
+('AD343', '10', 'Omega', '2020-06-11', 'Furgon', 200000, '0', 'excelente', 1683809522, '2020-06-11 05:00:00'),
+('ghy56', '15 tonelads', '23123123', '2020-06-11', 'furgon', 0, 'si', 'contratista', 1070007809, '2020-06-12 19:55:34');
 
 --
 -- Índices para tablas volcadas
@@ -379,7 +381,7 @@ ALTER TABLE `departamentos`
 -- AUTO_INCREMENT de la tabla `rutas`
 --
 ALTER TABLE `rutas`
-  MODIFY `id_ruta` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificación de ruta', AUTO_INCREMENT=3;
+  MODIFY `id_ruta` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificación de ruta', AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `solicitud`
