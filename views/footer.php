@@ -1,15 +1,15 @@
 <div class="footer-copyright-area">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="footer-copy-right">
-                            <p>Realizacion SENA  CDA Chia <a href="https://colorlib.com/wp/templates/">WAPV </a> All rights reserved.</p>
-                        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-copy-right">
+                        <p>Realizacion SENA  CDA Chia <a href="https://colorlib.com/wp/templates/">WAPV </a> All rights reserved.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
     <!-- jquery
             ============================================ -->
             <script src="<?php echo constant('URL'); ?>public/js/vendor/jquery-1.11.3.min.js"></script>

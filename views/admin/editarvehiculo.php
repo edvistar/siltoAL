@@ -16,7 +16,7 @@
                 <h3><i class="fa fa-truck" aria-hidden="true"></i> Editar Vehículo</h3>
                 <p>Todos los campos son obligatorios</p>
             </div>
-            <h1>ID <?php echo strtoupper($this->vehiculo->placa); ?></h1>
+            <h1>ID = <?php echo strtoupper($this->vehiculo->placa); ?></h1>
             <div><?php echo $this->mensaje; ?></div>
             <div class="hpanel">
                 <div class="panel-body">
@@ -24,7 +24,7 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="placa">Placa de vehículo</label>
-                            <input type="text" class="form-control" value="<?php echo $this->vehiculo->placa; ?>" name="placa" id="placa">
+                            <input type="text" class="form-control" value="<?php echo $this->vehiculo->placa; ?>" name="placa" id="placa" readonly>
                             <small id="placaHelp" class="form-text text-muted">Digite placas del vehículo</small>
                         </div>
          
@@ -78,8 +78,8 @@
                         
                         <div class="form-group col-md-6">
                             <label for="fecha_registro">Fecha registro</label>
-                            <input type="date" class="form-control" value="<?php echo $this->vehiculo->fecha_registro; ?>" name="fecha_registro" id="fecha_registro">
-                            <small id=fecha_registroHelp" class="form-text text-muted">Fecha de Registro</small>
+                            <input type="date" class="form-control" value="<?php echo $this->vehiculo->fecha_registro; ?>" name="fecha_registro" id="fecha_registro" readonly>
+                            <small id="fecha_registroHelp" class="form-text text-muted">Fecha de Registro</small>
                         </div>
                     </div>
                     <div class="text-center">

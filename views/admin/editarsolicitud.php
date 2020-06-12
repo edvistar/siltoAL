@@ -16,7 +16,7 @@
                 <h3><i class="fa fa-edit" aria-hidden="true"></i> Editar  Solicitud De vehículo</h3>
                 <p>Todos los campos son obligatorios</p>
             </div>
-            <h1><?php echo strtoupper($this->solicitud->id_solicitud); ?></h1>
+            <h1>ID solicitud : <?php echo strtoupper($this->solicitud->id_solicitud); ?></h1>
             <div><?php echo $this->mensaje; ?></div>
             <div class="hpanel">
                 <div class="panel-body">
@@ -33,15 +33,10 @@
                             <input type="date" class="form-control" value="<?php echo $this->solicitud->solicitud; ?>" name="solicitud" id="solicitud">
                             <small id="solicitudHelp" class="form-text text-muted">Diligencie la solicitud de ruta</small>
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             <label for="descripcion">Descripciòn</label>
-                            <input type="text" class="form-control" value="<?php echo $this->solicitud->descripcion; ?>" name="descripcion" id="descripcion">
+                            <textarea  class="form-control" name="descripcion" id="descripcion" cols="30" rows="10" value="<?php echo $this->solicitud->descripcion; ?>"></textarea>
                             <small id="descripcionHelp" class="form-text text-muted">Diligencie el descripcion de la solicitud.</small>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="cantidad_kilos">Cantidad kilos</label>
-                            <input type="number" class="form-control" value="<?php echo $this->solicitud->cantidad_kilos; ?>" name="cantidad_kilos" id="cantidad_kilos">
-                            <small id="cantidad_kilosHelp" class="form-text text-muted">Diligencie la cantidad de kilos a trasportar.</small>
                         </div>
                     </div>
                     <div class="text-center">

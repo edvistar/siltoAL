@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title><?php echo constant ('NOMBRESITIO');?></title>
+<?php require 'views/head.php'; ?>
 </head>
 <body>
 
@@ -25,7 +25,6 @@
                                             <th  scope="col">Tecnomecánica</th>
                                             <th  scope="col">Tipo vehiculo</th>
                                             <th  scope="col">Conductor</th>
-                                            <th  scope="col">Costo flete</th>
                                             <th  scope="col">GPS</th>
                                             <th  scope="col">Estado</th>
                                             <th  scope="col">Fecha registro</th>
@@ -47,7 +46,6 @@
                                                 <td><?php echo $vehiculo->tecnomecanica; ?></td>
                                                 <td><?php echo $vehiculo->tipo_vehiculo;?></td>
                                                 <td><?php echo $vehiculo->identificacion;?></td>
-                                                <td><?php echo $vehiculo->costo_flete;?></td>
                                                 <td><?php echo $vehiculo->gps;?></td>
                                                 <td><?php echo $vehiculo->estado;?></td>
                                                 <td><?php echo $vehiculo->fecha_registro;?></td>
@@ -65,17 +63,17 @@
                                 ?>
                                     </tbody>
                                 </table>
-                            </div>
-                            <div class="custom-pagination">
-                                <nav aria-label="Page navigation example">
-                                    <ul class="pagination">
-                                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                    </ul>
-                                </nav>
+                                <div class="custom-pagination">
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination">
+                                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -83,6 +81,5 @@
             </div>
         </div>
     <?php require 'views/footer.php'; ?>
-    <script src="<?php echo constant('URL'); ?>/public/js/main.js"></script>
 </body>
 </html>

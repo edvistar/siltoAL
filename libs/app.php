@@ -18,7 +18,7 @@ class App{
                 require $archivoController;
                 $controller = new Main();
                 $controller->render();
-                //$controller->loadModel('index');
+                // $controller->loadModel('index');
                 return false;
             }else{
                 $archivoController = 'controllers/' . $_SESSION['url'][0] . '.php';

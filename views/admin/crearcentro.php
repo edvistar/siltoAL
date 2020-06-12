@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title><?php  echo constant('NOMBRESITIO'); ?></title>
+<?php require 'views/head.php'; ?>
 </head>
 <body>
 
@@ -42,10 +42,10 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="whatsapp">Whatsapp</label><br>
-                                <input type="radio"  name="whatsapp" id="whatsapp1" value="si" checked> SI
-                                <input type="radio"  name="whatsapp" id="whatsapp2" value="no" checked> NO <br>
-                                <small id="whatsappHelp" class="form-text text-muted">El numero indicado tiene whatsapp</small>
-                            </div>
+                                    <input class="custom-control-input"required type="radio" name="whatsapp" id="whatsapp1" value="SI" checked>SI
+                                    <input class="custom-control-input" type="radio" name="whatsapp" id="whatsapp0" value="NO">NO<br>
+                                    <small id="whatsappHelp" class="form-text text-muted">Confirme si tiene whatsapp el numero de telefono ingresado</small>
+                                </div>
                             <div class="form-group col-lg-6">
                                 <label for="lugar">Lugar</label>
                                 <input type="text" class="form-control" name="lugar" id="lugar">
