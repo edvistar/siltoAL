@@ -9,7 +9,7 @@
         public function create($datos = null){
             // insertar
             //if(!isset($datos)){
-                $sentenceSQL="INSERT INTO centro( id_centro, nombre, email, telefono, whatsapp, departamento, ciudad, nombre, lugar) VALUES( :id_centro, :nombre, :email, :telefono, :whatsapp, :departamento, :ciudad, :nombre, :lugar)";
+                $sentenceSQL="INSERT INTO centro( id_centro, nombre, email, telefono, whatsapp, departamento, ciudad, identificacion, lugar) VALUES( :id_centro, :nombre, :email, :telefono, :whatsapp, :departamento, :ciudad, :identificacion, :lugar)";
                 $connexionDB=$this->db->connect();
                 $query = $connexionDB->prepare($sentenceSQL);
 
@@ -22,7 +22,7 @@
                                     'whatsapp'        => $datos['whatsapp'],
                                     'departamento'    => $datos['departamento'],
                                     'ciudad'          => $datos['ciudad'],
-                                    'nombre'  => $datos['nombre'],
+                                    'identificacion'  => $datos['identificacion'],
                                     'lugar'           => $datos['lugar']
                                    
                                     
