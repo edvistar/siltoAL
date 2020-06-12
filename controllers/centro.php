@@ -34,7 +34,8 @@
 
             //session_start();
             $_SESSION["id_verCentro"] = $centro->id_centro;
-
+            $usuarios = $this->view->datos['ddl_usuarios'] = $this->model->cargarEncargado();
+            $this->view->ddl_usuarios = $usuarios;
             $this->view->centro = $centro;
             $this->view->render('admin/editarcentro');
         }
@@ -47,22 +48,24 @@
                 $centro = new CentroDAO();
 
                 $centro->id_centro     = $id;
-                $centro->id_centro     = $_POST['id_centro'];
-                $centro->nombre        = $_POST['nombre'];
+                //$centro->id_centro     = $_POST['id_centro'];
+                //$centro->nombre        = $_POST['nombre'];
                 $centro->email         = $_POST['email'];
                 $centro->telefono      = $_POST['telefono'];
                 $centro->whatsapp      = $_POST['whatsapp'];
-                $centro->departamento  = $_POST['departamento'];
-                $centro->ciudad        = $_POST['ciudad'];
+                //$centro->departamento  = $_POST['departamento'];
+                //$centro->ciudad        = $_POST['ciudad'];
                 $centro->identificacion = $_POST['identificacion'];
                 $centro->lugar         = $_POST['lugar'];
     
-    
+                
                 $this->view->centro = $centro;
                 $this->view->mensaje = "Centro actualizado correctamente";
             }else{
+                
                 $this->view->mensaje = "No se pudo actualizar al centro";
             }
+            
             $centros = $this->view->datos = $this->model->read();
             $this->view->centros = $centros;
             $this->view->render('admin/listacentro');

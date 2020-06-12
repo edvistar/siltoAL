@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-06-2020 a las 15:39:23
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.2.31
+-- Tiempo de generación: 12-06-2020 a las 20:25:09
+-- Versión del servidor: 10.3.16-MariaDB
+-- Versión de PHP: 7.3.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -56,7 +57,7 @@ CREATE TABLE `centro` (
 --
 
 INSERT INTO `centro` (`id_centro`, `nombre`, `email`, `telefono`, `whatsapp`, `departamento`, `ciudad`, `lugar`, `identificacion`) VALUES
-(34545, 'OcatiCotas', 'lavaca@gmail.com', 3138252764, '1', '21', '21', 'Chia', 0);
+(34545, 'OcatiCotas', 'miguelpam6@gmail.com', 3138252764, 'SI', '23', '23', 'Chia', 1078371526);
 
 -- --------------------------------------------------------
 
@@ -187,8 +188,8 @@ INSERT INTO `producto` (`id_producto`, `nombre`, `peso`) VALUES
 CREATE TABLE `rutas` (
   `id_ruta` int(11) NOT NULL COMMENT 'Identificación de ruta',
   `fecha_ruta` date NOT NULL COMMENT 'Fecha de ruta',
-  `hora_salida` date NOT NULL COMMENT 'hora de salida de vehículo de centro',
-  `hora_llegada` date NOT NULL COMMENT 'hora de llegada de vehículo a centro',
+  `hora_salida` time NOT NULL COMMENT 'hora de salida de vehículo de centro',
+  `hora_llegada` time NOT NULL COMMENT 'hora de llegada de vehículo a centro',
   `descripcion` varchar(255) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Descripción de la ruta',
   `tipo_ruta` varchar(15) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Tipo de ruta solocitada.',
   `precinto` varchar(20) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Numero de presinto del tipo de ruta solicitada.',
@@ -204,8 +205,7 @@ CREATE TABLE `rutas` (
 --
 
 INSERT INTO `rutas` (`id_ruta`, `fecha_ruta`, `hora_salida`, `hora_llegada`, `descripcion`, `tipo_ruta`, `precinto`, `identificacion`, `placa`, `id_centro`, `id_producto`, `id_solicitud`) VALUES
-(1, '2020-06-11', '0000-00-00', '0000-00-00', 'Carga especial', 'Nacional', '123456', 20199375, 'AD343', 34545, 78, 1),
-(2, '2020-06-11', '0000-00-00', '0000-00-00', 'Carga especial', 'Local', '1234567', 1683809522, 'AD343', 34545, 78, 4);
+(4, '2020-06-12', '09:13:00', '13:17:00', 'Carga especial', 'Nacional', '5555', 20199375, 'AD343', 34545, 78, 4);
 
 -- --------------------------------------------------------
 
@@ -381,7 +381,7 @@ ALTER TABLE `departamentos`
 -- AUTO_INCREMENT de la tabla `rutas`
 --
 ALTER TABLE `rutas`
-  MODIFY `id_ruta` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificación de ruta', AUTO_INCREMENT=3;
+  MODIFY `id_ruta` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificación de ruta', AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `solicitud`

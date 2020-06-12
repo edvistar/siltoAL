@@ -149,7 +149,25 @@
         public function read(){
             $items = [];
             try{
-                $query = $this->db->connect()->query('SELECT * FROM rutas');
+                $query = $this->db->connect()->query('SELECT
+                rut.id_ruta, 
+                rut.fecha_ruta, 
+                rut.hora_salida, 
+                rut.hora_llegada, 
+                rut.descripcion, 
+                rut.tipo_ruta, 
+                rut.precinto, 
+                usu.nombre as nombreConductor,
+                rut.placa, 
+                cent.nombre as nombreCentro,
+                pro.nombre as nombreProducto,
+                rut.id_solicitud
+            
+                FROM rutas as rut
+                INNER JOIN usuario as usu on usu.identificacion=rut.identificacion
+                INNER JOIN centro as cent on cent.id_centro=rut.id_centro
+                INNER JOIN producto as pro on pro.id_producto=rut.id_producto
+                ');
 
                 while($row = $query->fetch()){
                     $item = new RutaDAO();
@@ -161,10 +179,10 @@
                     $item->descripcion    = $row['descripcion'];
                     $item->tipo_ruta      = $row['tipo_ruta'];
                     $item->precinto       = $row['precinto'];
-                    $item->identificacion = $row['identificacion'];
+                    $item->identificacion = $row['nombreConductor'];
                     $item->placa          = $row['placa'];
-                    $item->id_centro      = $row['id_centro'];
-                    $item->id_producto      = $row['id_producto'];
+                    $item->id_centro      = $row['nombreCentro'];
+                    $item->id_producto      = $row['nombreProducto'];
                     $item->id_solicitud      = $row['id_solicitud'];
 
                     array_push($items, $item);
