@@ -74,14 +74,44 @@
   <script>
       
       // In your Javascript (external .js resource or <script> tag)
+    // $(document).ready(function() {
+    //     $('.js-example-basic-single').select2();
+    //     listarDepartamentos();
+
+    // });
+    // $("#departamentos").change(function(){
+    //         var iddepartamento = $("#departamentos").val();
+    //         listarCiudades(iddepartamento);
+    //     })
+
+    //     $(document).ready(function() {
+    //     $('.js-example-basic-single').select2();
+    
+    //     listarDepartamentos_Editar();
+    // });
+
+    // $("#departamentos_editar").change(function(){
+    //         var iddepartamento = $("#departamentos_editar").val();
+    //         listarCiudades_Editar(iddepartamento);
+    //     })
     $(document).ready(function() {
-        $('.js-example-basic-single').select2();
-        listarDepartamentos();
-    });
-    $("#sel_departamento").change(function(){
-            var iddepartamento = $("#sel_departamento").val();
-            listarCiudades(iddepartamento);
-        })
+    $('.js-example-basic-single').select2();
+    listarDepartamentos();
+    //listarDepartamentos_Editar();
+
+});
+$("#departamentos").change(function(){
+        var iddepartamento = $("#departamentos").val();
+        listarCiudades(iddepartamento);
+    })
+
+
+$("#departamentos_editar").change(function(){
+        var iddepartamento = $("#departamentos_editar").val();
+        listarCiudades_Editar(iddepartamento);
+    })
+
+
   </script>
     </body>
     </body>
