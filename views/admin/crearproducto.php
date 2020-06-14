@@ -31,11 +31,6 @@
                                 <small id="nombreHelp" class="form-text text-muted">Ingrese el nombre del producto</small>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="peso">Peso kl</label>
-                                <input type="text" name="peso" id="peso" class="form-control" required>
-                                <small id="pesoHelp" class="form-text text-muted">Ingrese peso del producto por kilo</small>
-                            </div>
-                            <div class="form-group col-md-6">
                                 <label for="costo">Costo kl</label>
                                 <input type="text" name="costo" id="costo" class="form-control" required>
                                 <small id="costoHelp" class="form-text text-muted">Ingrese el costo del producto por kilo</small>

@@ -114,5 +114,4 @@ $("#departamentos_editar").change(function(){
 
   </script>
     </body>
-    </body>
 </html>

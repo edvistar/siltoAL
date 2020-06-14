@@ -24,7 +24,6 @@
                                 <label for="id_centro">Centro Solicitante</label>
                                 <select class="form-control" id="id_centro" name="id_centro" style="width:100%">
                                     <option selected value="">seleccione...</option>
-                                                <small id="id_centroHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
                                         <?php
                                             include_once 'models/centro.php';
 
@@ -40,15 +39,12 @@
                                             }
                                                 ?>
                                 </select>
+                                <small id="id_centroHelp" class="form-text text-muted">Diligencie el centro solicitante de la solicitud.</small>
                             </div>
-                        </div>
-                        
-                        
-                        <div class="form-group col-md-6">
-                                <label for="identificacion">Encargado</label>
+                            <div class="form-group col-md-6">
+                                <label for="identificacion">Encargado de centro</label>
                                 <select class="form-control" id="identificacion" name="identificacion" style="width:100%">
                                     <option selected value="">seleccione...</option>
-                                                <small id="identificacionHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
                                         <?php
                                             include_once 'models/usuario.php';
 
@@ -63,17 +59,20 @@
                                             }
                                                 ?>
                                 </select>
-                            </>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="descripcion">Descripciòn</label>
-                            <input type="text" class="form-control" name="descripcion" id="descripcion">
-                            <small id="descripcionHelp" class="form-text text-muted">Diligencie el descripcion de la solicitud.</small>
-                        </div>
-                    <div class="text-center ">
+                                <small id="identificacionHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="descripcion">Descripciòn de solicitud</label>
+                                <textarea  class="form-control" name="descripcion" id="descripcion" cols="30" rows="10" ></textarea>
+                                <small id="descripcionHelp" class="form-text text-muted">Diligencie el descripcion de la solicitud.</small>
+                            </div>
+                            </div>
+                            <div class="text-center ">
                         <button type="submit" class="btn btn-info">Registrar Solicitud</button>
                         <button class="btn btn-danger">Cancelar</button>
                     </div>
+                    </div>
+
                 </form>
                 </div>
             </div>

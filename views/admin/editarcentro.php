@@ -26,7 +26,7 @@
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="nombre">Nombre</label>
+                                <label for="nombre">Nombre de centro</label>
                                 <input type="text" class="form-control" value="<?php echo $this->centro->nombre; ?>" name="nombre" id="nombre" readonly>
                                 <small id="nombreHelp" class="form-text text-muted"></small>
                             </div>
@@ -51,18 +51,6 @@
                                 <input type="text" class="form-control" value="<?php echo $this->centro->lugar; ?>" name="lugar" id="lugar">
                                 <small id="lugarHelp" class="form-text text-muted">Diligencie el Lugar de ubicacion</small>
                             </div>
-                            <!-- <div class="form-group col-lg-6">
-                                <label for="departamento">Departamento</label>
-                                <input type="text" class="form-control" value="<?php echo $this->centro->departamento; ?>" name="departamento" id="departamento" readonly>
-                                <small id="departamentoHelp" class="form-text text-muted"></small>
-                            </div>
-                            <div class="form-group col-lg-6">
-                                <label for="ciudad">Lugar</label>
-                                <input type="text" class="form-control" value="<?php echo $this->centro->ciudad; ?>" name="ciudad" id="ciudad" readonly>
-                                <small id="ciudadHelp" class="form-text text-muted"></small>
-                                
-                            </div> -->
-
                              <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-header">
@@ -87,7 +75,7 @@
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="identificacion">Encargado</label>
+                                <label for="identificacion">Encargado de centro</label>
                                 <select class="form-control" id="identificacion" name="identificacion" style="width:100%">
                                 <option selected value="<?php echo $this->centro->identificacion; ?>"><?php echo $this->centro->identificacion; ?></option>
                                 

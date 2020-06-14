@@ -18,50 +18,38 @@
             <div class="center"><?php echo $this->mensaje;?></div>
             <div class="hpanel">
                 <div class="panel-body">
-                <form action="<?php echo constant('URL'); ?>ruta/crear" method="POST">
-                    <div class="row">
+                    <form action="<?php echo constant('URL'); ?>ruta/crear" method="POST">
+                        <div class="row">
 
-                   <!--     <div class="form-group col-md-6">
-                            <label for="destino">Destino</label>
-                            <input type="text" class="form-control" name="destino" id="destino">
-                            <small id="destinoHelp" class="form-text text-muted">Diligencie el destino del centro</small>
-                        </div>-->
-                        <div class="form-group col-md-6">
-                            <label for="fecha_ruta">Fecha Ruta</label>
-                            <input type="date" class="form-control" name="fecha_ruta" id="fecha_ruta">
-                            <small id="fecha_rutaHelp" class="form-text text-muted">Diligencie la fecha de la ruta</small>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="hora_salida">Hora Salida</label>
-                            <input type="time" class="form-control" name="hora_salida" id="hora_salida">
-                            <small id="hora_salidaHelp" class="form-text text-muted">Diligencie la hora de salida</small>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="hora_llegada">Hora Llegada</label>
-                            <input type="time" class="form-control" name="hora_llegada" id="hora_llegada">
-                            <small id="hora_llegadaHelp" class="form-text text-muted">Diligencie la hora de llegada</small>
-                        </div>
-                        
-                        <div class="form-group col-md-6">
-                            <label for="descripcion">Descripción</label>
-                            <input type="text" class="form-control" name="descripcion" id="descripcion">
-                            <small id="descripcioneHelp" class="form-text text-muted">Descripción</small>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="tipo_ruta">Tipo Ruta</label>
-                            <input type="text" class="form-control" name="tipo_ruta" id="tipo_ruta">
-                            <small id="tipo_rutaHelp" class="form-text text-muted">Tipo Ruta</small>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="precinto">Precinto</label>
-                            <input type="text" class="form-control" name="precinto" id="precinto">
-                            <small id="precintoHelp" class="form-text text-muted">Precinto </small>
-                        </div>
-                        <div class="form-group col-md-6">
-                                <label for="identificacion">Encargado</label>
+                            <div class="form-group col-md-4">
+                                <label for="fecha_ruta">Fecha Ruta</label>
+                                <input type="date" class="form-control" name="fecha_ruta" id="fecha_ruta">
+                                <small id="fecha_rutaHelp" class="form-text text-muted">Diligencie la fecha de la ruta</small>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="hora_salida">Hora Salida</label>
+                                <input type="time" class="form-control" name="hora_salida" id="hora_salida">
+                                <small id="hora_salidaHelp" class="form-text text-muted">Diligencie la hora de salida</small>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="hora_llegada">Hora Llegada</label>
+                                <input type="time" class="form-control" name="hora_llegada" id="hora_llegada">
+                                <small id="hora_llegadaHelp" class="form-text text-muted">Diligencie la hora de llegada</small>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="tipo_ruta">Tipo Ruta</label>
+                                <input type="text" class="form-control" name="tipo_ruta" id="tipo_ruta">
+                                <small id="tipo_rutaHelp" class="form-text text-muted">Tipo Ruta</small>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="precinto">Precinto</label>
+                                <input type="text" class="form-control" name="precinto" id="precinto">
+                                <small id="precintoHelp" class="form-text text-muted">Precinto </small>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="identificacion">Encargado centro</label>
                                 <select class="form-control" id="identificacion" name="identificacion" style="width:100%">
                                     <option selected value="">seleccione...</option>
-                                                <small id="identificacionHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
                                         <?php
                                             include_once 'models/usuario.php';
 
@@ -76,9 +64,10 @@
                                             }
                                                 ?>
                                 </select>
+                                <small id="identificacionHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
                             </div>
 
-                        <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="placa">Placa</label>
                                 <select class="form-control" id="placa" name="placa" style="width:100%">
                                     <option selected value="">seleccione...</option>
@@ -98,7 +87,7 @@
                                                 ?>
                                 </select>
                             </div>
-                         <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="id_centro">Centro Solicitante</label>
                                 <select class="form-control" id="id_centro" name="id_centro" style="width:100%">
                                     <option selected value="">seleccione...</option>
@@ -119,28 +108,7 @@
                                                 ?>
                                 </select>
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="id_producto">Id del Producto</label>
-                                <select class="form-control" id="id_producto" name="id_producto" style="width:100%">
-                                    <option selected value="">seleccione...</option>
-                                                <small id="id_productoHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
-                                        <?php
-                                            include_once 'models/centro.php';
-
-                                            if(count($this->ddl_productos)>0){
-                                                foreach ($this->ddl_productos as $centro) {
-                                                $ddl_producto = new ProductoDAO();
-                                                $ddl_producto = $centro;
-                                        ?>
-                                                <option  value="<?php echo $ddl_producto->id_producto;?>"><?php echo $ddl_producto->id_producto;?>-<?php echo $ddl_producto->nombre;?>
-                                            </option>
-                                                <?php
-                                                }
-                                            }
-                                                ?>
-                                </select>
-                            </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="id_solicitud">Id Solicitud</label>
                                 <select class="form-control" id="id_solicitud" name="id_solicitud" style="width:100%">
                                     <option selected value="">seleccione...</option>
@@ -161,12 +129,46 @@
                                                 ?>
                                 </select>
                             </div>
-                    </div>
-                    <div class="text-center ">
-                        <button class="btn btn-info">Registrar ruta</button>
-                        <button class="btn btn-danger">Cancel</button>
-                    </div>
-                </form>
+
+                            <div class="form-group col-md-12">
+                                <label class="form-text text-muted">Productos en la ruta</label><br>
+                                <input type="checkbox" id="producto_0" name="productos[0]" value="uchuba" class="form-check-input">
+                                <label class="form-check-label" for="producto_0">Uchuba</label>
+                                <input type="checkbox" id="producto_1" name="productos[1]" value="maracuya" class="form-check-input">
+                                <label class="form-check-label" for="producto_1">Maracuya</label>
+                                <input type="checkbox" id="producto_1" name="productos[1]" value="maracuya" class="form-check-input">
+                                <label class="form-check-label" for="producto_1">Maracuya</label>
+                                <input type="checkbox" id="producto_2" name="productos[2]" value="chulupa" class="form-check-input">
+                                <label class="form-check-label" for="producto_2">Chulupa</label>
+                                <input type="checkbox" id="producto_3" name="productos[3]" value="arandanos" class="form-check-input">
+                                <label class="form-check-label" for="producto_3">Arandanos</label>
+                                <input type="checkbox" id="producto_4" name="productos[4]" value="pitaya" class="form-check-input">
+                                <label class="form-check-label" for="producto_4">Pitaya</label><br>
+                                <input type="checkbox" id="producto_5" name="productos[5]" value="granadilla" class="form-check-input">
+                                <label class="form-check-label" for="producto_5">Granadilla</label>
+                                <input type="checkbox" id="producto_6" name="productos[6]" value="freijoa" class="form-check-input">
+                                <label class="form-check-label" for="producto_6">Freijoa</label>
+                                <input type="checkbox" id="producto_7" name="productos[7]" value="lulo" class="form-check-input">
+                                <label class="form-check-label" for="producto_7">Lulo</label>
+                                <input type="checkbox" id="producto_8" name="productos[8]" value="guanabana" class="form-check-input">
+                                <label class="form-check-label" for="producto_8">Guanabana</label>
+                                <input type="checkbox" id="producto_9" name="productos[9]" value="tamarillo" class="form-check-input">
+                                <label class="form-check-label" for="producto_9">Tamarillo</label>
+                                <input type="checkbox" id="producto_10" name="productos[10]" value="babybanana" class="form-check-input">
+                                <label class="form-check-label" for="producto_10">Babybanana</label>
+
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="descripcion">Descripciòn de solicitud</label>
+                                <textarea  class="form-control" name="descripcion" id="descripcion" cols="30" rows="10" ></textarea>
+                                <small id="descripcionHelp" class="form-text text-muted">Diligencie el descripcion de la solicitud.</small>
+                            </div>
+                        </div>
+                        <div class="text-center ">
+                            <button class="btn btn-info">Registrar ruta</button>
+                            <button class="btn btn-danger">Cancel</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

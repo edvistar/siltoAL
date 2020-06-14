@@ -24,8 +24,7 @@
                                     'ciudad'          => $datos['ciudad'],
                                     'identificacion'  => $datos['identificacion'],
                                     'lugar'           => $datos['lugar']
-                                   
-                                    
+
                     ]);
                     return true;
                 }catch(PDOException $e){
@@ -48,7 +47,7 @@
                 INNER JOIN departamentos as depa on depa.idDepa=cent.departamento
                 INNER JOIN ciudades as ciud on ciud.idCiud=cent.ciudad
                 INNER JOIN usuario as usu on usu.identificacion=cent.identificacion
-                  
+
                 ');
 
                 while($row = $query->fetch()){

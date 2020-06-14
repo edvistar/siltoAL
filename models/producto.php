@@ -2,7 +2,7 @@
     class ProductoDAO{
         public $id_producto;
         public $nombre;
-        public $peso;
+        public $costo;
         
     }
 
