@@ -11,7 +11,7 @@
         public $identificacion;
         public $placa;
         public $id_centro;
-        public $id_producto;
+        public $variedad_productos;
         public $id_solicitud;
     }
 

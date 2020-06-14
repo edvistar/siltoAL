@@ -29,7 +29,7 @@
                                         <th  scope="col">Identificacion</th>
                                         <th  scope="col">Placa</th>
                                         <th  scope="col">Id Centro</th>
-                                        <th  scope="col">Id Producto</th>
+                                        <th  scope="col">Productos</th>
                                         <th  scope="col">Id Solicitud</th>
                                         <th  scope="col" colspan="2" class="text-center">Acciones</th>
                                     </tr>
@@ -53,7 +53,7 @@
                                             <td><?php echo $ruta->identificacion; ?>
                                             <td><?php echo $ruta->placa; ?>
                                             <td><?php echo $ruta->id_centro; ?>
-                                            <td><?php echo $ruta->id_producto; ?>
+                                            <td><?php echo $ruta->variedad_productos; ?>
                                             <td><?php echo $ruta->id_solicitud; ?>
                                             <td><a href="<?php echo constant('URL') . 'ruta/leer/' . $ruta->id_ruta; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a></td>
                                             <td><button class="bEliminar" data-controlador="ruta" data-accion="eliminar" data-id="<?php echo $ruta->id_ruta; ?>"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</button></td>

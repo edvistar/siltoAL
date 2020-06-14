@@ -10,7 +10,7 @@
             $this->view->render('admin/listaruta');
         }
         function crear(){
-            if(isset($_POST["destino"])){
+            if(isset($_POST["descripcion"])){
                 if($this->model->create($_POST)){
                     $this->view->mensaje = "Ruta creada correctamente";
                     $rutas = $this->view->datos = $this->model->read();
@@ -30,8 +30,8 @@
                 $this->view->ddl_centros = $centros;
                 $solicitudes = $this->view->datos['ddl_solicitudes'] = $this->model->cargarSolicitud();
                 $this->view->ddl_solicitudes = $solicitudes;
-                $productos = $this->view->datos['ddl_productos'] = $this->model->cargarProducto();
-                $this->view->ddl_productos = $productos;
+                // $productos = $this->view->datos['ddl_productos'] = $this->model->cargarProducto();
+                // $this->view->ddl_productos = $productos;
                 $this->view->render('admin/crearruta');
             }
         }
@@ -41,7 +41,14 @@
 
             //session_start();
             $_SESSION["id_verRuta"] = $ruta->id_ruta;
-
+            $usuarios = $this->view->datos['ddl_usuarios'] = $this->model->cargarEncargado();
+                $this->view->ddl_usuarios = $usuarios;
+                $vehiculos = $this->view->datos['ddl_vehiculos'] = $this->model->cargarVehiculo();
+                $this->view->ddl_vehiculos = $vehiculos;
+                $centros = $this->view->datos['ddl_centros'] = $this->model->cargarCentro();
+                $this->view->ddl_centros = $centros;
+                $solicitudes = $this->view->datos['ddl_solicitudes'] = $this->model->cargarSolicitud();
+                $this->view->ddl_solicitudes = $solicitudes;
             $this->view->ruta = $ruta;
             $this->view->render('admin/editarruta');
         }
@@ -54,8 +61,7 @@
                 $ruta = new RutaDAO();
 
                 $ruta->id_ruta        = $id;
-                $ruta->id_ruta        = $_POST['id_ruta'];
-                $ruta->destino        = $_POST['destino'];
+                //$ruta->id_ruta        = $_POST['id_ruta'];
                 $ruta->fecha_ruta     = $_POST['fecha_ruta'];
                 $ruta->hora_salida    = $_POST['hora_salida'];
                 $ruta->hora_llegada   = $_POST['hora_llegada'];
@@ -65,6 +71,8 @@
                 $ruta->identificacion = $_POST['identificacion'];
                 $ruta->placa          = $_POST['placa'];
                 $ruta->id_centro      = $_POST['id_centro'];
+                $ruta->variedad_productos      = $_POST['variedad_productos'];
+                $ruta->id_solicitud      = $_POST['id_solicitud'];
 
                 $this->view->ruta = $ruta;
                 $this->view->mensaje = "Ruta actualizada correctamente";
