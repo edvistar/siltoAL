@@ -13,14 +13,18 @@
                         <div id="main" class="container">
                             <div><?php echo $this->mensaje; ?></div>
                             <h1 class="text-center"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Listado de Productos </h1>
-                            <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>producto/crear")'>Crear Producto</button><br>
+                            <div class=" row">
+                            <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>producto/crear")'>Crear Producto</button>
+                            <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>producto/crear")'>PDF</button><br>
+                            </div>
+                            
 
                             <table id="tabla" class="table table-hover">
                                 <thead class="thead-dark">
                                     <tr>
                                         <th  scope="col">Id</th>
                                         <th  scope="col">Nombre</th>
-                                        <th  scope="col">Peso</th>
+                                        <th  scope="col">Costo</th>
                                         <th  scope="col" colspan="2" class="text-center">Acciones</th>
                                     </tr>
                                 </thead>
@@ -35,7 +39,7 @@
                                         <tr id="fila-<?php echo $producto->id_producto; ?>">
                                             <td><?php echo $producto->id_producto; ?>
                                             <td><?php echo $producto->nombre; ?>
-                                            <td><?php echo $producto->peso; ?>
+                                            <td><?php echo $producto->costo; ?>
                                             <td><a href="<?php echo constant('URL') . 'producto/leer/' . $producto->id_producto; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a></td>
                                             <td><button class="bEliminar" data-controlador="producto" data-accion="eliminar" data-id="<?php echo $producto->id_producto; ?>"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</button></td>
                                         </tr>

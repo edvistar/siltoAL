@@ -51,7 +51,6 @@
                 $producto->id_producto = $id;
                 $producto->id_producto = $_POST['id_producto'];
                 $producto->nombre      = $_POST['nombre'];
-                $producto->peso        = $_POST['peso'];
                 $producto->costo       = $_POST['costo'];
 
                 $this->view->producto  = $producto;

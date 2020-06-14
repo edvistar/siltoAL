@@ -21,187 +21,147 @@
                     <form action="<?php echo constant('URL'); ?>ruta/crear" method="POST">
                         <div class="row">
 
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="fecha_ruta">Fecha Ruta</label>
                                 <input type="date" class="form-control" name="fecha_ruta" id="fecha_ruta">
                                 <small id="fecha_rutaHelp" class="form-text text-muted">Diligencie la fecha de la ruta</small>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="hora_salida">Hora Salida</label>
                                 <input type="time" class="form-control" name="hora_salida" id="hora_salida">
                                 <small id="hora_salidaHelp" class="form-text text-muted">Diligencie la hora de salida</small>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="hora_llegada">Hora Llegada</label>
                                 <input type="time" class="form-control" name="hora_llegada" id="hora_llegada">
                                 <small id="hora_llegadaHelp" class="form-text text-muted">Diligencie la hora de llegada</small>
                             </div>
-                            
-                            <div class="form-group col-md-6">
-                                <label for="descripcion">Descripción</label>
-                                <input type="text" class="form-control" name="descripcion" id="descripcion">
-                                <small id="descripcioneHelp" class="form-text text-muted">Descripción</small>
-                            </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="tipo_ruta">Tipo Ruta</label>
                                 <input type="text" class="form-control" name="tipo_ruta" id="tipo_ruta">
                                 <small id="tipo_rutaHelp" class="form-text text-muted">Tipo Ruta</small>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="precinto">Precinto</label>
                                 <input type="text" class="form-control" name="precinto" id="precinto">
                                 <small id="precintoHelp" class="form-text text-muted">Precinto </small>
                             </div>
-                            <div class="form-group col-md-6">
-                                    <label for="identificacion">Encargado</label>
-                                    <select class="form-control" id="identificacion" name="identificacion" style="width:100%">
-                                        <option selected value="">seleccione...</option>
-                                                    <small id="identificacionHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
-                                            <?php
-                                                include_once 'models/usuario.php';
+                            <div class="form-group col-md-4">
+                                <label for="identificacion">Encargado centro</label>
+                                <select class="form-control" id="identificacion" name="identificacion" style="width:100%">
+                                    <option selected value="">seleccione...</option>
+                                        <?php
+                                            include_once 'models/usuario.php';
 
-                                                if(count($this->ddl_usuarios)>0){
-                                                    foreach ($this->ddl_usuarios as $usuario) {
-                                                    $ddl_usuario = new UsuarioDAO();
-                                                    $ddl_usuario = $usuario;
-                                            ?>
-                                                    <option  value="<?php echo $ddl_usuario->identificacion;?>"><?php echo $ddl_usuario->identificacion;?>-<?php echo $ddl_usuario->nombre;?>-<?php echo $ddl_usuario->apellido; ?>-<?php echo $ddl_usuario->cargo; ?></option>
-                                                    <?php
-                                                    }
+                                            if(count($this->ddl_usuarios)>0){
+                                                foreach ($this->ddl_usuarios as $usuario) {
+                                                $ddl_usuario = new UsuarioDAO();
+                                                $ddl_usuario = $usuario;
+                                        ?>
+                                                <option  value="<?php echo $ddl_usuario->identificacion;?>"><?php echo $ddl_usuario->identificacion;?>-<?php echo $ddl_usuario->nombre;?>-<?php echo $ddl_usuario->apellido; ?>-<?php echo $ddl_usuario->cargo; ?></option>
+                                                <?php
                                                 }
-                                                    ?>
-                                    </select>
-                                </div>
+                                            }
+                                                ?>
+                                </select>
+                                <small id="identificacionHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                            </div>
 
-                            <div class="form-group col-md-6">
-                                    <label for="placa">Placa</label>
-                                    <select class="form-control" id="placa" name="placa" style="width:100%">
-                                        <option selected value="">seleccione...</option>
-                                                    <small id="placaHelp" class="form-text text-muted">Diligencie la placa del vehiculo</small>
-                                            <?php
-                                                include_once 'models/vehiculo.php';
+                            <div class="form-group col-md-4">
+                                <label for="placa">Placa</label>
+                                <select class="form-control" id="placa" name="placa" style="width:100%">
+                                    <option selected value="">seleccione...</option>
+                                                <small id="placaHelp" class="form-text text-muted">Diligencie la placa del vehiculo</small>
+                                        <?php
+                                            include_once 'models/vehiculo.php';
 
-                                                if(count($this->ddl_vehiculos)>0){
-                                                    foreach ($this->ddl_vehiculos as $vehiculo) {
-                                                    $ddl_vehiculo = new VehiculoDAO();
-                                                    $ddl_vehiculo = $vehiculo;
-                                            ?>
-                                                    <option  value="<?php echo $ddl_vehiculo->placa;?>"><?php echo $ddl_vehiculo->placa;?></option>
-                                                    <?php
-                                                    }
+                                            if(count($this->ddl_vehiculos)>0){
+                                                foreach ($this->ddl_vehiculos as $vehiculo) {
+                                                $ddl_vehiculo = new VehiculoDAO();
+                                                $ddl_vehiculo = $vehiculo;
+                                        ?>
+                                                <option  value="<?php echo $ddl_vehiculo->placa;?>"><?php echo $ddl_vehiculo->placa;?></option>
+                                                <?php
                                                 }
-                                                    ?>
-                                    </select>
-                                </div>
-                            <div class="form-group col-md-6">
-                                    <label for="id_centro">Centro Solicitante</label>
-                                    <select class="form-control" id="id_centro" name="id_centro" style="width:100%">
-                                        <option selected value="">seleccione...</option>
-                                                    <small id="id_centroHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
-                                            <?php
-                                                include_once 'models/centro.php';
+                                            }
+                                                ?>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="id_centro">Centro Solicitante</label>
+                                <select class="form-control" id="id_centro" name="id_centro" style="width:100%">
+                                    <option selected value="">seleccione...</option>
+                                                <small id="id_centroHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                                        <?php
+                                            include_once 'models/centro.php';
 
-                                                if(count($this->ddl_centros)>0){
-                                                    foreach ($this->ddl_centros as $centro) {
-                                                    $ddl_centro = new CentroDAO();
-                                                    $ddl_centro = $centro;
-                                            ?>
-                                                    <option  value="<?php echo $ddl_centro->id_centro;?>"><?php echo $ddl_centro->id_centro;?>-<?php echo $ddl_centro->nombre;?>
-                                                </option>
-                                                    <?php
-                                                    }
+                                            if(count($this->ddl_centros)>0){
+                                                foreach ($this->ddl_centros as $centro) {
+                                                $ddl_centro = new CentroDAO();
+                                                $ddl_centro = $centro;
+                                        ?>
+                                                <option  value="<?php echo $ddl_centro->id_centro;?>"><?php echo $ddl_centro->id_centro;?>-<?php echo $ddl_centro->nombre;?>
+                                            </option>
+                                                <?php
                                                 }
-                                                    ?>
-                                    </select>
-                                </div>
-                                <!-- <div class="form-group col-md-6">
-                                    <label for="id_producto">Id del Producto</label>
-                                    <select class="form-control" id="id_producto" name="id_producto" style="width:100%">
-                                        <option selected value="">seleccione...</option>
-                                                    <small id="id_productoHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
-                                            <?php
-                                                include_once 'models/centro.php';
+                                            }
+                                                ?>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="id_solicitud">Id Solicitud</label>
+                                <select class="form-control" id="id_solicitud" name="id_solicitud" style="width:100%">
+                                    <option selected value="">seleccione...</option>
+                                                <small id="id_solicitudHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                                        <?php
+                                            include_once 'models/solicitud.php';
 
-                                                if(count($this->ddl_productos)>0){
-                                                    foreach ($this->ddl_productos as $centro) {
-                                                    $ddl_producto = new ProductoDAO();
-                                                    $ddl_producto = $centro;
-                                            ?>
-                                                    <option  value="<?php echo $ddl_producto->id_producto;?>"><?php echo $ddl_producto->id_producto;?>-<?php echo $ddl_producto->nombre;?>
-                                                </option>
-                                                    <?php
-                                                    }
+                                            if(count($this->ddl_solicitudes)>0){
+                                                foreach ($this->ddl_solicitudes as $solicitud) {
+                                                $ddl_solicitud = new SolicitudDAO();
+                                                $ddl_solicitud = $solicitud;
+                                        ?>
+                                                <option  value="<?php echo $ddl_solicitud->id_solicitud;?>"><?php echo $ddl_solicitud->id_solicitud;?>-<?php echo $ddl_solicitud->descripcion;?>
+                                            </option>
+                                                <?php
                                                 }
-                                                    ?>
-                                    </select>
-                                </div> -->
-                                <div class="form-group col-md-6">
-                                    <label for="id_solicitud">Id Solicitud</label>
-                                    <select class="form-control" id="id_solicitud" name="id_solicitud" style="width:100%">
-                                        <option selected value="">seleccione...</option>
-                                                    <small id="id_solicitudHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
-                                            <?php
-                                                include_once 'models/solicitud.php';
+                                            }
+                                                ?>
+                                </select>
+                            </div>
 
-                                                if(count($this->ddl_solicitudes)>0){
-                                                    foreach ($this->ddl_solicitudes as $solicitud) {
-                                                    $ddl_solicitud = new SolicitudDAO();
-                                                    $ddl_solicitud = $solicitud;
-                                            ?>
-                                                    <option  value="<?php echo $ddl_solicitud->id_solicitud;?>"><?php echo $ddl_solicitud->id_solicitud;?>-<?php echo $ddl_solicitud->descripcion;?>
-                                                </option>
-                                                    <?php
-                                                    }
-                                                }
-                                                    ?>
-                                    </select>
-                                </div>
-                                <label class="form-text text-muted">Productos en la ruta</label>
-                                
-
-                        <div class="custom-control form-check custom-control-inline">
+                            <div class="form-group col-md-12">
+                                <label class="form-text text-muted">Productos en la ruta</label><br>
                                 <input type="checkbox" id="producto_0" name="productos[0]" value="uchuba" class="form-check-input">
                                 <label class="form-check-label" for="producto_0">Uchuba</label>
-                            </div>
-                        <div class="custom-control form-check custom-control-inline">
                                 <input type="checkbox" id="producto_1" name="productos[1]" value="maracuya" class="form-check-input">
                                 <label class="form-check-label" for="producto_1">Maracuya</label>
-                            </div>
-                        <div class="custom-control form-check custom-control-inline">
+                                <input type="checkbox" id="producto_1" name="productos[1]" value="maracuya" class="form-check-input">
+                                <label class="form-check-label" for="producto_1">Maracuya</label>
                                 <input type="checkbox" id="producto_2" name="productos[2]" value="chulupa" class="form-check-input">
                                 <label class="form-check-label" for="producto_2">Chulupa</label>
-                            </div>
-                        <div class="custom-control form-check custom-control-inline">
                                 <input type="checkbox" id="producto_3" name="productos[3]" value="arandanos" class="form-check-input">
                                 <label class="form-check-label" for="producto_3">Arandanos</label>
-                            </div>
-                            <div class="custom-control form-check custom-control-inline">
                                 <input type="checkbox" id="producto_4" name="productos[4]" value="pitaya" class="form-check-input">
-                                <label class="form-check-label" for="producto_4">Pitaya</label>
-                            </div>
-                            <div class="custom-control form-check custom-control-inline">
+                                <label class="form-check-label" for="producto_4">Pitaya</label><br>
                                 <input type="checkbox" id="producto_5" name="productos[5]" value="granadilla" class="form-check-input">
                                 <label class="form-check-label" for="producto_5">Granadilla</label>
-                            </div>
-                            <div class="custom-control form-check custom-control-inline">
                                 <input type="checkbox" id="producto_6" name="productos[6]" value="freijoa" class="form-check-input">
                                 <label class="form-check-label" for="producto_6">Freijoa</label>
-                            </div>
-                            <div class="custom-control form-check custom-control-inline">
                                 <input type="checkbox" id="producto_7" name="productos[7]" value="lulo" class="form-check-input">
                                 <label class="form-check-label" for="producto_7">Lulo</label>
-                            </div>
-                            <div class="custom-control form-check custom-control-inline">
                                 <input type="checkbox" id="producto_8" name="productos[8]" value="guanabana" class="form-check-input">
                                 <label class="form-check-label" for="producto_8">Guanabana</label>
-                            </div>
-                            <div class="custom-control form-check custom-control-inline">
                                 <input type="checkbox" id="producto_9" name="productos[9]" value="tamarillo" class="form-check-input">
                                 <label class="form-check-label" for="producto_9">Tamarillo</label>
-                            </div>
-                            <div class="custom-control form-check custom-control-inline">
                                 <input type="checkbox" id="producto_10" name="productos[10]" value="babybanana" class="form-check-input">
                                 <label class="form-check-label" for="producto_10">Babybanana</label>
+
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="descripcion">Descripciòn de solicitud</label>
+                                <textarea  class="form-control" name="descripcion" id="descripcion" cols="30" rows="10" ></textarea>
+                                <small id="descripcionHelp" class="form-text text-muted">Diligencie el descripcion de la solicitud.</small>
                             </div>
                         </div>
                         <div class="text-center ">

@@ -16,7 +16,7 @@
                     
                     $item->id_producto = $row['id_producto'];
                     $item->nombre      = $row['nombre'];
-                    $item->peso       = $row['peso'];
+                    $item->costo       = $row['costo'];
 
                     array_push($items, $item);
                 }
@@ -39,7 +39,7 @@
                 while($row = $query->fetch()){
                     $item->id_producto = $row['id_producto'];
                     $item->nombre      = $row['nombre'];
-                    $item->peso        = $row['peso'];
+                    $item->costo        = $row['costo'];
                     
                 }
                 return $item;
@@ -53,7 +53,7 @@
         public function create($datos = null){
             // insertar
             //if(!isset($datos)){
-                $sentenceSQL="INSERT INTO producto( id_producto, nombre, peso,) VALUES( :id_producto, :nombre, :peso, )";
+                $sentenceSQL="INSERT INTO producto( id_producto, nombre, costo) VALUES( :id_producto, :nombre, :costo )";
                 $connexionDB=$this->db->connect();
                 $query = $connexionDB->prepare($sentenceSQL);
 
@@ -61,7 +61,7 @@
                     $query->execute([
                                     'id_producto' => $datos['id_producto'],
                                     'nombre'      => $datos['nombre'],
-                                    'peso'        => $datos['peso']
+                                    'costo'        => $datos['costo']
                                     
                     ]);
                     return true;
@@ -77,12 +77,12 @@
         }
 
         public function update($item){
-            $query = $this->db->connect()->prepare('UPDATE producto SET nombre = :nombre, peso = :peso WHERE id_producto = :id_producto');
+            $query = $this->db->connect()->prepare('UPDATE producto SET nombre = :nombre, costo = :costo WHERE id_producto = :id_producto');
             try{
                 $query->execute([
                     'id_producto' => $item['id_producto'],
                     'nombre'      => $item['nombre'],
-                    'peso'        => $item['peso'],
+                    'costo'        => $item['costo']
                     
                 ]);
                 return true;

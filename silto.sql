@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-06-2020 a las 10:08:29
--- Versión del servidor: 10.3.16-MariaDB
--- Versión de PHP: 7.3.7
+-- Tiempo de generación: 14-06-2020 a las 21:21:05
+-- Versión del servidor: 10.1.40-MariaDB
+-- Versión de PHP: 7.1.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -1236,17 +1236,25 @@ INSERT INTO `departamentos` (`idDepa`, `departamento`) VALUES
 CREATE TABLE `producto` (
   `id_producto` int(11) NOT NULL COMMENT 'Identificación de producto ',
   `nombre` varchar(11) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Nombre del producto',
-  `peso` int(11) NOT NULL COMMENT 'peso de producto'
+  `costo` int(11) NOT NULL COMMENT 'Costo de producto por kilo.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `producto`
 --
 
-INSERT INTO `producto` (`id_producto`, `nombre`, `peso`) VALUES
-(2, 'carlosss', 25000),
-(6, 'carlos', 4500),
-(78, 'Manzana', 567);
+INSERT INTO `producto` (`id_producto`, `nombre`, `costo`) VALUES
+(1, 'Arandanos', 6500),
+(2, 'Granadilla', 2800),
+(3, 'Maracuya', 4000),
+(4, 'Gulupa', 3000),
+(5, 'Baby Banana', 5000),
+(6, 'Pitaya', 8000),
+(7, 'Freijoa', 4000),
+(8, 'Lulo', 4000),
+(9, 'Tamarillo', 2500),
+(10, 'Guanabana', 4000),
+(11, 'Uchuba', 4500);
 
 -- --------------------------------------------------------
 
@@ -1318,7 +1326,8 @@ CREATE TABLE `solicitud` (
 INSERT INTO `solicitud` (`id_solicitud`, `solicitud`, `descripcion`, `id_centro`, `identificacion`) VALUES
 (1, '2020-06-09 00:00:00', 'viaje completo', 34545, 22656626),
 (2, '2020-06-11 20:37:13', 'Viaje commpleto', 0, 20199375),
-(3, '2020-06-11 20:50:11', 'Viaje commpleto', 34545, 1683809522);
+(3, '2020-06-11 20:50:11', 'Viaje commpleto', 34545, 1683809522),
+(5, '2020-06-14 18:11:20', 'una tonelada de frutas jjjj', 34545, 1683809522);
 
 -- --------------------------------------------------------
 
@@ -1335,7 +1344,7 @@ CREATE TABLE `usuario` (
   `whatsapp` varchar(2) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Whatsapp',
   `cargo` varchar(15) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Rol de user',
   `estado` text COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Estado del User',
-  `fecha_ingreso` datetime NOT NULL DEFAULT current_timestamp() COMMENT 'Fecha de ingreso user',
+  `fecha_ingreso` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha de ingreso user',
   `foto` varchar(300) COLLATE utf8_spanish2_ci NOT NULL,
   `pass` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL COMMENT 'password'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
@@ -1367,7 +1376,7 @@ CREATE TABLE `vehiculo` (
   `gps` varchar(2) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'GPS de vehiculo',
   `estado` varchar(11) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Estao de vehiculo en la empresa propiedad o contratista.',
   `identificacion` bigint(20) NOT NULL COMMENT 'Nombre de conductor.',
-  `fecha_registro` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'Fecha del registro'
+  `fecha_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha del registro'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
@@ -1463,7 +1472,7 @@ ALTER TABLE `rutas`
 -- AUTO_INCREMENT de la tabla `solicitud`
 --
 ALTER TABLE `solicitud`
-  MODIFY `id_solicitud` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id de la solicitud para la ruta.', AUTO_INCREMENT=5;
+  MODIFY `id_solicitud` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id de la solicitud para la ruta.', AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
