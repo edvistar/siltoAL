@@ -21,11 +21,11 @@
                 <form action="<?php echo constant('URL'); ?>ruta/crear" method="POST">
                     <div class="row">
 
-                        <div class="form-group col-md-6">
+                   <!--     <div class="form-group col-md-6">
                             <label for="destino">Destino</label>
                             <input type="text" class="form-control" name="destino" id="destino">
                             <small id="destinoHelp" class="form-text text-muted">Diligencie el destino del centro</small>
-                        </div>
+                        </div>-->
                         <div class="form-group col-md-6">
                             <label for="fecha_ruta">Fecha Ruta</label>
                             <input type="date" class="form-control" name="fecha_ruta" id="fecha_ruta">

@@ -214,8 +214,10 @@
                     $item->identificacion = $row['identificacion'];
                     $item->placa          = $row['placa'];
                     $item->id_centro      = $row['id_centro'];
-                    $item->id_producto      = $row['id_producto'];
-                    $item->id_centro      = $row['id_centro'];
+                    $item->id_producto    = $row['id_producto'];
+                    $item->id_solicitud    = $row['id_solicitud'];
+                   
+                   
                 }
                 return $item;
             }catch(PDOException $e){
@@ -226,11 +228,11 @@
             }
         }
         public function update($item){
-            $query = $this->db->connect()->prepare('UPDATE rutas SET destino = :destino, fecha_ruta = :fecha_ruta, hora_salida = :hora_salida, hora_llegada = :hora_llegada, descripcion = :descripcion, tipo_ruta = :tipo_ruta, precinto = :precinto, identificacion = :identificacion, placa = :placa, id_centro = :id_centro WHERE id_ruta = :id_ruta');
+            $query = $this->db->connect()->prepare('UPDATE rutas SET fecha_ruta = :fecha_ruta, hora_salida = :hora_salida, hora_llegada = :hora_llegada, descripcion = :descripcion, tipo_ruta = :tipo_ruta, precinto = :precinto, identificacion = :identificacion, placa = :placa, id_centro = :id_centro, id_producto = :id_producto, id_solicitud = :id_solicitud WHERE id_ruta = :id_ruta');
             try{
                 $query->execute([
                         'id_ruta'        => $item['id_ruta'],
-                        'destino'        => $item['destino'],
+                        //'destino'        => $item['destino'],
                         'fecha_ruta'     => $item['fecha_ruta'],
                         'hora_salida'    => $item['hora_salida'],
                         'hora_llegada'   => $item['hora_llegada'],
@@ -239,7 +241,9 @@
                         'precinto'       => $item['precinto'],
                         'identificacion' => $item['identificacion'],
                         'placa'          => $item['placa'],
-                        'id_centro'      => $item['id_centro']
+                        'id_centro'      => $item['id_centro'],
+                        'id_producto'    => $item['id_producto'],
+                        'id_solicitud'   => $item['id_solicitud']
                 ]);
                 return true;
             }catch(PDOException $e){
