@@ -2,10 +2,6 @@
 <html lang="en">
 <head>
 <?php require 'views/head.php'; ?>
-<<<<<<< HEAD
-</head>
-=======
->>>>>>> wapv
 </head>
 <body>
 
@@ -55,7 +51,7 @@
                                 <input type="text" class="form-control" value="<?php echo $this->centro->lugar; ?>" name="lugar" id="lugar">
                                 <small id="lugarHelp" class="form-text text-muted">Diligencie el Lugar de ubicacion</small>
                             </div>
-                            <div class="form-group col-lg-6">
+                            <!-- <div class="form-group col-lg-6">
                                 <label for="departamento">Departamento</label>
                                 <input type="text" class="form-control" value="<?php echo $this->centro->departamento; ?>" name="departamento" id="departamento" readonly>
                                 <small id="departamentoHelp" class="form-text text-muted"></small>
@@ -65,9 +61,9 @@
                                 <input type="text" class="form-control" value="<?php echo $this->centro->ciudad; ?>" name="ciudad" id="ciudad" readonly>
                                 <small id="ciudadHelp" class="form-text text-muted"></small>
                                 
-                            </div>
+                            </div> -->
 
-                            <!-- <div class="col-lg-12">
+                             <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-header">
                                     Seleccione Departamento y Ciudad
@@ -76,18 +72,20 @@
                                         <div class="row">
                                                 <div class="col-md-6">
                                                     <label for="">Departamento</label>
-                                                    <select class="form-control" value="<?php echo $this->centro->departamento; ?>" name="departamento"  id="departamentos" style="width: 100%;">
+                                                    <select class="form-control" name="departamento"  id="departamentos_editar" style="width: 100%;" readonly>
+                                                    <option selected value="<?php echo $this->centro->departamento;?>"><?php echo $this->centro->departamento; ?></option>
                                                     </select>
                                                 </div>
                                                 <div class="col-md-6">
                                                 <label for="ciudades">Ciudad</label>
-                                                <select class="form-control" name="ciudad" id="ciudades" style="width: 100%;">
+                                                <select class="form-control" name="ciudad" id="ciudades_editar" style="width: 100%;" readonly>
+                                                <option selected value="<?php echo $this->centro->ciudad; ?>"><?php echo $this->centro->ciudad; ?></option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
                             <div class="form-group col-md-6">
                                 <label for="identificacion">Encargado</label>
                                 <select class="form-control" id="identificacion" name="identificacion" style="width:100%">

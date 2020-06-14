@@ -76,9 +76,6 @@
         public function readById($id){
             $item = new CentroDAO();
             try{
-<<<<<<< HEAD
-                $query = $this->db->connect()->prepare('SELECT * FROM centro WHERE id_centro = :id');
-=======
                 $query = $this->db->connect()->prepare('SELECT cent.id_centro, cent.nombre as nombrecentro, cent.email, cent.telefono, cent.whatsapp, depa.departamento, ciud.ciudad, usu.nombre as nombreusuario, cent.lugar 
                 FROM centro as cent
                 INNER JOIN departamentos as depa on depa.idDepa=cent.departamento
@@ -86,27 +83,18 @@
                 INNER JOIN usuario as usu on usu.identificacion=cent.identificacion
                 
                 WHERE id_centro = :id');
->>>>>>> wapv
 
                 $query->execute(['id' => $id]);
 
                 while($row = $query->fetch()){
                     $item->id_centro       = $row['id_centro'];
-<<<<<<< HEAD
-                    $item->nombre          = $row['nombre'];
-=======
                     $item->nombre          = $row['nombrecentro'];
->>>>>>> wapv
                     $item->email           = $row['email'];
                     $item->telefono        = $row['telefono'];
                     $item->whatsapp        = $row['whatsapp'];
                     $item->departamento    = $row['departamento'];
                     $item->ciudad          = $row['ciudad'];
-<<<<<<< HEAD
-                    $item->identificacion  = $row['identificacion'];
-=======
                     $item->identificacion  = $row['nombreusuario'];
->>>>>>> wapv
                     $item->lugar           = $row['lugar'];
                 }
                 return $item;
@@ -118,20 +106,6 @@
             }
         }
         public function update($item){
-<<<<<<< HEAD
-            $query = $this->db->connect()->prepare('UPDATE centro SET nombre = :nombre, email = :email, telefono = :telefono, whatsapp = :whatsapp, departamento = :departamento, ciudad = :ciudad, identificacion = :identificacion, lugar = :lugar WHERE id_centro = :id_centro');
-            try{
-                $query->execute([
-                    'id_centro'    => $item['id_centro'],
-                    'nombre'       => $item['nombre'],
-                    'email'        => $item['email'],
-                    'telefono'     => $item['telefono'],
-                    'whatsapp'     => $item['whatsapp'],
-                    'departamento' => $item['departamento'],
-                    'ciudad'       => $item['ciudad'],
-                    'identificacion'    => $item['identificacion'],
-                    'lugar'        => $item['lugar']
-=======
             $query = $this->db->connect()->prepare('UPDATE centro SET  email = :email, telefono = :telefono, whatsapp = :whatsapp, identificacion = :identificacion, lugar = :lugar WHERE id_centro = :id_centro');
             try{
                 $query->execute([
@@ -144,7 +118,6 @@
                     //'ciudad'         => $item['ciudad'],
                     'identificacion' => $item['identificacion'],
                     'lugar'          => $item['lugar']
->>>>>>> wapv
                 ]);
                 return true;
             }catch(PDOException $e){
