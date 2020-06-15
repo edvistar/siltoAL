@@ -16,7 +16,7 @@
                 <h3><i class="fa fa-truck" aria-hidden="true"></i> Editar Vehículo</h3>
                 <p>Todos los campos son obligatorios</p>
             </div>
-            <h1>ID = <?php echo strtoupper($this->vehiculo->placa); ?></h1>
+            <h1>PLACA = <?php echo strtoupper($this->vehiculo->placa); ?></h1>
             <div><?php echo $this->mensaje; ?></div>
             <div class="hpanel">
                 <div class="panel-body">
@@ -36,7 +36,7 @@
 
                         <div class="form-group col-md-6">
                             <label for="seguro">Seguro del vehículo</label>
-                            <input type="text" class="form-control" value="<?php echo $this->vehiculo->seguro; ?>" name="seguro" id="seguro">
+                            <input type="date" class="form-control" value="<?php echo $this->vehiculo->seguro; ?>" name="seguro" id="seguro">
                             <small id="seguroHelp" class="form-text text-muted">Digite numero de la poliza del seguro</small>
                         </div>
 
@@ -45,42 +45,78 @@
                             <input type="date" class="form-control" value="<?php echo $this->vehiculo->tecnomecanica; ?>" name="tecnomecanica" id="tecnomecanica">
                             <small id="tecnomecanicaHelp" class="form-text text-muted">Fecha de vencimiento del la tecnomecanica del vehículo</small>
                         </div>
-
+<!-- 
                         <div class="form-group col-md-6">
                             <label for="tipo_vehiculo">Tipo de vehículo</label>
                             <input type="text" class="form-control" value="<?php echo $this->vehiculo->tipo_vehiculo; ?>" name="tipo_vehiculo" id="tipo_vehiculo">
                             <small id="tipo_vehiculoHelp" class="form-text text-muted">Tipo de vehículo</small>
-                        </div>
+                        </div> -->
 
                         <div class="form-group col-md-6">
-                            <label for="conductor">Nombre del conductor </label>
-                            <input type="text" class="form-control" value="<?php echo $this->vehiculo->conductor; ?>" name="conductor" id="conductor">
-                            <small id="nombreHelp" class="form-text text-muted">Nombre del conductor</small>
+                            <label for="tipo_vehiculo">Tipo de vehículo</label>
+                            <select  class="form-control" name="tipo_vehiculo" id="tipo_vehiculo" required>
+                                <option selected value="<?php echo $this->vehiculo->tipo_vehiculo;?>">Seleccione tipo de vehiculo</option>
+                                <option value="furgon">Furgon</option>
+                                <option value="tractocaminon">Tractocamion</option>
+                                <option value="estaca">Estacas</option>
+                            </select>
+                            <small id="tipo_vehiculoHelp" class="form-text text-muted">Tipo de vehículo</small>
                         </div>
 
-                        <div class="form-group col-md-6">
-                            <label for="costo_flete">Costo del flete</label>
-                            <input type="text" class="form-control" value="<?php echo $this->vehiculo->costo_flete; ?>" name="costo_flete" id="costo_flete">
-                            <small id="fleteHelp" class="form-text text-muted">Valor del flete</small>
-                        </div>
+
 
                         <div class="form-group col-md-6">
+                                <label for="conductor">Encargado</label>
+                                <select class="form-control" id="conductor" name="conductor" style="width:100%">
+                                <option selected value="<?php echo $this->vehiculo->conductor; ?>"><?php echo $this->vehiculo->conductor; ?></option>
+                                
+                                        <?php
+                                            include_once 'models/usuario.php';
+
+                                            if(count($this->ddl_usuarios)>0){
+                                                foreach ($this->ddl_usuarios as $usuario) {
+                                                $ddl_usuario = new UsuarioDAO();
+                                                $ddl_usuario = $usuario;
+                                        ?>
+                                                <option  value="<?php echo $ddl_usuario->identificacion;?>"><?php echo $ddl_usuario->identificacion;?>-<?php echo $ddl_usuario->nombre;?>-<?php echo $ddl_usuario->apellido; ?>-<?php echo $ddl_usuario->cargo; ?></option>
+                                                <?php
+                                                }
+                                            }
+                                                ?>
+                                </select>
+                                <small id="identificacionHelp" class="form-text text-muted">Debe elegir nuevamente el encargado del centro</small>
+                            </div>
+
+                        <!-- <div class="form-group col-md-6">
                             <label for="gps">GPS</label>
                             <input type="text" class="form-control" value="<?php echo $this->vehiculo->gps; ?>" name="gps" id="gps">
                             <small id="gpsHelp" class="form-text text-muted">GPS de vehículo incorporado</small>
-                        </div>
+                        </div> -->
+
                         
                         <div class="form-group col-md-6">
+                                <label for="whatsapp">gps</label><br>
+                                    <input class="custom-control-input"required type="radio" name="gps" id="gps1" value="SI" checked>SI
+                                    <input class="custom-control-input" type="radio" name="gps" id="gps0" value="NO">NO<br>
+                                    <small id="gpsHelp" class="form-text text-muted">Confirme si tiene whatsapp el numero de telefono ingresado</small>
+                                </div>
+
+                        <!-- <div class="form-group col-md-6">
                             <label for="estado">Estado</label>
                             <input type="text" class="form-control" value="<?php echo $this->vehiculo->estado; ?>" name="estado" id="estado">
                             <small id="estadoHelp" class="form-text text-muted">Estado dentro de la empresa Propiedad o contratista</small>
-                        </div>
-                        
+                        </div> -->
+                       
                         <div class="form-group col-md-6">
-                            <label for="fecha_registro">Fecha registro</label>
-                            <input type="date" class="form-control" value="<?php echo $this->vehiculo->fecha_registro; ?>" name="fecha_registro" id="fecha_registro" readonly>
-                            <small id="fecha_registroHelp" class="form-text text-muted">Fecha de Registro</small>
+                            <label for="estado">Estado en la empresa</label>
+                            <select id="estado"  name="estado" class="form-control" required>
+                                <option selected value="<?php echo $this->vehiculo->estado; ?>">Seleccione estado</option>
+                                <option value="Contratista">Contratista</option>
+                                <option value="Propiedad">Propiedad</option>
+                            </select>
+                            <small id="estadopHelp" class="form-text text-muted">Diligencie el el estado del vehiculo en la empresa</small>
                         </div>
+                      
                     </div>
                     <div class="text-center">
                         <input type="submit" class="btn btn-info" value="Actualizar vehículo" >

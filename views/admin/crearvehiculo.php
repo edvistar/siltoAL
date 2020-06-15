@@ -33,7 +33,7 @@
 
                         <div class="form-group col-md-6">
                             <label for="seguro">Seguro del vehículo</label>
-                            <input type="text" class="form-control" name="seguro" id="seguro">
+                            <input type="date" class="form-control" name="seguro" id="seguro">
                             <small id="seguroHelp" class="form-text text-muted">Digite datos de la poliza del seguro</small>
                         </div>
 
