@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-06-2020 a las 21:21:05
--- Versión del servidor: 10.1.40-MariaDB
--- Versión de PHP: 7.1.29
+-- Tiempo de generación: 15-06-2020 a las 03:41:11
+-- Versión del servidor: 10.3.16-MariaDB
+-- Versión de PHP: 7.3.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -1267,23 +1267,32 @@ CREATE TABLE `rutas` (
   `fecha_ruta` date NOT NULL COMMENT 'Fecha de ruta',
   `hora_salida` time NOT NULL COMMENT 'hora de salida de vehículo de centro',
   `hora_llegada` time NOT NULL COMMENT 'hora de llegada de vehículo a centro',
-  `descripcion` varchar(255) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Descripción de la ruta',
   `tipo_ruta` varchar(15) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Tipo de ruta solocitada.',
   `precinto` varchar(20) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Numero de presinto del tipo de ruta solicitada.',
   `identificacion` bigint(20) NOT NULL COMMENT 'Identificación de usuario',
   `placa` varchar(11) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Numero de placa de vehiculo.',
   `id_centro` int(11) NOT NULL COMMENT 'Id de centro dirigido la ruta.',
   `variedad_productos` varchar(250) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'productos en ruta',
+<<<<<<< HEAD
   `id_solicitud` int(11) NOT NULL COMMENT 'id de solicitud'
+=======
+  `id_solicitud` int(11) NOT NULL COMMENT 'id de solicitud',
+  `observaciones` varchar(250) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Observaciones de la ruta'
+>>>>>>> wapv
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `rutas`
 --
 
+<<<<<<< HEAD
 INSERT INTO `rutas` (`id_ruta`, `fecha_ruta`, `hora_salida`, `hora_llegada`, `descripcion`, `tipo_ruta`, `precinto`, `identificacion`, `placa`, `id_centro`, `variedad_productos`, `id_solicitud`) VALUES
 (13, '2020-06-14', '02:52:00', '02:52:00', 'Viaje commpleto', 'Nacional', '55556', 22656626, 'AD343', 34545, '-arandanos-freijoa', 1),
 (14, '2020-06-14', '02:52:00', '02:52:00', 'Tarjeta de Identidad', 'Nacional', '346454', 1078371526, 'AD343', 34545, '-tamarillo-babybanana', 1);
+=======
+INSERT INTO `rutas` (`id_ruta`, `fecha_ruta`, `hora_salida`, `hora_llegada`, `tipo_ruta`, `precinto`, `identificacion`, `placa`, `id_centro`, `variedad_productos`, `id_solicitud`, `observaciones`) VALUES
+(15, '2020-06-14', '20:33:00', '08:33:00', 'Nacional', '123456', 20199375, 'AD343', 34545, '-uchuba-chulupa-freijoa-tamarillo', 1, 'la papaya');
+>>>>>>> wapv
 
 -- --------------------------------------------------------
 
@@ -1466,7 +1475,11 @@ ALTER TABLE `departamentos`
 -- AUTO_INCREMENT de la tabla `rutas`
 --
 ALTER TABLE `rutas`
+<<<<<<< HEAD
   MODIFY `id_ruta` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificación de ruta', AUTO_INCREMENT=15;
+=======
+  MODIFY `id_ruta` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificación de ruta', AUTO_INCREMENT=16;
+>>>>>>> wapv
 
 --
 -- AUTO_INCREMENT de la tabla `solicitud`

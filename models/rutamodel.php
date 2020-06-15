@@ -10,7 +10,11 @@
         foreach($datos["productos"] as $producto){
             $misproductos = $misproductos. "-".$producto;
         }
+<<<<<<< HEAD
                 $sentenceSQL="INSERT INTO rutas (fecha_ruta, hora_salida, hora_llegada, descripcion, tipo_ruta, precinto, identificacion, placa, id_centro, variedad_productos, id_solicitud) VALUES(:fecha_ruta, :hora_salida, :hora_llegada, :descripcion, :tipo_ruta, :precinto, :identificacion, :placa, :id_centro, :variedad_productos, :id_solicitud)";
+=======
+                $sentenceSQL="INSERT INTO rutas (fecha_ruta, hora_salida, hora_llegada, tipo_ruta, precinto, identificacion, placa, id_centro, variedad_productos, id_solicitud, observaciones) VALUES(:fecha_ruta, :hora_salida, :hora_llegada,  :tipo_ruta, :precinto, :identificacion, :placa, :id_centro, :variedad_productos, :id_solicitud, :observaciones)";
+>>>>>>> wapv
                 $connexionDB=$this->db->connect();
                 $query = $connexionDB->prepare($sentenceSQL);
 
@@ -20,14 +24,18 @@
                                     'fecha_ruta'     => $datos['fecha_ruta'],
                                     'hora_salida'    => $datos['hora_salida'],
                                     'hora_llegada'   => $datos['hora_llegada'],
-                                    'descripcion'    => $datos['descripcion'],
                                     'tipo_ruta'      => $datos['tipo_ruta'],
                                     'precinto'       => $datos['precinto'],
                                     'identificacion' => $datos['identificacion'],
                                     'placa'          => $datos['placa'],
                                     'id_centro'      => $datos['id_centro'],
                                     'variedad_productos' => $misproductos,
+<<<<<<< HEAD
                                     'id_solicitud'      => $datos['id_solicitud']
+=======
+                                    'id_solicitud'      => $datos['id_solicitud'],
+                                    'observaciones'      => $datos['observaciones']
+>>>>>>> wapv
                     ]);
                     return true;
                 }catch(PDOException $e){
@@ -131,7 +139,11 @@
             $items = [];
             try{
                 $query = $this->db->connect()->query('SELECT
+<<<<<<< HEAD
                 rut.id_ruta, rut.fecha_ruta, rut.hora_salida, rut.hora_llegada, rut.descripcion, rut.tipo_ruta, rut.precinto, usu.nombre as nombreConductor, rut.placa, cent.nombre as nombreCentro, rut.variedad_productos, rut.id_solicitud
+=======
+                rut.id_ruta, rut.fecha_ruta, rut.hora_salida, rut.hora_llegada, rut.tipo_ruta, rut.precinto, usu.nombre as nombreConductor, rut.placa, cent.nombre as nombreCentro, rut.variedad_productos, rut.id_solicitud, rut.observaciones
+>>>>>>> wapv
                 FROM rutas as rut
                 INNER JOIN usuario as usu on usu.identificacion=rut.identificacion
                 INNER JOIN centro as cent on cent.id_centro=rut.id_centro
@@ -144,7 +156,10 @@
                     $item->fecha_ruta         = $row['fecha_ruta'];
                     $item->hora_salida        = $row['hora_salida'];
                     $item->hora_llegada       = $row['hora_llegada'];
+<<<<<<< HEAD
                     $item->descripcion        = $row['descripcion'];
+=======
+>>>>>>> wapv
                     $item->tipo_ruta          = $row['tipo_ruta'];
                     $item->precinto           = $row['precinto'];
                     $item->identificacion     = $row['nombreConductor'];
@@ -152,6 +167,10 @@
                     $item->id_centro          = $row['nombreCentro'];
                     $item->variedad_productos = $row['variedad_productos'];
                     $item->id_solicitud       = $row['id_solicitud'];
+<<<<<<< HEAD
+=======
+                    $item->observaciones       = $row['observaciones'];
+>>>>>>> wapv
 
                     array_push($items, $item);
                 }
@@ -167,7 +186,11 @@
             $item = new RutaDAO();
             try{
                 $query = $this->db->connect()->prepare('SELECT 
+<<<<<<< HEAD
                  rut.id_ruta, rut.fecha_ruta, rut.hora_salida, rut.hora_llegada, rut.descripcion, rut.tipo_ruta, rut.precinto, usu.nombre as nombreEncargado, rut.placa, cent.nombre as nombreCentro, rut.variedad_productos, sol.descripcion as descripcionSolicitud
+=======
+                 rut.id_ruta, rut.fecha_ruta, rut.hora_salida, rut.hora_llegada, rut.tipo_ruta, rut.precinto, usu.nombre as nombreEncargado, rut.placa, cent.nombre as nombreCentro, rut.variedad_productos, sol.descripcion as descripcionSolicitud, rut.observaciones
+>>>>>>> wapv
                 FROM rutas as rut
                 INNER JOIN usuario as usu on usu.identificacion=rut.identificacion
                 INNER JOIN centro as cent on cent.id_centro=rut.id_centro
@@ -183,7 +206,10 @@
                     $item->fecha_ruta         = $row['fecha_ruta'];
                     $item->hora_salida        = $row['hora_salida'];
                     $item->hora_llegada       = $row['hora_llegada'];
+<<<<<<< HEAD
                     $item->descripcion        = $row['descripcion'];
+=======
+>>>>>>> wapv
                     $item->tipo_ruta          = $row['tipo_ruta'];
                     $item->precinto           = $row['precinto'];
                     $item->identificacion     = $row['nombreEncargado'];
@@ -191,6 +217,10 @@
                     $item->id_centro          = $row['nombreCentro'];
                     $item->variedad_productos = $row['variedad_productos'];
                     $item->id_solicitud       = $row['descripcionSolicitud'];
+<<<<<<< HEAD
+=======
+                    $item->observaciones       = $row['observaciones'];
+>>>>>>> wapv
                 }
                 return $item;
             }catch(PDOException $e){
@@ -209,7 +239,10 @@
             fecha_ruta = :fecha_ruta, 
             hora_salida = :hora_salida, 
             hora_llegada = :hora_llegada, 
+<<<<<<< HEAD
             descripcion = :descripcion, 
+=======
+>>>>>>> wapv
             tipo_ruta = :tipo_ruta, 
             precinto = :precinto, 
             identificacion = :identificacion, 
@@ -224,14 +257,22 @@
                         'fecha_ruta'         => $item['fecha_ruta'],
                         'hora_salida'        => $item['hora_salida'],
                         'hora_llegada'       => $item['hora_llegada'],
+<<<<<<< HEAD
                         'descripcion'        => $item['descripcion'],
+=======
+>>>>>>> wapv
                         'tipo_ruta'          => $item['tipo_ruta'],
                         'precinto'           => $item['precinto'],
                         'identificacion'     => $item['identificacion'],
                         'placa'              => $item['placa'],
                         'id_centro'          => $item['id_centro'],
                         'variedad_productos' => $misproductos,
+<<<<<<< HEAD
                         'id_solicitud   '    => $item['id_solicitud']
+=======
+                        'id_solicitud   '    => $item['id_solicitud'],
+                        'observaciones   '    => $item['observaciones']
+>>>>>>> wapv
                 ]);
                 return true;
             }catch(PDOException $e){
