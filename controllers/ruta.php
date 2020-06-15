@@ -10,11 +10,7 @@
             $this->view->render('admin/listaruta');
         }
         function crear(){
-<<<<<<< HEAD
-            if(isset($_POST["descripcion"])){
-=======
             if(isset($_POST["observaciones"])){
->>>>>>> wapv
                 if($this->model->create($_POST)){
                     $this->view->mensaje = "Ruta creada correctamente";
                     $rutas = $this->view->datos = $this->model->read();
@@ -77,10 +73,7 @@
                 $ruta->id_centro      = $_POST['id_centro'];
                 $ruta->variedad_productos      = $_POST['variedad_productos'];
                 $ruta->id_solicitud      = $_POST['id_solicitud'];
-<<<<<<< HEAD
-=======
                 $ruta->obervaciones      = $_POST['obervaciones'];
->>>>>>> wapv
 
                 $this->view->ruta = $ruta;
                 $this->view->mensaje = "Ruta actualizada correctamente";
