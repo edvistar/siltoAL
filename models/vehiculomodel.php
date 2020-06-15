@@ -20,9 +20,9 @@
                         'seguro'         => $datos['seguro'],
                         'tecnomecanica'  => $datos['tecnomecanica'],
                         'tipo_vehiculo'  => $datos['tipo_vehiculo'],
-                        'identificacion'      => $datos['identificacion'],
                         'gps'            => $datos['gps'],
                         'estado'         =>$datos['estado'],
+                        'identificacion'  => $datos['identificacion'],
                         'fecha_registro' => date('Y-m-d H:i:s')//$datos['fecha_registro']
 
                     ]);
@@ -66,7 +66,7 @@
             $items = [];
             try{
                 $query = $this->db->connect()->query('SELECT  veh.placa, veh.capacidad, veh.seguro, veh.tecnomecanica,
-                veh.tipo_vehiculo,   veh.gps,  veh.fecha_registro, usu.nombre as nombreconductor, veh.estado as estadovehiculo
+                veh.tipo_vehiculo,   veh.gps,  veh.fecha_registro, usu.nombre as nombreconductor, veh.estado
                 FROM vehiculo as veh
                 INNER JOIN usuario as usu on usu.identificacion=veh.identificacion
 
@@ -79,10 +79,10 @@
                     $item->capacidad       = $row['capacidad'];
                     $item->seguro          = $row['seguro'];
                     $item->tecnomecanica   = $row['tecnomecanica'];
-                    $item->tipo_vehiculo   = $row['tipo_vehiculo'];
-                    $item->identificacion  = $row['nombreconductor'];
+                    $item->tipo_vehiculo   = $row['tipo_vehiculo']; 
                     $item->gps             = $row['gps'];
-                    $item->estado          = $row['estadovehiculo'];
+                    $item->estado          = $row['estado'];
+                    $item->identificacion  = $row['nombreconductor'];
                     $item->fecha_registro  = $row['fecha_registro'];
 
                     array_push($items, $item);
@@ -99,7 +99,11 @@
         public function readById($id){
             $item = new vehiculoDAO();
             try{
-                $query = $this->db->connect()->prepare('SELECT * FROM vehiculo WHERE placa = :id'); //campo placa sera igual a uvardiale id
+                $query = $this->db->connect()->prepare('SELECT veh.placa, veh.capacidad, veh.seguro, veh.tecnomecanica,
+                veh.tipo_vehiculo,   veh.gps,  veh.fecha_registro, usu.nombre as nombreconductor, veh.estado as estadovehiculo
+                FROM vehiculo as veh
+                INNER JOIN usuario as usu on usu.identificacion=veh.identificacion
+                 WHERE placa = :id'); //campo placa sera igual a uvardiale id
 
                 $query->execute(['id' => $id]);
 
@@ -109,9 +113,9 @@
                     $item->seguro          = $row['seguro'];
                     $item->tecnomecanica   = $row['tecnomecanica'];
                     $item->tipo_vehiculo   = $row['tipo_vehiculo'];
-                    $item->identificacion       = $row['identificacion'];
                     $item->gps             = $row['gps'];
-                    $item->estado          = $row['estado'];
+                    $item->estado          = $row['estadovehiculo'];
+                    $item->identificacion  = $row['nombreconductor'];
                     $item->fecha_registro  = $row['fecha_registro'];
                 }
                 return $item;
@@ -123,19 +127,20 @@
             }
         }
         public function update($item){
-            $query = $this->db->connect()->prepare('UPDATE vehiculo SET capacidad = :capacidad, seguro = :seguro, tecnomecanica = :tecnomecanica, tipo_vehiculo = :tipo_vehiculo, identificacion = :identificacion,  gps = :gps, estado = :estado, fecha_registro = :fecha_registro WHERE placa = :placa ');
+            $query = $this->db->connect()->prepare('UPDATE vehiculo SET capacidad = :capacidad, seguro = :seguro, tecnomecanica = :tecnomecanica, tipo_vehiculo = :tipo_vehiculo,  gps = :gps, estado = :estado, identificacion = :identificacion
+                WHERE placa = :placa ');
 
             try{
                 $query->execute([
-                    'placa'    => $item['placa'],
-                    'capacidad'       => $item['capacidad'],
-                    'seguro'        => $item['seguro'],
-                    'tecnomecanica'     => $item['tecnomecanica'],
-                    'tipo_vehiculo'     => $item['tipo_vehiculo'],
-                    'identificacion' => $item['identificacion'],
-                    'gps'    => $item['gps'],
-                    'estado'        => $item['estado'],
-                    'fecha_registro'        => $item['fecha_registro']
+                    'placa'                 => $item['placa'],
+                    'capacidad'             => $item['capacidad'],
+                    'seguro'                => $item['seguro'],
+                    'tecnomecanica'         => $item['tecnomecanica'],
+                    'tipo_vehiculo'         => $item['tipo_vehiculo'],
+                    'identificacion'        => $item['identificacion'],
+                    'gps'                   => $item['gps'],
+                    'estado'                => $item['estado']
+                   // 'fecha_registro'        => $item['fecha_registro']
                 ]);
                 return true;
             }catch(PDOException $e){

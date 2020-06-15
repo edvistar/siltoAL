@@ -35,6 +35,8 @@
 
             //session_start();
             $_SESSION["id_verVehiculo"] = $vehiculo->placa;
+            $usuarios = $this->view->datos['ddl_usuarios'] = $this->model->cargarEncargado();
+            $this->view->ddl_usuarios = $usuarios;
 
             $this->view->vehiculo = $vehiculo;
             $this->view->render('admin/editarvehiculo');
@@ -49,19 +51,18 @@
                 $vehiculo = new VehiculoDao();
 
                 $vehiculo->placa = $id;
-                $vehiculo->placa = $_POST['placa'];
+               // $vehiculo->placa = $_POST['placa'];
                 $vehiculo->capacidad = $_POST['capacidad'];
                 $vehiculo->seguro = $_POST['seguro'];
                 $vehiculo->tecnomecanica = $_POST['tecnomecanica'];
                 $vehiculo->tipo_vehiculo = $_POST['tipo_vehiculo'];
-                $vehiculo->conductor = $_POST['conductor'];
-                $vehiculo->costo_flete = $_POST['costo_flete'];
+                $vehiculo->identificacion = $_POST['identificacion'];
                 $vehiculo->gps = $_POST['gps'];
                 $vehiculo->estado = $_POST['estado'];
-                $vehiculo->fecha_registro = $_POST['fecha_registro'];
+                // $vehiculo->fecha_registro = $_POST['fecha_registro'];
 
                 $this->view->vehiculo = $vehiculo;
-                $this->view->mensaje = "Centro actualizado correctamente";
+                $this->view->mensaje = "vehiculo actualizado correctamente";
             }else{
                 $this->view->mensaje = "No se pudo actualizar al centro";
             }
@@ -71,6 +72,7 @@
         }
 
         function eliminar($param = null){
+            $id = $param[0];
 
             if($this->model->delete($id)){
                 $mensaje ="vehiculo eliminado correctamente";
