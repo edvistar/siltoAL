@@ -2,25 +2,7 @@
 <html class="no-js" lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title><?php  echo constant('NOMBRESITIO'); ?></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- favicon
-		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="<?php echo constant('URL'); ?>public/img/favicon.ico">
-    <!-- Google Fonts
-		============================================ -->
-    <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/bootstrap.min.css">
-    <!-- Bootstrap CSS
-		============================================ -->
-   
-    <!-- style CSS
-		============================================ -->
-    <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/style.css">
-    <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/style0.css">
-    <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/style2.css">
+<?php require 'views/head.php'; ?>
 </head>
 <body>
 

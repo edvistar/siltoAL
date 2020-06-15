@@ -27,6 +27,7 @@
                                             <th  scope="col">Conductor</th>
                                             <th  scope="col">GPS</th>
                                             <th  scope="col">Estado</th>
+                                            <th  scope="col">Conductor</th>
                                             <th  scope="col">Fecha registro</th>
                                             <th  scope="col" colspan="2">Acciones</th>
                                         </tr>
@@ -44,10 +45,10 @@
                                                 <td><?php echo $vehiculo->capacidad;?></td>
                                                 <td><?php echo $vehiculo->seguro;?></td>
                                                 <td><?php echo $vehiculo->tecnomecanica; ?></td>
-                                                <td><?php echo $vehiculo->tipo_vehiculo;?></td>
-                                                <td><?php echo $vehiculo->conductor;?></td>
+                                                <td><?php echo $vehiculo->tipo_vehiculo;?></td> 
                                                 <td><?php echo $vehiculo->gps;?></td>
                                                 <td><?php echo $vehiculo->estado;?></td>
+                                                <td><?php echo $vehiculo->identificacion;?></td>
                                                 <td><?php echo $vehiculo->fecha_registro;?></td>
 
                                                 <td><a href="<?php echo constant('URL') . 'vehiculo/leer/' . $vehiculo->placa; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a></td>

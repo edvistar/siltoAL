@@ -55,9 +55,9 @@
                         <div class="form-group col-md-6">
                             <label for="tipo_vehiculo">Tipo de vehículo</label>
                             <select  class="form-control" name="tipo_vehiculo" id="tipo_vehiculo" required>
-                                <option selected value="<?php echo $this->vehiculo->tipo_vehiculo;?>">Seleccione tipo de vehiculo</option>
+                                <option selected value="<?php echo $this->vehiculo->tipo_vehiculo;?>"><?php echo $this->vehiculo->tipo_vehiculo;?></option>
                                 <option value="furgon">Furgon</option>
-                                <option value="tractocaminon">Tractocamion</option>
+                                <option value="tractocamion">Tractocamion</option>
                                 <option value="estaca">Estacas</option>
                             </select>
                             <small id="tipo_vehiculoHelp" class="form-text text-muted">Tipo de vehículo</small>
@@ -66,9 +66,9 @@
 
 
                         <div class="form-group col-md-6">
-                                <label for="conductor">Encargado</label>
-                                <select class="form-control" id="conductor" name="conductor" style="width:100%">
-                                <option selected value="<?php echo $this->vehiculo->conductor; ?>"><?php echo $this->vehiculo->conductor; ?></option>
+                                <label for="identificacion">Encargado</label>
+                                <select class="form-control" id="identificacion" name="identificacion" style="width:100%">
+                                <option selected value="<?php echo $this->vehiculo->identificacion; ?>"><?php echo $this->vehiculo->identificacion; ?></option>
                                 
                                         <?php
                                             include_once 'models/usuario.php';
@@ -110,7 +110,7 @@
                         <div class="form-group col-md-6">
                             <label for="estado">Estado en la empresa</label>
                             <select id="estado"  name="estado" class="form-control" required>
-                                <option selected value="<?php echo $this->vehiculo->estado; ?>">Seleccione estado</option>
+                                <option selected value="<?php echo $this->vehiculo->estado; ?>"><?php echo $this->vehiculo->estado; ?></option>
                                 <option value="Contratista">Contratista</option>
                                 <option value="Propiedad">Propiedad</option>
                             </select>

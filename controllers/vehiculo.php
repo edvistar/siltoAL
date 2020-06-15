@@ -50,13 +50,13 @@
             if($this->model->update($_POST)){
                 $vehiculo = new VehiculoDao();
 
-                // $vehiculo->placa = $id;
-                $vehiculo->placa = $_POST['placa'];
+                $vehiculo->placa = $id;
+               // $vehiculo->placa = $_POST['placa'];
                 $vehiculo->capacidad = $_POST['capacidad'];
                 $vehiculo->seguro = $_POST['seguro'];
                 $vehiculo->tecnomecanica = $_POST['tecnomecanica'];
                 $vehiculo->tipo_vehiculo = $_POST['tipo_vehiculo'];
-                $vehiculo->conductor = $_POST['conductor'];
+                $vehiculo->identificacion = $_POST['identificacion'];
                 $vehiculo->gps = $_POST['gps'];
                 $vehiculo->estado = $_POST['estado'];
                 // $vehiculo->fecha_registro = $_POST['fecha_registro'];

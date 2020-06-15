@@ -32,7 +32,7 @@
     <!-- main CSS
 		============================================ -->
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/main.css">
-    <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/main1.css">
+    
     <!-- morrisjs CSS
 		============================================ -->
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/morrisjs/morris.css">
