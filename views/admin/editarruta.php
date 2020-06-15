@@ -169,9 +169,9 @@
                                 <small id="descripcioneHelp" class="form-text text-muted">Descripción</small>
                             </div> -->
                             <div class="form-group col-md-12">
-                                <label for="descripcion">Descripciòn de solicitud</label>
-                                <textarea  class="form-control" name="descripcion" id="descripcion" cols="30" rows="10" value="<?php echo $this->ruta->descripcion; ?>" ></textarea>
-                                <small id="descripcionHelp" class="form-text text-muted">Diligencie el descripcion de la solicitud.</small>
+                                <label for="observaciones">Descripciòn de solicitud</label>
+                                <textarea  class="form-control" name="observaciones" id="observaciones" cols="30" rows="10" value="<?php echo $this->ruta->observaciones; ?>" ></textarea>
+                                <small id="descripcionHelp" class="form-text text-muted">Observaciones</small>
                             </div>
                         </div>
                         <div class="text-center ">

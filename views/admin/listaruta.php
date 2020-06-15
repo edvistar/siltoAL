@@ -23,7 +23,6 @@
                                         <th  scope="col">Fecha Ruta</th>
                                         <th  scope="col">Hora Salida</th>
                                         <th  scope="col">Hora Llegada</th>
-                                        <th  scope="col">Descripcion</th>
                                         <th  scope="col">Tipo de Ruta</th>
                                         <th  scope="col">Precinto</th>
                                         <th  scope="col">Identificacion</th>
@@ -31,6 +30,7 @@
                                         <th  scope="col">Id Centro</th>
                                         <th  scope="col">Productos</th>
                                         <th  scope="col">Id Solicitud</th>
+                                        <th  scope="col">Observaciones</th>
                                         <th  scope="col" colspan="2" class="text-center">Acciones</th>
                                     </tr>
                                 </thead>
@@ -44,17 +44,17 @@
                             ?>
                                         <tr id="fila-<?php echo $ruta->id_ruta; ?>">
                                             <td><?php echo $ruta->id_ruta; ?></td>
-                                            <td><?php echo $ruta->fecha_ruta; ?>
-                                            <td><?php echo $ruta->hora_salida; ?>
-                                            <td><?php echo $ruta->hora_llegada; ?>
-                                            <td><?php echo $ruta->descripcion; ?>
-                                            <td><?php echo $ruta->tipo_ruta; ?>
-                                            <td><?php echo $ruta->precinto; ?>
-                                            <td><?php echo $ruta->identificacion; ?>
-                                            <td><?php echo $ruta->placa; ?>
-                                            <td><?php echo $ruta->id_centro; ?>
-                                            <td><?php echo $ruta->variedad_productos; ?>
-                                            <td><?php echo $ruta->id_solicitud; ?>
+                                            <td><?php echo $ruta->fecha_ruta; ?></td>
+                                            <td><?php echo $ruta->hora_salida; ?></td>
+                                            <td><?php echo $ruta->hora_llegada; ?></td>
+                                            <td><?php echo $ruta->tipo_ruta; ?></td>
+                                            <td><?php echo $ruta->precinto; ?></td>
+                                            <td><?php echo $ruta->identificacion; ?></td>
+                                            <td><?php echo $ruta->placa; ?></td>
+                                            <td><?php echo $ruta->id_centro; ?></td>
+                                            <td><?php echo $ruta->variedad_productos; ?></td>
+                                            <td><?php echo $ruta->id_solicitud; ?></td>
+                                            <td><?php echo $ruta->observaciones; ?></td>
                                             <td><a href="<?php echo constant('URL') . 'ruta/leer/' . $ruta->id_ruta; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a></td>
                                             <td><button class="bEliminar" data-controlador="ruta" data-accion="eliminar" data-id="<?php echo $ruta->id_ruta; ?>"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</button></td>
                                         </tr>
