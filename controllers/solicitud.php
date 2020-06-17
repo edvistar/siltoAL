@@ -10,7 +10,7 @@
             $this->view->solicitudes = $solicitudes;
             $this->view->render('admin/listasolicitud');
         }
-
+        // funcion para leer los datos de la base de datos
         function leer($param = null){
             $id_solicitud = $param[0];
             $solicitud = $this->model->readById($id_solicitud);
@@ -21,41 +21,17 @@
             $this->view->solicitud = $solicitud;
             $this->view->render('admin/editarsolicitud');
         }
-        function editar($param = null){
-            //session_start();
-            $id = $_SESSION["id_verSolicitud"];
-            unset($_SESSION['id_verSolicitud']);
-
-            if($this->model->update($_POST)){
-                $solicitud = new SolicitudDAO();
-
-                $solicitud->id_solicitud     = $id;
-                $solicitud->id_solicitud     = $_POST['id_solicitud'];
-                $solicitud->solicitud        = $_POST['solicitud'];
-                $solicitud->descripcion      = $_POST['descripcion'];
-                $solicitud->id_centro   = $_POST['id_centro'];
-                $solicitud->identificacion   = $_POST['identificacion'];
-
-                $this->view->solicitud = $solicitud;
-                $this->view->mensaje = "Solicitud actualizado correctamente";
-            }else{
-                $this->view->mensaje = "No se pudo actualizar la solicitud";
-            }
-            $solicitudes = $this->view->datos = $this->model->read();
-            $this->view->solicitudes = $solicitudes;
-            $this->view->render('admin/listasolicitud');
-        }
-
+        // funcion crear  data en base de  datos
         function crear(){
-            if(isset($_POST["descripcion"])){
+            if(isset($_POST["id_solicitud"])){
                 if($this->model->create($_POST)){
-                    $this->view->mensaje = "Centro creado correctamente";
+                    $this->view->mensaje = "Solicitud creada correctamente";
                     $solicitudes = $this->view->datos = $this->model->read();
                     $this->view->solicitudes = $solicitudes;
                     $this->view->render('admin/listasolicitud');
                 }else{
 
-                    $this->view->mensaje = "El centro ya existe 1";
+                    $this->view->mensaje = "La solicitud ya existe.";
                     $this->view->render('admin/listasolicitud');
                 }
             }else{
@@ -69,9 +45,39 @@
                 $id_solicitud = $param[0];
                 $solicitud = $this->model->readById($id_solicitud);
 
+                //session_start();
+                $_SESSION["id_verSolicitud"] = $centro->id_centro;
+                $usuarios = $this->view->datos['ddl_usuarios'] = $this->model->cargarEncargado();
+                $this->view->ddl_usuarios = $usuarios;
+
                 $this->view->solicitud = $solicitud;
                 $this->view->render('admin/editarsolicitud');
             }
+        }
+        // funcion editar la data de la base de datos.
+        function editar($param = null){
+            //session_start();
+            $id = $_SESSION["id_verSolicitud"];
+            unset($_SESSION['id_verSolicitud']);
+
+            if($this->model->update($_POST)){
+                $solicitud = new SolicitudDAO();
+
+                $solicitud->id_solicitud     = $id;
+                $solicitud->id_solicitud     = $_POST['id_solicitud'];
+                $solicitud->solicitud        = $_POST['solicitud'];
+                $solicitud->descripcion      = $_POST['descripcion'];
+                // $solicitud->id_centro   = $_POST['id_centro'];
+                // $solicitud->identificacion   = $_POST['identificacion'];
+
+                $this->view->solicitud = $solicitud;
+                $this->view->mensaje = "Solicitud actualizado correctamente";
+            }else{
+                $this->view->mensaje = "No se pudo actualizar la solicitud";
+            }
+            $solicitudes = $this->view->datos = $this->model->read();
+            $this->view->solicitudes = $solicitudes;
+            $this->view->render('admin/listasolicitud');
         }
 
         function eliminar($param = null){

@@ -35,49 +35,7 @@
             // }
 
         }
-        public function cargarEncargado(){
-            $items = [];
-            try {
-                $query = $this->db->connect()->query('SELECT identificacion, nombre, apellido, cargo FROM usuario');
-                include_once('models/usuario.php');
-                while ($row = $query->fetch()) {
-                    $item = new UsuarioDAO();
-                    $item->identificacion = $row['identificacion'];
-                    $item->nombre = $row['nombre'];
-                    $item->apellido = $row['apellido'];
-                    $item->cargo = $row['cargo'];
-                   
-                    array_push($items, $item);
-                }
-                return $items;
-            } catch (PDOException $e) {
-                if (constant("DEBUG")) {
-                    echo $e->getMessage();
-                }
-                return [];
-            }
-        }
-        public function cargarCentro(){
-            $items = [];
-            try {
-                $query = $this->db->connect()->query('SELECT id_centro, nombre FROM centro');
-                include_once('models/centro.php');
-                while ($row = $query->fetch()) {
-                    $item = new CentroDAO();
-                    $item->id_centro = $row['id_centro'];
-                    $item->nombre = $row['nombre'];
-                    
-                   
-                    array_push($items, $item);
-                }
-                return $items;
-            } catch (PDOException $e) {
-                if (constant("DEBUG")) {
-                    echo $e->getMessage();
-                }
-                return [];
-            }
-        }
+       
         public function read(){
             $items = [];
             try{
@@ -107,12 +65,13 @@
                 return [];
             }
         }
-        public function readById($id){
+        // funcion para llamar data de un solo id  para la modificacion
+        public function readById($id_solicitud){
             $item = new SolicitudDAO();
             try{
                 $query = $this->db->connect()->prepare('SELECT * FROM solicitud WHERE id_solicitud = :id');
 
-                $query->execute(['id' => $id]);
+                $query->execute(['id' => $id_solicitud]);
 
                 while($row = $query->fetch()){
                     $item->id_solicitud     = $row['id_solicitud'];
@@ -129,14 +88,14 @@
                 return null;
             }
         }
+        //funcion para modificar la data de la base de datos.
         public function update($item){
-            $query = $this->db->connect()->prepare('UPDATE solicitud SET solicitud = :solicitud, descripcion = :descripcion, cantidad_kilos = :cantidad_kilos WHERE id_solicitud = :id_solicitud');
+            $query = $this->db->connect()->prepare('UPDATE solicitud SET solicitud = :solicitud, descripcion = :descripcion, id_centro = :id_centro, identificacion = :identificacion WHERE id_solicitud = :id_solicitud');
             try{
                 $query->execute([
                     'id_solicitud'    => $item['id_solicitud'],
                     'solicitud'       => $item['solicitud'],
                     'descripcion'     => $item['descripcion'],
-                    'cantidad_kilos'  => $item['cantidad_kilos'],
                     'id_centro'       => $item['id_centro'],
                     'identificacion'   => $item['identificacion']
                 ]);
@@ -146,6 +105,51 @@
                     echo $e->getMessage();
                 }
                 return false;
+            }
+        }
+        //// esta funcion carga  la data de  la tabla centro
+        public function cargarEncargado(){
+            $items = [];
+            try {
+                $query = $this->db->connect()->query('SELECT identificacion, nombre, apellido, cargo FROM usuario');
+                include_once('models/usuario.php');
+                while ($row = $query->fetch()) {
+                    $item = new UsuarioDAO();
+                    $item->identificacion = $row['identificacion'];
+                    $item->nombre = $row['nombre'];
+                    $item->apellido = $row['apellido'];
+                    $item->cargo = $row['cargo'];
+                   
+                    array_push($items, $item);
+                }
+                return $items;
+            } catch (PDOException $e) {
+                if (constant("DEBUG")) {
+                    echo $e->getMessage();
+                }
+                return [];
+            }
+        }
+        // esta funcion carga  la data de  la tabla centro
+        public function cargarCentro(){
+            $items = [];
+            try {
+                $query = $this->db->connect()->query('SELECT id_centro, nombre FROM centro');
+                include_once('models/centro.php');
+                while ($row = $query->fetch()) {
+                    $item = new CentroDAO();
+                    $item->id_centro = $row['id_centro'];
+                    $item->nombre = $row['nombre'];
+                    
+                   
+                    array_push($items, $item);
+                }
+                return $items;
+            } catch (PDOException $e) {
+                if (constant("DEBUG")) {
+                    echo $e->getMessage();
+                }
+                return [];
             }
         }
         public function delete($id){

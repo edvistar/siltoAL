@@ -14,7 +14,7 @@
         <div class="col-md-8 col-md-8 col-sm-8 col-xs-12">
             <div class="text-center custom-login mt-20px">
                 <h3><i class="fa fa-edit" aria-hidden="true"></i> Editar  Solicitud De vehículo</h3>
-                <p>Todos los campos son obligatorios</p>
+                <p>Todos los campos son obligatorios  <br>para la actualizacion porfavor confirmar todos los campos</p>
             </div>
             <h1>ID solicitud : <?php echo strtoupper($this->solicitud->id_solicitud); ?></h1>
             <div><?php echo $this->mensaje; ?></div>
@@ -30,12 +30,53 @@
 
                         <div class="form-group col-md-6">
                             <label for="solicitud">Solicitud</label>
-                            <input type="date" class="form-control" value="<?php echo $this->solicitud->solicitud; ?>" name="solicitud" id="solicitud">
+                            <input type="date" class="form-control" value="<?php echo $this->solicitud->solicitud; ?>" name="solicitud" id="solicitud"><?php echo $this->solicitud->solicitud; ?>
                             <small id="solicitudHelp" class="form-text text-muted">Diligencie la solicitud de ruta</small>
                         </div>
+                        <div class="form-group col-md-6">
+                                <label for="id_centro">Centro Solicitante</label>
+                                <select class="form-control" id="id_centro" name="id_centro" style="width:100%">
+                                    <option selected value="<?php echo $this->solicitud->id_centro; ?>"><?php echo $this->solicitud->id_centro; ?></option>
+                                        <?php
+                                            include_once 'models/centro.php';
+
+                                            if(count($this->ddl_centros)>0){
+                                                foreach ($this->ddl_centros as $centro) {
+                                                $ddl_centro = new CentroDAO();
+                                                $ddl_centro = $centro;
+                                        ?>
+                                                <option  value="<?php echo $ddl_centro->id_centro;?>"><?php echo $ddl_centro->id_centro;?>-<?php echo $ddl_centro->nombre;?>
+                                            </option>
+                                                <?php
+                                                }
+                                            }
+                                                ?>
+                                </select>
+                                <small id="id_centroHelp" class="form-text text-muted">Diligencie el centro solicitante de la solicitud.</small>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="identificacion">Encargado de centro</label>
+                                <select class="form-control" id="identificacion" name="identificacion" style="width:100%">
+                                    <option selected value=""><?php echo $this->solicitud->identificacion; ?></option>
+                                        <?php
+                                            include_once 'models/usuario.php';
+
+                                            if(count($this->ddl_usuarios)>0){
+                                                foreach ($this->ddl_usuarios as $usuario) {
+                                                $ddl_usuario = new UsuarioDAO();
+                                                $ddl_usuario = $usuario;
+                                        ?>
+                                                <option  value="<?php echo $ddl_usuario->identificacion;?>"><?php echo $ddl_usuario->identificacion;?>-<?php echo $ddl_usuario->nombre;?>-<?php echo $ddl_usuario->apellido; ?>-<?php echo $ddl_usuario->cargo; ?></option>
+                                                <?php
+                                                }
+                                            }
+                                                ?>
+                                </select>
+                                <small id="identificacionHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                            </div>
                         <div class="form-group col-md-12">
                             <label for="descripcion">Descripciòn</label>
-                            <textarea  class="form-control" name="descripcion" id="descripcion" cols="30" rows="10" value="<?php echo $this->solicitud->descripcion; ?>"></textarea>
+                            <textarea  class="form-control" name="descripcion" id="descripcion" cols="30" rows="10" value="<?php echo $this->solicitud->descripcion; ?>"><?php echo $this->solicitud->descripcion; ?></textarea>
                             <small id="descripcionHelp" class="form-text text-muted">Diligencie el descripcion de la solicitud.</small>
                         </div>
                     </div>
