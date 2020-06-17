@@ -14,8 +14,12 @@
                             <div id="main" >
                                 <div><?php echo $this->mensaje; ?></div>
                                 <h1 class="text-center"><i class="fa fa-car" aria-hidden="true"></i> Listado de vehículos</h1>
-                                <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>/vehiculo/crear")'>Crear vehículo</button><br>
+                                <div class="row">
+                                <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>/vehiculo/crear")'>Crear vehículo</button>
 
+                                <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/pdf/vehiculo.php")'>PDF</button><br>
+                                
+                                </div>
                                 <table id="tabla" class="table table-hover">
                                     <thead class="thead-dark">
                                         <tr>
