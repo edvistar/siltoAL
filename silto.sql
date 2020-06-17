@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-06-2020 a las 05:38:40
+-- Tiempo de generación: 17-06-2020 a las 23:03:05
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.7
 
@@ -57,7 +57,7 @@ CREATE TABLE `centro` (
 --
 
 INSERT INTO `centro` (`id_centro`, `nombre`, `email`, `telefono`, `whatsapp`, `departamento`, `ciudad`, `lugar`, `identificacion`) VALUES
-(34545, 'OcatiCotas', 'victorhoyoscolombia@gmail.com', 3138252764, 'SI', '73', '428', '', 1078371526);
+(34545, 'OcatiCotas', 'victorhoyoscolombia@gmail.com', 3138252764, 'SI', '73', '428', 'Chia', 1070007809);
 
 -- --------------------------------------------------------
 
@@ -1259,6 +1259,25 @@ INSERT INTO `producto` (`id_producto`, `nombre`, `costo`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `roles`
+--
+
+CREATE TABLE `roles` (
+  `id` int(11) NOT NULL,
+  `rol` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `roles`
+--
+
+INSERT INTO `roles` (`id`, `rol`) VALUES
+(1, 'administrador'),
+(2, 'coordinador');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `rutas`
 --
 
@@ -1282,7 +1301,7 @@ CREATE TABLE `rutas` (
 --
 
 INSERT INTO `rutas` (`id_ruta`, `fecha_ruta`, `hora_salida`, `hora_llegada`, `tipo_ruta`, `precinto`, `identificacion`, `placa`, `id_centro`, `variedad_productos`, `id_solicitud`, `observaciones`) VALUES
-(15, '2020-06-14', '20:33:00', '08:33:00', 'Nacional', '123456', 20199375, 'AD343', 34545, '-uchuba-chulupa-freijoa-tamarillo', 1, 'la papaya');
+(22, '2020-06-17', '15:56:00', '15:56:00', 'Nacional', '5555', 22656626, 'ADM435', 34545, '-uchuba-lulo-tamarillo', 12, 'Full');
 
 -- --------------------------------------------------------
 
@@ -1312,7 +1331,7 @@ INSERT INTO `sectores` (`idSect`, `sector`, `idCiud`) VALUES
 
 CREATE TABLE `solicitud` (
   `id_solicitud` int(11) NOT NULL COMMENT 'Id de la solicitud para la ruta.',
-  `solicitud` datetime NOT NULL COMMENT 'Fecha de la solicitudde ruta.',
+  `fecha_solicitud` date NOT NULL COMMENT 'Fecha de la solicitudde ruta.',
   `descripcion` text COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Descripcion de la ruta solicitada.',
   `id_centro` int(11) NOT NULL,
   `identificacion` bigint(20) NOT NULL COMMENT 'Nombre del encargado de centro.'
@@ -1322,11 +1341,8 @@ CREATE TABLE `solicitud` (
 -- Volcado de datos para la tabla `solicitud`
 --
 
-INSERT INTO `solicitud` (`id_solicitud`, `solicitud`, `descripcion`, `id_centro`, `identificacion`) VALUES
-(1, '2020-06-09 00:00:00', 'viaje completo', 34545, 22656626),
-(2, '2020-06-11 20:37:13', 'Viaje commpleto', 0, 20199375),
-(3, '2020-06-11 20:50:11', 'Viaje commpleto', 34545, 1683809522),
-(5, '2020-06-14 18:11:20', 'una tonelada de frutas jjjj', 34545, 1683809522);
+INSERT INTO `solicitud` (`id_solicitud`, `fecha_solicitud`, `descripcion`, `id_centro`, `identificacion`) VALUES
+(12, '2020-06-17', 'hola', 34545, 1070007809);
 
 -- --------------------------------------------------------
 
@@ -1345,19 +1361,21 @@ CREATE TABLE `usuario` (
   `estado` text COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Estado del User',
   `fecha_ingreso` datetime NOT NULL DEFAULT current_timestamp() COMMENT 'Fecha de ingreso user',
   `foto` varchar(300) COLLATE utf8_spanish2_ci NOT NULL,
-  `pass` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL COMMENT 'password'
+  `pass` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL COMMENT 'password',
+  `id` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`identificacion`, `nombre`, `apellido`, `email`, `telefono`, `whatsapp`, `cargo`, `estado`, `fecha_ingreso`, `foto`, `pass`) VALUES
-(20199375, 'Patricia lara', 'Lara Dimate', 'lida@gmail.com', 2147483647, 'NO', 'Seleccionar', 'activo', '2020-06-11 06:45:03', '', 'ed7bf4b59cd04ac01b0dfc3664769a73'),
-(22656626, 'Victor Eduardo', 'Hoyos Sandoval', 'victorhoyoscolombia@gmail.com', 2147483647, 'SI', 'conductor', 'activo', '2020-06-09 21:46:40', 'public/img/contact/', 'fcea920f7412b5da7be0cf42b8c93759'),
-(1070007809, 'Alexandra ', 'Castro Clavijo', 'jacastro9087@misena.edu.co', 2147483647, 'SI', 'administrador', 'activo', '2020-06-11 19:16:19', 'public/img/contact/alexa.png', '866b425d671cb40b206e02673b199b92'),
-(1078371526, 'Jhonatan', 'Lopez Gonzalez', 'jrlopez62@misena.edu.co', 2147483647, 'SI', 'administrador', 'activo', '2020-06-11 19:19:35', 'public/img/contact/lopez.jpg', '1f32aa4c9a1d2ea010adcf2348166a04'),
-(1683809522, 'luis', 'joder', 'luisjoder@gmail.com', 2123252764, 'SI', 'supervisor', 'activo', '2020-06-22 00:00:00', '', 'fcea920f7412b5da7be0cf42b8c93759');
+INSERT INTO `usuario` (`identificacion`, `nombre`, `apellido`, `email`, `telefono`, `whatsapp`, `cargo`, `estado`, `fecha_ingreso`, `foto`, `pass`, `id`) VALUES
+(16838095, 'Victor Eduardo', 'Hoyos Sandoval', 'victorhoyoscolombia@gmail.com', 2147483647, '1', 'supervisor', 'activo', '2020-06-15 17:41:57', 'public/img/usuarios/', 'fcea920f7412b5da7be0cf42b8c93759', 0),
+(20199375, 'Patricia lara', 'Lara Dimate', 'lida@gmail.com', 2147483647, 'NO', 'Seleccionar', 'activo', '2020-06-11 06:45:03', '', 'ed7bf4b59cd04ac01b0dfc3664769a73', 0),
+(22656626, 'Victor Eduardo', 'Hoyos Sandoval', 'victorhoyoscolombia@gmail.com', 2147483647, 'SI', 'supervisor', 'activo', '2020-06-09 21:46:40', 'public/img/contact/', '224cf2b695a5e8ecaecfb9015161fa4b', 0),
+(1070007809, 'Alexandra ', 'Castro Clavijo', 'jacastro9087@misena.edu.co', 2147483647, 'SI', 'administrador', 'activo', '2020-06-11 19:16:19', 'public/img/contact/alexa.png', '866b425d671cb40b206e02673b199b92', 0),
+(1078371526, 'Jhonatan', 'Lopez Gonzalez', 'jrlopez62@misena.edu.co', 2147483647, 'SI', 'administrador', 'activo', '2020-06-11 19:19:35', 'public/img/contact/lopez.jpg', '1f32aa4c9a1d2ea010adcf2348166a04', 0),
+(1683809522, 'luis', 'joder', 'luisjoder@gmail.com', 2123252764, 'SI', 'supervisor', 'activo', '2020-06-22 00:00:00', '', 'fcea920f7412b5da7be0cf42b8c93759', 0);
 
 -- --------------------------------------------------------
 
@@ -1414,6 +1432,12 @@ ALTER TABLE `producto`
   ADD PRIMARY KEY (`id_producto`);
 
 --
+-- Indices de la tabla `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `rutas`
 --
 ALTER TABLE `rutas`
@@ -1435,7 +1459,8 @@ ALTER TABLE `solicitud`
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`identificacion`);
+  ADD PRIMARY KEY (`identificacion`),
+  ADD KEY `rol_id` (`id`);
 
 --
 -- Indices de la tabla `vehiculo`
@@ -1460,16 +1485,22 @@ ALTER TABLE `departamentos`
   MODIFY `idDepa` int(2) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
+-- AUTO_INCREMENT de la tabla `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT de la tabla `rutas`
 --
 ALTER TABLE `rutas`
-  MODIFY `id_ruta` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificación de ruta', AUTO_INCREMENT=16;
+  MODIFY `id_ruta` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificación de ruta', AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `solicitud`
 --
 ALTER TABLE `solicitud`
-  MODIFY `id_solicitud` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id de la solicitud para la ruta.', AUTO_INCREMENT=6;
+  MODIFY `id_solicitud` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id de la solicitud para la ruta.', AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
