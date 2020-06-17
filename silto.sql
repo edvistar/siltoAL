@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-06-2020 a las 03:41:11
+-- Tiempo de generación: 15-06-2020 a las 05:38:40
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.7
 
@@ -1366,12 +1366,11 @@ INSERT INTO `usuario` (`identificacion`, `nombre`, `apellido`, `email`, `telefon
 --
 
 CREATE TABLE `vehiculo` (
-  `placa` varchar(5) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Placa de vehiculo',
+  `placa` varchar(6) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Placa de vehiculo',
   `capacidad` varchar(15) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Capacidad de cargue vehiculo',
-  `seguro` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Seguro de vehiculo',
-  `tecnomecanica` varchar(11) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Tecnomecanica vehiculo',
+  `seguro` date NOT NULL COMMENT 'Seguro de vehiculo',
+  `tecnomecanica` date NOT NULL COMMENT 'Tecnomecanica vehiculo',
   `tipo_vehiculo` varchar(11) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Tipo de vehiculo de carga.',
-  `costo_flete` int(11) NOT NULL COMMENT 'Costo de plete por carga',
   `gps` varchar(2) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'GPS de vehiculo',
   `estado` varchar(11) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Estao de vehiculo en la empresa propiedad o contratista.',
   `identificacion` bigint(20) NOT NULL COMMENT 'Nombre de conductor.',
@@ -1382,9 +1381,8 @@ CREATE TABLE `vehiculo` (
 -- Volcado de datos para la tabla `vehiculo`
 --
 
-INSERT INTO `vehiculo` (`placa`, `capacidad`, `seguro`, `tecnomecanica`, `tipo_vehiculo`, `costo_flete`, `gps`, `estado`, `identificacion`, `fecha_registro`) VALUES
-('AD343', '10', 'Omega', '2020-06-11', 'Furgon', 200000, '0', 'excelente', 1683809522, '2020-06-11 05:00:00'),
-('ghy56', '15 tonelads', '23123123', '2020-06-11', 'furgon', 0, 'si', 'contratista', 1070007809, '2020-06-12 19:55:34');
+INSERT INTO `vehiculo` (`placa`, `capacidad`, `seguro`, `tecnomecanica`, `tipo_vehiculo`, `gps`, `estado`, `identificacion`, `fecha_registro`) VALUES
+('ADM435', '10', '2020-06-14', '2020-06-14', 'tractocamin', 'si', 'contratista', 1078371526, '2020-06-15 10:10:19');
 
 --
 -- Índices para tablas volcadas

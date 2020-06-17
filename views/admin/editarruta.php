@@ -20,7 +20,11 @@
                 <div class="panel-body">
                     <form action="<?php echo constant('URL'); ?>ruta/editar" method="POST">
                         <div class="row">
-                        
+                        <div class="form-group col-md-4">
+                                <label for="id_ruta">Id Ruta</label>
+                                <input type="number" class="form-control" value="<?php echo $this->ruta->id_ruta; ?>" name="id_ruta" id="id_ruta" readonly>
+                                <small id="id_rutaHelp" class="form-text text-muted">Diligencie la fecha de la ruta</small>
+                            </div>
                             <div class="form-group col-md-4">
                                 <label for="fecha_ruta">Fecha Ruta</label>
                                 <input type="date" class="form-control" value="<?php echo $this->ruta->fecha_ruta; ?>" name="fecha_ruta" id="fecha_ruta">
@@ -132,46 +136,42 @@
                             </div>
 
                                 <?php 
-                                    $arr_productos=explode('.',$this->ruta->variedad_productos);
+                                    $arr_productos=explode('-',$this->ruta->variedad_productos);
                                     $producto;
                                     foreach($arr_productos as $item){
                                         $producto[$item]='checked="checked"';
                                     }
                                  ?>
                         <div class="custom-control form-check form-group col-md-12">
-                                <label class="form-text text-muted">Productos en la ruta</label><br>
-                                <input type="checkbox" id="producto_0" name="productos[0]" <?php echo (isset($producto["uchuba"])?$producto["uchuba"]:""); ?>   value="uchuba" class="form-check-input">
-                                <label class="form-check-label" for="producto_0">Uchuba</label>
-                                <input type="checkbox" id="producto_1" name="productos[1]" <?php echo (isset($producto["maracuya"])?$producto["maracuya"]:""); ?>   value="maracuya" class="form-check-input">
+                        <label class="form-text text-muted">Productos en la ruta</label><br>
+                        <input type="checkbox" id="producto_0" name="productos[0]" <?php echo (isset($producto["uchuba"])?$producto["uchuba"]:""); ?>   value="uchuba" checked class="form-check-input">
+                                <label class="form-check-label" for="productos_0">Uchuba</label>
+                                <input type="checkbox" id="producto_1" name="productos[1]" <?php echo (isset($producto["maracuya"])?$producto["maracuya"]:""); ?> value="maracuya"  class="form-check-input">
                                 <label class="form-check-label" for="producto_1">Maracuya</label>
-                                <input type="checkbox" id="producto_2" name="productos[2]" <?php echo (isset($producto["chulupa"])?$producto["chulupa"]:""); ?>  value="chulupa" class="form-check-input">
-                                <label class="form-check-label" for="producto_2">Chulupa</label>
-                                <input type="checkbox" id="producto_3" name="productos[3]" <?php echo (isset($producto["arandanos"])?$producto["arandanos"]:""); ?>  value="arandanos" class="form-check-input">
-                                <label class="form-check-label" for="producto_3">Arandanos</label>
+                                <input type="checkbox" id="producto_2" name="productos[2]" <?php echo (isset($producto["chulupa"])?$producto["chulupa"]:""); ?>  value="chulupa"  class="form-check-input">
+                                <label class="form-check-label" for="productos_2">Chulupa</label>
+                                <input type="checkbox" id="producto_3" name="productos[3]" <?php echo (isset($producto["arandanos"])?$producto["arandanos"]:""); ?>  value="arandanos"  class="form-check-input">
+                                <label class="form-check-label" for="productos_3">Arandanos</label>
                                 <input type="checkbox" id="producto_4" name="productos[4]" <?php echo (isset($producto["pitaya"])?$producto["pitaya"]:""); ?>  value="pitaya" class="form-check-input">
-                                <label class="form-check-label" for="producto_4">Pitaya</label><br>
+                                <label class="form-check-label" for="productos_4">Pitaya</label><br>
                                 <input type="checkbox" id="producto_5" name="productos[5]" <?php echo (isset($producto["granadilla"])?$producto["granadilla"]:""); ?>  value="granadilla" class="form-check-input">
-                                <label class="form-check-label" for="producto_5">Granadilla</label>
+                                <label class="form-check-label" for="productos_5">Granadilla</label>
                                 <input type="checkbox" id="producto_6" name="productos[6]" <?php echo (isset($producto["freijoa"])?$producto["freijoa"]:""); ?>  value="freijoa" class="form-check-input">
                                 <label class="form-check-label" for="productos_6">Freijoa</label>
                                 <input type="checkbox" id="producto_7" name="productos[7]" <?php echo (isset($producto["lulo"])?$producto["lulo"]:""); ?>  value="lulo" class="form-check-input">
-                                <label class="form-check-label" for="producto_7">Lulo</label>
+                                <label class="form-check-label" for="productos_7">Lulo</label>
                                 <input type="checkbox" id="producto_8" name="productos[8]" <?php echo (isset($producto["guanabana"])?$producto["guanabana"]:""); ?>  value="guanabana" class="form-check-input">
-                                <label class="form-check-label" for="producto_8">Guanabana</label>
+                                <label class="form-check-label" for="productos_8">Guanabana</label>
                                 <input type="checkbox" id="producto_9" name="productos[9]" <?php echo (isset($producto["tamarillo"])?$producto["tamarillo"]:""); ?>  value="tamarillo" class="form-check-input">
-                                <label class="form-check-label" for="producto_9">Tamarillo</label>
+                                <label class="form-check-label" for="productos_9">Tamarillo</label>
                                 <input type="checkbox" id="producto_10" name="productos[10]" <?php echo (isset($producto["babybanana"])?$producto["babybanana"]:""); ?> value="babybanana" class="form-check-input">
-                                <label class="form-check-label" for="producto_10">Babybanana</label>
+                                <label class="form-check-label" for="productos_10">Babybanana</label>
                             </div>
-                             <!-- <div class="form-group col-md-4">
-                                <label for="descripcion">Descripción</label>
-                                <input type="text" class="form-control" value="<?php echo $this->ruta->descripcion; ?>" name="descripcion" id="descripcion">
-                                <small id="descripcioneHelp" class="form-text text-muted">Descripción</small>
-                            </div> -->
+                            
                             <div class="form-group col-md-12">
-                                <label for="observaciones">Descripciòn de solicitud</label>
-                                <textarea  class="form-control" name="observaciones" id="observaciones" cols="30" rows="10" value="<?php echo $this->ruta->observaciones; ?>" ></textarea>
-                                <small id="descripcionHelp" class="form-text text-muted">Observaciones</small>
+                                <label for="observaciones">Observaciones</label>
+                                <textarea  class="form-control" name="observaciones" id="observaciones" cols="30" rows="10" value="<?php echo $this->ruta->observaciones; ?>" ><?php echo $this->ruta->observaciones; ?></textarea>
+                                <small id="observacionesHelp" class="form-text text-muted">Observaciones</small>
                             </div>
                         </div>
                         <div class="text-center ">

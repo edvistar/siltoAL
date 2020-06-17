@@ -66,6 +66,7 @@
                                         <option value="Bodeguero">Bodeguero</option>
                                         <option value="Coordinador">Coordinador</option>
                                         <option value="Conductor">Conductor</option>
+                                        <option value="supervisor">Supervisor</option>
                                     </select>
                                     <small id="cargopHelp" class="form-text text-muted">Diligencie el cargo a desempeñar el usuario</small>
                                 </div>

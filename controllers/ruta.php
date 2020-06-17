@@ -60,20 +60,19 @@
             if($this->model->update($_POST)){
                 $ruta = new RutaDAO();
 
-                $ruta->id_ruta        = $id;
+                $ruta->id_ruta            = $id;
                 //$ruta->id_ruta        = $_POST['id_ruta'];
-                $ruta->fecha_ruta     = $_POST['fecha_ruta'];
-                $ruta->hora_salida    = $_POST['hora_salida'];
-                $ruta->hora_llegada   = $_POST['hora_llegada'];
-                $ruta->descripcion    = $_POST['descripcion'];
-                $ruta->tipo_ruta      = $_POST['tipo_ruta'];
-                $ruta->precinto       = $_POST['precinto'];
-                $ruta->identificacion = $_POST['identificacion'];
-                $ruta->placa          = $_POST['placa'];
-                $ruta->id_centro      = $_POST['id_centro'];
-                $ruta->variedad_productos      = $_POST['variedad_productos'];
-                $ruta->id_solicitud      = $_POST['id_solicitud'];
-                $ruta->obervaciones      = $_POST['obervaciones'];
+                $ruta->fecha_ruta         = $_POST['fecha_ruta'];
+                $ruta->hora_salida        = $_POST['hora_salida'];
+                $ruta->hora_llegada       = $_POST['hora_llegada'];
+                $ruta->tipo_ruta          = $_POST['tipo_ruta'];
+                $ruta->precinto           = $_POST['precinto'];
+                $ruta->identificacion     = $_POST['identificacion'];
+                $ruta->placa              = $_POST['placa'];
+                $ruta->id_centro          = $_POST['id_centro'];
+               // $ruta->variedad_productos = $_POST['variedad_productos'];          
+                $ruta->id_solicitud       = $_POST['id_solicitud'];
+               // $ruta->obervaciones       = $_POST['obervaciones'];
 
                 $this->view->ruta = $ruta;
                 $this->view->mensaje = "Ruta actualizada correctamente";

@@ -24,7 +24,6 @@
                                             <th  scope="col">Seguro </th>
                                             <th  scope="col">Tecnomecánica</th>
                                             <th  scope="col">Tipo vehiculo</th>
-                                            <th  scope="col">Conductor</th>
                                             <th  scope="col">GPS</th>
                                             <th  scope="col">Estado</th>
                                             <th  scope="col">Conductor</th>
