@@ -17,13 +17,17 @@
 
             //session_start();
             $_SESSION["id_verSolicitud"] = $solicitud->id_solicitud;
+            $usuarios = $this->view->datos['ddl_usuarios'] = $this->model->cargarEncargado();
+            $this->view->ddl_usuarios = $usuarios;
+            $centros = $this->view->datos['ddl_centros'] = $this->model->cargarCentro();
+            $this->view->ddl_centros = $centros;
 
             $this->view->solicitud = $solicitud;
             $this->view->render('admin/editarsolicitud');
         }
         // funcion crear  data en base de  datos
         function crear(){
-            if(isset($_POST["id_solicitud"])){
+            if(isset($_POST["descripcion"])){
                 if($this->model->create($_POST)){
                     $this->view->mensaje = "Solicitud creada correctamente";
                     $solicitudes = $this->view->datos = $this->model->read();
@@ -41,19 +45,9 @@
                 $this->view->ddl_centros = $centros;
                 $this->view->render('admin/crearsolicitud');
             }
-            function leer($param = null){
-                $id_solicitud = $param[0];
-                $solicitud = $this->model->readById($id_solicitud);
-
-                //session_start();
-                $_SESSION["id_verSolicitud"] = $centro->id_centro;
-                $usuarios = $this->view->datos['ddl_usuarios'] = $this->model->cargarEncargado();
-                $this->view->ddl_usuarios = $usuarios;
-
-                $this->view->solicitud = $solicitud;
-                $this->view->render('admin/editarsolicitud');
-            }
+           
         }
+        
         // funcion editar la data de la base de datos.
         function editar($param = null){
             //session_start();
@@ -64,11 +58,11 @@
                 $solicitud = new SolicitudDAO();
 
                 $solicitud->id_solicitud     = $id;
-                $solicitud->id_solicitud     = $_POST['id_solicitud'];
-                $solicitud->solicitud        = $_POST['solicitud'];
-                $solicitud->descripcion      = $_POST['descripcion'];
-                // $solicitud->id_centro   = $_POST['id_centro'];
-                // $solicitud->identificacion   = $_POST['identificacion'];
+                //$solicitud->id_solicitud     = $_POST['id_solicitud'];
+                //$solicitud->solicitud        = $_POST['solicitud'];
+                //$solicitud->descripcion        = $_POST['descripcion'];
+               //$solicitud->id_centro          = $_POST['id_centro'];
+               // $solicitud->identificacion    = $_POST['identificacion'];
 
                 $this->view->solicitud = $solicitud;
                 $this->view->mensaje = "Solicitud actualizado correctamente";

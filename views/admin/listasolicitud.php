@@ -36,7 +36,7 @@
                                 ?>
                                             <tr id="fila-<?php echo $solicitud->id_solicitud; ?>">
                                                 <td><?php echo $solicitud->id_solicitud; ?></td>
-                                                <td><?php echo $solicitud->solicitud; ?></td>
+                                                <td><?php echo $solicitud->fecha_solicitud; ?></td>
                                                 <td><?php echo $solicitud->descripcion; ?>
                                                 <td><?php echo $solicitud->id_centro; ?>
                                                 <td><?php echo $solicitud->identificacion; ?>

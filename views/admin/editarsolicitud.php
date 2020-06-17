@@ -29,8 +29,8 @@
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="solicitud">Solicitud</label>
-                            <input type="date" class="form-control" value="<?php echo $this->solicitud->solicitud; ?>" name="solicitud" id="solicitud"><?php echo $this->solicitud->solicitud; ?>
+                            <label for="fecha_solicitud">Fecha de Solicitud</label>
+                            <input type="date" class="form-control" value="<?php echo $this->solicitud->fecha_solicitud; ?>" name="fecha_solicitud" id="fecha_solicitud" readonly>
                             <small id="solicitudHelp" class="form-text text-muted">Diligencie la solicitud de ruta</small>
                         </div>
                         <div class="form-group col-md-6">
