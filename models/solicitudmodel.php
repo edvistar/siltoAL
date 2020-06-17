@@ -8,14 +8,14 @@
         public function create($datos = null){
             // insertar
             //if(!isset($datos)){
-                $sentenceSQL="INSERT INTO solicitud (solicitud, descripcion, id_centro, identificacion) VALUES( :solicitud, :descripcion, :id_centro, :identificacion)";
+                $sentenceSQL="INSERT INTO solicitud (fecha_solicitud, descripcion, id_centro, identificacion) VALUES( :fecha_solicitud, :descripcion, :id_centro, :identificacion)";
                 $connexionDB=$this->db->connect();
                 $query = $connexionDB->prepare($sentenceSQL);
                 
                 try{
                     $query->execute([
                                     //'id_solicitud'    =>$datos['id_solicitud'],
-                                    'solicitud'       => date('Y-m-d H:i:s'),
+                                    'fecha_solicitud'       => date('Y-m-d'),
                                     'descripcion'     => $datos['descripcion'],
                                     'id_centro'       => $datos['id_centro'],
                                     'identificacion'  => $datos['identificacion']
@@ -35,6 +35,85 @@
             // }
 
         }
+       
+        public function read(){
+            $items = [];
+            try{
+                $query = $this->db->connect()->query('SELECT sol.id_solicitud, sol.fecha_solicitud, sol.descripcion, 
+                cent.nombre as nombreCentro, usu.nombre as nombreUsuario
+                FROM solicitud as sol
+                INNER JOIN centro as cent on cent.id_centro=cent.id_centro
+                INNER JOIN usuario as usu on usu.identificacion=sol.identificacion
+                ');
+
+                while($row = $query->fetch()){
+                    $item = new SolicitudDAO();
+
+                    $item->id_solicitud     = $row['id_solicitud'];
+                    $item->fecha_solicitud  = $row['fecha_solicitud'];
+                    $item->descripcion      = $row['descripcion'];
+                    $item->id_centro        = $row['nombreCentro'];
+                    $item->identificacion   = $row['nombreUsuario'];
+
+                    array_push($items, $item);
+                }
+                return $items;
+            }catch(PDOException $e){
+            if(constant("DEBUG")){
+                echo $e->getMessage();
+            }
+                return [];
+            }
+        }
+        // funcion para llamar data de un solo id  para la modificacion
+        public function readById($id){
+            $item = new SolicitudDAO();
+            try{
+                $query = $this->db->connect()->prepare('SELECT sol.id_solicitud, sol.fecha_solicitud, sol.descripcion, 
+                cent.nombre as nombreCentro, usu.nombre as nombreUsuario
+                FROM solicitud as sol
+                INNER JOIN centro as cent on cent.id_centro=cent.id_centro
+                INNER JOIN usuario as usu on usu.identificacion=sol.identificacion 
+
+                WHERE id_solicitud = :id');
+
+                $query->execute(['id' => $id]);
+
+                while($row = $query->fetch()){
+                    $item->id_solicitud     = $row['id_solicitud'];
+                    $item->fecha_solicitud  = $row['fecha_solicitud'];
+                    $item->descripcion      = $row['descripcion'];
+                    $item->id_centro        = $row['nombreCentro'];
+                    $item->identificacion   = $row['nombreUsuario'];
+                }
+                return $item;
+            }catch(PDOException $e){
+                if(constant("DEBUG")){
+                    echo $e->getMessage();
+                }
+                return null;
+            }
+        }
+        //funcion para modificar la data de la base de datos.
+        public function update($item){
+            $query = $this->db->connect()->prepare('UPDATE solicitud SET fecha_solicitud = :fecha_solicitud, descripcion = :descripcion, id_centro = :id_centro, identificacion = :identificacion WHERE id_solicitud = :id_solicitud');
+            try{
+                $query->execute([
+                    'id_solicitud'       => $item['id_solicitud'],
+                    'fecha_solicitud'    => $item['fecha_solicitud'],
+                    'descripcion'        => $item['descripcion'],
+                    'id_centro'          => $item['id_centro'],
+                    'identificacion'     => $item['identificacion']
+                ]);
+                return true;
+            }catch(PDOException $e){
+                if(constant("DEBUG")){
+                    echo $e->getMessage();
+                }
+                return false;
+            }
+        }
+        //// esta funcion carga  la data de  la tabla centro
         public function cargarEncargado(){
             $items = [];
             try {
@@ -57,6 +136,7 @@
                 return [];
             }
         }
+        // esta funcion carga  la data de  la tabla centro
         public function cargarCentro(){
             $items = [];
             try {
@@ -76,76 +156,6 @@
                     echo $e->getMessage();
                 }
                 return [];
-            }
-        }
-        public function read(){
-            $items = [];
-            try{
-                $query = $this->db->connect()->query('SELECT sol.id_solicitud, sol.solicitud, sol.descripcion, 
-                cent.nombre as nombreCentro, usu.nombre as nombreUsuario
-                FROM solicitud as sol
-                INNER JOIN centro as cent on cent.id_centro=cent.id_centro
-                INNER JOIN usuario as usu on usu.identificacion=cent.identificacion
-                ');
-
-                while($row = $query->fetch()){
-                    $item = new SolicitudDAO();
-
-                    $item->id_solicitud     = $row['id_solicitud'];
-                    $item->solicitud        = $row['solicitud'];
-                    $item->descripcion      = $row['descripcion'];
-                    $item->id_centro        = $row['nombreCentro'];
-                    $item->identificacion   = $row['nombreUsuario'];
-
-                    array_push($items, $item);
-                }
-                return $items;
-            }catch(PDOException $e){
-            if(constant("DEBUG")){
-                echo $e->getMessage();
-            }
-                return [];
-            }
-        }
-        public function readById($id){
-            $item = new SolicitudDAO();
-            try{
-                $query = $this->db->connect()->prepare('SELECT * FROM solicitud WHERE id_solicitud = :id');
-
-                $query->execute(['id' => $id]);
-
-                while($row = $query->fetch()){
-                    $item->id_solicitud     = $row['id_solicitud'];
-                    $item->solicitud        = $row['solicitud'];
-                    $item->descripcion      = $row['descripcion'];
-                    $item->id_centro   = $row['id_centro'];
-                    $item->identificacion   = $row['identificacion'];
-                }
-                return $item;
-            }catch(PDOException $e){
-                if(constant("DEBUG")){
-                    echo $e->getMessage();
-                }
-                return null;
-            }
-        }
-        public function update($item){
-            $query = $this->db->connect()->prepare('UPDATE solicitud SET solicitud = :solicitud, descripcion = :descripcion, cantidad_kilos = :cantidad_kilos WHERE id_solicitud = :id_solicitud');
-            try{
-                $query->execute([
-                    'id_solicitud'    => $item['id_solicitud'],
-                    'solicitud'       => $item['solicitud'],
-                    'descripcion'     => $item['descripcion'],
-                    'cantidad_kilos'  => $item['cantidad_kilos'],
-                    'id_centro'       => $item['id_centro'],
-                    'identificacion'   => $item['identificacion']
-                ]);
-                return true;
-            }catch(PDOException $e){
-                if(constant("DEBUG")){
-                    echo $e->getMessage();
-                }
-                return false;
             }
         }
         public function delete($id){

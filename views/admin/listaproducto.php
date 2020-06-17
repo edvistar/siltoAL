@@ -15,7 +15,7 @@
                             <h1 class="text-center"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Listado de Productos </h1>
                             <div class=" row">
                             <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>producto/crear")'>Crear Producto</button>
-                            <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>producto/crear")'>PDF</button><br>
+                            <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/config.php")'>PDF</button><br>
                             </div>
                             
 

@@ -53,6 +53,9 @@
   </div>
 </header>
 <?php require 'views/footer.php'; ?>
+<script>
+  txtusu.focus();
+</script>
 </body>
 
 </html>

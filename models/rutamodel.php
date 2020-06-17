@@ -17,16 +17,16 @@
                 try{
                     $query->execute([
                                     
-                                    'fecha_ruta'     => $datos['fecha_ruta'],
-                                    'hora_salida'    => $datos['hora_salida'],
-                                    'hora_llegada'   => $datos['hora_llegada'],
-                                    'tipo_ruta'      => $datos['tipo_ruta'],
-                                    'precinto'       => $datos['precinto'],
-                                    'identificacion' => $datos['identificacion'],
-                                    'placa'          => $datos['placa'],
-                                    'id_centro'      => $datos['id_centro'],
+                                    'fecha_ruta'         => $datos['fecha_ruta'],
+                                    'hora_salida'        => $datos['hora_salida'],
+                                    'hora_llegada'       => $datos['hora_llegada'],
+                                    'tipo_ruta'          => $datos['tipo_ruta'],
+                                    'precinto'           => $datos['precinto'],
+                                    'identificacion'     => $datos['identificacion'],
+                                    'placa'              => $datos['placa'],
+                                    'id_centro'          => $datos['id_centro'],
                                     'variedad_productos' => $misproductos,
-                                    'id_solicitud'      => $datos['id_solicitud'],
+                                    'id_solicitud'       => $datos['id_solicitud'],
                                     'observaciones'      => $datos['observaciones']
                     ]);
                     return true;
@@ -151,7 +151,7 @@
                     $item->id_centro          = $row['nombreCentro'];
                     $item->variedad_productos = $row['variedad_productos'];
                     $item->id_solicitud       = $row['id_solicitud'];
-                    $item->observaciones       = $row['observaciones'];
+                    $item->observaciones      = $row['observaciones'];
 
                     array_push($items, $item);
                 }
@@ -205,17 +205,8 @@
             foreach($item["productos"] as $producto){
                 $misproductos = $misproductos. "-".$producto;
             }
-            $query = $this->db->connect()->prepare('UPDATE rutas SET  
-            fecha_ruta = :fecha_ruta, 
-            hora_salida = :hora_salida, 
-            hora_llegada = :hora_llegada, 
-            tipo_ruta = :tipo_ruta, 
-            precinto = :precinto, 
-            identificacion = :identificacion, 
-            placa = :placa, 
-            id_centro = :id_centro, 
-            variedad_productos = :variedad_productos, 
-            id_solicitud = :id_solicitud 
+            $query = $this->db->connect()->prepare('UPDATE rutas SET fecha_ruta = :fecha_ruta, hora_salida = :hora_salida, hora_llegada = :hora_llegada, tipo_ruta = :tipo_ruta, precinto = :precinto, 
+            identificacion = :identificacion, placa = :placa, id_centro = :id_centro, variedad_productos = :variedad_productos, id_solicitud = :id_solicitud, observaciones = :observaciones
             WHERE id_ruta = :id_ruta');
             try{
                 $query->execute([
@@ -229,8 +220,9 @@
                         'placa'              => $item['placa'],
                         'id_centro'          => $item['id_centro'],
                         'variedad_productos' => $misproductos,
-                        'id_solicitud   '    => $item['id_solicitud'],
-                        'observaciones   '    => $item['observaciones']
+                        'id_solicitud'       => $item['id_solicitud'],
+                        'observaciones'      => $item['observaciones']
+                        
                 ]);
                 return true;
             }catch(PDOException $e){

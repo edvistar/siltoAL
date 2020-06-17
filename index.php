@@ -6,6 +6,7 @@
     require 'libs/view.php';
     require 'libs/app.php';
     require 'config/config.php';
+
     
     //$_SESSION['auth']=false;
     
