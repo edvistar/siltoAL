@@ -14,7 +14,8 @@
                             <div id="main">
                                 <div><?php echo $this->mensaje; ?></div>
                                 <h1 class="text-center"><i class="fa fa-eye" aria-hidden="true"></i> Listado Solicitudes</h1>
-                                <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>solicitud/crear")'>Crear Solicitud</button><br>
+                                <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>solicitud/crear")'>Crear Solicitud</button>
+                                <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/pdf/solicitud.php")'>PDF</button><br>
                                 <table id="tabla" class="table table-hover">
                                     <thead class="thead-dark">
                                         <tr>
