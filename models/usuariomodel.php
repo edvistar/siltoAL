@@ -27,7 +27,7 @@ class UsuarioModel extends Model{
                 'whatsapp'  => $datos['whatsapp'],
                 'cargo'            => $datos['cargo'],
                 'estado'           => $datos['estado'],
-                'foto'             => "public/img/usuarios/".$_FILES['foto']['name']
+                'foto'             => "public/img/contact/".$_FILES['foto']['name']
             ]);
             return true;
 

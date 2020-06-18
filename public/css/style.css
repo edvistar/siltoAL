@@ -3302,3 +3302,10 @@ element.style {
 div#sparklinehome canvas {
     width: 100% !important;
 }
+
+/* propiedades para la foto del usuario en la barra superior */
+#fotousuario{
+    width: 25px;
+    height: 30px;
+    border-radius: 50px;
+}

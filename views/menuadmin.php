@@ -12,6 +12,10 @@
                                 <span class="mini-click-non">Administrador</span>
 							</a>
                             <ul class="submenu-angle" aria-expanded="true">
+                                <!-- validar si el usuario es admin o superv -->
+                            <?php
+                                if($_SESSION['cargo']=="supervisor" || $_SESSION['cargo']=="administrador"):
+                            ?>
                             <!-- //crud usuario -->
                                 <li><a title="Registro Usuario" href="<?php echo constant('URL'); ?>usuario/crear"><i class="fa fa-user" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Usuario</span></a></li>
                                 <li><a title="Ver Usuarios" href="<?php echo constant('URL'); ?>usuario"><i class="fa fa-users nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Usuarios</span></a></li>
@@ -27,6 +31,7 @@
                                 <!-- crud solicitud -->
                                 <li><a title="Registro Solicitud " href="<?php echo constant('URL'); ?>solicitud/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Solicitud</span></a></li>
                                 <li><a title="Lista de solicitudes" href="<?php echo constant('URL'); ?>solicitud"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Solicitudes</span></a></li>
+                                <?php endif; //cierre if. las opciones de arriba solo seran visibles al rol valido ?>
                                 <!-- crud rutas -->
                                 <li><a title="Registro Ruta" href="<?php echo constant('URL'); ?>ruta/crear"><i class="fa fa-map-marker" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Rutas</span></a></li>
                                 <li><a title="Lista de rutas" href="<?php echo constant('URL'); ?>ruta"><i class="fa fa-map nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Rutas</span></a></li>

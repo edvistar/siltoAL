@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 
 <head>
-<?php require 'views/head.php'; ?>
+    <?php require 'views/head.php'; ?>
 </head>
 
 <body>
@@ -28,8 +28,8 @@
                                     <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
                                         <div class="menu-switcher-pro">
                                             <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
-													<i class="fa fa-bars"></i>
-												</button>
+                                                <i class="fa fa-bars"></i>
+                                            </button>
                                         </div>
                                     </div>
                                     <!-- MENU LISTA  -->
@@ -51,7 +51,7 @@
                                     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                         <div class="header-right-info">
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
-                                             <!-- ICONO MENSAJES BARRA NAVEGACION -->
+                                                <!-- ICONO MENSAJES BARRA NAVEGACION -->
                                                 <li class="nav-item dropdown">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-envelope-o adminpro-chat-pro" aria-hidden="true"></i><span class="indicator-ms"></span></a>
                                                     <div role="menu" class="author-message-top dropdown-menu animated zoomIn">
@@ -77,7 +77,7 @@
                                                         </div>
                                                     </div>
                                                 </li>
-                                                 <!-- ICONO NOTIFICACIONES BARRA NAVEGACION -->
+                                                <!-- ICONO NOTIFICACIONES BARRA NAVEGACION -->
                                                 <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-bell-o" aria-hidden="true"></i><span class="indicator-nt"></span></a>
                                                     <div role="menu" class="notification-author dropdown-menu animated zoomIn">
                                                         <div class="notification-single-top">
@@ -102,13 +102,15 @@
                                                         </div>
                                                     </div>
                                                 </li>
-                                                 <!-- ICONO USUARIO BARRA NAVEGACION -->
+                                                <!-- ICONO USUARIO BARRA NAVEGACION -->
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-															<i class="fa fa-user adminpro-user-rounded header-riht-inf" aria-hidden="true"></i>
-															<span class="admin-name">Advanda Cro</span>
-															<i class="fa fa-angle-down adminpro-icon adminpro-down-arrow"></i>
-														</a>
+                                                        <i class="fa  adminpro-user-rounded header-riht-inf" aria-hidden="true">
+                                                            <img id="fotousuario" src="<?php echo constant('URL') . $_SESSION['foto'] ?>" alt="Foto">
+                                                        </i>
+                                                        <span class="admin-name"><?php echo $_SESSION['nombre']; ?></span>
+                                                        <i class="fa fa-angle-down adminpro-icon adminpro-down-arrow"></i>
+                                                    </a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
                                                         <li><a href="<?php echo constant('URL'); ?>usuario/crear"><span class="fa fa-home author-log-ic"></span>Register</a>
                                                         </li>
@@ -199,9 +201,9 @@
                                                                                         <div class="onoffswitch">
                                                                                             <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example">
                                                                                             <label class="onoffswitch-label" for="example">
-																									<span class="onoffswitch-inner"></span>
-																									<span class="onoffswitch-switch"></span>
-																								</label>
+                                                                                                <span class="onoffswitch-inner"></span>
+                                                                                                <span class="onoffswitch-switch"></span>
+                                                                                            </label>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -215,9 +217,9 @@
                                                                                         <div class="onoffswitch">
                                                                                             <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example3">
                                                                                             <label class="onoffswitch-label" for="example3">
-																									<span class="onoffswitch-inner"></span>
-																									<span class="onoffswitch-switch"></span>
-																								</label>
+                                                                                                <span class="onoffswitch-inner"></span>
+                                                                                                <span class="onoffswitch-switch"></span>
+                                                                                            </label>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -231,9 +233,9 @@
                                                                                         <div class="onoffswitch">
                                                                                             <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example4">
                                                                                             <label class="onoffswitch-label" for="example4">
-																									<span class="onoffswitch-inner"></span>
-																									<span class="onoffswitch-switch"></span>
-																								</label>
+                                                                                                <span class="onoffswitch-inner"></span>
+                                                                                                <span class="onoffswitch-switch"></span>
+                                                                                            </label>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -247,9 +249,9 @@
                                                                                         <div class="onoffswitch">
                                                                                             <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example7">
                                                                                             <label class="onoffswitch-label" for="example7">
-																									<span class="onoffswitch-inner"></span>
-																									<span class="onoffswitch-switch"></span>
-																								</label>
+                                                                                                <span class="onoffswitch-inner"></span>
+                                                                                                <span class="onoffswitch-switch"></span>
+                                                                                            </label>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -263,9 +265,9 @@
                                                                                         <div class="onoffswitch">
                                                                                             <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example2">
                                                                                             <label class="onoffswitch-label" for="example2">
-																									<span class="onoffswitch-inner"></span>
-																									<span class="onoffswitch-switch"></span>
-																								</label>
+                                                                                                <span class="onoffswitch-inner"></span>
+                                                                                                <span class="onoffswitch-switch"></span>
+                                                                                            </label>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -279,9 +281,9 @@
                                                                                         <div class="onoffswitch">
                                                                                             <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example6">
                                                                                             <label class="onoffswitch-label" for="example6">
-																									<span class="onoffswitch-inner"></span>
-																									<span class="onoffswitch-switch"></span>
-																								</label>
+                                                                                                <span class="onoffswitch-inner"></span>
+                                                                                                <span class="onoffswitch-switch"></span>
+                                                                                            </label>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -295,9 +297,9 @@
                                                                                         <div class="onoffswitch">
                                                                                             <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example5">
                                                                                             <label class="onoffswitch-label" for="example5">
-																									<span class="onoffswitch-inner"></span>
-																									<span class="onoffswitch-switch"></span>
-																								</label>
+                                                                                                <span class="onoffswitch-inner"></span>
+                                                                                                <span class="onoffswitch-switch"></span>
+                                                                                            </label>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -330,7 +332,7 @@
                                     <ul class="mobile-menu-nav">
                                         <li><a data-toggle="collapse" data-target="#Charts" href="#">Administrador<span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                             <ul class="collapse dropdown-header-top">
-                                            <!-- crud usuarios -->
+                                                <!-- crud usuarios -->
                                                 <li><a title="Registro Usuario" href="<?php echo constant('URL'); ?>usuario/crear"><i class="fa fa-user" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Usuario</span></a></li>
                                                 <li><a title="Ver Usuarios" href="<?php echo constant('URL'); ?>usuario"><i class="fa fa-users nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Usuarios</span></a></li>
                                                 <!-- crud centro -->
