@@ -22,7 +22,7 @@
                     <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="id_centro">Centro Solicitante</label>
-                                <select class="form-control" id="id_centro" name="id_centro" style="width:100%">
+                                <select class="form-control" id="id_centro" name="id_centro" style="width:100%" required >
                                     <option selected value="">seleccione...</option>
                                         <?php
                                             include_once 'models/centro.php';
@@ -43,7 +43,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="identificacion">Encargado de centro</label>
-                                <select class="form-control" id="identificacion" name="identificacion" style="width:100%">
+                                <select class="form-control" id="identificacion" name="identificacion" style="width:100%" required >
                                     <option selected value="">seleccione...</option>
                                         <?php
                                             include_once 'models/usuario.php';
@@ -63,7 +63,7 @@
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="descripcion">Descripciòn de solicitud</label>
-                                <textarea  class="form-control" name="descripcion" id="descripcion" cols="30" rows="10" ></textarea>
+                                <textarea  class="form-control" name="descripcion" id="descripcion" cols="30" rows="10" required ></textarea>
                                 <small id="descripcionHelp" class="form-text text-muted">Diligencie el descripcion de la solicitud.</small>
                             </div>
                             </div>

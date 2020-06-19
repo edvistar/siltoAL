@@ -36,7 +36,6 @@
                                 <li><a title="Registro Ruta" href="<?php echo constant('URL'); ?>ruta/crear"><i class="fa fa-map-marker" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Rutas</span></a></li>
                                 <li><a title="Lista de rutas" href="<?php echo constant('URL'); ?>ruta"><i class="fa fa-map nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Rutas</span></a></li>
                             </ul>
-                        <li><a title="Landing Page" href="<?php echo constant('URL'); ?>" aria-expanded="false"><i class="fa fa-bookmark icon-wrap sub-icon-mg" aria-hidden="true"></i> <span class="mini-click-non">Landing Page</span></a></li>
                     </ul>
                 </nav>
             </div>

@@ -27,30 +27,40 @@
 
                             <div class="form-group col-md-6">
                                 <label for="nombre">Nombre de centro</label>
-                                <input type="text" class="form-control" value="<?php echo $this->centro->nombre; ?>" name="nombre" id="nombre" readonly>
+                                <input type="text" class="form-control" value="<?php echo $this->centro->nombre; ?>" name="nombre" id="nombre" required>
                                 <small id="nombreHelp" class="form-text text-muted"></small>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="email">Email</label>
-                                <input type="email" class="form-control" value="<?php echo $this->centro->email; ?>" name="email" id="email">
+                                <input type="email" class="form-control" value="<?php echo $this->centro->email; ?>" name="email" id="email" required>
                                 <small id="emailHelp" class="form-text text-muted">Diligencie el email del Centro</small>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="telefono">Telefono</label>
-                                <input type="number" class="form-control" value="<?php echo $this->centro->telefono; ?>" name="telefono" id="telefono">
+                                <input type="number" class="form-control" value="<?php echo $this->centro->telefono; ?>" name="telefono" id="telefono" required>
                                 <small id="telefonoHelp" class="form-text text-muted">Diligencie el numero de telefono del Centro</small>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="whatsapp">Whatsapp</label><br>
-                                    <input class="custom-control-input"required type="radio" name="whatsapp" id="whatsapp1" value="SI" checked>SI
-                                    <input class="custom-control-input" type="radio" name="whatsapp" id="whatsapp0" value="NO">NO<br>
-                                    <small id="whatsappHelp" class="form-text text-muted">Confirme si tiene whatsapp el numero de telefono ingresado</small>
-                                </div>
+                            <label for="whatsapp">Whatsapp</label><br>
+                                <input class="custom-control-input"required type="radio" name="whatsapp" id="whatsapp1" value="SI" checked>SI
+                                <input class="custom-control-input" type="radio" name="whatsapp" id="whatsapp0" value="NO">NO<br>
+                                <small id="whatsappHelp" class="form-text text-muted">Confirme si tiene whatsapp el numero de telefono ingresado</small>
+                            </div>
                             <div class="form-group col-lg-6">
+                                <label for="lugar">Lugar</label>
+                                <select class="form-control" id="lugar" name="lugar" style="width:100%"  required>
+                                    <option selected value="<?php echo $this->centro->lugar; ?>"><?php echo $this->centro->lugar; ?>"</option>
+                                    <option  value="Centro">Centro Acopio</option>
+                                    <option  value="Bodega">Bodega Principal</option>
+                                </select>
+                                <small id="lugarHelp" class="form-text text-muted">Lugar de ubicacion</small>
+
+                            </div>
+                            <!-- <div class="form-group col-lg-6">
                                 <label for="lugar">Lugar</label>
                                 <input type="text" class="form-control" value="<?php echo $this->centro->lugar; ?>" name="lugar" id="lugar">
                                 <small id="lugarHelp" class="form-text text-muted">Diligencie el Lugar de ubicacion</small>
-                            </div>
+                            </div> -->
                              <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-header">
@@ -76,7 +86,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="identificacion">Encargado de centro</label>
-                                <select class="form-control" id="identificacion" name="identificacion" style="width:100%">
+                                <select class="form-control" id="identificacion" name="identificacion" style="width:100%" required>
                                 <option selected value="<?php echo $this->centro->identificacion; ?>"><?php echo $this->centro->identificacion; ?></option>
                                 
                                         <?php

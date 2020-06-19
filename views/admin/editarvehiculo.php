@@ -30,27 +30,21 @@
          
                         <div class="form-group col-md-6">
                             <label for="capacidad"> Capacidad del vehículo</label>
-                            <input type="text" class="form-control" value="<?php echo $this->vehiculo->capacidad; ?>" name="capacidad" id="capacidad">
+                            <input type="text" class="form-control" value="<?php echo $this->vehiculo->capacidad; ?>" name="capacidad" id="capacidad" required>
                             <small id="capadidadHelp" class="form-text text-muted">Capacidad de carga del vehiculo</small>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="seguro">Seguro del vehículo</label>
-                            <input type="date" class="form-control" value="<?php echo $this->vehiculo->seguro; ?>" name="seguro" id="seguro">
+                            <input type="date" class="form-control" value="<?php echo $this->vehiculo->seguro; ?>" name="seguro" id="seguro" required>
                             <small id="seguroHelp" class="form-text text-muted">Digite numero de la poliza del seguro</small>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="tecnomecanica">Tecnomecanica del vehículo</label>
-                            <input type="date" class="form-control" value="<?php echo $this->vehiculo->tecnomecanica; ?>" name="tecnomecanica" id="tecnomecanica">
+                            <input type="date" class="form-control" value="<?php echo $this->vehiculo->tecnomecanica; ?>" name="tecnomecanica" id="tecnomecanica" required>
                             <small id="tecnomecanicaHelp" class="form-text text-muted">Fecha de vencimiento del la tecnomecanica del vehículo</small>
                         </div>
-<!-- 
-                        <div class="form-group col-md-6">
-                            <label for="tipo_vehiculo">Tipo de vehículo</label>
-                            <input type="text" class="form-control" value="<?php echo $this->vehiculo->tipo_vehiculo; ?>" name="tipo_vehiculo" id="tipo_vehiculo">
-                            <small id="tipo_vehiculoHelp" class="form-text text-muted">Tipo de vehículo</small>
-                        </div> -->
 
                         <div class="form-group col-md-6">
                             <label for="tipo_vehiculo">Tipo de vehículo</label>
@@ -67,7 +61,7 @@
 
                         <div class="form-group col-md-6">
                                 <label for="identificacion">Encargado</label>
-                                <select class="form-control" id="identificacion" name="identificacion" style="width:100%">
+                                <select class="form-control" id="identificacion" name="identificacion" style="width:100%" required>
                                 <option selected value="<?php echo $this->vehiculo->identificacion; ?>"><?php echo $this->vehiculo->identificacion; ?></option>
                                 
                                         <?php
@@ -87,26 +81,13 @@
                                 <small id="identificacionHelp" class="form-text text-muted">Debe elegir nuevamente el encargado del centro</small>
                             </div>
 
-                        <!-- <div class="form-group col-md-6">
-                            <label for="gps">GPS</label>
-                            <input type="text" class="form-control" value="<?php echo $this->vehiculo->gps; ?>" name="gps" id="gps">
-                            <small id="gpsHelp" class="form-text text-muted">GPS de vehículo incorporado</small>
-                        </div> -->
-
                         
                         <div class="form-group col-md-6">
-                                <label for="whatsapp">gps</label><br>
-                                    <input class="custom-control-input"required type="radio" name="gps" id="gps1" value="SI" checked>SI
-                                    <input class="custom-control-input" type="radio" name="gps" id="gps0" value="NO">NO<br>
-                                    <small id="gpsHelp" class="form-text text-muted">Confirme si tiene whatsapp el numero de telefono ingresado</small>
-                                </div>
-
-                        <!-- <div class="form-group col-md-6">
-                            <label for="estado">Estado</label>
-                            <input type="text" class="form-control" value="<?php echo $this->vehiculo->estado; ?>" name="estado" id="estado">
-                            <small id="estadoHelp" class="form-text text-muted">Estado dentro de la empresa Propiedad o contratista</small>
-                        </div> -->
-                       
+                            <label for="whatsapp">gps</label><br>
+                            <input class="custom-control-input"required type="radio" name="gps" id="gps1" value="SI" checked>SI
+                            <input class="custom-control-input" type="radio" name="gps" id="gps0" value="NO">NO<br>
+                            <small id="gpsHelp" class="form-text text-muted">Confirme si tiene whatsapp el numero de telefono ingresado</small>
+                        </div>
                         <div class="form-group col-md-6">
                             <label for="estado">Estado en la empresa</label>
                             <select id="estado"  name="estado" class="form-control" required>

@@ -36,7 +36,7 @@ class PDF extends FPDF{
 
 
 require 'base.php';
-$consulta ="SELECT sol.id_solicitud, sol.solicitud, sol.descripcion, 
+$consulta ="SELECT sol.id_solicitud, sol.fecha_solicitud, sol.descripcion, 
 cent.nombre as nombreCentro, usu.nombre as nombreUsuario
 FROM solicitud as sol
 INNER JOIN centro as cent on cent.id_centro=cent.id_centro
@@ -51,7 +51,7 @@ $pdf->SetFont('Arial','',16);
 // $pdf->Cell(40,10,utf8_decode('¡Hola, Mundo!'));
 while($row = $resultado->fetch_assoc()){
     $pdf->Cell(20, 10, $row['id_solicitud'], 1, 0, 'C',0);
-    $pdf->Cell(60, 10, $row['solicitud'], 1, 0, 'C',0);
+    $pdf->Cell(60, 10, $row['fecha_solicitud'], 1, 0, 'C',0);
     $pdf->Cell(30, 10, $row['nombreCentro'], 1, 0, 'C',0);
     $pdf->Cell(40, 10, $row['nombreUsuario'], 1, 0, 'C',0);
     $pdf->Cell(185, 10, $row['descripcion'], 1, 1, 'C',0);

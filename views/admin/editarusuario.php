@@ -22,12 +22,6 @@
                     <div class="panel-body">
                         <form action="<?php echo constant('URL'); ?>usuario/editar" method="POST" enctype="multipart/form-data">
                             <div class="row">
-                                <!-- <div class="form-group col-md-6">
-                                    <label for="identificacion">Identificación</label> -->
-                                    <input type="hidden" class="form-control" value="<?php echo $this->usuario->identificacion; ?>" name="identificacion" id="identificacion" readonly>
-                                    <!-- <small id="identificacionHelp" class="form-text text-muted">Diligencie el numero de identificación del usuario</small>
-                                </div> -->
-
                                 <div class="form-group col-md-6">
                                     <label for="nombre">Nombres</label>
                                     <input type="text" name="nombre" id="nombre" class="form-control" value="<?php echo $this->usuario->nombre; ?>" placeholder="Ej: Luis Felipe" required>

@@ -30,12 +30,12 @@
 
                         <div class="form-group col-md-6">
                             <label for="fecha_solicitud">Fecha de Solicitud</label>
-                            <input type="date" class="form-control" value="<?php echo $this->solicitud->fecha_solicitud; ?>" name="fecha_solicitud" id="fecha_solicitud" readonly>
+                            <input type="date" class="form-control" value="<?php echo $this->solicitud->fecha_solicitud; ?>" name="fecha_solicitud" id="fecha_solicitud" required>
                             <small id="solicitudHelp" class="form-text text-muted">Diligencie la solicitud de ruta</small>
                         </div>
                         <div class="form-group col-md-6">
                                 <label for="id_centro">Centro Solicitante</label>
-                                <select class="form-control" id="id_centro" name="id_centro" style="width:100%">
+                                <select class="form-control" id="id_centro" name="id_centro" style="width:100%" required>
                                     <option selected value="<?php echo $this->solicitud->id_centro; ?>"><?php echo $this->solicitud->id_centro; ?></option>
                                         <?php
                                             include_once 'models/centro.php';
@@ -56,7 +56,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="identificacion">Encargado de centro</label>
-                                <select class="form-control" id="identificacion" name="identificacion" style="width:100%">
+                                <select class="form-control" id="identificacion" name="identificacion" style="width:100%" required>
                                     <option selected value=""><?php echo $this->solicitud->identificacion; ?></option>
                                         <?php
                                             include_once 'models/usuario.php';

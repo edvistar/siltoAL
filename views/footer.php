@@ -62,6 +62,7 @@
             <!-- main JS
                 ============================================ -->
             <script src="<?php echo constant('URL'); ?>public/js/main.js"></script>
+            <script src="<?php echo constant('URL'); ?>public/js/vendor/modernizr-2.8.3.min.js"></script>
             <script src="<?php echo constant('URL'); ?>public/js/main1.js"></script>
 
             <!-- Optional JavaScript -->
