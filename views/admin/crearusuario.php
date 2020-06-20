@@ -1,7 +1,9 @@
 <?php
-if ($_SESSION['cargo']!="supervisor") {
-    echo "<script>alert('Señor usuario,esta intentando acceder de forma incorrecta al sistema!')</script>";
-    header("location: ../index/logout");    
+if ($_SESSION['cargo']!="supervisor"){
+    if ($_SESSION['cargo']!="administrador") {
+        echo "<script>alert('Señor usuario,esta intentando acceder de forma incorrecta al sistema!')</script>";
+        header("location: ../index/logout");  
+    } 
 }
 ?>
 

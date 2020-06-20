@@ -41,10 +41,14 @@
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                    <label for="pass">Password</label>
-                                    <input type="password" name="pass" id="pass" class="form-control" value="<?php echo $this->usuario->pass; ?>" required>
-                                    <small id="passHelp" class="form-text text-muted">Diligencie la contraseña del email</small>
+                                    <label for="show_hide_password">Password</label>
+                                    <input type="password" name="pass" id="show_hide_password" class="form-control" value="<?php echo $this->usuario->pass; ?>" required>
+                                    <small id="passHelp" class="form-text text-muted">AVISO: modifique solo si desea un password nuevo</small>
                                 </div>
+
+                                <!-- Password antiguo -->
+                                <input type="hidden" name="passoriginal" id="passoriginal" class="form-control" value="<?php echo $this->usuario->pass; ?>" required>
+
 
                                 <div class="form-group col-md-6">
                                     <label for="telefono">Numero Telefonico</label>
