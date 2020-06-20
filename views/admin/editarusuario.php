@@ -22,6 +22,9 @@
                     <div class="panel-body">
                         <form action="<?php echo constant('URL'); ?>usuario/editar" method="POST" enctype="multipart/form-data">
                             <div class="row">
+
+                                <input type="hidden" class="form-control" value="<?php echo $this->usuario->identificacion; ?>" name="identificacion" id="identificacion" readonly>
+
                                 <div class="form-group col-md-6">
                                     <label for="nombre">Nombres</label>
                                     <input type="text" name="nombre" id="nombre" class="form-control" value="<?php echo $this->usuario->nombre; ?>" placeholder="Ej: Luis Felipe" required>

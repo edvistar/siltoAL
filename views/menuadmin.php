@@ -9,7 +9,7 @@
                         <li class="active">
                             <a class="has-arrow" href="index.php">
                                 <i class="fa big-icon fa-home icon-wrap"></i>
-                                <span class="mini-click-non">Administrador</span>
+                                <span class="mini-click-non"><?php echo $_SESSION['cargo'];?></span>
 							</a>
                             <ul class="submenu-angle" aria-expanded="true">
                                 <!-- validar si el usuario es admin o superv -->
