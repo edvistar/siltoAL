@@ -10,7 +10,7 @@ class IndexModel extends Model
     {
         $result = "";
         try {
-            $query = $this->db->connect()->prepare('SELECT * FROM usuario WHERE email = :email and pass=:clave');
+            $query = $this->db->connect()->prepare('SELECT * FROM usuario WHERE email = :email and pass=:clave and estado = "activo"');
 
             $query->execute([
                 'email' => $email,
