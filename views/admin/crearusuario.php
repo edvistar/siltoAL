@@ -1,10 +1,8 @@
 <?php
-if ($_SESSION['cargo']!="supervisor"){
     if ($_SESSION['cargo']!="administrador") {
         echo "<script>alert('Señor usuario,esta intentando acceder de forma incorrecta al sistema!')</script>";
         header("location: ../index/logout");  
-    } 
-}
+    }
 ?>
 
 <!DOCTYPE html>
@@ -74,9 +72,8 @@ if ($_SESSION['cargo']!="supervisor"){
                                     <select id="cargo" name="cargo" class="form-control"required >
                                         <option>-- Seleccionar --</option>
                                         <option value="administrador">Administrador</option>
-                                        <option value="coordinador">Coordinador</option>
-                                        <option value="conductor">Conductor</option>
                                         <option value="supervisor">Supervisor</option>
+                                        <option value="bodeguero">Bodeguero</option>
                                     </select>
                                     <small id="cargopHelp" class="form-text text-muted">Diligencie el cargo a desempeñar el usuario</small>
                                 </div>

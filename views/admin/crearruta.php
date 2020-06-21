@@ -1,3 +1,12 @@
+<?php
+if ($_SESSION['cargo'] != "administrador") {
+    if ($_SESSION['cargo'] != "supervisor") {
+        echo "<script>alert('Señor usuario,esta intentando acceder de forma incorrecta al sistema!')</script>";
+        header("location: ../index/logout");
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

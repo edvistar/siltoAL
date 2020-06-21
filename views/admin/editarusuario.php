@@ -63,11 +63,9 @@
                                     <label for="cargo">Cargo</label>
                                     <select id="cargo" name="cargo" class="form-control" required>
                                         <option value="<?php echo $this->usuario->cargo; ?>"><?php echo $this->usuario->cargo; ?></option>
-                                        <option value="Administrador">Administrador</option>
-                                        <option value="Bodeguero">Bodeguero</option>
-                                        <option value="Coordinador">Coordinador</option>
-                                        <option value="Conductor">Conductor</option>
+                                        <option value="administrador">Administrador</option>
                                         <option value="supervisor">Supervisor</option>
+                                        <option value="bodeguero">Bodeguero</option>
                                     </select>
                                     <small id="cargopHelp" class="form-text text-muted">Diligencie el cargo a desempeñar el usuario</small>
                                 </div>
