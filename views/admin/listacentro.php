@@ -23,7 +23,9 @@ if ($_SESSION['cargo'] != "administrador") {
                                 <div><?php echo $this->mensaje; ?></div>
                                 <h1 class="text-center"><i class="fa fa-eye" aria-hidden="true"></i> Listado de Centros de Acopio</h1>
                                 <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>/centro/crear")'>Crear Centro</button>
-                                <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/pdf/centro.php")'>PDF</button><br>
+                                <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/pdf/centro.php")'>PDF</button>
+                                <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/excel/functions/centro/createExcel.php")'>EXCEL</button>
+                            <table id="tabla" class="table table-hover"><br>
 
                                 <table id="tabla" class="table table-hover">
                                     <thead class="thead-dark">

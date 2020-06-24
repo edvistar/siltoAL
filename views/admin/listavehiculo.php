@@ -13,9 +13,14 @@ if ($_SESSION['cargo'] != "administrador") {
 </head>
 <body>
 
+
+
+
     <?php require 'views/header.php'; ?>
     <div class="product-status mg-tb-15">
             <div class="container-fluid">
+
+                                       
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap">
@@ -25,12 +30,15 @@ if ($_SESSION['cargo'] != "administrador") {
                                 <div class="row">
                                 <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>/vehiculo/crear")'>Crear vehículo</button>
 
-                                <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/pdf/vehiculo.php")'>PDF</button><br>
+                                <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/pdf/vehiculo.php")'>PDF</button>
+                                
+                                <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/excel/functions/vehiculo/createExcel.php")'>EXCEL</button>
                                 
                                 </div>
                                 <table id="tabla" class="table table-hover">
                                     <thead class="thead-dark">
                                         <tr>
+                                            <th data-field="state" data-checkbox="true"></th>
                                             <th  scope="col">Placa vehículo</th>
                                             <th  scope="col">Capacidad</th>
                                             <th  scope="col">Seguro </th>
@@ -51,6 +59,8 @@ if ($_SESSION['cargo'] != "administrador") {
                                             $vehiculo = new VehiculoDAO();
                                             $vehiculo = $row;
                                 ?>
+
+                                                                            
                                             <tr id="fila-<?php echo $vehiculo->placa; ?>">
                                                 <td><?php echo $vehiculo->placa; ?></td>
                                                 <td><?php echo $vehiculo->capacidad;?></td>
@@ -93,5 +103,6 @@ if ($_SESSION['cargo'] != "administrador") {
             </div>
         </div>
     <?php require 'views/footer.php'; ?>
+    
 </body>
 </html>
