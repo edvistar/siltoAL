@@ -16,17 +16,17 @@ class PDF extends FPDF{
         $this->Ln(20);
 
         $this->Cell(10, 10, 'ID', 1, 0, 'C',0);
-        $this->Cell(20, 10, 'Fecha', 1, 0, 'C',0);
-        $this->Cell(20, 10, 'Salida', 1, 0, 'C',0);
-        $this->Cell(20, 10, 'Llegada', 1, 0, 'C',0);
+        $this->Cell(25, 10, 'Fecha', 1, 0, 'C',0);
+        $this->Cell(25, 10, 'Salida', 1, 0, 'C',0);
+        $this->Cell(25, 10, 'Llegada', 1, 0, 'C',0);
         $this->Cell(25, 10, 'Tipo ruta', 1, 0, 'C',0);
-        $this->Cell(20, 10, 'Precinto', 1, 0, 'C',0);
-        $this->Cell(35, 10, 'Encargado', 1, 0, 'C',0);
-        $this->Cell(20, 10, utf8_decode('Vehículo'), 1, 0, 'C',0);
-        $this->Cell(20, 10, 'Centro', 1, 0, 'C',0);
-        $this->Cell(55, 10, 'Productos', 1, 0, 'C',0);
+        $this->Cell(25, 10, 'Precinto', 1, 0, 'C',0);
+        $this->Cell(40, 10, 'Encargado', 1, 0, 'C',0);
+        $this->Cell(25, 10, utf8_decode('Vehículo'), 1, 0, 'C',0);
+        $this->Cell(25, 10, 'Centro', 1, 0, 'C',0);
         $this->Cell(18, 10, 'Solicitid', 1, 0, 'C',0);
-        $this->Cell(80, 10, 'Observacion', 1, 1, 'C',0);
+        $this->Cell(80, 10, 'Productos', 1, 1, 'C',0);
+        // $this->Cell(80, 10, 'Observacion', 1, 1, 'C',0);
 
     }
 
@@ -59,17 +59,17 @@ $pdf->SetFont('Arial','',10);
 while($row = $resultado->fetch_assoc()){
 
     $pdf->Cell(10, 10, $row['id_ruta'], 1, 0, 'C',0);
-    $pdf->Cell(20, 10, $row['fecha_ruta'], 1, 0, 'C',0);
-    $pdf->Cell(20, 10, $row['hora_salida'], 1, 0, 'C',0);
-    $pdf->Cell(20, 10, $row['hora_llegada'], 1, 0, 'C',0);
+    $pdf->Cell(25, 10, $row['fecha_ruta'], 1, 0, 'C',0);
+    $pdf->Cell(25, 10, $row['hora_salida'], 1, 0, 'C',0);
+    $pdf->Cell(25, 10, $row['hora_llegada'], 1, 0, 'C',0);
     $pdf->Cell(25, 10, $row['tipo_ruta'], 1, 0, 'C',0);
-    $pdf->Cell(20, 10, $row['precinto'], 1, 0, 'C',0);
-    $pdf->Cell(35, 10, $row['nombreConductor'], 1, 0, 'C',0);
-    $pdf->Cell(20, 10, $row['placa'], 1, 0, 'C',0);
-    $pdf->Cell(20, 10, $row['nombreCentro'], 1, 0, 'C',0);
-    $pdf->Cell(55, 10, $row['variedad_productos'], 1, 0, 'C',0);
+    $pdf->Cell(25, 10, $row['precinto'], 1, 0, 'C',0);
+    $pdf->Cell(40, 10, $row['nombreConductor'], 1, 0, 'C',0);
+    $pdf->Cell(25, 10, $row['placa'], 1, 0, 'C',0);
+    $pdf->Cell(25, 10, $row['nombreCentro'], 1, 0, 'C',0);
     $pdf->Cell(18, 10, $row['id_solicitud'], 1, 0, 'C',0);
-    $pdf->Cell(80, 10, $row['observaciones'], 1, 1, 'C',0);
+    $pdf->MultiCell(80, 5, $row['variedad_productos'], 1, 1, '',0);    
+    // $pdf->MultiCell(80, 5, $row['observaciones'], 1, 1, '',0);
 
 
 }
