@@ -112,9 +112,7 @@
                                                         <i class="fa fa-angle-down adminpro-icon adminpro-down-arrow"></i>
                                                     </a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                        <li><a href="<?php echo constant('URL'); ?>usuario/crear"><span class="fa fa-home author-log-ic"></span>Registar</a>
-                                                        </li>
-                                                        <li><a href="#"><span class="fa fa-user author-log-ic"></span>Perfil</a>
+                                                        <li><a href="<?php echo constant('URL'); ?>perfil"><span class="fa fa-user author-log-ic"></span>Perfil</a>
                                                         </li>
                                                         <li><a href="<?php echo constant('URL'); ?>index/logout"><span class="fa fa-lock author-log-ic"></span>Salir</a>
                                                         </li>

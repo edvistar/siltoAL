@@ -74,6 +74,7 @@
                                         <option value="administrador">Administrador</option>
                                         <option value="supervisor">Supervisor</option>
                                         <option value="bodeguero">Bodeguero</option>
+                                        <option value="bodeguero">Conductor</option>
                                     </select>
                                     <small id="cargopHelp" class="form-text text-muted">Diligencie el cargo a desempeñar el usuario</small>
                                 </div>

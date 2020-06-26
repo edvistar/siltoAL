@@ -23,6 +23,7 @@ class IndexModel extends Model
                 $_SESSION['cargo'] = $row['cargo'];
                 $_SESSION['nombre'] = $row['nombre'];
                 $_SESSION['foto'] = $row['foto'];
+                $_SESSION['identificacion']= $row['identificacion'];
             }
             return $result;
         } catch (PDOException $e) {
