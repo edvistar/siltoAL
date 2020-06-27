@@ -1,3 +1,11 @@
+<?php
+if ($_SESSION['cargo'] != "administrador") {
+    if ($_SESSION['cargo'] != "supervisor") {
+        echo "<script>alert('Señor usuario,esta intentando acceder de forma incorrecta al sistema!')</script>";
+        header("location: index/logout");
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,20 +13,32 @@
 </head>
 <body>
 
+
+
+
     <?php require 'views/header.php'; ?>
     <div class="product-status mg-tb-15">
             <div class="container-fluid">
+
+                                       
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap">
                             <div id="main" >
                                 <div><?php echo $this->mensaje; ?></div>
                                 <h1 class="text-center"><i class="fa fa-car" aria-hidden="true"></i> Listado de vehículos</h1>
-                                <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>/vehiculo/crear")'>Crear vehículo</button><br>
+                                <div class="row">
+                                <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>/vehiculo/crear")'>Crear vehículo</button>
 
+                                <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/pdf/vehiculo.php")'>PDF</button>
+                                
+                                <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/excel/functions/vehiculo/createExcel.php")'>EXCEL</button>
+                                
+                                </div>
                                 <table id="tabla" class="table table-hover">
                                     <thead class="thead-dark">
                                         <tr>
+                                            <th data-field="state" data-checkbox="true"></th>
                                             <th  scope="col">Placa vehículo</th>
                                             <th  scope="col">Capacidad</th>
                                             <th  scope="col">Seguro </th>
@@ -39,6 +59,8 @@
                                             $vehiculo = new VehiculoDAO();
                                             $vehiculo = $row;
                                 ?>
+
+                                                                            
                                             <tr id="fila-<?php echo $vehiculo->placa; ?>">
                                                 <td><?php echo $vehiculo->placa; ?></td>
                                                 <td><?php echo $vehiculo->capacidad;?></td>
@@ -81,5 +103,6 @@
             </div>
         </div>
     <?php require 'views/footer.php'; ?>
+    
 </body>
 </html>

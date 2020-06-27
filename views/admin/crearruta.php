@@ -1,3 +1,12 @@
+<?php
+if ($_SESSION['cargo'] != "administrador") {
+    if ($_SESSION['cargo'] != "supervisor") {
+        echo "<script>alert('Señor usuario,esta intentando acceder de forma incorrecta al sistema!')</script>";
+        header("location: ../index/logout");
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,32 +32,32 @@
 
                             <div class="form-group col-md-4">
                                 <label for="fecha_ruta">Fecha Ruta</label>
-                                <input type="date" class="form-control" name="fecha_ruta" id="fecha_ruta">
+                                <input type="date" class="form-control" name="fecha_ruta" id="fecha_ruta" required >
                                 <small id="fecha_rutaHelp" class="form-text text-muted">Diligencie la fecha de la ruta</small>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="hora_salida">Hora Salida</label>
-                                <input type="time" class="form-control" name="hora_salida" id="hora_salida">
+                                <input type="time" class="form-control" name="hora_salida" id="hora_salida" required >
                                 <small id="hora_salidaHelp" class="form-text text-muted">Diligencie la hora de salida</small>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="hora_llegada">Hora Llegada</label>
-                                <input type="time" class="form-control" name="hora_llegada" id="hora_llegada">
+                                <input type="time" class="form-control" name="hora_llegada" id="hora_llegada" required >
                                 <small id="hora_llegadaHelp" class="form-text text-muted">Diligencie la hora de llegada</small>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="tipo_ruta">Tipo Ruta</label>
-                                <input type="text" class="form-control" name="tipo_ruta" id="tipo_ruta">
+                                <input type="text" class="form-control" name="tipo_ruta" id="tipo_ruta" required >
                                 <small id="tipo_rutaHelp" class="form-text text-muted">Tipo Ruta</small>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="precinto">Precinto</label>
-                                <input type="text" class="form-control" name="precinto" id="precinto">
+                                <input type="text" class="form-control" name="precinto" id="precinto" required >
                                 <small id="precintoHelp" class="form-text text-muted">Precinto </small>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="identificacion">Encargado centro</label>
-                                <select class="form-control" id="identificacion" name="identificacion" style="width:100%">
+                                <select class="form-control" id="identificacion" name="identificacion" style="width:100%" required >
                                     <option selected value="">seleccione...</option>
                                         <?php
                                             include_once 'models/usuario.php';
@@ -69,7 +78,7 @@
 
                             <div class="form-group col-md-4">
                                 <label for="placa">Placa</label>
-                                <select class="form-control" id="placa" name="placa" style="width:100%">
+                                <select class="form-control" id="placa" name="placa" style="width:100%" required >
                                     <option selected value="">seleccione...</option>
                                                 <small id="placaHelp" class="form-text text-muted">Diligencie la placa del vehiculo</small>
                                         <?php
@@ -89,7 +98,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="id_centro">Centro Solicitante</label>
-                                <select class="form-control" id="id_centro" name="id_centro" style="width:100%">
+                                <select class="form-control" id="id_centro" name="id_centro" style="width:100%" required >
                                     <option selected value="">seleccione...</option>
                                                 <small id="id_centroHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
                                         <?php
@@ -110,7 +119,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="id_solicitud">Id Solicitud</label>
-                                <select class="form-control" id="id_solicitud" name="id_solicitud" style="width:100%">
+                                <select class="form-control" id="id_solicitud" name="id_solicitud" style="width:100%" required >
                                     <option selected value="">seleccione...</option>
                                                 <small id="id_solicitudHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
                                         <?php
@@ -160,7 +169,7 @@
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="observaciones">Observaciones</label>
-                                <textarea  class="form-control" name="observaciones" id="observaciones" cols="30" rows="10" ></textarea>
+                                <textarea  class="form-control" name="observaciones" id="observaciones" cols="30" rows="10" required ></textarea>
                                 <small id="descripcionHelp" class="form-text text-muted">Observaciones</small>
                             </div>
                         </div>

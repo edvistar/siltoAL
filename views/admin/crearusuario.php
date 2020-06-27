@@ -1,3 +1,10 @@
+<?php
+    if ($_SESSION['cargo']!="administrador") {
+        echo "<script>alert('Señor usuario,esta intentando acceder de forma incorrecta al sistema!')</script>";
+        header("location: ../index/logout");  
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -24,56 +31,56 @@
                             <div class="row">
                                 <div class="form-group col-lg-6">
                                     <label for="identificacion">Identificación</label>
-                                    <input type="number" class="form-control" name="identificacion" id="identificacion" placeholder="Ej: 107000000">
+                                    <input type="number" class="form-control" name="identificacion" id="identificacion" placeholder="Ej: 107000000" required >
                                     <small id="identificacionHelp" class="form-text text-muted">Diligencie el numero de identificación del usuario</small>
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label for="nombre">Nombres</label>
-                                    <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ej: Luis Felipe">
+                                    <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ej: Luis Felipe" required >
                                     <small id="nombreHelp" class="form-text text-muted">Diligencie el nombre del usuario</small>
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label for="apellido">Apellidos</label>
-                                    <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Ej: Agudelo Restrepo">
+                                    <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Ej: Agudelo Restrepo" required >
                                     <small id="apellidoHelp" class="form-text text-muted">Diligencie los apellidos del usuario</small>
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label for="email">Email</label>
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="Ej: usuario@gmail.com">
+                                    <input type="email" name="email" id="email" class="form-control" placeholder="Ej: usuario@gmail.com" required >
                                     <small id="emailHelp" class="form-text text-muted">Diligencie el email del usuario</small>
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label for="pass">Password</label>
-                                    <input type="password" name="pass" id="pass" class="form-control">
+                                    <input type="password" name="pass" id="pass" class="form-control"required >
                                     <small id="passHelp" class="form-text text-muted">Diligencie la contraseña del email</small>
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label for="telefono">Numero Telefonico</label>
-                                    <input type="number" name="telefono" id="telefono" class="form-control" placeholder="Ej: 304123456">
+                                    <input type="number" name="telefono" id="telefono" class="form-control" placeholder="Ej: 304123456" required >
                                     <small id="telefonoHelp" class="form-text text-muted">Diligencie el numero de telefono del usuario</small>
                                 </div>
                                 <div class="custom-control custom-radio col-md-6">
                                     <label for="">Whatsapp</label><br>
-                                    <input class="custom-control-input" type="radio" name="whatsapp" id="whatsapp1" value="1">
+                                    <input class="custom-control-input" type="radio" name="whatsapp" id="whatsapp1" value="Si">
                                     <label class="custom-control-label" for="whatsapp1">Si</label>
-                                    <input class="custom-control-input" type="radio" name="whatsapp" id="whatsapp2" value="0">
+                                    <input class="custom-control-input" type="radio" name="whatsapp" id="whatsapp2" value="No">
                                     <label class="custom-control-label" for="whatsapp2">No</label><br>
                                     <small id="whatsappHelp" class="form-text text-muted">Confirme si tiene whatsapp el numero telefonico ingresado</small>
                                 </div>
                                 <div id="cargo" name="cargo" class="form-group col-lg-6">
                                     <label for="cargo">Cargo</label>
-                                    <select id="cargo" name="cargo" class="form-control">
+                                    <select id="cargo" name="cargo" class="form-control"required >
                                         <option>-- Seleccionar --</option>
                                         <option value="administrador">Administrador</option>
-                                        <option value="coordinador">Coordinador</option>
-                                        <option value="conductor">Conductor</option>
                                         <option value="supervisor">Supervisor</option>
+                                        <option value="bodeguero">Bodeguero</option>
+                                        <option value="bodeguero">Conductor</option>
                                     </select>
                                     <small id="cargopHelp" class="form-text text-muted">Diligencie el cargo a desempeñar el usuario</small>
                                 </div>
                                 <div id="estado" name="estado" class="form-group col-lg-6">
                                     <label for="estado">Estado</label>
-                                    <select id="estado" name="estado" class="form-control">
+                                    <select id="estado" name="estado" class="form-control" required >
                                         <option value="activo">Activo</option>
                                         <option value="inactivo">Inactivo</option>
                                     </select>
@@ -82,7 +89,7 @@
 
                                 <div class="form-group col-lg-6">
                                     <label for="foto">Foto de perfil</label>
-                                    <input type="file" name="foto" id="foto" class="form-control" accept=".jpg, .png, .jpeg">
+                                    <input type="file" name="foto" id="foto" class="form-control" accept=".jpg, .png, .jpeg" required  >
                                     <small id="foto" class="form-text text-muted"> Seleccione de su equipo una foto en formatos .jpg, .png, .jpeg</small>
 
                                 </div>

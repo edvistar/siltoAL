@@ -1,3 +1,11 @@
+<?php
+if ($_SESSION['cargo'] != "administrador") {
+    if ($_SESSION['cargo'] != "supervisor") {
+        echo "<script>alert('Señor usuario,esta intentando acceder de forma incorrecta al sistema!')</script>";
+        header("location: index/logout");
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,7 +22,10 @@
                         <div id="main">
                             <div><?php echo $this->mensaje; ?></div>
                             <h1 class="text-center"><i class="fa fa-map" aria-hidden="true"></i> Listado de Rutas</h1>
-                            <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>/ruta/crear")'>Crear Ruta</button><br>
+                            <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>/ruta/crear")'>Crear Ruta</button>
+                            <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/pdf/ruta.php")'>PDF</button>
+                            <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/excel/functions/ruta/createExcel.php")'>EXCEL</button>
+                            <table id="tabla" class="table table-hover"><br>
 
                             <table id="tabla" class="table table-hover">
                                 <thead class="thead-dark">

@@ -1,14 +1,17 @@
 -- phpMyAdmin SQL Dump
+<<<<<<< HEAD
 -- version 4.8.5
+=======
+-- version 5.0.2
+>>>>>>> wapv
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-06-2020 a las 23:03:05
--- Versión del servidor: 10.3.16-MariaDB
--- Versión de PHP: 7.3.7
+-- Tiempo de generación: 19-06-2020 a las 02:31:49
+-- Versión del servidor: 10.4.11-MariaDB
+-- Versión de PHP: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -44,12 +47,12 @@ CREATE TABLE `centro` (
   `id_centro` int(11) NOT NULL COMMENT 'Id de centro',
   `nombre` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Nombre  de centro',
   `email` varchar(50) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Email centro',
-  `telefono` bigint(20) NOT NULL COMMENT 'Numero cel centro',
+  `telefono` bigint(14) NOT NULL COMMENT 'Numero cel centro',
   `whatsapp` varchar(2) COLLATE utf8_spanish2_ci DEFAULT NULL COMMENT 'Whatsapp de centro',
   `departamento` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Departamento de centro',
   `ciudad` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Ciudad de centro',
-  `lugar` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Lugar de centro o bodega',
-  `identificacion` bigint(20) NOT NULL
+  `lugar` varchar(15) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Lugar de centro o bodega',
+  `identificacion` bigint(12) NOT NULL COMMENT 'Encargado de centro'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
@@ -1288,7 +1291,7 @@ CREATE TABLE `rutas` (
   `hora_llegada` time NOT NULL COMMENT 'hora de llegada de vehículo a centro',
   `tipo_ruta` varchar(15) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Tipo de ruta solocitada.',
   `precinto` varchar(20) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Numero de presinto del tipo de ruta solicitada.',
-  `identificacion` bigint(20) NOT NULL COMMENT 'Identificación de usuario',
+  `identificacion` bigint(12) NOT NULL COMMENT 'Identificación de usuario',
   `placa` varchar(11) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Numero de placa de vehiculo.',
   `id_centro` int(11) NOT NULL COMMENT 'Id de centro dirigido la ruta.',
   `variedad_productos` varchar(250) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'productos en ruta',
@@ -1346,9 +1349,9 @@ INSERT INTO `sectores` (`idSect`, `sector`, `idCiud`) VALUES
 CREATE TABLE `solicitud` (
   `id_solicitud` int(11) NOT NULL COMMENT 'Id de la solicitud para la ruta.',
   `fecha_solicitud` date NOT NULL COMMENT 'Fecha de la solicitudde ruta.',
-  `descripcion` text COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Descripcion de la ruta solicitada.',
-  `id_centro` int(11) NOT NULL,
-  `identificacion` bigint(20) NOT NULL COMMENT 'Nombre del encargado de centro.'
+  `descripcion` varchar(250) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Descripcion de la ruta solicitada.',
+  `id_centro` int(11) NOT NULL COMMENT 'Centro solicitante',
+  `identificacion` bigint(12) NOT NULL COMMENT 'Nombre del encargado de centro.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
@@ -1365,18 +1368,27 @@ INSERT INTO `solicitud` (`id_solicitud`, `fecha_solicitud`, `descripcion`, `id_c
 --
 
 CREATE TABLE `usuario` (
-  `identificacion` bigint(20) NOT NULL COMMENT 'Identificacion de user',
-  `nombre` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Nombre de user',
-  `apellido` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Apellido  de user',
-  `email` varchar(50) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Email de user',
-  `telefono` int(20) NOT NULL COMMENT 'Numero de celular',
+  `identificacion` bigint(12) NOT NULL COMMENT 'Identificacion de user',
+  `nombre` varchar(20) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Nombre de usuario',
+  `apellido` varchar(22) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Apellido  de usuario',
+  `email` varchar(38) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Email usuario',
+  `telefono` int(14) NOT NULL COMMENT 'Numero de celular',
   `whatsapp` varchar(2) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Whatsapp',
+<<<<<<< HEAD
   `cargo` varchar(15) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Rol de user',
   `estado` text COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Estado del User',
   `fecha_ingreso` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha de ingreso user',
   `foto` varchar(300) COLLATE utf8_spanish2_ci NOT NULL,
   `pass` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL COMMENT 'password',
   `id` int(2) NOT NULL
+=======
+  `cargo` varchar(12) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Rol de usuario',
+  `estado` varchar(9) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Estado del Usuario',
+  `fecha_ingreso` date NOT NULL DEFAULT current_timestamp() COMMENT 'Fecha de ingreso usuario.',
+  `foto` varchar(300) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Foto de usuario',
+  `pass` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL COMMENT 'Clave de email.',
+  `id` int(2) NOT NULL COMMENT 'Rol de usuario'
+>>>>>>> wapv
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
@@ -1384,12 +1396,14 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`identificacion`, `nombre`, `apellido`, `email`, `telefono`, `whatsapp`, `cargo`, `estado`, `fecha_ingreso`, `foto`, `pass`, `id`) VALUES
-(16838095, 'Victor Eduardo', 'Hoyos Sandoval', 'victorhoyoscolombia@gmail.com', 2147483647, '1', 'supervisor', 'activo', '2020-06-15 17:41:57', 'public/img/usuarios/', 'fcea920f7412b5da7be0cf42b8c93759', 0),
-(20199375, 'Patricia lara', 'Lara Dimate', 'lida@gmail.com', 2147483647, 'NO', 'Seleccionar', 'activo', '2020-06-11 06:45:03', '', 'ed7bf4b59cd04ac01b0dfc3664769a73', 0),
-(22656626, 'Victor Eduardo', 'Hoyos Sandoval', 'victorhoyoscolombia@gmail.com', 2147483647, 'SI', 'supervisor', 'activo', '2020-06-09 21:46:40', 'public/img/contact/', '224cf2b695a5e8ecaecfb9015161fa4b', 0),
-(1070007809, 'Alexandra ', 'Castro Clavijo', 'jacastro9087@misena.edu.co', 2147483647, 'SI', 'administrador', 'activo', '2020-06-11 19:16:19', 'public/img/contact/alexa.png', '866b425d671cb40b206e02673b199b92', 0),
-(1078371526, 'Jhonatan', 'Lopez Gonzalez', 'jrlopez62@misena.edu.co', 2147483647, 'SI', 'administrador', 'activo', '2020-06-11 19:19:35', 'public/img/contact/lopez.jpg', '1f32aa4c9a1d2ea010adcf2348166a04', 0),
-(1683809522, 'luis', 'joder', 'luisjoder@gmail.com', 2123252764, 'SI', 'supervisor', 'activo', '2020-06-22 00:00:00', '', 'fcea920f7412b5da7be0cf42b8c93759', 0);
+(16838095, 'Victor Eduardo', 'Hoyos Sandoval', 'victorhoyoscolombia@gmail.com', 2147483647, '1', 'supervisor', 'activo', '2020-06-15', 'public/img/usuarios/', 'fcea920f7412b5da7be0cf42b8c93759', 0),
+(20199375, 'Patricia lara', 'Lara Dimate', 'lida@gmail.com', 2147483647, 'NO', 'Seleccionar', 'activo', '2020-06-11', '', 'ed7bf4b59cd04ac01b0dfc3664769a73', 0),
+(22656626, 'Victor Eduardo', 'Hoyos Sandoval', 'victorhoyoscolombia@gmail.com', 2147483647, 'SI', 'supervisor', 'activo', '2020-06-09', 'public/img/contact/', '224cf2b695a5e8ecaecfb9015161fa4b', 0),
+(1070007809, 'Alexandra ', 'Castro Clavijo', 'jacastro9087@misena.edu.co', 2147483647, 'SI', 'administrado', 'activo', '2020-06-11', 'public/img/contact/alexa.png', '866b425d671cb40b206e02673b199b92', 0),
+(1078371526, 'Jhonatan', 'Lopez Gonzalez', 'jrlopez62@misena.edu.co', 2147483647, 'SI', 'administrado', 'activo', '2020-06-11', 'public/img/contact/lopez1.png', 'e807f1fcf82d132f9bb018ca6738a19f', 0),
+(1683809522, 'luis', 'joder', 'luisjoder@gmail.com', 2123252764, 'SI', 'supervisor', 'activo', '2020-06-22', '', 'fcea920f7412b5da7be0cf42b8c93759', 0),
+(7666677676766, 'zapatos', 'lopex', 'colombia@gmail.com', 677777, '1', 'conductor', 'activo', '2020-06-18', 'public/img/contact/alexa.png', '6531401f9a6807306651b87e44c05751', 0),
+(88898989898988988, 'MAURO', 'GGGGG', 'hoyos@gmail.com', 0, '0', 'conductor', 'activo', '2020-06-18', 'public/img/contact/la-pantera-rosa.png', '827ccb0eea8a706c4c34a16891f84e7b', 0);
 
 -- --------------------------------------------------------
 

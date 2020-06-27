@@ -1,3 +1,12 @@
+<?php
+    if ($_SESSION['cargo']!="administrador") {
+        echo "<script>alert('Señor usuario,esta intentando acceder de forma incorrecta al sistema!')</script>";
+        header("location: ../index/logout");  
+    }
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -16,8 +25,12 @@
                         <div id="main">
                             <div><?php echo $this->mensaje; ?></div>
                             <h1 class="text-center"><i class="fa fa-users" aria-hidden="true"></i> Listado de Usuarios</h1>
-                            <button type="button" class="btn btn-success loginbtn" onClick='window.location.assign("<?php echo constant('URL'); ?>/usuario/crear")'>Crear Usuario</button><br>
+                            <button type="button" class="btn btn-success loginbtn" onClick='window.location.assign("<?php echo constant('URL'); ?>usuario/crear")'>Crear Usuario</button>
+                            <button type="button" class="btn btn-success loginbtn" onClick='window.location.assign("<?php echo constant('URL'); ?>public/pdf/usuario.php")'>PDF</button>
+                            <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/excel/functions/usuario/createExcel.php")'>EXCEL</button>
                             <table id="tabla" class="table table-hover">
+                           
+                                
                                 <thead class="thead-dark">
                                     <tr>
                                         <th scope="col">Identificacion</th>

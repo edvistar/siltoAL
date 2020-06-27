@@ -1,3 +1,14 @@
+<?php
+if ($_SESSION['cargo'] != "administrador") {
+    if ($_SESSION['cargo'] != "supervisor") {
+        if ($_SESSION['cargo'] != "bodeguero") {
+            echo "<script>alert('Señor usuario,esta intentando acceder de forma incorrecta al sistema!')</script>";
+            header("location: index/logout");
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,7 +25,9 @@
                             <div id="main">
                                 <div><?php echo $this->mensaje; ?></div>
                                 <h1 class="text-center"><i class="fa fa-eye" aria-hidden="true"></i> Listado Solicitudes</h1>
-                                <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>solicitud/crear")'>Crear Solicitud</button><br>
+                                <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>solicitud/crear")'>Crear Solicitud</button>
+                                <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/pdf/solicitud.php")'>PDF</button>
+                                <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/excel/functions/solicitud/createExcel.php")'>EXCEL</button><br>
                                 <table id="tabla" class="table table-hover">
                                     <thead class="thead-dark">
                                         <tr>

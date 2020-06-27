@@ -38,24 +38,15 @@ class Usuario extends Controller{
         $identificacion = $param[0];
         $usuario = $this->model->readById($identificacion);
 
-        //session_start();
-        $_SESSION["identificacion"] = $usuario->identificacion;
-
         $this->view->usuario = $usuario;
         $this->view->render('admin/editarusuario');
     }
 
 
     function editar($param = null){
-        //session_start();
-        $id = $_SESSION["identificacion"];
-        //$_POST["identificacion"]=$id;
-        unset($_SESSION['identificacion']);
 
-        if($this->model->update($_POST)){
-            
+        if($this->model->update($_POST)){        
             $usuario = new usuarioDAO();
-            $usuario->identificacion = $id;
             $usuario->identificacion = $_POST['identificacion'];
             $usuario->nombre         = $_POST['nombre'];
             $usuario->apellido       = $_POST['apellido'];

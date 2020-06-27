@@ -13,7 +13,7 @@
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
             <div class="col-md-8 col-md-8 col-sm-8 col-xs-12">
                 <div class="text-center custom-login">
-                    <h3><i class="fa fa-user" aria-hidden="true"></i> Editar usuario</h3>
+                    <h3><i class="fa fa-user" aria-hidden="true"></i>Editar usuario</h3>
                     <p>Todos los campos son obligatorios</p>
                 </div>
                 <h4> Identificación del usuario: <?php echo strtoupper($this->usuario->identificacion); ?></h4>
@@ -22,11 +22,8 @@
                     <div class="panel-body">
                         <form action="<?php echo constant('URL'); ?>usuario/editar" method="POST" enctype="multipart/form-data">
                             <div class="row">
-                                <!-- <div class="form-group col-md-6">
-                                    <label for="identificacion">Identificación</label> -->
-                                    <input type="hidden" class="form-control" value="<?php echo $this->usuario->identificacion; ?>" name="identificacion" id="identificacion" readonly>
-                                    <!-- <small id="identificacionHelp" class="form-text text-muted">Diligencie el numero de identificación del usuario</small>
-                                </div> -->
+
+                                <input type="hidden" class="form-control" value="<?php echo $this->usuario->identificacion; ?>" name="identificacion" id="identificacion" readonly>
 
                                 <div class="form-group col-md-6">
                                     <label for="nombre">Nombres</label>
@@ -47,10 +44,14 @@
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                    <label for="pass">Password</label>
-                                    <input type="password" name="pass" id="pass" class="form-control" value="<?php echo $this->usuario->pass; ?>" required>
-                                    <small id="passHelp" class="form-text text-muted">Diligencie la contraseña del email</small>
+                                    <label for="show_hide_password">Password</label>
+                                    <input type="password" name="pass" id="show_hide_password" class="form-control" value="<?php echo $this->usuario->pass; ?>" required>
+                                    <small id="passHelp" class="form-text text-muted">AVISO: modifique solo si desea un password nuevo</small>
                                 </div>
+
+                                <!-- Password antiguo -->
+                                <input type="hidden" name="passoriginal" id="passoriginal" class="form-control" value="<?php echo $this->usuario->pass; ?>" required>
+
 
                                 <div class="form-group col-md-6">
                                     <label for="telefono">Numero Telefonico</label>
@@ -62,11 +63,10 @@
                                     <label for="cargo">Cargo</label>
                                     <select id="cargo" name="cargo" class="form-control" required>
                                         <option value="<?php echo $this->usuario->cargo; ?>"><?php echo $this->usuario->cargo; ?></option>
-                                        <option value="Administrador">Administrador</option>
-                                        <option value="Bodeguero">Bodeguero</option>
-                                        <option value="Coordinador">Coordinador</option>
-                                        <option value="Conductor">Conductor</option>
+                                        <option value="administrador">Administrador</option>
                                         <option value="supervisor">Supervisor</option>
+                                        <option value="bodeguero">Bodeguero</option>
+                                        <option value="bodeguero">Conductor</option>
                                     </select>
                                     <small id="cargopHelp" class="form-text text-muted">Diligencie el cargo a desempeñar el usuario</small>
                                 </div>

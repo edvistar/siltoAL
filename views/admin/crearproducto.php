@@ -1,3 +1,12 @@
+<?php
+if ($_SESSION['cargo'] != "administrador") {
+    if ($_SESSION['cargo'] != "supervisor") {
+        echo "<script>alert('Señor usuario,esta intentando acceder de forma incorrecta al sistema!')</script>";
+        header("location: ../index/logout");
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,17 +31,17 @@
                         <div class="row ">
                             <div class="form-group col-md-6">
                                 <label for="id_producto">Id producto</label>
-                                <input type="number" name="id_producto"  id="id_producto" class="form-control" required>
+                                <input type="number" name="id_producto"  id="id_producto" class="form-control" required >
                                 <small id="id_productoHelp" class="form-text text-muted">Ingrese el Id del producto</small>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="nombre">Nombre</label>
-                                <input type="text" name="nombre" id="nombre" class="form-control" required>
+                                <input type="text" name="nombre" id="nombre" class="form-control" required >
                                 <small id="nombreHelp" class="form-text text-muted">Ingrese el nombre del producto</small>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="costo">Costo kl</label>
-                                <input type="text" name="costo" id="costo" class="form-control" required>
+                                <input type="text" name="costo" id="costo" class="form-control" required >
                                 <small id="costoHelp" class="form-text text-muted">Ingrese el costo del producto por kilo</small>
                             </div>
                         </div>

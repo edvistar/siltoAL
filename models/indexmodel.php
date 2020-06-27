@@ -1,24 +1,33 @@
 <?php
 
-class IndexModel extends Model{
-    function __construct(){
+class IndexModel extends Model
+{
+    function __construct()
+    {
         parent::__construct();
     }
-    function consultarUsuario($email,$password){
-        $result="";
-        try{
-            $query = $this->db->connect()->prepare('SELECT * FROM usuario WHERE email = :email and pass=:clave');
+    function consultarUsuario($email, $password)
+    {
+        $result = "";
+        try {
+            $query = $this->db->connect()->prepare('SELECT * FROM usuario WHERE email = :email and pass=:clave and estado = "activo"');
 
-            $query->execute(['email' => $email,
-                             'clave'=>  md5($password)
-                            ]);
-            
-            if($row = $query->fetch()){
-                $result=$row['identificacion'];
+            $query->execute([
+                'email' => $email,
+                'clave' =>  md5($password)
+            ]);
+
+            if ($row = $query->fetch()) {
+                $result = $row['identificacion'];
+                //se le asigna a una variable de sesion un indice (resultado de la consulta fetch)
+                $_SESSION['cargo'] = $row['cargo'];
+                $_SESSION['nombre'] = $row['nombre'];
+                $_SESSION['foto'] = $row['foto'];
+                $_SESSION['identificacion']= $row['identificacion'];
             }
             return $result;
-        }catch(PDOException $e){
-            if(constant("DEBUG")){
+        } catch (PDOException $e) {
+            if (constant("DEBUG")) {
                 echo $e->getMessage();
             }
             return null;

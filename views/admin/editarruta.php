@@ -27,22 +27,22 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="fecha_ruta">Fecha Ruta</label>
-                                <input type="date" class="form-control" value="<?php echo $this->ruta->fecha_ruta; ?>" name="fecha_ruta" id="fecha_ruta">
+                                <input type="date" class="form-control" value="<?php echo $this->ruta->fecha_ruta; ?>" name="fecha_ruta" id="fecha_ruta" required>
                                 <small id="fecha_rutaHelp" class="form-text text-muted">Diligencie la fecha de la ruta</small>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="hora_salida">Hora Salida</label>
-                                <input type="time" class="form-control" value="<?php echo $this->ruta->hora_salida; ?>"  name="hora_salida" id="hora_salida">
+                                <input type="time" class="form-control" value="<?php echo $this->ruta->hora_salida; ?>"  name="hora_salida" id="hora_salida" required>
                                 <small id="hora_salidaHelp" class="form-text text-muted">Diligencie la hora de salida</small>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="hora_llegada">Hora Llegada</label>
-                                <input type="time" class="form-control" value="<?php echo $this->ruta->hora_llegada; ?>"   name="hora_llegada" id="hora_llegada">
+                                <input type="time" class="form-control" value="<?php echo $this->ruta->hora_llegada; ?>"   name="hora_llegada" id="hora_llegada" required>
                                 <small id="hora_llegadaHelp" class="form-text text-muted">Diligencie la hora de llegada</small>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="tipo_ruta">Tipo Ruta</label>
-                                <input type="text" class="form-control" value="<?php echo $this->ruta->tipo_ruta; ?>"  name="tipo_ruta" id="tipo_ruta">
+                                <input type="text" class="form-control" value="<?php echo $this->ruta->tipo_ruta; ?>"  name="tipo_ruta" id="tipo_ruta" required>
                                 <small id="tipo_rutaHelp" class="form-text text-muted">Tipo Ruta</small>
                             </div>
                             <div class="form-group col-md-4">
@@ -52,7 +52,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="identificacion">Encargado</label>
-                                <select class="form-control" id="identificacion" name="identificacion" style="width:100%">
+                                <select class="form-control" id="identificacion" name="identificacion" style="width:100%" required>
 
                                     <option selected value="<?php echo $this->ruta->identificacion;?>"><?php echo $this->ruta->identificacion;?></option>
                                         <?php
@@ -74,7 +74,7 @@
 
                             <div class="form-group col-md-4">
                                 <label for="placa">Placa</label>
-                                <select class="form-control" id="placa" name="placa" style="width:100%">
+                                <select class="form-control" id="placa" name="placa" style="width:100%" required>
                                     <option selected value="<?php echo $this->ruta->placa;?>"><?php echo $this->ruta->placa;?></option>
                                         <?php
                                             include_once 'models/vehiculo.php';
@@ -94,7 +94,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="id_centro">Centro Solicitante</label>
-                                <select class="form-control" id="id_centro" name="id_centro" style="width:100%">
+                                <select class="form-control" id="id_centro" name="id_centro" style="width:100%" required>
                                 <option selected value="<?php echo $this->ruta->id_centro;?>"><?php echo $this->ruta->id_centro;?></option>
                                         <?php
                                             include_once 'models/centro.php';
@@ -115,7 +115,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="id_solicitud">Id Solicitud</label>
-                                <select class="form-control" id="id_solicitud" name="id_solicitud" style="width:100%">
+                                <select class="form-control" id="id_solicitud" name="id_solicitud" style="width:100%" required>
                                 <option selected value="<?php echo $this->ruta->id_solicitud;?>"><?php echo $this->ruta->id_solicitud;?></option>
                                         <?php
                                             include_once 'models/solicitud.php';
@@ -170,7 +170,7 @@
                             
                             <div class="form-group col-md-12">
                                 <label for="observaciones">Observaciones</label>
-                                <textarea  class="form-control" name="observaciones" id="observaciones" cols="30" rows="10" value="<?php echo $this->ruta->observaciones; ?>" ><?php echo $this->ruta->observaciones; ?></textarea>
+                                <textarea  class="form-control" name="observaciones" id="observaciones" cols="30" rows="10"  required value="<?php echo $this->ruta->observaciones; ?>" ><?php echo $this->ruta->observaciones; ?></textarea>
                                 <small id="observacionesHelp" class="form-text text-muted">Observaciones</small>
                             </div>
                         </div>

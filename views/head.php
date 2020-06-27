@@ -57,5 +57,5 @@
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/responsive.css">
     <!-- modernizr JS
 		============================================ -->
-    <script src="<?php echo constant('URL'); ?>public/js/vendor/modernizr-2.8.3.min.js"></script>
+    
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />

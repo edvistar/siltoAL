@@ -29,12 +29,12 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="nombre">Nombre</label>
-                                <input type="text" name="nombre" id="nombre" class="form-control" value="<?php echo $this->producto->nombre; ?>" >
+                                <input type="text" name="nombre" id="nombre" class="form-control" value="<?php echo $this->producto->nombre; ?>" required>
                                 <small id="nombreHelp" class="form-text text-muted">Ingrese el nombre del producto</small>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="costo">Costo</label>
-                                <input type="text" name="costo" id="costo" class="form-control" value="<?php echo $this->producto->costo; ?>" >
+                                <input type="text" name="costo" id="costo" class="form-control" value="<?php echo $this->producto->costo; ?>" required>
                                 <small id="costoHelp" class="form-text text-muted">Ingrese el costo del producto por kilo</small>
                             </div>
                         </div>

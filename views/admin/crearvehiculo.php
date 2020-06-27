@@ -1,3 +1,11 @@
+<?php
+if ($_SESSION['cargo'] != "administrador") {
+    if ($_SESSION['cargo'] != "supervisor") {
+        echo "<script>alert('Señor usuario,esta intentando acceder de forma incorrecta al sistema!')</script>";
+        header("location: ../index/logout");
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,29 +30,29 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="placa">Placa de vehículo</label>
-                            <input type="text" class="form-control" name="placa" id="placa">
+                            <input type="text" class="form-control" name="placa" id="placa" required >
                             <small id="placaHelp" class="form-text text-muted">Digite placa del vehículo</small>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="capacidad">Capacidad del vehículo</label>
-                            <input type="text" class="form-control" name="capacidad" id="capacidad">
+                            <input type="text" class="form-control" name="capacidad" id="capacidad" required >
                             <small id="capadidadHelp" class="form-text text-muted">Capacidad de carga del vehículo</small>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="seguro">Seguro del vehículo</label>
-                            <input type="date" class="form-control" name="seguro" id="seguro">
+                            <input type="date" class="form-control" name="seguro" id="seguro" required >
                             <small id="seguroHelp" class="form-text text-muted">Digite datos de la poliza del seguro</small>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="tecnomecanica">Tecnomecánica del vehículo</label>
-                            <input type="date" class="form-control" name="tecnomecanica" id="tecnomecanica">
+                            <input type="date" class="form-control" name="tecnomecanica" id="tecnomecanica" required >
                             <small id="tecnomecanicaHelp" class="form-text text-muted">Fecha de vencimiento del la tecnomecánica del vehículo</small>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="tipo_vehiculo">Tipo de vehículo</label>
-                            <select  class="form-control" name="tipo_vehiculo" id="tipo_vehiculo" required>
+                            <select  class="form-control" name="tipo_vehiculo" id="tipo_vehiculo"  required >
                                 <option selected value="">Seleccione tipo de vehiculo</option>
                                 <option value="furgon">Furgon</option>
                                 <option value="tractocaminon">Tractocamion</option>
@@ -54,7 +62,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="estado">Estado en la empresa</label>
-                            <select id="estado"  name="estado" class="form-control" required>
+                            <select id="estado"  name="estado" class="form-control" required  >
                                 <option selected value="">Seleccione estado</option>
                                 <option value="contratista">Contratista</option>
                                 <option value="propiedad">Propiedad</option>
@@ -64,9 +72,9 @@
 
                         <div class="form-group col-md-6">
                                 <label for="identificacion">Conductor</label>
-                                <select class="form-control" id="identificacion" name="identificacion" style="width:100%">
+                                <select class="form-control" id="identificacion" name="identificacion" style="width:100%" required >
                                     <option selected value="">seleccione...</option>
-                                                <small id="identificacionHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                                                
                                         <?php
                                             include_once 'models/usuario.php';
 
@@ -81,13 +89,8 @@
                                             }
                                                 ?>
                                 </select>
+                                <small id="identificacionHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
                             </div>
-
-                        <!-- <div class="form-group col-md-6">
-                            <label for="costo_flete">Costo del flete</label>
-                            <input type="text" class="form-control" name="costo_flete" id="costo_flete">
-                            <small id="fleteHelp" class="form-text text-muted">Valor del flete</small>
-                        </div> -->
 
                         <div class="form-group col-md-6">
                             <label for="gps" >GPS</label><br>

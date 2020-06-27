@@ -12,7 +12,7 @@ class UsuarioModel extends Model{
         $connexionDB=$this->db->connect();
         $query = $connexionDB->prepare($sentenceSQL);
 
-        $foto= "public/img/contact/".$_FILES['foto']['name'];
+        $foto= "public/img/usuarios/".$_FILES['foto']['name'];
         move_uploaded_file($_FILES["foto"]["tmp_name"], $foto);
             
         try{
@@ -107,10 +107,19 @@ class UsuarioModel extends Model{
         if (empty($foto)) {
             $foto = $fotoriginal;
         } else {
-            $foto="public/img/contact/".$foto;
+            $foto="public/img/usuarios/".$foto;
             move_uploaded_file($_FILES["foto"]["tmp_name"], $foto);
             unlink($fotoriginal);
-        }      
+        }
+
+        $passnuevo = $_POST['pass'];
+        $passantiguo = $_POST['passoriginal'];
+
+        if ($passnuevo != $passantiguo) {
+            $passnuevo = md5($item['pass']);
+        }else {
+            $passnuevo == $passantiguo;
+        }
         
         try{
             $query->execute([
@@ -118,10 +127,10 @@ class UsuarioModel extends Model{
                 'identificacion'  => $item['identificacion'],
                 'nombre'          => $item['nombre'],
                 'apellido'        => $item['apellido'],
-                'email'    => $item['email'],
-                'pass'            => md5($item['pass']), 
-                'telefono' => $item['telefono'],
-                'whatsapp' => $item['whatsapp'],
+                'email'           => $item['email'],
+                'pass'            => $passnuevo, 
+                'telefono'        => $item['telefono'],
+                'whatsapp'        => $item['whatsapp'],
                 'cargo'           => $item['cargo'],
                 'estado'          => $item['estado'],
                 'foto'            => $foto,
