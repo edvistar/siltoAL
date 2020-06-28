@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-06-2020 a las 19:01:16
+-- Tiempo de generación: 28-06-2020 a las 18:03:52
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.7
 
@@ -48,9 +48,18 @@ CREATE TABLE `centro` (
   `whatsapp` varchar(2) COLLATE utf8_spanish2_ci DEFAULT NULL COMMENT 'Whatsapp de centro',
   `departamento` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Departamento de centro',
   `ciudad` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Ciudad de centro',
-  `lugar` varchar(15) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Lugar de centro o bodega',
+  `tipo_centro` varchar(15) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'centro o bodega',
+  `direccion` varchar(40) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'direccion del centro o Bodega',
   `identificacion` bigint(12) NOT NULL COMMENT 'Encargado de centro'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `centro`
+--
+
+INSERT INTO `centro` (`id_centro`, `nombre`, `email`, `telefono`, `whatsapp`, `departamento`, `ciudad`, `tipo_centro`, `direccion`, `identificacion`) VALUES
+(12345, 'La Piña', 'lapapaya@gmail.com', 3138252764, 'SI', '17', '532', 'Bodega', 'Carrera 3 #30-17', 16838095),
+(34545, 'OcatiCotas', 'lavaca@gmail.com', 3138252764, 'SI', '25', '246', 'Acopio', 'Sector cerca de piedra 5', 16838095);
 
 -- --------------------------------------------------------
 
@@ -1267,8 +1276,16 @@ CREATE TABLE `rutas` (
   `id_centro` int(11) NOT NULL COMMENT 'Id de centro dirigido la ruta.',
   `variedad_productos` varchar(250) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'productos en ruta',
   `id_solicitud` int(11) NOT NULL COMMENT 'id de solicitud',
+  `estado` varchar(10) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'activa o cancelada',
   `observaciones` varchar(250) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Observaciones de la ruta'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `rutas`
+--
+
+INSERT INTO `rutas` (`id_ruta`, `fecha_ruta`, `hora_salida`, `hora_llegada`, `tipo_ruta`, `precinto`, `identificacion`, `placa`, `id_centro`, `variedad_productos`, `id_solicitud`, `estado`, `observaciones`) VALUES
+(24, '2020-06-28', '10:40:00', '22:44:00', 'Acopio', '5555', 16838095, 'AD3435', 34545, '-uchuba-tamarillo', 13, 'cancelada', 'Promocion de uchuba');
 
 -- --------------------------------------------------------
 
@@ -1283,6 +1300,14 @@ CREATE TABLE `solicitud` (
   `id_centro` int(11) NOT NULL COMMENT 'Centro solicitante',
   `identificacion` bigint(12) NOT NULL COMMENT 'Nombre del encargado de centro.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `solicitud`
+--
+
+INSERT INTO `solicitud` (`id_solicitud`, `fecha_solicitud`, `descripcion`, `id_centro`, `identificacion`) VALUES
+(13, '2020-06-28', '100 canastillas', 34545, 16838095),
+(14, '2020-06-28', '80 canastillas', 34545, 16838095);
 
 -- --------------------------------------------------------
 
@@ -1328,6 +1353,13 @@ CREATE TABLE `vehiculo` (
   `identificacion` bigint(20) NOT NULL COMMENT 'Nombre de conductor.',
   `fecha_registro` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'Fecha del registro'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `vehiculo`
+--
+
+INSERT INTO `vehiculo` (`placa`, `capacidad`, `seguro`, `tecnomecanica`, `tipo_vehiculo`, `gps`, `estado`, `identificacion`, `fecha_registro`) VALUES
+('AD3435', '10', '2020-06-28', '2020-06-28', 'furgon', 'si', 'contratista', 16838095, '2020-06-28 22:13:50');
 
 --
 -- Índices para tablas volcadas
@@ -1405,13 +1437,13 @@ ALTER TABLE `departamentos`
 -- AUTO_INCREMENT de la tabla `rutas`
 --
 ALTER TABLE `rutas`
-  MODIFY `id_ruta` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificación de ruta', AUTO_INCREMENT=24;
+  MODIFY `id_ruta` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificación de ruta', AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `solicitud`
 --
 ALTER TABLE `solicitud`
-  MODIFY `id_solicitud` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id de la solicitud para la ruta.', AUTO_INCREMENT=13;
+  MODIFY `id_solicitud` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id de la solicitud para la ruta.', AUTO_INCREMENT=15;
 
 --
 -- Restricciones para tablas volcadas
