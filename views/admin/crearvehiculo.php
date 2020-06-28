@@ -91,7 +91,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                 </select>
                                 <small id="identificacionHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
                             </div>
-
+                           
                         <div class="form-group col-md-6">
                             <label for="gps" >GPS</label><br>
                             <input class="custom-control-input"required type="radio" name="gps" id="gps1" value="si" checked>SI
@@ -99,6 +99,7 @@ if ($_SESSION['cargo'] != "administrador") {
                             <small id="whatsappHelp" class="form-text text-muted">Diligencie si el vehiculo tiene gps</small>
                         </div>
                     </div>
+                    
                     <div class="text-center ">
                         <button type="submit" class="btn btn-info">Registrar vehículo</button>
                         <button class="btn btn-danger">Cancelar</button>

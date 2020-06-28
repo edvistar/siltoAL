@@ -66,7 +66,7 @@
             $items = [];
             try{
                 $query = $this->db->connect()->query('SELECT  veh.placa, veh.capacidad, veh.seguro, veh.tecnomecanica,
-                veh.tipo_vehiculo,   veh.gps,  veh.fecha_registro, usu.nombre as nombreconductor, veh.estado
+                veh.tipo_vehiculo,   veh.gps,  veh.fecha_registro as registro, usu.nombre as nombreconductor, veh.estado
                 FROM vehiculo as veh
                 INNER JOIN usuario as usu on usu.identificacion=veh.identificacion
 
@@ -83,7 +83,7 @@
                     $item->gps             = $row['gps'];
                     $item->estado          = $row['estado'];
                     $item->identificacion  = $row['nombreconductor'];
-                    $item->fecha_registro  = $row['fecha_registro'];
+                    $item->fecha_registro  = $row['registro'];
 
                     array_push($items, $item);
                 }

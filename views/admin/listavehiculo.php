@@ -37,8 +37,8 @@ if ($_SESSION['cargo'] != "administrador") {
                                 </div>
                                 <table id="tabla" class="table table-hover">
                                     <thead class="thead-dark">
-                                        <tr>
-                                            <th data-field="state" data-checkbox="true"></th>
+                                        <tr class="text-center">
+                                            
                                             <th  scope="col">Placa vehículo</th>
                                             <th  scope="col">Capacidad</th>
                                             <th  scope="col">Seguro </th>
