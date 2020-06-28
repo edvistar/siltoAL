@@ -56,7 +56,8 @@
                 //$centro->departamento  = $_POST['departamento'];
                 //$centro->ciudad        = $_POST['ciudad'];
                 $centro->identificacion = $_POST['identificacion'];
-                $centro->lugar         = $_POST['lugar'];
+                $centro->tipo_centro         = $_POST['tipo_centro'];
+                $centro->direccion         = $_POST['direccion'];
     
                 
                 $this->view->centro = $centro;

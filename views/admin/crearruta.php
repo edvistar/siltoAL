@@ -46,9 +46,12 @@ if ($_SESSION['cargo'] != "administrador") {
                                 <small id="hora_llegadaHelp" class="form-text text-muted">Diligencie la hora de llegada</small>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="tipo_ruta">Tipo Ruta</label>
-                                <input type="text" class="form-control" name="tipo_ruta" id="tipo_ruta" required >
-                                <small id="tipo_rutaHelp" class="form-text text-muted">Tipo Ruta</small>
+                                <label for="tipo_ruta">Tipo de la ruta</label>
+                                <select class="form-control" id="tipo_ruta" name="tipo_ruta" style="width:100%" required >
+                                    <option value="Acopio">Acopio</option>
+                                    <option value="Aeropuerto">Aeropuerto</option>
+                                <small id="tipo_rutaHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                                </select>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="precinto">Precinto</label>
@@ -138,7 +141,14 @@ if ($_SESSION['cargo'] != "administrador") {
                                                 ?>
                                 </select>
                             </div>
-
+                            <div class="form-group col-md-4">
+                                <label for="estado">Estado de la ruta</label>
+                                <select class="form-control" id="estado" name="estado" style="width:100%" required >
+                                    <option value="activo">Activo</option>
+                                    <option value="cancelada">Cancelada</option>
+                                <small id="estadoHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                                </select>
+                            </div>
                             <div class="form-group col-md-12">
                                 <label class="form-text text-muted">Productos en la ruta</label><br>
                                 <input type="checkbox" id="producto_0" name="productos[0]" value="uchuba" class="form-check-input">
@@ -170,7 +180,7 @@ if ($_SESSION['cargo'] != "administrador") {
                             <div class="form-group col-md-12">
                                 <label for="observaciones">Observaciones</label>
                                 <textarea  class="form-control" name="observaciones" id="observaciones" cols="30" rows="10" required ></textarea>
-                                <small id="descripcionHelp" class="form-text text-muted">Observaciones</small>
+                                <small id="observacionesHelp" class="form-text text-muted">Observaciones</small>
                             </div>
                         </div>
                         <div class="text-center ">

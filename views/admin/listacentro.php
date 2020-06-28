@@ -37,8 +37,9 @@ if ($_SESSION['cargo'] != "administrador") {
                                             <th  scope="col">Whatsapp</th>
                                             <th  scope="col">Departamento</th>
                                             <th  scope="col">Ciudad</th>
+                                            <th  scope="col">Direccion</th>
                                             <th  scope="col">Encargado</th>
-                                            <th  scope="col">Lugar</th>
+                                            <th  scope="col">Tipo de Centro</th>
                                             <th  scope="col" colspan="2" class="text-center">Acciones</th>
                                         </tr>
                                     </thead>
@@ -59,8 +60,9 @@ if ($_SESSION['cargo'] != "administrador") {
                                                 <td><?php echo $centro->whatsapp; ?>
                                                 <td><?php echo $centro->departamento; ?>
                                                 <td><?php echo $centro->ciudad; ?>
+                                                <td><?php echo $centro->direccion; ?>
                                                 <td><?php echo $centro->identificacion; ?>
-                                                <td><?php echo $centro->lugar; ?>
+                                                <td><?php echo $centro->tipo_centro; ?>
                                                 <td><a href="<?php echo constant('URL') . 'centro/leer/' . $centro->id_centro; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a></td>
                                                 <td><button class="bEliminar" data-controlador="centro" data-accion="eliminar" data-id="<?php echo $centro->id_centro; ?>"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</button></td>
                                             </tr>

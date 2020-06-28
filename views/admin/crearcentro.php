@@ -58,13 +58,13 @@ if ($_SESSION['cargo'] != "administrador") {
                                     <small id="whatsappHelp" class="form-text text-muted">Confirme si tiene whatsapp el numero de telefono ingresado</small>
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label for="lugar">Lugar</label>
-                                    <select class="form-control" id="lugar" name="lugar" style="width:100%" required>
+                                    <label for="tipo_centro">Tipo de Centro</label>
+                                    <select class="form-control" id="tipo_centro" name="tipo_centro" style="width:100%" required>
                                         <option selected value="">Seleccione...</option>
-                                        <option value="Centro">Centro Acopio</option>
+                                        <option value="Acopio">Centro Acopio</option>
                                         <option value="Bodega">Bodega Principal</option>
                                     </select>
-                                    <small id="lugarHelp" class="form-text text-muted">Lugar de ubicacion</small>
+                                    <small id="tipo_centroHelp" class="form-text text-muted">Tipo de Centro</small>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="card">
@@ -87,6 +87,11 @@ if ($_SESSION['cargo'] != "administrador") {
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="direccion">Direccion</label>
+                                    <input type="text" class="form-control" name="direccion" id="direccion" required>
+                                    <small id="direccionHelp" class="form-text text-muted">Diligencie la direccion del Centro</small>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="identificacion">Encargado</label>

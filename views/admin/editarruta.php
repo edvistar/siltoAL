@@ -41,9 +41,12 @@
                                 <small id="hora_llegadaHelp" class="form-text text-muted">Diligencie la hora de llegada</small>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="tipo_ruta">Tipo Ruta</label>
-                                <input type="text" class="form-control" value="<?php echo $this->ruta->tipo_ruta; ?>"  name="tipo_ruta" id="tipo_ruta" required>
-                                <small id="tipo_rutaHelp" class="form-text text-muted">Tipo Ruta</small>
+                                <label for="tipo_ruta">Tipo de la ruta</label>
+                                <select class="form-control" value="<?php echo $this->ruta->tipo_ruta; ?>" id="tipo_ruta" name="tipo_ruta" style="width:100%" required >
+                                    <option value="Acopio">Acopio</option>
+                                    <option value="Aeropuerto">Aeropuerto</option>
+                                <small id="tipo_rutaHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                                </select>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="precinto">Precinto</label>
@@ -133,6 +136,14 @@
                                                 ?>
                                 </select>
                                 <small id="id_solicitudHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="estado">Estado de la ruta</label>
+                                <select class="form-control" alue="<?php echo $this->ruta->estado;?>" id="estado" name="estado" style="width:100%" required >
+                                    <option value="activo">Activo</option>
+                                    <option value="cancelada">Cancelada</option>
+                                <small id="estadoHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                                </select>
                             </div>
 
                                 <?php 

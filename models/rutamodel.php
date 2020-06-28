@@ -10,7 +10,7 @@
         foreach($datos["productos"] as $producto){
             $misproductos = $misproductos. "-".$producto;
         }
-                $sentenceSQL="INSERT INTO rutas (fecha_ruta, hora_salida, hora_llegada, tipo_ruta, precinto, identificacion, placa, id_centro, variedad_productos, id_solicitud, observaciones) VALUES(:fecha_ruta, :hora_salida, :hora_llegada,  :tipo_ruta, :precinto, :identificacion, :placa, :id_centro, :variedad_productos, :id_solicitud, :observaciones)";
+                $sentenceSQL="INSERT INTO rutas (fecha_ruta, hora_salida, hora_llegada, tipo_ruta, precinto, identificacion, placa, id_centro, variedad_productos, id_solicitud, estado, observaciones) VALUES(:fecha_ruta, :hora_salida, :hora_llegada,  :tipo_ruta, :precinto, :identificacion, :placa, :id_centro, :variedad_productos, :id_solicitud, :estado, :observaciones)";
                 $connexionDB=$this->db->connect();
                 $query = $connexionDB->prepare($sentenceSQL);
 
@@ -27,6 +27,7 @@
                                     'id_centro'          => $datos['id_centro'],
                                     'variedad_productos' => $misproductos,
                                     'id_solicitud'       => $datos['id_solicitud'],
+                                    'estado'       => $datos['estado'],
                                     'observaciones'      => $datos['observaciones']
                     ]);
                     return true;
@@ -131,7 +132,7 @@
             $items = [];
             try{
                 $query = $this->db->connect()->query('SELECT
-                rut.id_ruta, rut.fecha_ruta, rut.hora_salida, rut.hora_llegada, rut.tipo_ruta, rut.precinto, usu.nombre as nombreConductor, rut.placa, cent.nombre as nombreCentro, rut.variedad_productos, rut.id_solicitud, rut.observaciones
+                rut.id_ruta, rut.fecha_ruta, rut.hora_salida, rut.hora_llegada, rut.tipo_ruta, rut.precinto, usu.nombre as nombreConductor, rut.placa, cent.nombre as nombreCentro, rut.variedad_productos, rut.id_solicitud, rut.estado, rut.observaciones
                 FROM rutas as rut
                 INNER JOIN usuario as usu on usu.identificacion=rut.identificacion
                 INNER JOIN centro as cent on cent.id_centro=rut.id_centro
@@ -151,6 +152,7 @@
                     $item->id_centro          = $row['nombreCentro'];
                     $item->variedad_productos = $row['variedad_productos'];
                     $item->id_solicitud       = $row['id_solicitud'];
+                    $item->estado       = $row['estado'];
                     $item->observaciones      = $row['observaciones'];
 
                     array_push($items, $item);
@@ -167,7 +169,7 @@
             $item = new RutaDAO();
             try{
                 $query = $this->db->connect()->prepare('SELECT 
-                 rut.id_ruta, rut.fecha_ruta, rut.hora_salida, rut.hora_llegada, rut.tipo_ruta, rut.precinto, usu.nombre as nombreEncargado, rut.placa, cent.nombre as nombreCentro, rut.variedad_productos, sol.descripcion as descripcionSolicitud, rut.observaciones
+                 rut.id_ruta, rut.fecha_ruta, rut.hora_salida, rut.hora_llegada, rut.tipo_ruta, rut.precinto, usu.nombre as nombreEncargado, rut.placa, cent.nombre as nombreCentro, rut.variedad_productos, rut.estado, sol.descripcion as descripcionSolicitud, rut.estado, rut.observaciones
                 FROM rutas as rut
                 INNER JOIN usuario as usu on usu.identificacion=rut.identificacion
                 INNER JOIN centro as cent on cent.id_centro=rut.id_centro
@@ -190,6 +192,7 @@
                     $item->id_centro          = $row['nombreCentro'];
                     $item->variedad_productos = $row['variedad_productos'];
                     $item->id_solicitud       = $row['descripcionSolicitud'];
+                    $item->estado       = $row['estado'];
                     $item->observaciones       = $row['observaciones'];
                 }
                 return $item;
@@ -206,7 +209,7 @@
                 $misproductos = $misproductos. "-".$producto;
             }
             $query = $this->db->connect()->prepare('UPDATE rutas SET fecha_ruta = :fecha_ruta, hora_salida = :hora_salida, hora_llegada = :hora_llegada, tipo_ruta = :tipo_ruta, precinto = :precinto, 
-            identificacion = :identificacion, placa = :placa, id_centro = :id_centro, variedad_productos = :variedad_productos, id_solicitud = :id_solicitud, observaciones = :observaciones
+            identificacion = :identificacion, placa = :placa, id_centro = :id_centro, variedad_productos = :variedad_productos, id_solicitud = :id_solicitud, estado = :estado, observaciones = :observaciones
             WHERE id_ruta = :id_ruta');
             try{
                 $query->execute([
@@ -221,6 +224,7 @@
                         'id_centro'          => $item['id_centro'],
                         'variedad_productos' => $misproductos,
                         'id_solicitud'       => $item['id_solicitud'],
+                        'estado'       => $item['estado'],
                         'observaciones'      => $item['observaciones']
                         
                 ]);
