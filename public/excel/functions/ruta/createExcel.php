@@ -25,37 +25,32 @@ $objPHPExcel->getDefaultStyle()->getFont()->setName('Arial Narrow Bold')->setSiz
 
 
 $objPHPExcel->setActiveSheetIndex(0)
-            ->setCellValue('A1', 'id_ruta')
-            ->setCellValue('B1', 'fecha_ruta')
-            ->setCellValue('C1', 'hora_salida')
-            ->setCellValue('D1', 'hora_llegada')
-            ->setCellValue('E1', 'tipo_ruta')
-            ->setCellValue('F1', 'precinto')
-            ->setCellValue('G1', 'nombreConductor')
-            ->setCellValue('H1', 'placa')
-            ->setCellValue('I1', 'nombreCentro')
-            ->setCellValue('J1', 'variedad_productos')
-            ->setCellValue('K1', 'id_solicitud')
-            ->setCellValue('L1', 'observaciones');
-
- $informe = getruta();
+            ->setCellValue('A1', 'id_centro')
+            ->setCellValue('B1', 'nombrecentro')
+            ->setCellValue('C1', 'email')
+            ->setCellValue('D1', 'telefono')
+            ->setCellValue('E1', 'whatsapp')
+            ->setCellValue('F1', 'departamento')
+            ->setCellValue('G1', 'ciudad')
+            ->setCellValue('H1', 'nombreusuario')
+            ->setCellValue('I1', 'tipo_centro')
+            ->setCellValue('J1', 'direccion');
+ 
+$informe = getcentro();
  $i = 2; 
    while($row = $informe->fetch_array(MYSQLI_ASSOC))
             {
                 $objPHPExcel->setActiveSheetIndex(0)
-                ->setCellValue("A$i", $row['id_ruta'])
-                ->setCellValue("B$i", $row['fecha_ruta'])
-                ->setCellValue("C$i", $row['hora_salida'])
-                ->setCellValue("D$i", $row['hora_llegada'])
-                ->setCellValue("E$i", $row['tipo_ruta'])
-                ->setCellValue("F$i", $row['precinto'])
-                ->setCellValue("G$i", $row['nombreConductor'])
-                ->setCellValue("H$i", $row['placa'])
-                ->setCellValue("I$i", $row['nombreCentro'])
-                ->setCellValue("J$i", $row['variedad_productos'])
-                ->setCellValue("K$i", $row['id_solicitud'])
-                ->setCellValue("L$i", $row['observaciones']);
-               
+                ->setCellValue("A$i", $row['id_centro'])
+                ->setCellValue("B$i", $row['nombrecentro'])
+                ->setCellValue("C$i", $row['email'])
+                ->setCellValue("D$i", $row['telefono'])
+                ->setCellValue("E$i", $row['whatsapp'])
+                ->setCellValue("F$i", $row['departamento'])
+                ->setCellValue("G$i", $row['ciudad'])
+                ->setCellValue("H$i", $row['nombreusuario'])
+                ->setCellValue("I$i", $row['tipo_centro'])
+                ->setCellValue("J$i", $row['direccion']);
 
     $i++;
             }
