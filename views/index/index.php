@@ -309,7 +309,11 @@
             <div class="modal-body">
                 <img class="avatar" src="public/img/jhonatan.png">
                 <h4>Tecnologo ADSI</h4>
-                <p>Desarrollador frond-end apoyo en back-end de la aplicacion.</p>
+                <p>Analista de sistemas bases de datos, programadora PHP, HTML5, Bootstrap 4, apollo en FROND-END de aplicación y colaboración en el BACK-END de la misma.<br>
+                Contacto<br>
+                Email: jrlopez62@misena.edu.co<br>
+                Email: jhonatanlopezgonzalez@hotmail.es<br>
+                Cel:312 2734752<br></p>
             </div>
             <div class="modal-footer">
                 <a data-dismiss="modal" href="#">Cerrar</a>
@@ -330,7 +334,10 @@
             <div class="modal-body">
                 <img class="avatar" src="public/img/lida.jpg">
                 <h4>Tecnologa ADSI</h4>
-                <p></p>
+                <p>Tecnologo en Analisis y desarrollo de Informacion enfasis en Analisis y levantamiento de requerimientos.<br>
+                Telefono 3222435548<br>
+                Emails lucianajoh1113@gmail.com<br>
+                lplara67@misena.edu.co</p>
             </div>
             <div class="modal-footer">
                 <a data-dismiss="modal" href="#">Cerrar</a>
@@ -372,7 +379,9 @@
             <div class="modal-body">
                 <img class="avatar" src="public/img/victor.jpg">
                 <h4>Tecnologo ADSI</h4>
-                <p>Analista y desarrollador, encargado del BACK-END de la aplicacion. Lider de proyecto a cargo de la aplicaciòn.</p>
+                <p>Analista y desarrollador, encargado del BACK-END de la aplicacion. Lider de proyecto a cargo de la aplicaciòn.<br>
+                Contacto<br>
+                Email: victorhoyoscolombia@gmail.com<br></p>
             </div>
             <div class="modal-footer">
                 <a data-dismiss="modal" href="#">Cerrar</a>
