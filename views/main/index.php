@@ -11,7 +11,7 @@
 <br>
 <br>
 <br>
-<h1><?php echo $_SESSION['cargo'];?></h1>
+<h1 style="text-transform: uppercase" ><?php echo $_SESSION['cargo'];?></h1>
 <br>
 <br>
 <br>
@@ -20,11 +20,7 @@
 <br>
 <br>
 <br>
-
-
-<p> Los productos al alcance de tu mano.
-<br>WAPV trabajando para su servicio.<br></p>
-
+<p>WAPV trabajando para su servicio.<br></p>
 </div>
 <br>
 <br>
@@ -38,7 +34,6 @@
 <br>
 <br>
 <br>
-
 <?php require 'views/footer.php'; ?>
 </body>
 </html>

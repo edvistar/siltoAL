@@ -6,8 +6,9 @@
 </head>
 
 <body>
-    <?php require 'views/menuadmin.php'; ?>
+<?php require 'views/menuadmin.php'; ?>
     <!-- Start Welcome area -->
+  
     <div class="all-content-wrapper">
         <div class="container-fluid">
             <div class="row">
@@ -18,6 +19,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="header-advance-area">
             <div class="header-top-area">
                 <div class="container-fluid">
@@ -53,7 +55,7 @@
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
                                                 <!-- ICONO MENSAJES BARRA NAVEGACION -->
                                                 <li class="nav-item dropdown">
-                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-envelope-o adminpro-chat-pro" aria-hidden="true"></i><span class="indicator-ms"></span></a>
+                                                    <!-- <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-envelope-o adminpro-chat-pro" aria-hidden="true"></i><span class="indicator-ms"></span></a> -->
                                                     <div role="menu" class="author-message-top dropdown-menu animated zoomIn">
                                                         <!-- <div class="message-single-top">
                                                             <h1>Message</h1>
@@ -78,7 +80,7 @@
                                                     </div>
                                                 </li>
                                                 <!-- ICONO NOTIFICACIONES BARRA NAVEGACION -->
-                                                <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-bell-o" aria-hidden="true"></i><span class="indicator-nt"></span></a>
+                                                <!-- <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-bell-o" aria-hidden="true"></i><span class="indicator-nt"></span></a> -->
                                                     <div role="menu" class="notification-author dropdown-menu animated zoomIn">
                                                         <!-- <div class="notification-single-top">
                                                             <h1>Notifications</h1>
@@ -120,15 +122,15 @@
                                                 </li>
                                                 <li class="nav-item nav-setting-open"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-tasks"></i></a>
 
-                                                    <div role="menu" class="admintab-wrap menu-setting-wrap menu-setting-wrap-bg dropdown-menu animated zoomIn">
-                                                        <ul class="nav nav-tabs custon-set-tab">
+                                                    <div role="menu" >
+                                                        <!-- <ul class="nav nav-tabs custon-set-tab">
                                                             <li class="active"><a data-toggle="tab" href="#Notes">News</a>
                                                             </li>
                                                             <li><a data-toggle="tab" href="#Projects">Activity</a>
                                                             </li>
                                                             <li><a data-toggle="tab" href="#Settings">Settings</a>
                                                             </li>
-                                                        </ul>
+                                                        </ul> -->
 
                                                         <div class="tab-content custom-bdr-nt">
                                                             <div id="Notes" class="tab-pane fade in active">
@@ -249,4 +251,5 @@
                     </div>
                 </div>
             </div>
-        </div><br>
+        </div>
+        <div class="color-line"></div>

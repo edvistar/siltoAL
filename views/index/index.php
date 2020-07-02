@@ -25,10 +25,10 @@
                     <div class="col-lg-9">
                         <ul class="text-center">
                         <li><a href="<?php echo constant('URL'); ?>index.php">Inicio</a></li>
-                            <li><a href="<?php echo constant('URL'); ?>quehacemos">Que Hacemos</a></li>
-                            <li><a href="<?php echo constant('URL'); ?>servicios">Servicios</a></li>
-                            <li><a href="<?php echo constant('URL'); ?>Equipo">Equipo</a></li>
-                            <li><a href="<?php echo constant('URL'); ?>Contacto">Contacto</a></li>
+                            <li><a href="#quehacemos">Que Hacemos</a></li>
+                            <li><a href="#servicios">Servicios</a></li>
+                            <li><a href="#equipo">Equipo</a></li>
+                            <li><a href="#Contacto">Contacto</a></li>
                             <li><a href="<?php echo constant('URL'); ?>index/Autenticar?auth=1">Ingreso</a></li>
                         </ul>
                     </div>
@@ -249,15 +249,15 @@
                     <div>
                         <ul>
                             <li><a href="https://twitter.com/Silto16">
-                                    <img width="50" height="50" src="public/img/043-twitter.png" alt="imagen de twitter">
+                                    <img width="50" height="50" src="public/img/redes sociales/043-twitter.png" alt="imagen de twitter">
                                 </a>
                             </li>
                             <li><a href="https://www.facebook.com/groups/1653448328150890/?ref=share">
-                                    <img width="50" height="50" src="public/img/021-facebook.png" alt="imagen de facebook">
+                                    <img width="50" height="50" src="public/img/redes sociales/021-facebook.png" alt="imagen de facebook">
                                 </a>
                             </li>
                             <li><a href="https://api.whatsapp.com/send?phone=573122734752&text=hola%20amor%20">
-                                    <img  width="50" height="50" src="public/img/035-whatsapp.png" alt="imagen de whatsapp">
+                                    <img  width="50" height="50" src="public/img/redes sociales/035-whatsapp.png" alt="imagen de whatsapp">
                                 </a>
                             </li>
 
