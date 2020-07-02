@@ -30,7 +30,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                 <table id="tabla" class="table table-hover">
                                     <thead class="thead-dark">
                                         <tr class="text-center">
-                                            <th  scope="col">ID Centro</th>
+                                            <th  scope="col">Código de Centro</th>
                                             <th  scope="col">Nombre</th>
                                             <th  scope="col">email</th>
                                             <th  scope="col">Telefono</th>

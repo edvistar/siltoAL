@@ -31,8 +31,8 @@ if ($_SESSION['cargo'] != "administrador") {
                                 <table id="tabla" class="table table-hover">
                                     <thead class="thead-dark">
                                         <tr>
-                                            <th  scope="col">ID</th>
-                                            <th  scope="col">Solicitud</th>
+                                            <th  scope="col">Código</th>
+                                            <th  scope="col">Fecha de Solicitud</th>
                                             <th  scope="col">Descripciòn</th>
                                             <th  scope="col">Centro</th>
                                             <th  scope="col">Encargado</th>

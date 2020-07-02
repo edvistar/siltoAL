@@ -30,17 +30,17 @@ if ($_SESSION['cargo'] != "administrador") {
                             <table id="tabla" class="table table-hover">
                                 <thead class="thead-dark">
                                     <tr>
-                                        <th  scope="col">Id Ruta</th>
+                                        <th  scope="col">Código Ruta</th>
                                         <th  scope="col">Fecha Ruta</th>
                                         <th  scope="col">Hora Salida</th>
                                         <th  scope="col">Hora Llegada</th>
                                         <th  scope="col">Tipo de Ruta</th>
                                         <th  scope="col">Precinto</th>
-                                        <th  scope="col">Identificacion</th>
-                                        <th  scope="col">Placa</th>
-                                        <th  scope="col">Id Centro</th>
+                                        <th  scope="col">Responsable De solicitud</th>
+                                        <th  scope="col">Vehículo Asignado</th>
+                                        <th  scope="col">Centro Solicitante</th>
                                         <th  scope="col">Productos</th>
-                                        <th  scope="col">Id Solicitud</th>
+                                        <th  scope="col">Código de Solicitud</th>
                                         <th  scope="col">Estado</th>
                                         <th  scope="col">Observaciones</th>
                                         <th  scope="col" colspan="2" class="text-center">Acciones</th>
