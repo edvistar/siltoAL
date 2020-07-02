@@ -23,7 +23,7 @@ if ($_SESSION['cargo'] != "administrador") {
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap">
                             <div id="main">
-                                <div><?php echo $this->mensaje; ?></div>
+                                <div id="respuesta"><?php echo $this->mensaje; ?></div>
                                 <h1 class="text-center"><i class="fa fa-eye" aria-hidden="true"></i> Listado Solicitudes</h1>
                                 <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>solicitud/crear")'>Crear Solicitud</button>
                                 <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/pdf/solicitud.php")'>PDF</button>

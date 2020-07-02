@@ -20,7 +20,7 @@ if ($_SESSION['cargo'] != "administrador") {
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="product-status-wrap">
                         <div id="main">
-                            <div><?php echo $this->mensaje; ?></div>
+                            <div id="respuesta"><?php echo $this->mensaje; ?></div>
                             <h1 class="text-center"><i class="fa fa-map" aria-hidden="true"></i> Listado de Rutas</h1>
                             <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>/ruta/crear")'>Crear Ruta</button>
                             <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/pdf/ruta.php")'>PDF</button>

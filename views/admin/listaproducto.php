@@ -20,7 +20,7 @@ if ($_SESSION['cargo'] != "administrador") {
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="product-status-wrap">
                         <div id="main" class="container">
-                            <div><?php echo $this->mensaje; ?></div>
+                            <div id="respuesta"><?php echo $this->mensaje; ?></div>
                             <h1 class="text-center"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Listado de Productos </h1>
                             <div class=" row">
                             <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>producto/crear")'>Crear Producto</button>
