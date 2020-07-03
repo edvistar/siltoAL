@@ -23,17 +23,17 @@
                 <form action="<?php  echo constant('URL'); ?>producto/editar" method="POST">
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="id_producto">Id</label>
+                                <label for="id_producto">Codigo</label>
                                 <input type="number" name="id_producto"  id="id_producto" class="form-control" value="<?php echo $this->producto->id_producto; ?>" readonly>
                                 <small id="id_productoHelp" class="form-text text-muted">Ingrese el Id del producto</small>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="nombre">Nombre</label>
+                                <label for="nombre">Nombre de Producto</label>
                                 <input type="text" name="nombre" id="nombre" class="form-control" value="<?php echo $this->producto->nombre; ?>" required>
                                 <small id="nombreHelp" class="form-text text-muted">Ingrese el nombre del producto</small>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="costo">Costo</label>
+                                <label for="costo">Costo Kl</label>
                                 <input type="text" name="costo" id="costo" class="form-control" value="<?php echo $this->producto->costo; ?>" required>
                                 <small id="costoHelp" class="form-text text-muted">Ingrese el costo del producto por kilo</small>
                             </div>

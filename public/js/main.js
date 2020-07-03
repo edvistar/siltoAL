@@ -5,11 +5,12 @@ items.forEach(item => {
         const controlador = this.dataset.controlador;
         const accion=this.dataset.accion;
 
-        const confirm = window.confirm("Deseas eliminar el elemento?");
+        const confirm = window.confirm("¿Desea eliminar el registro "+id+"?");
 
         if(confirm){
             httpRequest("http://localhost/siltoWapv/"+controlador+"/"+accion+"/" + id, function(e){
-                console.log(this.responseText);
+                //console.log(this.responseText);
+                document.querySelector("#respuesta").innerHTML = this.responseText;
                 const tbody = document.querySelector("#tbody-data");
                 const fila  = document.querySelector("#fila-" + id);
               

@@ -20,7 +20,7 @@ if ($_SESSION['cargo'] != "administrador") {
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap">
                             <div id="main">
-                                <div><?php echo $this->mensaje; ?></div>
+                                <div id="respuesta"><?php echo $this->mensaje; ?></div>
                                 <h1 class="text-center"><i class="fa fa-eye" aria-hidden="true"></i> Listado de Centros de Acopio</h1>
                                 <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>/centro/crear")'>Crear Centro</button>
                                 <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/pdf/centro.php")'>PDF</button>
@@ -30,7 +30,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                 <table id="tabla" class="table table-hover">
                                     <thead class="thead-dark">
                                         <tr class="text-center">
-                                            <th  scope="col">ID Centro</th>
+                                            <th  scope="col">Código de Centro</th>
                                             <th  scope="col">Nombre</th>
                                             <th  scope="col">email</th>
                                             <th  scope="col">Telefono</th>

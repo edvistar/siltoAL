@@ -7,7 +7,7 @@ noCli();
 
 require_once '../../Classes/PHPExcel.php';
 require '../conexion.php';
-require '../modulos.php';
+require '..//modulos.php';
 
 $objPHPExcel = new PHPExcel();
 
@@ -36,7 +36,7 @@ $objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('I1', 'Fecha de registro');
 
  $informe = getvehiculos();
- $i = 2;
+ $i = 2; 
    while($row = $informe->fetch_array(MYSQLI_ASSOC))
             {
                 $objPHPExcel->setActiveSheetIndex(0)
@@ -49,6 +49,7 @@ $objPHPExcel->setActiveSheetIndex(0)
                 ->setCellValue("G$i", $row['estado'])
                 ->setCellValue("H$i", $row['nombreconductor'])
                 ->setCellValue("I$i", $row['fecha_registro']);
+               
 
     $i++;
             }

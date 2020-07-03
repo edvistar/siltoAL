@@ -20,7 +20,7 @@
                     <form action="<?php echo constant('URL'); ?>centro/editar" method="POST">
                         <div class="row">
                         <div class="form-group col-md-6">
-                                <label for="id_centro">Id Centro</label>
+                                <label for="id_centro">Codigo de Centro</label>
                                 <input type="number" class="form-control" value="<?php echo $this->centro->id_centro; ?>" name="id_centro" id="id_centro" readonly>
                                 <small id="id_centroHelp" class="form-text text-muted"></small>
                             </div>
@@ -47,7 +47,7 @@
                                 <small id="whatsappHelp" class="form-text text-muted">Confirme si tiene whatsapp el numero de telefono ingresado</small>
                             </div>
                             <div class="form-group col-lg-6">
-                                <label for="tipo_centro">tipo_centro</label>
+                                <label for="tipo_centro">Tipo de Centro</label>
                                 <select class="form-control" id="tipo_centro" name="tipo_centro" style="width:100%"  required>
                                     <option selected value="<?php echo $this->centro->tipo_centro; ?>"><?php echo $this->centro->tipo_centro; ?></option>
                                     <option  value="Acopio">Centro Acopio</option>

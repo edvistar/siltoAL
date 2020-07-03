@@ -32,7 +32,7 @@ function getruta(){
  
     $mysqli = getConnexion();
     $query =('SELECT
-    rut.id_ruta, rut.fecha_ruta, rut.hora_salida, rut.hora_llegada, rut.tipo_ruta, rut.precinto, usu.nombre as nombreConductor, rut.placa, cent.nombre as nombreCentro, rut.variedad_productos, rut.id_solicitud, rut.estado, rut.observaciones
+    rut.id_ruta, rut.fecha_ruta, rut.hora_salida, rut.hora_llegada, rut.tipo_ruta, rut.precinto, usu.nombre as nombreConductor, rut.placa, cent.nombre as nombreCentro, rut.variedad_productos, rut.id_solicitud, rut.observaciones
     FROM rutas as rut
     INNER JOIN usuario as usu on usu.identificacion=rut.identificacion
     INNER JOIN centro as cent on cent.id_centro=rut.id_centro
@@ -49,7 +49,7 @@ function getproducto(){
 function getcentro(){
  
     $mysqli = getConnexion();
-    $query =('SELECT cent.id_centro, cent.nombre as nombrecentro, cent.email, cent.telefono, cent.whatsapp, depa.departamento, ciud.ciudad, usu.nombre as nombreusuario, cent.tipo_centro, cent.direccion 
+    $query =('SELECT cent.id_centro, cent.nombre as nombrecentro, cent.email, cent.telefono, cent.whatsapp, depa.departamento, ciud.ciudad, usu.nombre as nombreusuario, cent.lugar 
     FROM centro as cent
     INNER JOIN departamentos as depa on depa.idDepa=cent.departamento
     INNER JOIN ciudades as ciud on ciud.idCiud=cent.ciudad

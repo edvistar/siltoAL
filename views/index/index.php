@@ -25,10 +25,10 @@
                     <div class="col-lg-9">
                         <ul class="text-center">
                         <li><a href="<?php echo constant('URL'); ?>index.php">Inicio</a></li>
-                            <li><a href="#quehacemos">Que Hacemos</a></li>
-                            <li><a href="#servicios">Servicios</a></li>
-                            <li><a href="#equipo">Equipo</a></li>
-                            <li><a href="#Contacto">Contacto</a></li>
+                            <li><a href="<?php echo constant('URL'); ?>#quehacemos">Que Hacemos</a></li>
+                            <li><a href="<?php echo constant('URL'); ?>#Servicios">Servicios</a></li>
+                            <li><a href="<?php echo constant('URL'); ?>#Equipo">Equipo</a></li>
+                            <li><a href="<?php echo constant('URL'); ?>#Contacto">Contacto</a></li>
                             <li><a href="<?php echo constant('URL'); ?>index/Autenticar?auth=1">Ingreso</a></li>
                         </ul>
                     </div>
@@ -90,7 +90,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="mision-vision">
-                            <img  src="public/img/mision.jpg" alt="imagen Misión">
+                            <img  width="500" height="300" src="public/img/64857.jpg" alt="imagen Misión">
                             <h1 class="h1">
                                 MISIÓN
                             </h1>
@@ -101,7 +101,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="mision-vision">
-                            <img  src="public/img/vision.png" alt="imagen Misión">
+                            <img  width="500" height="300" src="public/img/logistica.jpg" alt="imagen Misión">
                             <h1 class="h1">
                                 VISIÓN
                             </h1>
@@ -120,18 +120,18 @@
                 <!--rol-->
                 <div class="col-lg-6 text-center">
                     <a class="btn " data-toggle="collapse" href="#rol" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Cargo Usuario</h1>
-                        <img class="tama" src="public/img/cargo.png" alt="imagen Misión"></a>
+                        <img class="tama" src="public/img/oper.png" alt="imagen Misión"></a>
                     <div class="collapse " id="rol">
                         <div class="card card-body">
                         <strong>
-                            <p class="">La plataforma tendra diferentes cargos para los usuarios en los cuales se encuentran los siguientes: <br>1. Administrador es el encargado del sistema y tendra los permisos para el manejo de la plataforma. <br>2. Supervisor es el encargado de las solicitudes y el planeamiento de las rutas. <br>3. Bodeguero es el encargado de realizar solicitudes  para la ruta.</p>
+                            <p class="">La plataforma tendra diferentes cargos para los usuarios en los cuales se encuentran los siguientes: <br>1. Administrador es el encargado del sistema y tendra los permisos para el manejo de la plataforma. <br>2. Coordinador es el encargado de las solicitudes de los bodegueros y las rutas. <br>3. Bodeguero es el encargado de realizar solicitudes y llenar registros de las rutas en los centro de acopio y bodega principal.</p>
                             </strong>
                         </div>
                     </div>
                 </div>
                 <!--solicitud-->
                 <div class="col-lg-6 text-center">
-                    <a class="btn " data-toggle="collapse" href="#solicitud" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Solicitud de Pedidos</h1><img  class="tama" src="public/img/solicitud.png" alt="imagen Misión"></a>
+                    <a class="btn " data-toggle="collapse" href="#solicitud" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Solicitud de Pedidos</h1><img  class="tama" src="public/img/8869.jpg" alt="imagen Misión"></a>
                     <div class="collapse " id="solicitud">
                         <div class="card card-body">
                             <p><b>La solicitud de las rutas  es realizada apartir de pedidos de los centros de acopio, oficinas para el trasporte de mercancioa o de documentacion de la empresa, o de personal solicitado en diferentes puntos.</b>
@@ -144,11 +144,11 @@
             <div class="row">
                 <div class="col-lg-6">
                     <a class="btn " data-toggle="collapse" href="#planeamiento" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Planeamiento</h1>
-                    <img class="tama" src="public/img/planeamiento.png" alt="imagen Misión"></a>
+                    <img class="tama" src="public/img/subcontratacion-servicios-logistica-770x367m.jpg" alt="imagen Misión"></a>
                     <div class="collapse " id="planeamiento">
                         <div class="card card-body">
                                 <p>
-                               <b> El planeamiento es realizado apartir de las solicitudes que se encuentren activas en la plataforma y asi el supervisor podra planear la logistica para que se cumplan a totalidad las solicitudes realizadas anteriormente.</b>
+                               <b> El planeamiento es realizado apartir de las solicitudes que se encuentren activas en la plataforma y asi la coordinadora podra planear la logistica para que se cumplan a totalidad las solicitudes realizadas anteriormente.</b>
                                 </p>
                         </div>
                     </div>
@@ -156,7 +156,7 @@
             <!--rutas-->
                 <div class="col-lg-6">
                     <a class="btn " data-toggle="collapse" href="#ruta" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Rutas</h1>
-                    <img class="tama" src="public/img/rutas.png" alt="imagen Misión"></a>
+                    <img class="tama" src="public/img/camion-carretera-contenedor-importacion-exportacion-transporte-logistico_42493-29.jpg" alt="imagen Misión"></a>
                     <div class="collapse " id="ruta">
                         <div class="card card-body">
                             <strong>
@@ -227,7 +227,7 @@
 
 <footer>
     <div id="rectangulo">
-    <div class="container-fluid" id="Contacto">
+    <div class="container-fluid">
         <div class="container">
             <div class="row">
                 <!-- seccion mapa -->
@@ -249,15 +249,15 @@
                     <div>
                         <ul>
                             <li><a href="https://twitter.com/Silto16">
-                                    <img width="50" height="50" src="public/img/redes sociales/043-twitter.png" alt="imagen de twitter">
+                                    <img width="50" height="50" src="public/img/043-twitter.png" alt="imagen de twitter">
                                 </a>
                             </li>
                             <li><a href="https://www.facebook.com/groups/1653448328150890/?ref=share">
-                                    <img width="50" height="50" src="public/img/redes sociales/021-facebook.png" alt="imagen de facebook">
+                                    <img width="50" height="50" src="public/img/021-facebook.png" alt="imagen de facebook">
                                 </a>
                             </li>
                             <li><a href="https://api.whatsapp.com/send?phone=573122734752&text=hola%20amor%20">
-                                    <img  width="50" height="50" src="public/img/redes sociales/035-whatsapp.png" alt="imagen de whatsapp">
+                                    <img  width="50" height="50" src="public/img/035-whatsapp.png" alt="imagen de whatsapp">
                                 </a>
                             </li>
 
@@ -309,11 +309,7 @@
             <div class="modal-body">
                 <img class="avatar" src="public/img/jhonatan.png">
                 <h4>Tecnologo ADSI</h4>
-                <p>Analista de sistemas bases de datos, programadora PHP, HTML5, Bootstrap 4, apollo en FROND-END de aplicación y colaboración en el BACK-END de la misma.<br>
-                Contacto<br>
-                Email: jrlopez62@misena.edu.co<br>
-                Email: jhonatanlopezgonzalez@hotmail.es<br>
-                Cel:312 2734752<br></p>
+                <p>Desarrollador frond-end apoyo en back-end de la aplicacion.</p>
             </div>
             <div class="modal-footer">
                 <a data-dismiss="modal" href="#">Cerrar</a>
@@ -334,10 +330,7 @@
             <div class="modal-body">
                 <img class="avatar" src="public/img/lida.jpg">
                 <h4>Tecnologa ADSI</h4>
-                <p>Tecnologo en Analisis y desarrollo de Informacion enfasis en Analisis y levantamiento de requerimientos.<br>
-                Telefono 3222435548<br>
-                Emails lucianajoh1113@gmail.com<br>
-                lplara67@misena.edu.co</p>
+                <p></p>
             </div>
             <div class="modal-footer">
                 <a data-dismiss="modal" href="#">Cerrar</a>
@@ -379,9 +372,7 @@
             <div class="modal-body">
                 <img class="avatar" src="public/img/victor.jpg">
                 <h4>Tecnologo ADSI</h4>
-                <p>Analista y desarrollador, encargado del BACK-END de la aplicacion. Lider de proyecto a cargo de la aplicaciòn.<br>
-                Contacto<br>
-                Email: victorhoyoscolombia@gmail.com<br></p>
+                <p>Analista y desarrollador, encargado del BACK-END de la aplicacion. Lider de proyecto a cargo de la aplicaciòn.</p>
             </div>
             <div class="modal-footer">
                 <a data-dismiss="modal" href="#">Cerrar</a>

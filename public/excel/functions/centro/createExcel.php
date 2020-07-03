@@ -33,10 +33,8 @@ $objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('F1', 'departamento')
             ->setCellValue('G1', 'ciudad')
             ->setCellValue('H1', 'nombreusuario')
-            ->setCellValue('I1', 'tipo_centro')
-            ->setCellValue('J1', 'direccion');
- 
-$informe = getcentro();
+            ->setCellValue('I1', 'lugar');
+ $informe = getcentro();
  $i = 2; 
    while($row = $informe->fetch_array(MYSQLI_ASSOC))
             {
@@ -49,8 +47,7 @@ $informe = getcentro();
                 ->setCellValue("F$i", $row['departamento'])
                 ->setCellValue("G$i", $row['ciudad'])
                 ->setCellValue("H$i", $row['nombreusuario'])
-                ->setCellValue("I$i", $row['tipo_centro'])
-                ->setCellValue("J$i", $row['direccion']);
+                ->setCellValue("I$i", $row['lugar']);
 
     $i++;
             }
