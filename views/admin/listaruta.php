@@ -20,7 +20,7 @@ if ($_SESSION['cargo'] != "administrador") {
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="product-status-wrap">
                         <div id="main">
-                            <div id="respuesta"><?php echo $this->mensaje; ?></div>
+                            <div><?php echo $this->mensaje; ?></div>
                             <h1 class="text-center"><i class="fa fa-map" aria-hidden="true"></i> Listado de Rutas</h1>
                             <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>/ruta/crear")'>Crear Ruta</button>
                             <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/pdf/ruta.php")'>PDF</button>
@@ -30,17 +30,17 @@ if ($_SESSION['cargo'] != "administrador") {
                             <table id="tabla" class="table table-hover">
                                 <thead class="thead-dark">
                                     <tr>
-                                        <th  scope="col">Código Ruta</th>
+                                        <th  scope="col">Id Ruta</th>
                                         <th  scope="col">Fecha Ruta</th>
                                         <th  scope="col">Hora Salida</th>
                                         <th  scope="col">Hora Llegada</th>
                                         <th  scope="col">Tipo de Ruta</th>
                                         <th  scope="col">Precinto</th>
-                                        <th  scope="col">Responsable De solicitud</th>
-                                        <th  scope="col">Vehículo Asignado</th>
-                                        <th  scope="col">Centro Solicitante</th>
+                                        <th  scope="col">Identificacion</th>
+                                        <th  scope="col">Placa</th>
+                                        <th  scope="col">Id Centro</th>
                                         <th  scope="col">Productos</th>
-                                        <th  scope="col">Código de Solicitud</th>
+                                        <th  scope="col">Id Solicitud</th>
                                         <th  scope="col">Estado</th>
                                         <th  scope="col">Observaciones</th>
                                         <th  scope="col" colspan="2" class="text-center">Acciones</th>

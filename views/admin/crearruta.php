@@ -59,7 +59,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                 <small id="precintoHelp" class="form-text text-muted">Precinto </small>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="identificacion">Encargado del centro</label>
+                                <label for="identificacion">Encargado centro</label>
                                 <select class="form-control" id="identificacion" name="identificacion" style="width:100%" required >
                                     <option selected value="">seleccione...</option>
                                         <?php
@@ -80,7 +80,7 @@ if ($_SESSION['cargo'] != "administrador") {
                             </div>
 
                             <div class="form-group col-md-4">
-                                <label for="placa">Asignar Vehículo</label>
+                                <label for="placa">Placa</label>
                                 <select class="form-control" id="placa" name="placa" style="width:100%" required >
                                     <option selected value="">seleccione...</option>
                                                 <small id="placaHelp" class="form-text text-muted">Diligencie la placa del vehiculo</small>
@@ -121,7 +121,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                 </select>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="id_solicitud">Código de Solicitud</label>
+                                <label for="id_solicitud">Id Solicitud</label>
                                 <select class="form-control" id="id_solicitud" name="id_solicitud" style="width:100%" required >
                                     <option selected value="">seleccione...</option>
                                                 <small id="id_solicitudHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>

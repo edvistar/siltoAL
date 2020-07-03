@@ -31,13 +31,13 @@ if ($_SESSION['cargo'] != "administrador") {
                         <form action="<?php echo constant('URL'); ?>centro/crear" method="POST">
                             <div class="row">
                                 <div class="form-group col-md-6">
-                                    <label for="id_centro">Código de Centro</label>
+                                    <label for="id_centro">Id Centro</label>
                                     <input type="number" class="form-control" name="id_centro" id="id_centro" required>
                                     <small id="id_centroHelp" class="form-text text-muted">Ingrese el número de Id Centro</small>
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                    <label for="nombre">Nombre del Centro</label>
+                                    <label for="nombre">Nombre</label>
                                     <input type="text" class="form-control" name="nombre" id="nombre" required>
                                     <small id="nombreHelp" class="form-text text-muted">Diligencie el nombre del Centro</small>
                                 </div>
@@ -94,7 +94,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                     <small id="direccionHelp" class="form-text text-muted">Diligencie la direccion del Centro</small>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="identificacion">Encargado del Centro</label>
+                                    <label for="identificacion">Encargado</label>
                                     <select class="form-control" id="identificacion" name="identificacion" style="width:100%" required alt="Nombre  encargado de centro">
                                         <option selected value="">seleccione...</option>
                                         <small id="identificacionHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>

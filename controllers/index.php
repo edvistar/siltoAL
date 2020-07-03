@@ -21,20 +21,7 @@ class Index extends Controller{
     function ValidarUsuario(){
             
             $username = $this->model->consultarUsuario($_POST['email'],$_POST['password']);
-
-            if (isset($username) && $username == "inactivo") {
-                //$this->view->mensaje = "Su cuenta esta inactiva, póngase en contacto con el administrador";
-                echo "<script>alert('Su cuenta esta inactiva, póngase en contacto con el administrador');</script>";
-                $this->view->render('index/login');
-                $username = "error";
-            } elseif ($username == "conductor") {
-                //$this->view->mensaje = "El acceso a conductores está restringido";
-                echo "<script>alert('El acceso a conductores está restringido');</script>";
-                $this->view->render('index/login');
-                $username = "error";
-            }
-
-            if(isset($username) && $username!="" && $username != "error"){
+            if(isset($username) && $username!=""){
                 $_SESSION['auth']=true;
                 if(empty($_SESSION['url'][0])){
                     $archivoController = 'controllers/main.php';
@@ -76,17 +63,19 @@ class Index extends Controller{
                     $controller = new Errores();
                 }
                 
-            } elseif ($username != "error") {
-                //$this->view->mensaje = "Usuario o clave invalida";
-                echo "<script>alert('Usuario o clave invalida');</script>";
+            }else{
+                $this->view->mensaje = "Usuario o clave invalidos...";
                 $this->view->render('index/login');
             }
+        //$this->view->render('index/login');
     }
     function Logout(){
         $_SESSION['auth']=false;
         session_unset();
         session_destroy();
         $this->view->mensaje = "Sesión terminada.";
+        //$this->view->render('index/login?auth=1');
+        //$this->view->render('index/index');
         header("location: ../index.php");
     }
 }

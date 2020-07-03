@@ -21,7 +21,7 @@
                     <form action="<?php echo constant('URL'); ?>ruta/editar" method="POST">
                         <div class="row">
                         <div class="form-group col-md-4">
-                                <label for="id_ruta">Código de Ruta</label>
+                                <label for="id_ruta">Id Ruta</label>
                                 <input type="number" class="form-control" value="<?php echo $this->ruta->id_ruta; ?>" name="id_ruta" id="id_ruta" readonly>
                                 <small id="id_rutaHelp" class="form-text text-muted">Diligencie la fecha de la ruta</small>
                             </div>
@@ -45,7 +45,7 @@
                                 <select class="form-control" value="<?php echo $this->ruta->tipo_ruta; ?>" id="tipo_ruta" name="tipo_ruta" style="width:100%" required >
                                     <option value="Acopio">Acopio</option>
                                     <option value="Aeropuerto">Aeropuerto</option>
-                                <small id="tipo_rutaHelp" class="form-text text-muted">Diligencie el tipo de ruta</small>
+                                <small id="tipo_rutaHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
                                 </select>
                             </div>
                             <div class="form-group col-md-4">
@@ -54,7 +54,7 @@
                                 <small id="precintoHelp" class="form-text text-muted">Precinto </small>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="identificacion">Encargado de la Solicitud</label>
+                                <label for="identificacion">Encargado</label>
                                 <select class="form-control" id="identificacion" name="identificacion" style="width:100%" required>
 
                                     <option selected value="<?php echo $this->ruta->identificacion;?>"><?php echo $this->ruta->identificacion;?></option>
@@ -76,7 +76,7 @@
                             </div>
 
                             <div class="form-group col-md-4">
-                                <label for="placa">Vehículo Asignado</label>
+                                <label for="placa">Placa</label>
                                 <select class="form-control" id="placa" name="placa" style="width:100%" required>
                                     <option selected value="<?php echo $this->ruta->placa;?>"><?php echo $this->ruta->placa;?></option>
                                         <?php
@@ -114,10 +114,10 @@
                                             }
                                                 ?>
                                 </select>
-                                <small id="id_centroHelp" class="form-text text-muted">Diligencie el centro solicitante.</small>
+                                <small id="id_centroHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="id_solicitud">Código de Solicitud</label>
+                                <label for="id_solicitud">Id Solicitud</label>
                                 <select class="form-control" id="id_solicitud" name="id_solicitud" style="width:100%" required>
                                 <option selected value="<?php echo $this->ruta->id_solicitud;?>"><?php echo $this->ruta->id_solicitud;?></option>
                                         <?php

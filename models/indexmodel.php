@@ -10,7 +10,7 @@ class IndexModel extends Model
     {
         $result = "";
         try {
-            $query = $this->db->connect()->prepare('SELECT * FROM usuario WHERE email = :email and pass=:clave');
+            $query = $this->db->connect()->prepare('SELECT * FROM usuario WHERE email = :email and pass=:clave and estado = "activo"');
 
             $query->execute([
                 'email' => $email,
@@ -24,13 +24,6 @@ class IndexModel extends Model
                 $_SESSION['nombre'] = $row['nombre'];
                 $_SESSION['foto'] = $row['foto'];
                 $_SESSION['identificacion']= $row['identificacion'];
-
-                if ($row['estado'] == "inactivo") {
-                    $result = "inactivo";
-                } elseif ($row['cargo'] == "conductor") {
-                    $result = "conductor";
-                }
-            
             }
             return $result;
         } catch (PDOException $e) {

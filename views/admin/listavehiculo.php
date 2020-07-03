@@ -25,7 +25,7 @@ if ($_SESSION['cargo'] != "administrador") {
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap">
                             <div id="main" >
-                                <div id="respuesta"><?php echo $this->mensaje; ?></div>
+                                <div><?php echo $this->mensaje; ?></div>
                                 <h1 class="text-center"><i class="fa fa-car" aria-hidden="true"></i> Listado de vehículos</h1>
                                 <div class="row">
                                 <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>/vehiculo/crear")'>Crear vehículo</button>

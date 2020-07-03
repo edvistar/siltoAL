@@ -23,7 +23,7 @@ if ($_SESSION['cargo'] != "administrador") {
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
         <div class="col-md-6 col-md-6 col-sm-6 col-xs-12">
             <div class="text-center custom-login mt-20px">
-                <h3><i class="fa fa-edit" aria-hidden="true"></i> Registro de Solicitud de Vehículo</h3>
+                <h3><i class="fa fa-edit" aria-hidden="true"></i> Registro Solicitud</h3>
                 <p>Todos los campos son obligatorios</p>
             </div>
             <div class="center"><?php echo $this->mensaje;?></div>

@@ -30,9 +30,9 @@ if ($_SESSION['cargo'] != "administrador") {
                     <form action="<?php  echo constant('URL'); ?>producto/crear" id="" method="POST">
                         <div class="row ">
                             <div class="form-group col-md-6">
-                                <label for="id_producto">Código de producto</label>
+                                <label for="id_producto">Id producto</label>
                                 <input type="number" name="id_producto"  id="id_producto" class="form-control" required >
-                                <small id="id_productoHelp" class="form-text text-muted">Ingrese el Código del producto</small>
+                                <small id="id_productoHelp" class="form-text text-muted">Ingrese el Id del producto</small>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="nombre">Nombre</label>
