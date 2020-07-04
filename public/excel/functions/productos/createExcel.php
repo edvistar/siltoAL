@@ -23,14 +23,62 @@ $objPHPExcel->getProperties()->setCreator("SILTO")
 $objPHPExcel->getDefaultStyle()->getFont()->setName('Arial Narrow Bold')->setSize(15);  
 
 
+//MODIFICACIONES
+function cellColor($cells,$color){
+  global $objPHPExcel;
+
+  $objPHPExcel->setActiveSheetIndex(0)->getStyle($cells)->getFill()->applyFromArray(array(
+      'type' => PHPExcel_Style_Fill::FILL_SOLID,
+      'startcolor' => array(
+           'rgb' => $color
+      )
+  ));
+}
+cellColor('A3:C3','bf4914');
+//combinar celdas 
+$objPHPExcel->setActiveSheetIndex(0) ->mergeCells('A1:C1') 
+->setCellValue('A1', 'Listado de Productos');
+
+//centrar texto lateral  del titulo
+$objPHPExcel->setActiveSheetIndex(0)
+->getStyle('A1:C1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+//centrar texto lateral  del celda
+$objPHPExcel->setActiveSheetIndex(0)
+->getStyle('A3:C3')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+
+
+//color de texto titulo
+$objPHPExcel->setActiveSheetIndex(0)
+->getStyle('A1:C1')->getFont()->getColor()->setARGB('bf4914');
+
+
+//color de texto celdas
+$objPHPExcel->setActiveSheetIndex(0)
+->getStyle('A3:C3')->getFont()->getColor()->setARGB(PHPExcel_Style_Color::COLOR_WHITE);
+
+$objPHPExcel->getDefaultStyle()->getFont('A3:C3')->setName('Arial Narrow Bold')->setSize(13); 
+
+//ANCHO DE celda
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('A')->setWidth(15,78);
 
 $objPHPExcel->setActiveSheetIndex(0)
-            ->setCellValue('A1', 'Id producto')
-            ->setCellValue('B1', 'Nombre')
-            ->setCellValue('C1', 'Costo');
+->getColumnDimension('B')->setWidth(15,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('C')->setWidth(15,78);
+
+//FIN DE MODIFICACIONES
+
+
+
+$objPHPExcel->setActiveSheetIndex(0)
+            ->setCellValue('A3', 'Id producto')
+            ->setCellValue('B3', 'Nombre')
+            ->setCellValue('C3', 'Costo');
 
  $informe = getproducto();
- $i = 2; 
+ $i = 4; 
    while($row = $informe->fetch_array(MYSQLI_ASSOC))
             {
                 $objPHPExcel->setActiveSheetIndex(0)

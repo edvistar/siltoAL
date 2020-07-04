@@ -22,24 +22,107 @@ $objPHPExcel->getProperties()->setCreator("SILTO")
 
 $objPHPExcel->getDefaultStyle()->getFont()->setName('Arial Narrow Bold')->setSize(15);  
 
+//MODIFICACIONES
+function cellColor($cells,$color){
+  global $objPHPExcel;
+
+  $objPHPExcel->setActiveSheetIndex(0)->getStyle($cells)->getFill()->applyFromArray(array(
+      'type' => PHPExcel_Style_Fill::FILL_SOLID,
+      'startcolor' => array(
+           'rgb' => $color
+      )
+  ));
+}
+cellColor('A3:M3','bf4914');
+
+
+
+//combinar celdas 
+$objPHPExcel->setActiveSheetIndex(0) ->mergeCells('A1:M1') 
+->setCellValue('A1', 'Listado de Rutas');
+
+//centrar texto lateral  del titulo
+$objPHPExcel->setActiveSheetIndex(0)
+->getStyle('A1:M1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+//centrar texto lateral  del celda
+$objPHPExcel->setActiveSheetIndex(0)
+->getStyle('A3:M3')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+
+
+//color de texto titulo
+$objPHPExcel->setActiveSheetIndex(0)
+->getStyle('A1:M1')->getFont()->getColor()->setARGB('bf4914');
+
+
+//color de texto celdas
+$objPHPExcel->setActiveSheetIndex(0)
+->getStyle('A3:M3')->getFont()->getColor()->setARGB(PHPExcel_Style_Color::COLOR_WHITE);
+
+$objPHPExcel->getDefaultStyle()->getFont('A3:C3')->setName('Arial Narrow Bold')->setSize(13); 
+
+//ANCHO DE celda
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('A')->setWidth(8,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('B')->setWidth(15,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('C')->setWidth(15,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('D')->setWidth(15,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('E')->setWidth(15,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('F')->setWidth(15,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('G')->setWidth(25,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('H')->setWidth(15,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('I')->setWidth(25,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('I')->setWidth(15,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('J')->setWidth(25,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('K')->setWidth(15,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('L')->setWidth(15,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('M')->setWidth(25,78);
+//FIN DE MODIFICACIONES
 
 
 $objPHPExcel->setActiveSheetIndex(0)
-            ->setCellValue('A1', 'id_ruta')
-            ->setCellValue('B1', 'fecha_ruta')
-            ->setCellValue('C1', 'hora_salida')
-            ->setCellValue('D1', 'hora_llegada')
-            ->setCellValue('E1', 'tipo_ruta')
-            ->setCellValue('F1', 'precinto')
-            ->setCellValue('G1', 'nombreConductor')
-            ->setCellValue('H1', 'placa')
-            ->setCellValue('I1', 'nombreCentro')
-            ->setCellValue('J1', 'variedad_productos')
-            ->setCellValue('K1', 'id_solicitud')
-            ->setCellValue('L1', 'observaciones');
+            
+            ->setCellValue('A3', 'Id ruta')
+            ->setCellValue('B3', 'Fecha ruta')
+            ->setCellValue('C3', 'Hora salida')
+            ->setCellValue('D3', 'Hora llegada')
+            ->setCellValue('E3', 'Tipo ruta')
+            ->setCellValue('F3', 'Precinto')
+            ->setCellValue('G3', 'Conductor')
+            ->setCellValue('H3', 'Placa')
+            ->setCellValue('I3', 'Centros')
+            ->setCellValue('J3', 'Productos')
+            ->setCellValue('K3', 'Id solicitud')
+            ->setCellValue('L3', 'Estado')
+            ->setCellValue('M3', 'Observaciones');
 
  $informe = getruta();
- $i = 2; 
+ $i = 4; 
    while($row = $informe->fetch_array(MYSQLI_ASSOC))
             {
                 $objPHPExcel->setActiveSheetIndex(0)
@@ -54,7 +137,8 @@ $objPHPExcel->setActiveSheetIndex(0)
                 ->setCellValue("I$i", $row['nombreCentro'])
                 ->setCellValue("J$i", $row['variedad_productos'])
                 ->setCellValue("K$i", $row['id_solicitud'])
-                ->setCellValue("L$i", $row['observaciones']);
+                ->setCellValue("L$i", $row['estado'])
+                ->setCellValue("M$i", $row['observaciones']);
                
 
     $i++;
