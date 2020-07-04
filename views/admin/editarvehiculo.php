@@ -31,19 +31,19 @@
                         <div class="form-group col-md-6">
                             <label for="capacidad"> Capacidad del vehículo</label>
                             <input type="text" class="form-control" value="<?php echo $this->vehiculo->capacidad; ?>" name="capacidad" id="capacidad" required>
-                            <small id="capadidadHelp" class="form-text text-muted">Capacidad de carga del vehiculo</small>
+                            <small id="capadidadHelp" class="form-text text-muted">Digite  fecha de vencimiento de la poliza del seguro</small>
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="seguro">Seguro del vehículo</label>
+                            <label for="seguro">Vencimiento seguro del vehículo</label>
                             <input type="date" class="form-control" value="<?php echo $this->vehiculo->seguro; ?>" name="seguro" id="seguro" required>
                             <small id="seguroHelp" class="form-text text-muted">Digite numero de la poliza del seguro</small>
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="tecnomecanica">Tecnomecanica del vehículo</label>
+                            <label for="tecnomecanica">Vencimiento tecnomecánica del vehículo</label>
                             <input type="date" class="form-control" value="<?php echo $this->vehiculo->tecnomecanica; ?>" name="tecnomecanica" id="tecnomecanica" required>
-                            <small id="tecnomecanicaHelp" class="form-text text-muted">Fecha de vencimiento del la tecnomecanica del vehículo</small>
+                            <small id="tecnomecanicaHelp" class="form-text text-muted"> Digite la fecha de vencimiento del la tecnomecánica del vehículo</small>
                         </div>
 
                         <div class="form-group col-md-6">

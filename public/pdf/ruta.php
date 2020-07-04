@@ -25,7 +25,9 @@ class PDF extends FPDF{
         $this->Cell(25, 10, utf8_decode('Vehículo'), 1, 0, 'C',0);
         $this->Cell(25, 10, 'Centro', 1, 0, 'C',0);
         $this->Cell(18, 10, 'Solicitid', 1, 0, 'C',0);
+        $this->Cell(18, 10, 'Estado', 1, 0, 'C',0);
         $this->Cell(80, 10, 'Productos', 1, 1, 'C',0);
+
         // $this->Cell(80, 10, 'Observacion', 1, 1, 'C',0);
 
     }
@@ -44,7 +46,7 @@ class PDF extends FPDF{
 
 require 'base.php';
 $consulta ="SELECT
-rut.id_ruta, rut.fecha_ruta, rut.hora_salida, rut.hora_llegada, rut.tipo_ruta, rut.precinto, usu.nombre as nombreConductor, rut.placa, cent.nombre as nombreCentro, rut.variedad_productos, rut.id_solicitud, rut.observaciones
+rut.id_ruta, rut.fecha_ruta, rut.hora_salida, rut.hora_llegada, rut.tipo_ruta, rut.precinto, usu.nombre as nombreConductor, rut.placa, cent.nombre as nombreCentro, rut.variedad_productos, rut.id_solicitud, rut.estado, rut.observaciones
 FROM rutas as rut
 INNER JOIN usuario as usu on usu.identificacion=rut.identificacion
 INNER JOIN centro as cent on cent.id_centro=rut.id_centro";
@@ -68,6 +70,7 @@ while($row = $resultado->fetch_assoc()){
     $pdf->Cell(25, 10, $row['placa'], 1, 0, 'C',0);
     $pdf->Cell(25, 10, $row['nombreCentro'], 1, 0, 'C',0);
     $pdf->Cell(18, 10, $row['id_solicitud'], 1, 0, 'C',0);
+    $pdf->Cell(18, 10, $row['estado'], 1, 0, 'C',0);
     $pdf->MultiCell(80, 5, $row['variedad_productos'], 1, 1, '',0);    
     // $pdf->MultiCell(80, 5, $row['observaciones'], 1, 1, '',0);
 

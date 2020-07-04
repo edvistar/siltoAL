@@ -8,7 +8,7 @@ items.forEach(item => {
         const confirm = window.confirm("¿Desea eliminar el registro "+id+"?");
 
         if(confirm){
-            httpRequest("http://localhost/siltoWapv/"+controlador+"/"+accion+"/" + id, function(e){
+            httpRequest("<?php echo constant('URL'); ?>"+controlador+"/"+accion+"/" + id, function(e){
                 //console.log(this.responseText);
                 document.querySelector("#respuesta").innerHTML = this.responseText;
                 const tbody = document.querySelector("#tbody-data");
@@ -30,7 +30,7 @@ items1.forEach(item => {
         const confirm = window.confirm("Deseas eliminar el elemento?");
 
         if(confirm){
-            httpRequest("http://localhost/siltoWapv/"+controlador+"/"+accion+"/" + key, function(e){
+            httpRequest("<?php echo constant('URL'); ?>"+controlador+"/"+accion+"/" + key, function(e){
                 console.log(this.responseText);
                 const tbody = document.querySelector("#tbody-data");
                 const fila  = document.querySelector("#fila-" + id);
@@ -64,7 +64,8 @@ function validatePassword(){
         //confirm_password.setCustomValidity("Las contraseñas deben ser iguales");
   } else {
     document.getElementById("con_constrasenaHelp").style.display= 'none';
-    document.getElementById("btn_crear").disabled = false; 
+    document.getElementById("btn_crear").disabled = false;
     //confirm_password.setCustomValidity('');
   }
 }
+

@@ -40,15 +40,15 @@ if ($_SESSION['cargo'] != "administrador") {
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="seguro">Seguro del vehículo</label>
+                            <label for="seguro">Vencimiento seguro del vehículo</label>
                             <input type="date" class="form-control" name="seguro" id="seguro" required >
-                            <small id="seguroHelp" class="form-text text-muted">Digite datos de la poliza del seguro</small>
+                            <small id="seguroHelp" class="form-text text-muted">Digite  fecha de vencimiento de la poliza del seguro</small>
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="tecnomecanica">Tecnomecánica del vehículo</label>
+                            <label for="tecnomecanica">Vencimiento tecnomecánica del vehículo</label>
                             <input type="date" class="form-control" name="tecnomecanica" id="tecnomecanica" required >
-                            <small id="tecnomecanicaHelp" class="form-text text-muted">Fecha de vencimiento del la tecnomecánica del vehículo</small>
+                            <small id="tecnomecanicaHelp" class="form-text text-muted"> Digite la fecha de vencimiento del la tecnomecánica del vehículo</small>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="tipo_vehiculo">Tipo de vehículo</label>

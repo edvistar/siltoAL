@@ -3,7 +3,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="footer-copy-right">
-                        <p>Realizacion SENA  CDA Chia <a href="https://colorlib.com/wp/templates/">WAPV </a> All rights reserved.</p>
+                        <p>Realizacion SENA  CDA Chia <a href="#">WAPV </a> All rights reserved.</p>
                     </div>
                 </div>
             </div>
@@ -65,6 +65,8 @@
             <script src="<?php echo constant('URL'); ?>public/js/vendor/modernizr-2.8.3.min.js"></script>
             <script src="<?php echo constant('URL'); ?>public/js/main1.js"></script>
 
+            
+
             <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -73,28 +75,7 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <script src="<?php echo constant('URL'); ?>public/js/select.js"></script>
   <script>
-      
-      // In your Javascript (external .js resource or <script> tag)
-    // $(document).ready(function() {
-    //     $('.js-example-basic-single').select2();
-    //     listarDepartamentos();
 
-    // });
-    // $("#departamentos").change(function(){
-    //         var iddepartamento = $("#departamentos").val();
-    //         listarCiudades(iddepartamento);
-    //     })
-
-    //     $(document).ready(function() {
-    //     $('.js-example-basic-single').select2();
-    
-    //     listarDepartamentos_Editar();
-    // });
-
-    // $("#departamentos_editar").change(function(){
-    //         var iddepartamento = $("#departamentos_editar").val();
-    //         listarCiudades_Editar(iddepartamento);
-    //     })
     $(document).ready(function() {
     $('.js-example-basic-single').select2();
     listarDepartamentos();
@@ -114,5 +95,6 @@ $("#departamentos_editar").change(function(){
 
 
   </script>
+  
     </body>
 </html>
