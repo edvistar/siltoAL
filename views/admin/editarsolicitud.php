@@ -1,3 +1,10 @@
+<?php
+    if ($_SESSION['cargo']=="bodeguero") {
+        echo "<script>alert('Señor usuario,esta intentando acceder de forma incorrecta al sistema!')</script>";
+        header("location: ../../index/logout");  
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

@@ -36,7 +36,9 @@ if ($_SESSION['cargo'] != "administrador") {
                                             <th  scope="col">Descripciòn</th>
                                             <th  scope="col">Centro</th>
                                             <th  scope="col">Encargado</th>
+                                            <?php if ($_SESSION['cargo'] == "administrador" || $_SESSION['cargo'] == "supervisor") : ?>
                                             <th  scope="col" colspan="2">Acciones</th>
+                                            <?php endif; //FIN SUPERVISOR-ADMIN?>
                                         </tr>
                                     </thead>
                                     <tbody id="tbody-data">
@@ -53,8 +55,10 @@ if ($_SESSION['cargo'] != "administrador") {
                                                 <td><?php echo $solicitud->descripcion; ?>
                                                 <td><?php echo $solicitud->id_centro; ?>
                                                 <td><?php echo $solicitud->identificacion; ?>
+                                                <?php if ($_SESSION['cargo'] == "administrador" || $_SESSION['cargo'] == "supervisor") : ?>
                                                 <td><a href="<?php echo constant('URL') . 'solicitud/leer/' . $solicitud->id_solicitud; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a></td>
                                                 <td><button class="bEliminar" data-controlador="solicitud" data-accion="eliminar" data-id="<?php echo $solicitud->id_solicitud; ?>"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</button></td>
+                                                <?php endif; //FIN SUPERVISOR-ADMIN?>
                                             </tr>
                                 <?php
                                         }
