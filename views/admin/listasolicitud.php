@@ -57,7 +57,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                                 <td><?php echo $solicitud->identificacion; ?>
                                                 <?php if ($_SESSION['cargo'] == "administrador" || $_SESSION['cargo'] == "supervisor") : ?>
                                                 <td><a href="<?php echo constant('URL') . 'solicitud/leer/' . $solicitud->id_solicitud; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a></td>
-                                                <td><button class="bEliminar" data-controlador="solicitud" data-accion="eliminar" data-id="<?php echo $solicitud->id_solicitud; ?>"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</button></td>
+                                                <td><button class="bEliminar" data-url="<?php echo constant('URL');?>" data-controlador="solicitud" data-accion="eliminar" data-id="<?php echo $solicitud->id_solicitud; ?>"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</button></td>
                                                 <?php endif; //FIN SUPERVISOR-ADMIN?>
                                             </tr>
                                 <?php

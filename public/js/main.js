@@ -4,11 +4,12 @@ items.forEach(item => {
         const id = this.dataset.id;
         const controlador = this.dataset.controlador;
         const accion=this.dataset.accion;
+        const url=this.dataset.url;
 
         const confirm = window.confirm("¿Desea eliminar el registro "+id+"?");
 
         if(confirm){
-            httpRequest("<?php echo constant('URL'); ?>"+controlador+"/"+accion+"/" + id, function(e){
+            httpRequest(url+controlador+"/"+accion+"/" + id, function(e){
                 //console.log(this.responseText);
                 document.querySelector("#respuesta").innerHTML = this.responseText;
                 const tbody = document.querySelector("#tbody-data");
@@ -52,20 +53,53 @@ function httpRequest(url, callback){
     }
 }
 
-function validatePassword(){
-    var password = document.getElementById("constrasena");
-    var confirm_password = document.getElementById("con_constrasena");
-  if(document.getElementById("constrasena").value != document.getElementById("con_constrasena").value) {
-    //alert("Las contraseñas deben ser iguales");
-    document.getElementById("con_constrasenaHelp").textContent="Las contraseñas deben ser iguales";
-    document.getElementById("con_constrasenaHelp").className="alert alert-danger";
-    document.getElementById("con_constrasenaHelp").focus;
-    document.getElementById("btn_crear").disabled = true;
-        //confirm_password.setCustomValidity("Las contraseñas deben ser iguales");
-  } else {
-    document.getElementById("con_constrasenaHelp").style.display= 'none';
-    document.getElementById("btn_crear").disabled = false;
-    //confirm_password.setCustomValidity('');
-  }
+// function validatePassword(){
+//     var password = document.getElementById("constrasena");
+//     var confirm_password = document.getElementById("con_constrasena");
+//   if(document.getElementById("constrasena").value != document.getElementById("con_constrasena").value) {
+//     //alert("Las contraseñas deben ser iguales");
+//     document.getElementById("con_constrasenaHelp").textContent="Las contraseñas deben ser iguales";
+//     document.getElementById("con_constrasenaHelp").className="alert alert-danger";
+//     document.getElementById("con_constrasenaHelp").focus;
+//     document.getElementById("btn_crear").disabled = true;
+//         //confirm_password.setCustomValidity("Las contraseñas deben ser iguales");
+//   } else {
+//     document.getElementById("con_constrasenaHelp").style.display= 'none';
+//     document.getElementById("btn_crear").disabled = false;
+//     //confirm_password.setCustomValidity('');
+//   }
+// }
+
+
+// Permitir ver el contenido de los campos password de usuario
+function verPassword() {
+    var x = document.getElementById("pass");
+    var y = document.getElementById("passy");
+    if (x.type === "password" && y.type === "password") {
+      x.type = "text";
+      y.type = "text";
+    } else {
+      x.type = "password";
+      y.type = "password";
+    }
+}
+
+
+function validapassword() {
+
+    var pass1 = document.getElementById("pass");
+    var pass_c = document.getElementById("passy");
+
+    if(pass1.value != pass_c.value){
+        document.getElementById("alerta").innerHTML = '<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Los passwords no coinciden, digítelos nuevamente</div>';
+        pass1.value="";
+        pass_c.value="";
+        pass1.focus();
+        return false;
+      }else{
+          document.getElementById("alerta").innerHTML = "";
+  
+    }
+    
 }
 

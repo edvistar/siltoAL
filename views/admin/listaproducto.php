@@ -52,7 +52,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                             <td><?php echo $producto->nombre; ?>
                                             <td><?php echo $producto->costo; ?>
                                             <td><a href="<?php echo constant('URL') . 'producto/leer/' . $producto->id_producto; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a></td>
-                                            <td><button class="bEliminar" data-controlador="producto" data-accion="eliminar" data-id="<?php echo $producto->id_producto; ?>"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</button></td>
+                                            <td><button class="bEliminar" data-url="<?php echo constant('URL');?>" data-controlador="producto" data-accion="eliminar" data-id="<?php echo $producto->id_producto; ?>"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</button></td>
                                         </tr>
                             <?php
                                     }

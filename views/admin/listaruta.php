@@ -69,7 +69,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                             <td><?php echo $ruta->estado; ?></td>
                                             <td><?php echo $ruta->observaciones; ?></td>
                                             <td><a href="<?php echo constant('URL') . 'ruta/leer/' . $ruta->id_ruta; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a></td>
-                                            <td><button class="bEliminar" data-controlador="ruta" data-accion="eliminar" data-id="<?php echo $ruta->id_ruta; ?>"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</button></td>
+                                            <td><button class="bEliminar" data-url="<?php echo constant('URL');?>" data-controlador="ruta" data-accion="eliminar" data-id="<?php echo $ruta->id_ruta; ?>"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</button></td>
                                         </tr>
                             <?php   
                                     } 

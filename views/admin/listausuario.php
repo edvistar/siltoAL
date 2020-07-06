@@ -66,7 +66,7 @@
                                         <td><?php echo $usuario->fecha_ingreso; ?></td>
                                         <td><img src="<?php echo constant('URL') . $usuario->foto; ?>" alt="imagen usuario" width="100" height="100"> </td>
                                         <td><a href="<?php echo constant('URL') . 'usuario/leer/' . $usuario->identificacion; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a></td> <!--url/controlador/metodo-->
-                                        <td><button class="bEliminar" data-controlador="usuario" data-accion="eliminar" data-id="<?php echo $usuario->identificacion; ?>"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</button></td> 
+                                        <td><button class="bEliminar" data-url="<?php echo constant('URL');?>" data-controlador="usuario" data-accion="eliminar" data-id="<?php echo $usuario->identificacion; ?>"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</button></td> 
                                     </tr>
                                     <?php   
                                             } 

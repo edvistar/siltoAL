@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-<?php require 'views/head.php'; ?>
+    <?php require 'views/head.php'; ?>
 </head>
 
 <body>
@@ -37,21 +37,18 @@
                                     <small id="apellidoHelp" class="form-text text-muted">Diligencie los apellidos del usuario</small>
                                 </div>
 
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-12">
                                     <label for="email">Email</label>
                                     <input type="email" name="email" id="email" class="form-control" value="<?php echo $this->usuario->email; ?>" placeholder="Ej: usuario@gmail.com" required>
                                     <small id="emailHelp" class="form-text text-muted">Diligencie el email del usuario</small>
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                    <label for="show_hide_password">Password</label>
-                                    <input type="password" name="pass" id="show_hide_password" class="form-control" value="<?php echo $this->usuario->pass; ?>" required>
-                                    <small id="passHelp" class="form-text text-muted">AVISO: modifique solo si desea un password nuevo</small>
+                                    <label for="whatsapp">Whatsapp</label><br>
+                                    <input class="custom-control-input" required type="radio" name="whatsapp" id="whatsapp1" value="SI" checked>SI
+                                    <input class="custom-control-input" type="radio" name="whatsapp" id="whatsapp0" value="NO">NO<br>
+                                    <small id="whatsappHelp" class="form-text text-muted">Confirme si tiene whatsapp el numero de telefono ingresado</small>
                                 </div>
-
-                                <!-- Password antiguo -->
-                                <input type="hidden" name="passoriginal" id="passoriginal" class="form-control" value="<?php echo $this->usuario->pass; ?>" required>
-
 
                                 <div class="form-group col-md-6">
                                     <label for="telefono">Numero Telefonico</label>
@@ -66,15 +63,9 @@
                                         <option value="administrador">Administrador</option>
                                         <option value="supervisor">Supervisor</option>
                                         <option value="bodeguero">Bodeguero</option>
-                                        <option value="bodeguero">Conductor</option>
+                                        <option value="conductor">Conductor</option>
                                     </select>
                                     <small id="cargopHelp" class="form-text text-muted">Diligencie el cargo a desempeñar el usuario</small>
-                                </div>
-                                <div class="form-group col-md-6">
-                                <label for="whatsapp">Whatsapp</label><br>
-                                    <input class="custom-control-input"required type="radio" name="whatsapp" id="whatsapp1" value="SI" checked>SI
-                                    <input class="custom-control-input" type="radio" name="whatsapp" id="whatsapp0" value="NO">NO<br>
-                                    <small id="whatsappHelp" class="form-text text-muted">Confirme si tiene whatsapp el numero de telefono ingresado</small>
                                 </div>
 
                                 <div id="estado" name="estado" class="form-group col-md-6">
@@ -86,7 +77,23 @@
                                     </select>
                                     <small id="estadopHelp" class="form-text text-muted">Estado en la aplicación</small>
                                 </div>
-                                
+
+                                <div class="form-group col-lg-6">
+                                    <label for="pass">Password</label>
+                                    <input type="password" name="pass" id="pass" class="form-control" value="<?php echo $this->usuario->pass; ?>" onclick="this.value=''" required>
+                                    <small id="passHelp" class="form-text text-muted">Diligencie la contraseña del email</small>
+                                </div>
+
+                                <div class="form-group col-lg-6">
+                                    <label for="pass">Confirme Password</label>
+                                    <input type="password" name="pass2" id="passy" class="form-control" value="<?php echo $this->usuario->pass; ?>" onclick="this.value=''" required>
+                                    <small id="passHelp" class="form-text text-muted">Repita la contraseña del email</small>
+                                    <input type="checkbox" onclick="verPassword()"> Ver Password
+                                </div>
+
+                                <!-- Password antiguo -->
+                                <input type="hidden" name="passoriginal" id="passoriginal" class="form-control" value="<?php echo $this->usuario->pass; ?>" required>
+
                                 <div class="form-group col-md-6">
                                     <label for="foto">Cambiar Foto de perfil</label>
                                     <input type="file" name="foto" id="foto" accept=".jpg, .png, .jpeg">
@@ -103,8 +110,12 @@
                                 </div>
 
                             </div>
+                            
+                            <!-- Campo para generar alerta cuando los password no coinciden -->
+                            <div class="text-center" id="alerta"></div>
+
                             <div class="text-center">
-                                <input type="submit" class="btn btn-info" value="Actualizar Usuario">
+                                <input type="submit" onclick="validapassword();" class="btn btn-info" value="Registrar Usuario">
                                 <input type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>usuario")' value="Cancelar">
                             </div>
                         </form>

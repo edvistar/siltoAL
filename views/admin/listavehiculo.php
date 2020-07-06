@@ -73,7 +73,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                                 <td><?php echo $vehiculo->fecha_registro;?></td>
 
                                                 <td><a href="<?php echo constant('URL') . 'vehiculo/leer/' . $vehiculo->placa; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a></td>
-                                                <td><button class="bEliminar" data-controlador="vehiculo" data-accion="eliminar" data-id="<?php echo $vehiculo->placa; ?>"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</button></td>
+                                                <td><button class="bEliminar" data-url="<?php echo constant('URL');?>" data-controlador="vehiculo" data-accion="eliminar" data-id="<?php echo $vehiculo->placa; ?>"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</button></td>
                                             </tr>
                                 <?php
                                         }

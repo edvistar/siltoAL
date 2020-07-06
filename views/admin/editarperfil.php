@@ -20,8 +20,8 @@
                 <div><?php echo $this->mensaje; ?></div>
                 <div class="hpanel">
                     <div class="panel-body">
-                        <form action="<?php echo constant('URL'); ?>perfil/editar" method="POST" enctype="multipart/form-data">
-                            <div class="row">
+                        <form action="<?php echo constant('URL'); ?>perfil/editar" method="POST" enctype="multipart/form-data" id="formularioeditar">           
+                        <div class="row">
 
                                 <input type="hidden" class="form-control" value="<?php echo $this->usuario->identificacion; ?>" name="identificacion" id="identificacion" readonly>
 
@@ -44,38 +44,46 @@
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                    <label for="show_hide_password">Password</label>
-                                    <input type="password" name="pass" id="show_hide_password" class="form-control" value="<?php echo $this->usuario->pass; ?>" required>
-                                    <small id="passHelp" class="form-text text-muted">AVISO: modifique solo si desea un password nuevo</small>
+                                    <label for="telefono">Numero Telefonico</label>
+                                    <input type="number" name="telefono" id="telefono" class="form-control" value="<?php echo $this->usuario->telefono; ?>" placeholder="Ej: 3040000000" required>
+                                    <small id="telefonoHelp" class="form-text text-muted">Diligencie el numero de telefono del usuario</small>
                                 </div>
-
-                                <!-- Password antiguo -->
-                                <input type="hidden" name="passoriginal" id="passoriginal" class="form-control" value="<?php echo $this->usuario->pass; ?>" required>
-
-                                <div class="form-group col-md-6">
+                               
+                                <div class="form-group col-md-12">
                                 <label for="whatsapp">Whatsapp</label><br>
                                     <input class="custom-control-input"required type="radio" name="whatsapp" id="whatsapp1" value="SI" checked>SI
                                     <input class="custom-control-input" type="radio" name="whatsapp" id="whatsapp0" value="NO">NO<br>
                                     <small id="whatsappHelp" class="form-text text-muted">Confirme si tiene whatsapp el numero de telefono ingresado</small>
                                 </div>
 
-                                <div class="form-group col-md-6">
-                                    <label for="telefono">Numero Telefonico</label>
-                                    <input type="number" name="telefono" id="telefono" class="form-control" value="<?php echo $this->usuario->telefono; ?>" placeholder="Ej: 3040000000" required>
-                                    <small id="telefonoHelp" class="form-text text-muted">Diligencie el numero de telefono del usuario</small>
-                                </div>
-
                                 <input type="hidden" name="cargo" value="<?php echo $this->usuario->cargo; ?>">
 
                                 <input type="hidden" name="estado" value="<?php echo $this->usuario->estado; ?>">
+
+                                <div class="form-group col-lg-6">
+                                    <label for="pass">Password</label>
+                                    <input type="password" name="pass" id="pass" value="<?php echo $this->usuario->pass; ?>" class="form-control" onclick="this.value=''" required >
+                                    <small id="passHelp" class="form-text text-muted">AVISO: modifique solo si desea un password nuevo</small>       
+                                </div>
+
+                                <div class="form-group col-lg-6">
+                                    <label for="pass">Confirme Password</label>
+                                    <input type="password" name="passy" id="passy" value="<?php echo $this->usuario->pass; ?>" class="form-control" onclick="this.value=''" required >
+                                    <small id="passHelp" class="form-text text-muted">Repita la contraseña del email</small>
+                                    <input type="checkbox" onclick="verPassword()"> Ver Password
+                                </div>
                                 
+
+                                 <!-- Password antiguo -->
+                                <input type="hidden" name="passoriginal" id="passoriginal" class="form-control" value="<?php echo $this->usuario->pass; ?>" required>
+                             
                                 <div class="form-group col-md-6">
                                     <label for="foto">Cambiar Foto de perfil</label>
                                     <input type="file" name="foto" id="foto" accept=".jpg, .png, .jpeg">
                                     <br>
                                     <small id="foto" class="form-text text-muted"> Seleccione de su equipo una imagen nueva si desea cambiar su foto</small>
                                 </div>
-
+                                                                
                                 <div class="form-group col-md-6">
                                     <label for="foto">Foto de Perfil Actual</label>
                                     <div>
@@ -85,8 +93,12 @@
                                 </div>
 
                             </div>
+
+                            <!-- Campo para generar alerta cuando los password no coinciden -->
+                            <div class="text-center" id="alerta"></div>
+                            
                             <div class="text-center">
-                                <input type="submit" class="btn btn-info" value="Actualizar Usuario">
+                                <input type="submit" class="btn btn-info" value="Actualizar Perfil" onclick="validapassword();">
                                 <input type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>perfil")' value="Cancelar">
                             </div>
                         </form>
