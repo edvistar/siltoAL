@@ -155,12 +155,12 @@
                                  ?>
                         <div class="custom-control form-check form-group col-md-12">
                         <label class="form-text text-muted">Productos en la ruta</label><br>
-                        <input type="checkbox" id="producto_0" name="productos[0]" <?php echo (isset($producto["uchuba"])?$producto["uchuba"]:""); ?>   value="uchuba" checked class="form-check-input">
-                                <label class="form-check-label" for="productos_0">Uchuba</label>
+                        <input type="checkbox" id="producto_0" name="productos[0]" <?php echo (isset($producto["uchuva"])?$producto["uchuva"]:""); ?>   value="uchuva" checked class="form-check-input">
+                                <label class="form-check-label" for="productos_0">Uchuva</label>
                                 <input type="checkbox" id="producto_1" name="productos[1]" <?php echo (isset($producto["maracuya"])?$producto["maracuya"]:""); ?> value="maracuya"  class="form-check-input">
                                 <label class="form-check-label" for="producto_1">Maracuya</label>
-                                <input type="checkbox" id="producto_2" name="productos[2]" <?php echo (isset($producto["chulupa"])?$producto["chulupa"]:""); ?>  value="chulupa"  class="form-check-input">
-                                <label class="form-check-label" for="productos_2">Chulupa</label>
+                                <input type="checkbox" id="producto_2" name="productos[2]" <?php echo (isset($producto["gulupa"])?$producto["gulupa"]:""); ?>  value="gulupa"  class="form-check-input">
+                                <label class="form-check-label" for="productos_2">Gulupa</label>
                                 <input type="checkbox" id="producto_3" name="productos[3]" <?php echo (isset($producto["arandanos"])?$producto["arandanos"]:""); ?>  value="arandanos"  class="form-check-input">
                                 <label class="form-check-label" for="productos_3">Arandanos</label>
                                 <input type="checkbox" id="producto_4" name="productos[4]" <?php echo (isset($producto["pitaya"])?$producto["pitaya"]:""); ?>  value="pitaya" class="form-check-input">

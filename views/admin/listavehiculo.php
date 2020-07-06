@@ -41,8 +41,8 @@ if ($_SESSION['cargo'] != "administrador") {
                                             
                                             <th  scope="col">Placa vehículo</th>
                                             <th  scope="col">Capacidad</th>
-                                            <th  scope="col">Seguro </th>
-                                            <th  scope="col">Tecnomecánica</th>
+                                            <th  scope="col">Vencimiento Seguro </th>
+                                            <th  scope="col">Vencimiento Tecnomecánica</th>
                                             <th  scope="col">Tipo vehiculo</th>
                                             <th  scope="col">GPS</th>
                                             <th  scope="col">Estado</th>

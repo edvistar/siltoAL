@@ -151,14 +151,12 @@ if ($_SESSION['cargo'] != "administrador") {
                             </div>
                             <div class="form-group col-md-12">
                                 <label class="form-text text-muted">Productos en la ruta</label><br>
-                                <input type="checkbox" id="producto_0" name="productos[0]" value="uchuba" class="form-check-input">
-                                <label class="form-check-label" for="producto_0">Uchuba</label>
+                                <input type="checkbox" id="producto_0" name="productos[0]" value="uchuva" class="form-check-input">
+                                <label class="form-check-label" for="producto_0">Uchuva</label>
                                 <input type="checkbox" id="producto_1" name="productos[1]" value="maracuya" class="form-check-input">
                                 <label class="form-check-label" for="producto_1">Maracuya</label>
-                                <input type="checkbox" id="producto_1" name="productos[1]" value="maracuya" class="form-check-input">
-                                <label class="form-check-label" for="producto_1">Maracuya</label>
-                                <input type="checkbox" id="producto_2" name="productos[2]" value="chulupa" class="form-check-input">
-                                <label class="form-check-label" for="producto_2">Chulupa</label>
+                                <input type="checkbox" id="producto_2" name="productos[2]" value="gulupa" class="form-check-input">
+                                <label class="form-check-label" for="producto_2">Gulupa</label>
                                 <input type="checkbox" id="producto_3" name="productos[3]" value="arandanos" class="form-check-input">
                                 <label class="form-check-label" for="producto_3">Arandanos</label>
                                 <input type="checkbox" id="producto_4" name="productos[4]" value="pitaya" class="form-check-input">

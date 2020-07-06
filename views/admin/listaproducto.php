@@ -33,7 +33,7 @@ if ($_SESSION['cargo'] != "administrador") {
                             <table id="tabla" class="table table-hover">
                                 <thead class="thead-dark">
                                     <tr>
-                                        <th  scope="col">Código</th>
+                                        <th  scope="col">Código Producto</th>
                                         <th  scope="col">Nombre</th>
                                         <th  scope="col">Costo</th>
                                         <th  scope="col" colspan="2" class="text-center">Acciones</th>

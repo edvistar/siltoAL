@@ -19,27 +19,27 @@ items.forEach(item => {
         }
     });
 });
-const items1 = document.querySelectorAll(".bEliminar2");
-items1.forEach(item => {
-    item.addEventListener("click", function(){
-        const id = this.dataset.id;
-        const controlador = this.dataset.controlador;
-        const key = this.dataset.key;
-        const accion=this.dataset.accion;
+// const items1 = document.querySelectorAll(".bEliminar2");
+// items1.forEach(item => {
+//     item.addEventListener("click", function(){
+//         const id = this.dataset.id;
+//         const controlador = this.dataset.controlador;
+//         const key = this.dataset.key;
+//         const accion=this.dataset.accion;
 
-        const confirm = window.confirm("Deseas eliminar el elemento?");
+//         const confirm = window.confirm("Deseas eliminar el elemento?");
 
-        if(confirm){
-            httpRequest("<?php echo constant('URL'); ?>"+controlador+"/"+accion+"/" + key, function(e){
-                console.log(this.responseText);
-                const tbody = document.querySelector("#tbody-data");
-                const fila  = document.querySelector("#fila-" + id);
+//         if(confirm){
+//             httpRequest("<?php echo constant('URL'); ?>"+controlador+"/"+accion+"/" + key, function(e){
+//                 console.log(this.responseText);
+//                 const tbody = document.querySelector("#tbody-data");
+//                 const fila  = document.querySelector("#fila-" + id);
               
-                tbody.removeChild(fila);
-            })
-        }
-    });
-});
+//                 tbody.removeChild(fila);
+//             })
+//         }
+//     });
+// });
 function httpRequest(url, callback){
     const http = new XMLHttpRequest();
     http.open("GET", url);

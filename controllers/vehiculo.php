@@ -51,7 +51,7 @@
                 $vehiculo = new VehiculoDao();
 
                 $vehiculo->placa = $id;
-               // $vehiculo->placa = $_POST['placa'];
+               //$vehiculo->placa = $_POST['placa'];
                 $vehiculo->capacidad = $_POST['capacidad'];
                 $vehiculo->seguro = $_POST['seguro'];
                 $vehiculo->tecnomecanica = $_POST['tecnomecanica'];
