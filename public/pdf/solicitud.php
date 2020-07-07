@@ -54,7 +54,7 @@ while($row = $resultado->fetch_assoc()){
     $pdf->Cell(60, 10, $row['fecha_solicitud'], 1, 0, 'C',0);
     $pdf->Cell(30, 10, $row['nombreCentro'], 1, 0, 'C',0);
     $pdf->Cell(40, 10, $row['nombreUsuario'], 1, 0, 'C',0);
-    $pdf->MultiCell(185, 5, $row['descripcion'], 1, 1, '',0);
+    $pdf->MultiCell(185, 10, $row['descripcion'], 1, 1, '',0);
 
 }
 

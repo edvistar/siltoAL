@@ -71,7 +71,7 @@ while($row = $resultado->fetch_assoc()){
     $pdf->Cell(25, 10, $row['nombreCentro'], 1, 0, 'C',0);
     $pdf->Cell(18, 10, $row['id_solicitud'], 1, 0, 'C',0);
     $pdf->Cell(18, 10, $row['estado'], 1, 0, 'C',0);
-    $pdf->MultiCell(80, 5, $row['variedad_productos'], 1, 1, '',0);    
+    $pdf->MultiCell(80, 10, $row['variedad_productos'], 1, 1, '',0);    
     // $pdf->MultiCell(80, 5, $row['observaciones'], 1, 1, '',0);
 
 
