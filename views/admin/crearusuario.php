@@ -51,7 +51,7 @@
                                 </div>
 
                                 <div class="custom-control custom-radio col-lg-6">
-                                    <label for="">Whatsapp</label><br>
+                                    <label for=""><i class="fa fa-whatsapp" aria-hidden="true"></i> Whatsapp</label><br>
                                     <input class="custom-control-input" type="radio" name="whatsapp" id="whatsapp1" value="Si"> SI
                                     <input class="custom-control-input" type="radio" name="whatsapp" id="whatsapp2" value="No"> NO<br>
                                     <small id="whatsappHelp" class="form-text text-muted">Confirme si tiene whatsapp el numero telefonico ingresado</small>

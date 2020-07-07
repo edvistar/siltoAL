@@ -36,6 +36,13 @@
                                     <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
                                         <div class="header-top-menu tabl-d-n">
                                             <ul class="nav navbar-nav mai-top-nav">
+                                            <li>
+                                                    <a href="<?php echo constant('URL'); ?>perfil">
+                                                    <span class="fa fa-user author-log-ic"> Perfil</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="<?php echo constant('URL'); ?>index/logout"><span ></span> Salir</a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -52,14 +59,11 @@
                                                         <span class="admin-name"><?php echo $_SESSION['nombre']; ?></span>
                                                         <i class="fa fa-angle-down adminpro-icon adminpro-down-arrow"></i>
                                                     </a>
-                                                    <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                        <li><a href="<?php echo constant('URL'); ?>perfil"><span class="fa fa-user author-log-ic"></span>Perfil</a>
-                                                        </li>
-                                                        <li><a href="<?php echo constant('URL'); ?>index/logout"><span class="fa fa-lock author-log-ic"></span>Salir</a>
-                                                        </li>
-                                                    </ul>
+                                                   
                                                 </li>
-                                                <li class="nav-item nav-setting-open"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-tasks"></i></a>
+                                                
+                                                <li class="nav-item nav-setting-open">
+                                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-tasks"></i></a>
                                                 <div role="menu" ></div>
                                                 </li>
                                             </ul>
