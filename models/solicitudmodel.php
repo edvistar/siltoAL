@@ -69,13 +69,9 @@
         public function readById($id){
             $item = new SolicitudDAO();
             try{
-                $query = $this->db->connect()->prepare('SELECT sol.id_solicitud, sol.fecha_solicitud, sol.descripcion, 
-                cent.nombre as nombreCentro, usu.nombre as nombreUsuario
-                FROM solicitud as sol
-                INNER JOIN centro as cent on cent.id_centro=cent.id_centro
-                INNER JOIN usuario as usu on usu.identificacion=sol.identificacion 
-
-                WHERE id_solicitud = :id');
+                $query = $this->db->connect()->prepare('SELECT id_solicitud, fecha_solicitud, descripcion, 
+                id_centro, identificacion
+                FROM solicitud  WHERE id_solicitud = :id');
 
                 $query->execute(['id' => $id]);
 
@@ -83,8 +79,8 @@
                     $item->id_solicitud     = $row['id_solicitud'];
                     $item->fecha_solicitud  = $row['fecha_solicitud'];
                     $item->descripcion      = $row['descripcion'];
-                    $item->id_centro        = $row['nombreCentro'];
-                    $item->identificacion   = $row['nombreUsuario'];
+                    $item->id_centro        = $row['id_centro'];
+                    $item->identificacion   = $row['identificacion'];
                 }
                 return $item;
             }catch(PDOException $e){

@@ -132,10 +132,11 @@
             $items = [];
             try{
                 $query = $this->db->connect()->query('SELECT
-                rut.id_ruta, rut.fecha_ruta, rut.hora_salida, rut.hora_llegada, rut.tipo_ruta, rut.precinto, usu.nombre as nombreConductor, rut.placa, cent.nombre as nombreCentro, rut.variedad_productos, rut.id_solicitud, rut.estado, rut.observaciones
+                rut.id_ruta, rut.fecha_ruta, rut.hora_salida, rut.hora_llegada, rut.tipo_ruta, rut.precinto, usu.nombre as nombreConductor, rut.placa, cent.nombre as nombreCentro, rut.variedad_productos, sol.descripcion as descripcionSolicitud, rut.estado, rut.observaciones
                 FROM rutas as rut
                 INNER JOIN usuario as usu on usu.identificacion=rut.identificacion
                 INNER JOIN centro as cent on cent.id_centro=rut.id_centro
+                INNER JOIN solicitud as sol on sol.id_solicitud=rut.id_solicitud
                 ');
 
                 while($row = $query->fetch()){
@@ -151,7 +152,7 @@
                     $item->placa              = $row['placa'];
                     $item->id_centro          = $row['nombreCentro'];
                     $item->variedad_productos = $row['variedad_productos'];
-                    $item->id_solicitud       = $row['id_solicitud'];
+                    $item->id_solicitud       = $row['descripcionSolicitud'];
                     $item->estado       = $row['estado'];
                     $item->observaciones      = $row['observaciones'];
 
@@ -168,14 +169,8 @@
         public function readById($id){
             $item = new RutaDAO();
             try{
-                $query = $this->db->connect()->prepare('SELECT 
-                 rut.id_ruta, rut.fecha_ruta, rut.hora_salida, rut.hora_llegada, rut.tipo_ruta, rut.precinto, usu.nombre as nombreEncargado, rut.placa, cent.nombre as nombreCentro, rut.variedad_productos, rut.estado, sol.descripcion as descripcionSolicitud, rut.estado, rut.observaciones
-                FROM rutas as rut
-                INNER JOIN usuario as usu on usu.identificacion=rut.identificacion
-                INNER JOIN centro as cent on cent.id_centro=rut.id_centro
-                INNER JOIN solicitud as sol on sol.id_solicitud=rut.id_solicitud
-                WHERE id_ruta = :id
-                ');
+                $query = $this->db->connect()->prepare('SELECT id_ruta, fecha_ruta, hora_salida, hora_llegada, tipo_ruta, precinto, identificacion, placa, id_centro, variedad_productos, id_solicitud, estado, observaciones
+                FROM rutas WHERE id_ruta = :id ');
 
                 $query->execute(['id' => $id]);
 
@@ -187,11 +182,11 @@
                     $item->hora_llegada       = $row['hora_llegada'];
                     $item->tipo_ruta          = $row['tipo_ruta'];
                     $item->precinto           = $row['precinto'];
-                    $item->identificacion     = $row['nombreEncargado'];
+                    $item->identificacion     = $row['identificacion'];
                     $item->placa              = $row['placa'];
-                    $item->id_centro          = $row['nombreCentro'];
+                    $item->id_centro          = $row['id_centro'];
                     $item->variedad_productos = $row['variedad_productos'];
-                    $item->id_solicitud       = $row['descripcionSolicitud'];
+                    $item->id_solicitud       = $row['id_solicitud'];
                     $item->estado       = $row['estado'];
                     $item->observaciones       = $row['observaciones'];
                 }

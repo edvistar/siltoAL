@@ -40,7 +40,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                         <th  scope="col">Vehículo Asignado</th>
                                         <th  scope="col">Centro Solicitante</th>
                                         <th  scope="col">Productos</th>
-                                        <th  scope="col">Código de Solicitud</th>
+                                        <th  scope="col">Descripción de Solicitud</th>
                                         <th  scope="col">Estado</th>
                                         <th  scope="col">Observaciones</th>
                                         <th  scope="col" colspan="2" class="text-center">Acciones</th>

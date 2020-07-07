@@ -65,8 +65,13 @@
                                                 foreach ($this->ddl_usuarios as $usuario) {
                                                 $ddl_usuario = new UsuarioDAO();
                                                 $ddl_usuario = $usuario;
+                                                if($this->ruta->identificacion==$usuario->identificacion){
+                                                    $seleccionado = "selected";
+                                                }else{
+                                                    $seleccionado = '';
+                                                }
                                         ?>
-                                                <option  value="<?php echo $ddl_usuario->identificacion;?>"><?php echo $ddl_usuario->identificacion;?>-<?php echo $ddl_usuario->nombre;?>-<?php echo $ddl_usuario->apellido; ?>-<?php echo $ddl_usuario->cargo; ?></option>
+                                                <option <?php echo $seleccionado; ?>  value="<?php echo $ddl_usuario->identificacion;?>"><?php echo $ddl_usuario->identificacion;?>-<?php echo $ddl_usuario->nombre;?>-<?php echo $ddl_usuario->apellido; ?>-<?php echo $ddl_usuario->cargo; ?></option>
                                                 <?php
                                                 }
                                             }
@@ -86,8 +91,14 @@
                                                 foreach ($this->ddl_vehiculos as $vehiculo) {
                                                 $ddl_vehiculo = new VehiculoDAO();
                                                 $ddl_vehiculo = $vehiculo;
+                                                $seleccionado = '';
+                                                if($this->ruta->placa==$vehiculo->placa){
+                                                    $seleccionado = "selected";
+                                                }else{
+                                                    $seleccionado = '';
+                                                }
                                         ?>
-                                                <option  value="<?php echo $ddl_vehiculo->placa;?>"><?php echo $ddl_vehiculo->placa;?></option>
+                                                <option <?php echo $seleccionado; ?> value="<?php echo $ddl_vehiculo->placa;?>"><?php echo $ddl_vehiculo->placa;?></option>
                                                 <?php
                                                 }
                                             }
@@ -106,8 +117,14 @@
                                                 foreach ($this->ddl_centros as $centro) {
                                                 $ddl_centro = new CentroDAO();
                                                 $ddl_centro = $centro;
+                                                $seleccionado = '';
+                                                if($this->ruta->id_centro==$centro->id_centro){
+                                                    $seleccionado = "selected";
+                                                }else{
+                                                    $seleccionado = '';
+                                                }
                                         ?>
-                                                <option  value="<?php echo $ddl_centro->id_centro;?>"><?php echo $ddl_centro->id_centro;?>-<?php echo $ddl_centro->nombre;?>
+                                                <option  <?php echo $seleccionado; ?> value="<?php echo $ddl_centro->id_centro;?>"><?php echo $ddl_centro->nombre;?>
                                             </option>
                                                 <?php
                                                 }
@@ -117,7 +134,7 @@
                                 <small id="id_centroHelp" class="form-text text-muted">Diligencie el centro solicitante.</small>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="id_solicitud">Código de Solicitud</label>
+                                <label for="id_solicitud">Descripción de Solicitud</label>
                                 <select class="form-control" id="id_solicitud" name="id_solicitud" style="width:100%" required>
                                 <option selected value="<?php echo $this->ruta->id_solicitud;?>"><?php echo $this->ruta->id_solicitud;?></option>
                                         <?php
@@ -127,8 +144,13 @@
                                                 foreach ($this->ddl_solicitudes as $solicitud) {
                                                 $ddl_solicitud = new SolicitudDAO();
                                                 $ddl_solicitud = $solicitud;
+                                                if($this->ruta->id_solicitud==$solicitud->id_solicitud){
+                                                    $seleccionado = "selected";
+                                                }else{
+                                                    $seleccionado = '';
+                                                }
                                         ?>
-                                                <option  value="<?php echo $ddl_solicitud->id_solicitud;?>"><?php echo $ddl_solicitud->id_solicitud;?>-<?php echo $ddl_solicitud->descripcion;?>
+                                                <option <?php echo $seleccionado;?> value="<?php echo $ddl_solicitud->id_solicitud;?>"><?php echo $ddl_solicitud->descripcion;?>
                                             </option>
                                                 <?php
                                                 }
@@ -139,7 +161,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="estado">Estado de la ruta</label>
-                                <select class="form-control" alue="<?php echo $this->ruta->estado;?>" id="estado" name="estado" style="width:100%" required >
+                                <select class="form-control" value="<?php echo $this->ruta->estado;?>" id="estado" name="estado" style="width:100%" required >
                                     <option value="activo">Activo</option>
                                     <option value="cancelada">Cancelada</option>
                                 <small id="estadoHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>

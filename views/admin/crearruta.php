@@ -112,7 +112,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                                 $ddl_centro = new CentroDAO();
                                                 $ddl_centro = $centro;
                                         ?>
-                                                <option  value="<?php echo $ddl_centro->id_centro;?>"><?php echo $ddl_centro->id_centro;?>-<?php echo $ddl_centro->nombre;?>
+                                                <option  value="<?php echo $ddl_centro->id_centro;?>"><?php echo $ddl_centro->nombre;?>
                                             </option>
                                                 <?php
                                                 }
@@ -121,7 +121,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                 </select>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="id_solicitud">Código de Solicitud</label>
+                                <label for="id_solicitud">Descripción de Solicitud</label>
                                 <select class="form-control" id="id_solicitud" name="id_solicitud" style="width:100%" required >
                                     <option selected value="">seleccione...</option>
                                                 <small id="id_solicitudHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>

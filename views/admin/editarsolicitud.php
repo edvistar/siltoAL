@@ -51,8 +51,13 @@
                                                 foreach ($this->ddl_centros as $centro) {
                                                 $ddl_centro = new CentroDAO();
                                                 $ddl_centro = $centro;
+                                                if($this->solicitud->id_centro==$centro->id_centro){
+                                                    $seleccionado = "selected";
+                                                }else{
+                                                    $seleccionado = '';
+                                                }
                                         ?>
-                                                <option  value="<?php echo $ddl_centro->id_centro;?>"><?php echo $ddl_centro->id_centro;?>-<?php echo $ddl_centro->nombre;?>
+                                                <option <?php echo $seleccionado; ?>  value="<?php echo $ddl_centro->id_centro;?>"><?php echo $ddl_centro->nombre;?>
                                             </option>
                                                 <?php
                                                 }
@@ -64,7 +69,7 @@
                             <div class="form-group col-md-6">
                                 <label for="identificacion">Encargado de centro</label>
                                 <select class="form-control" id="identificacion" name="identificacion" style="width:100%" required>
-                                    <option selected value=""><?php echo $this->solicitud->identificacion; ?></option>
+                                    <option selected value="<?php echo $this->solicitud->identificacion;?>"><?php echo $this->solicitud->identificacion; ?></option>
                                         <?php
                                             include_once 'models/usuario.php';
 
@@ -72,8 +77,13 @@
                                                 foreach ($this->ddl_usuarios as $usuario) {
                                                 $ddl_usuario = new UsuarioDAO();
                                                 $ddl_usuario = $usuario;
+                                                if($this->solicitud->identificacion==$usuario->identificacion){
+                                                    $seleccionado = "selected";
+                                                }else{
+                                                    $seleccionado = '';
+                                                }
                                         ?>
-                                                <option  value="<?php echo $ddl_usuario->identificacion;?>"><?php echo $ddl_usuario->identificacion;?>-<?php echo $ddl_usuario->nombre;?>-<?php echo $ddl_usuario->apellido; ?>-<?php echo $ddl_usuario->cargo; ?></option>
+                                                <option <?php echo $seleccionado; ?>  value="<?php echo $ddl_usuario->identificacion;?>"><?php echo $ddl_usuario->identificacion;?>-<?php echo $ddl_usuario->nombre;?>-<?php echo $ddl_usuario->apellido; ?>-<?php echo $ddl_usuario->cargo; ?></option>
                                                 <?php
                                                 }
                                             }
