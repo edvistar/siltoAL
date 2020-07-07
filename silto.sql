@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-07-2020 a las 01:37:28
+-- Tiempo de generación: 07-07-2020 a las 02:41:43
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.7
 
@@ -58,8 +58,8 @@ CREATE TABLE `centro` (
 --
 
 INSERT INTO `centro` (`id_centro`, `nombre`, `email`, `telefono`, `whatsapp`, `departamento`, `ciudad`, `tipo_centro`, `direccion`, `identificacion`) VALUES
-(12345, 'La Piña', 'lapapaya@gmail.com', 3138252764, 'SI', '17', '532', 'Bodega', 'Carrera 3 #30-17', 16838095),
-(34545, 'OcatiCotas', 'lavaca@gmail.com', 3138252764, 'SI', '25', '246', 'Acopio', 'Sector cerca de piedra 5', 16838095);
+(1, 'OcatiCotas', 'ocaticotas@gmail.com', 3138252764, 'SI', '5', '1', 'Acopio', 'Calle 89b # 116a-10', 22656626),
+(2, 'La palma', 'lapalma@gmail.com', 3138252764, 'SI', '25', '211', 'Acopio', 'Carrera 16 #30-17', 22656626);
 
 -- --------------------------------------------------------
 
@@ -1285,7 +1285,9 @@ CREATE TABLE `rutas` (
 --
 
 INSERT INTO `rutas` (`id_ruta`, `fecha_ruta`, `hora_salida`, `hora_llegada`, `tipo_ruta`, `precinto`, `identificacion`, `placa`, `id_centro`, `variedad_productos`, `id_solicitud`, `estado`, `observaciones`) VALUES
-(24, '2020-06-28', '10:40:00', '22:44:00', 'Acopio', '5555', 16838095, 'AD3435', 12345, '-uchuba-tamarillo', 13, 'activo', 'Promocion de uchuba');
+(21, '2020-07-22', '18:50:00', '18:50:00', 'Acopio', '9', 16838095, 'NKZ123', 1, '-uchuva-guanabana', 11, 'activo', '300 vacias'),
+(22, '2020-07-06', '19:35:00', '19:35:00', 'Acopio', '10', 22656626, 'NKZ123', 1, '-pitaya-lulo', 12, 'activo', '200 vacias'),
+(23, '2020-07-06', '19:37:00', '19:37:00', 'Acopio', '11', 16838095, 'NKZ123', 1, '-gulupa', 13, 'activo', '100 vacias');
 
 -- --------------------------------------------------------
 
@@ -1306,9 +1308,9 @@ CREATE TABLE `solicitud` (
 --
 
 INSERT INTO `solicitud` (`id_solicitud`, `fecha_solicitud`, `descripcion`, `id_centro`, `identificacion`) VALUES
-(13, '2020-06-28', '100 canastillas', 34545, 16838095),
-(14, '2020-06-28', '80 canastillas', 34545, 16838095),
-(15, '2020-06-29', 'peras', 34545, 16838095);
+(11, '2020-07-07', 'Vehiculo, Martes 07-07. 3000 kl', 0, 22656626),
+(12, '2020-07-07', 'vehiculo 4000 kl', 1, 22656626),
+(13, '2020-07-07', 'vehiculo 2000 kl', 1, 16838095);
 
 -- --------------------------------------------------------
 
@@ -1336,7 +1338,7 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`identificacion`, `nombre`, `apellido`, `email`, `telefono`, `whatsapp`, `cargo`, `estado`, `fecha_ingreso`, `foto`, `pass`) VALUES
 (16838095, 'Victor Eduardo', 'Hoyos Sandoval', 'victorhoyoscolombia@gmail.com', '3138252764', 'Si', 'administrador', 'activo', '2020-06-26', 'public/img/usuarios/fotodigital.png', 'fcea920f7412b5da7be0cf42b8c93759'),
-(22656626, 'eduardo', 'sando', 'lavaca@gmail.com', '3138252764', 'Si', 'bodeguero', 'activo', '2020-06-30', 'public/img/usuarios/20200312_083546.jpg', 'fcea920f7412b5da7be0cf42b8c93759');
+(22656626, 'eduardo', 'sando', 'lavaca@gmail.com', '3138252764', 'SI', 'bodeguero', 'activo', '2020-06-30', 'public/img/usuarios/20200312_083547.jpg', 'fcea920f7412b5da7be0cf42b8c93759');
 
 -- --------------------------------------------------------
 
@@ -1362,7 +1364,7 @@ CREATE TABLE `vehiculo` (
 
 INSERT INTO `vehiculo` (`placa`, `capacidad`, `seguro`, `tecnomecanica`, `tipo_vehiculo`, `gps`, `estado`, `identificacion`, `fecha_registro`) VALUES
 ('AD3435', '10', '2020-06-17', '2020-06-28', 'furgon', 'si', 'contratista', 16838095, '2020-06-28 23:42:50'),
-('NKZ123', '20', '2020-06-30', '2020-06-30', 'tractocamin', 'si', 'propiedad', 22656626, '2020-07-01 04:01:10');
+('NKZ123', '20', '2020-07-05', '2020-07-05', 'furgon', 'SI', 'contratista', 22656626, '2020-07-06 07:02:24');
 
 --
 -- Índices para tablas volcadas
@@ -1398,8 +1400,8 @@ ALTER TABLE `producto`
 --
 ALTER TABLE `rutas`
   ADD PRIMARY KEY (`id_ruta`),
-  ADD UNIQUE KEY `id_centro` (`id_centro`),
-  ADD UNIQUE KEY `id_solicitud` (`id_solicitud`);
+  ADD UNIQUE KEY `id_solicitud` (`id_solicitud`),
+  ADD KEY `rutas_ibfk_2` (`id_centro`);
 
 --
 -- Indices de la tabla `solicitud`
@@ -1440,13 +1442,13 @@ ALTER TABLE `departamentos`
 -- AUTO_INCREMENT de la tabla `rutas`
 --
 ALTER TABLE `rutas`
-  MODIFY `id_ruta` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificación de ruta', AUTO_INCREMENT=28;
+  MODIFY `id_ruta` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificación de ruta', AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `solicitud`
 --
 ALTER TABLE `solicitud`
-  MODIFY `id_solicitud` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id de la solicitud para la ruta.', AUTO_INCREMENT=16;
+  MODIFY `id_solicitud` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id de la solicitud para la ruta.', AUTO_INCREMENT=14;
 
 --
 -- Restricciones para tablas volcadas
@@ -1456,8 +1458,8 @@ ALTER TABLE `solicitud`
 -- Filtros para la tabla `rutas`
 --
 ALTER TABLE `rutas`
-  ADD CONSTRAINT `rutas_ibfk_1` FOREIGN KEY (`id_centro`) REFERENCES `centro` (`id_centro`),
-  ADD CONSTRAINT `rutas_ibfk_2` FOREIGN KEY (`id_solicitud`) REFERENCES `solicitud` (`id_solicitud`);
+  ADD CONSTRAINT `rutas_ibfk_2` FOREIGN KEY (`id_centro`) REFERENCES `centro` (`id_centro`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `rutas_ibfk_3` FOREIGN KEY (`id_solicitud`) REFERENCES `solicitud` (`id_solicitud`);
 
 --
 -- Filtros para la tabla `vehiculo`
