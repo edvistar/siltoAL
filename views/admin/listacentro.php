@@ -15,24 +15,25 @@ if ($_SESSION['cargo'] != "administrador") {
 
     <?php require 'views/header.php'; ?>
     <div class="product-status mg-tb-15">
-            <div class="container-fluid">
+            <div class="container-sm">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="product-status-wrap">
-                            <div id="main">
+                        <div class="product-status-wrap ">
+                            <div id="main" class="container-fluid">
                                 <div id="respuesta"><?php echo $this->mensaje; ?></div>
                                 <h1 class="text-center"><i class="fa fa-eye" aria-hidden="true"></i> Listado de Centros de Acopio</h1>
+                                <div class="row">
                                 <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>/centro/crear")'>Crear Centro</button>
                                 <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/pdf/centro.php")'>PDF</button>
                                 <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/excel/functions/centro/createExcel.php")'>EXCEL</button>
-                            <table id="tabla" class="table table-hover"><br>
-
-                                <table id="tabla" class="table table-hover">
-                                    <thead class="thead-dark">
-                                        <tr class="text-center">
+                                </div><br>
+                                <div class="row">
+                                <table id="tabla" class="table table-hover table table-bordered">
+                                    <thead>
+                                        <tr class="text-center btn-warning">
                                             <th  scope="col">Código de Centro</th>
                                             <th  scope="col">Nombre</th>
-                                            <th  scope="col">email</th>
+                                            <th  scope="col">Email</th>
                                             <th  scope="col">Telefono</th>
                                             <th  scope="col">Whatsapp</th>
                                             <th  scope="col">Departamento</th>
@@ -40,7 +41,8 @@ if ($_SESSION['cargo'] != "administrador") {
                                             <th  scope="col">Direccion</th>
                                             <th  scope="col">Encargado</th>
                                             <th  scope="col">Tipo de Centro</th>
-                                            <th  scope="col" colspan="2" class="text-center">Acciones</th>
+                                            <th  scope="col">Editar</th>
+                                            <th  scope="col">Eliminar</th>
                                         </tr>
                                     </thead>
                         
@@ -63,8 +65,8 @@ if ($_SESSION['cargo'] != "administrador") {
                                                 <td><?php echo $centro->direccion; ?>
                                                 <td><?php echo $centro->identificacion; ?>
                                                 <td><?php echo $centro->tipo_centro; ?>
-                                                <td><a href="<?php echo constant('URL') . 'centro/leer/' . $centro->id_centro; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a></td>
-                                                <td><button class="bEliminar" data-url="<?php echo constant('URL');?>" data-controlador="centro" data-accion="eliminar" data-id="<?php echo $centro->id_centro; ?>"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</button></td>
+                                                <td><button class="btn-info"><a href="<?php echo constant('URL') . 'centro/leer/' . $centro->id_centro; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></button></td>
+                                                <td><button class="bEliminar btn-danger" data-url="<?php echo constant('URL');?>" data-controlador="centro" data-accion="eliminar" data-id="<?php echo $centro->id_centro; ?>"><i class="fa fa-trash-o" aria-hidden="true"></button></td>
                                             </tr>
                                 <?php
                                         }
@@ -76,6 +78,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                 ?>
                                     </tbody>
                                 </table>
+
                                 <div class="custom-pagination">
                                     <nav aria-label="Page navigation example">
                                         <ul class="pagination">
@@ -86,6 +89,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                             <li class="page-item"><a class="page-link" href="#">Next</a></li>
                                         </ul>
                                     </nav>
+                                </div>
                                 </div>
                             </div>
                         </div>

@@ -22,17 +22,21 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="product-status-wrap">
-                        <div id="main">
+                        <div id="main" class="container-xs">
                             <div id="respuesta"><?php echo $this->mensaje; ?></div>
                             <h1 class="text-center"><i class="fa fa-users" aria-hidden="true"></i> Listado de Usuarios</h1>
+                            <div class="row">
                             <button type="button" class="btn btn-success loginbtn" onClick='window.location.assign("<?php echo constant('URL'); ?>usuario/crear")'>Crear Usuario</button>
                             <button type="button" class="btn btn-success loginbtn" onClick='window.location.assign("<?php echo constant('URL'); ?>public/pdf/usuario.php")'>PDF</button>
-                            <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/excel/functions/usuario/createExcel.php")'>EXCEL</button>
-                            <table id="tabla" class="table table-hover">
-                           
-                                
+                            <button type="button" class="btn btn-success loginbtn" onClick='window.location.assign("<?php echo constant('URL'); ?>public/excel/functions/usuario/createExcel.php")'>EXCEL</button>
+                            </div><br>
+                            
+                            <div class="row container-sm">
+
+                            <table id="tabla" class="table table-hover table table-bordered ">
+
                                 <thead class="thead-dark">
-                                    <tr>
+                                    <tr class="text-center btn-warning">
                                         <th scope="col">Identificacion</th>
                                         <th scope="col">Nombres</th>
                                         <th scope="col">Apellidos</th>
@@ -43,7 +47,8 @@
                                         <th scope="col">Estado</th>
                                         <th scope="col">Fecha de ingreso</th>
                                         <th scope="col">Foto</th>
-                                        <th scope="col" colspan="2">Acciones</th>
+                                        <th scope="col" >Editar</th>
+                                        <th scope="col" >Eliminar</th>
                                     </tr>
                                 </thead>
                                 <tbody id="tbody-data">
@@ -65,29 +70,30 @@
                                         <td><?php echo $usuario->estado; ?></td>
                                         <td><?php echo $usuario->fecha_ingreso; ?></td>
                                         <td><img src="<?php echo constant('URL') . $usuario->foto; ?>" alt="imagen usuario" width="100" height="100"> </td>
-                                        <td><a href="<?php echo constant('URL') . 'usuario/leer/' . $usuario->identificacion; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a></td> <!--url/controlador/metodo-->
-                                        <td><button class="bEliminar" data-url="<?php echo constant('URL');?>" data-controlador="usuario" data-accion="eliminar" data-id="<?php echo $usuario->identificacion; ?>"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</button></td> 
+                                        <td><button class="btn-info"><a href="<?php echo constant('URL') . 'usuario/leer/' . $usuario->identificacion; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></button></td> <!--url/controlador/metodo-->
+                                        <td><button class="bEliminar btn-danger" data-url="<?php echo constant('URL');?>" data-controlador="usuario" data-accion="eliminar" data-id="<?php echo $usuario->identificacion; ?>"><i class="fa fa-trash-o" aria-hidden="true"></button></td> 
                                     </tr>
                                     <?php   
                                             } 
                                         }else{
                                     ?>
-                                    <tr><td colspan="11" class="text-center">NO HAY USUARIOS</td></tr>
+                                    <tr><td colspan="6" class="text-center">NO HAY USUARIOS</td></tr>
                                     <?php    
                                             }
                                     ?>
                                 </tbody>
-                            </table>
-                            <div class="custom-pagination">
-                                <nav aria-label="Page navigation example">
-                                    <ul class="pagination">
-                                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                    </ul>
-                                </nav>
+                                </table>
+                                <div class="custom-pagination">
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination">
+                                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
                             </div>
                         </div>
                     </div>
