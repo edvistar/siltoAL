@@ -54,9 +54,25 @@
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                                                         <i class="fa  adminpro-user-rounded header-riht-inf" aria-hidden="true">
-                                                            <img id="fotousuario" src="<?php echo constant('URL') . $_SESSION['foto'] ?>" alt="Foto">
+                                                            <img id="fotousuario" src="
+                                                                <?php 
+                                                                    if (isset($_SESSION['upd_foto'])) {
+                                                                        echo constant('URL') . $_SESSION['upd_foto'];
+                                                                    }else{
+                                                                        echo constant('URL') . $_SESSION['foto'];
+                                                                    }
+                                                                ?>
+                                                            " alt="Foto">
                                                         </i>
-                                                        <span class="admin-name"><?php echo $_SESSION['nombre']; ?></span>
+                                                        <span class="admin-name">
+                                                            <?php
+                                                                if (isset($_SESSION['upd_nomb'])) {
+                                                                    echo $_SESSION['upd_nomb'];
+                                                                }else{
+                                                                    echo $_SESSION['nombre'];
+                                                                }
+                                                            ?>
+                                                        </span>
                                                         <i class="fa fa-angle-down adminpro-icon adminpro-down-arrow"></i>
                                                     </a>
                                                    

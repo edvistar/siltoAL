@@ -28,6 +28,8 @@ class PerfilModel extends Model{
                 $item->foto              = $row['foto'];
               
                 array_push($items, $item);
+                $_SESSION['upd_nomb'] = $row['nombre'];
+                $_SESSION['upd_foto'] = $row['foto'];
             }
             return $items;
         }catch(PDOException $e){
@@ -58,6 +60,9 @@ class PerfilModel extends Model{
                 $item->estado           = $row['estado'];
                 $item->fecha_ingreso    = $row['fecha_ingreso'];
                 $item->foto             = $row['foto'];
+
+                $_SESSION['upd_nomb'] = $row['nombre'];
+                $_SESSION['upd_foto'] = $row['foto'];
             }
             return $item;
         }catch(PDOException $e){

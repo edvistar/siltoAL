@@ -43,7 +43,7 @@
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                    <label for="whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i>    Whatsapp</label><br>
+                                    <label for="whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i> Whatsapp</label><br>
                                     <input class="custom-control-input" required type="radio" name="whatsapp" id="whatsapp1" value="SI" checked>SI
                                     <input class="custom-control-input" type="radio" name="whatsapp" id="whatsapp0" value="NO">NO<br>
                                     <small id="whatsappHelp" class="form-text text-muted">Confirme si tiene whatsapp el numero de telefono ingresado</small>
@@ -113,7 +113,7 @@
                             </div>
 
                             <div class="text-center">
-                                <input type="submit" onclick="validapassword();" class="btn btn-info" value="Registrar Usuario">
+                                <input type="submit" onclick="validapassword();" class="btn btn-info" value="Actualizar Usuario">
                                 <input type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>usuario")' value="Cancelar">
                             </div>
                         </form>
