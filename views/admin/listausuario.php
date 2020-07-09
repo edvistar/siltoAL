@@ -30,7 +30,7 @@
                             <button type="button" class="btn btn-success loginbtn" onClick='window.location.assign("<?php echo constant('URL'); ?>public/pdf/usuario.php")'>PDF</button>
                             <button type="button" class="btn btn-success loginbtn" onClick='window.location.assign("<?php echo constant('URL'); ?>public/excel/functions/usuario/createExcel.php")'>EXCEL</button>
                             </div><br>
-                            
+
                             <div class="row container-sm">
 
                             <table id="tabla" class="table table-hover table table-bordered ">

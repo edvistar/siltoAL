@@ -1,10 +1,4 @@
 <?php
-require_once '../excel.php';
-
-activeErrorReporting(); 
-
-noCli();
-
 require_once '../../Classes/PHPExcel.php';
 require '../conexion.php';
 require '../modulos.php';
@@ -95,8 +89,10 @@ $objPHPExcel->setActiveSheetIndex(0)
             
 $objPHPExcel->setActiveSheetIndex(0);
 
-getHeaders();
-
-$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+header('Content-Type: application/vnd.ms-excel; charset=UTF-8');
+header('Content-Disposition: attachment;filename="Productos.xls"'); //nombre del documento
+header('Cache-Control: max-age=0');
+	
+$objWriter=PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
 $objWriter->save('php://output');
 exit;
