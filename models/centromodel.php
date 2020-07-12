@@ -61,8 +61,8 @@
                     $item->departamento     = $row['departamento'];
                     $item->ciudad           = $row['ciudad'];
                     $item->identificacion   = $row['nombreusuario'];
-                    $item->tipo_centro            = $row['tipo_centro'];
-                    $item->direccion           = $row['direccion'];
+                    $item->tipo_centro      = $row['tipo_centro'];
+                    $item->direccion        = $row['direccion'];
 
                     array_push($items, $item);
                 }
@@ -77,25 +77,24 @@
         public function readById($id){
             $item = new CentroDAO();
             try{
-                $query = $this->db->connect()->prepare('SELECT cent.id_centro, cent.nombre as nombrecentro, cent.email, cent.telefono, cent.whatsapp, depa.departamento, ciud.ciudad, usu.nombre as nombreusuario, cent.tipo_centro, cent.direccion 
+                $query = $this->db->connect()->prepare('SELECT  cent.id_centro, cent.nombre ,  cent.email,  cent.telefono,  cent.whatsapp, depa.departamento, ciud.ciudad, cent.identificacion, cent.tipo_centro, cent.direccion 
                 FROM centro as cent
                 INNER JOIN departamentos as depa on depa.idDepa=cent.departamento
                 INNER JOIN ciudades as ciud on ciud.idCiud=cent.ciudad
-                INNER JOIN usuario as usu on usu.identificacion=cent.identificacion
-                
+
                 WHERE id_centro = :id');
 
                 $query->execute(['id' => $id]);
 
                 while($row = $query->fetch()){
                     $item->id_centro       = $row['id_centro'];
-                    $item->nombre          = $row['nombrecentro'];
+                    $item->nombre          = $row['nombre'];
                     $item->email           = $row['email'];
                     $item->telefono        = $row['telefono'];
                     $item->whatsapp        = $row['whatsapp'];
                     $item->departamento    = $row['departamento'];
                     $item->ciudad          = $row['ciudad'];
-                    $item->identificacion  = $row['nombreusuario'];
+                    $item->identificacion  = $row['identificacion'];
                     $item->tipo_centro           = $row['tipo_centro'];
                     $item->direccion           = $row['direccion'];
                 }

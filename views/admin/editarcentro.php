@@ -84,11 +84,11 @@
                                     <input type="text" class="form-control" value="<?php echo $this->centro->direccion; ?>" name="direccion" id="direccion" required>
                                     <small id="direccionHelp" class="form-text text-muted">Diligencie la direccion del Centro</small>
                                 </div>
-                            <div class="form-group col-md-6">
-                                <label for="identificacion">Encargado de centro</label>
+                            <div class="form-group col-md-4">
+                                <label for="identificacion">Encargado de la Solicitud</label>
                                 <select class="form-control" id="identificacion" name="identificacion" style="width:100%" required>
-                                <option selected value="<?php echo $this->centro->identificacion; ?>"><?php echo $this->centro->identificacion; ?></option>
-                                
+
+                                    <option selected value="<?php echo $this->centro->identificacion;?>"><?php echo $this->centro->identificacion;?></option>
                                         <?php
                                             include_once 'models/usuario.php';
 
@@ -96,14 +96,19 @@
                                                 foreach ($this->ddl_usuarios as $usuario) {
                                                 $ddl_usuario = new UsuarioDAO();
                                                 $ddl_usuario = $usuario;
+                                                if($this->centro->identificacion==$usuario->identificacion){
+                                                    $seleccionado = "selected";
+                                                }else{
+                                                    $seleccionado = '';
+                                                }
                                         ?>
-                                                <option  value="<?php echo $ddl_usuario->identificacion;?>"><?php echo $ddl_usuario->identificacion;?>-<?php echo $ddl_usuario->nombre;?>-<?php echo $ddl_usuario->apellido; ?>-<?php echo $ddl_usuario->cargo; ?></option>
+                                                <option <?php echo $seleccionado; ?>  value="<?php echo $ddl_usuario->identificacion;?>"><?php echo $ddl_usuario->nombre;?>-<?php echo $ddl_usuario->apellido; ?>-<?php echo $ddl_usuario->cargo; ?></option>
                                                 <?php
                                                 }
                                             }
                                                 ?>
                                 </select>
-                                <small id="identificacionHelp" class="form-text text-muted">Debe elegir nuevamente el encargado del centro</small>
+                                <small id="identificacionHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
                             </div>
                         </div>
                         <div class="text-center ">
