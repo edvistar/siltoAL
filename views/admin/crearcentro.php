@@ -97,7 +97,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                     <label for="identificacion">Encargado del Centro</label>
                                     <select class="form-control" id="identificacion" name="identificacion" style="width:100%" required alt="Nombre  encargado de centro">
                                         <option selected value="">seleccione...</option>
-                                        <small id="identificacionHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                                        <small id="identificacionHelp" class="form-text text-muted">Diligencie el encargado de la centro.</small>
                                         <?php
                                         include_once 'models/usuario.php';
 

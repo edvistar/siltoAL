@@ -85,7 +85,7 @@
                                     <small id="direccionHelp" class="form-text text-muted">Diligencie la direccion del Centro</small>
                                 </div>
                             <div class="form-group col-md-4">
-                                <label for="identificacion">Encargado de la Solicitud</label>
+                                <label for="identificacion">Encargado de la Centro</label>
                                 <select class="form-control" id="identificacion" name="identificacion" style="width:100%" required>
 
                                     <option selected value="<?php echo $this->centro->identificacion;?>"><?php echo $this->centro->identificacion;?></option>
@@ -102,7 +102,7 @@
                                                     $seleccionado = '';
                                                 }
                                         ?>
-                                                <option <?php echo $seleccionado; ?>  value="<?php echo $ddl_usuario->identificacion;?>"><?php echo $ddl_usuario->nombre;?>-<?php echo $ddl_usuario->apellido; ?>-<?php echo $ddl_usuario->cargo; ?></option>
+                                                <option <?php echo $seleccionado; ?>  value="<?php echo $ddl_usuario->identificacion; ?>"><?php echo $ddl_usuario->identificacion; ?>-<?php echo $ddl_usuario->nombre; ?>-<?php echo $ddl_usuario->apellido; ?>-<?php echo $ddl_usuario->cargo; ?></option>
                                                 <?php
                                                 }
                                             }

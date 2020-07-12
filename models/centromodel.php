@@ -147,7 +147,8 @@
         public function cargarEncargado(){
             $items = [];
             try {
-                $query = $this->db->connect()->query('SELECT identificacion, nombre, apellido, cargo FROM usuario');
+                $query = $this->db->connect()->query('SELECT identificacion, nombre, apellido, cargo FROM usuario where cargo = "bodeguero"');
+                
                 include_once('models/usuario.php');
                 while ($row = $query->fetch()) {
                     $item = new UsuarioDAO();
