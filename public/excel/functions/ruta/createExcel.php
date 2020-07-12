@@ -147,6 +147,6 @@ header('Content-Type: application/vnd.ms-excel; charset=UTF-8');
 header('Content-Disposition: attachment;filename="Rutas.xls"'); //nombre del documento
 header('Cache-Control: max-age=0');
 	
-$objWriter=PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
+$objWriter=PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel2007');
 $objWriter->save('php://output');
 exit;
