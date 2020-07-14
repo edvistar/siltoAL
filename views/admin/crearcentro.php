@@ -42,17 +42,17 @@ if ($_SESSION['cargo'] != "administrador") {
                                     <small id="nombreHelp" class="form-text text-muted">Diligencie el nombre del Centro</small>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="email">Email</label>
+                                    <label for="email"><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</label>
                                     <input type="email" class="form-control" name="email" id="email" required>
                                     <small id="emailHelp" class="form-text text-muted">Diligencie el email del Centro</small>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="telefono">Telefono</label>
+                                    <label for="telefono"><i class="fa fa-phone" aria-hidden="true"></i>      Telefono</label>
                                     <input type="number" class="form-control" name="telefono" id="telefono" required>
                                     <small id="telefonoHelp" class="form-text text-muted">Diligencie el numero del Centro</small>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="whatsapp">Whatsapp</label><br>
+                                    <label for="whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i> Whatsapp</label><br>
                                     <input class="custom-control-input" required type="radio" name="whatsapp" id="whatsapp1" value="SI" checked>SI
                                     <input class="custom-control-input" type="radio" name="whatsapp" id="whatsapp0" value="NO">NO<br>
                                     <small id="whatsappHelp" class="form-text text-muted">Confirme si tiene whatsapp el numero de telefono ingresado</small>

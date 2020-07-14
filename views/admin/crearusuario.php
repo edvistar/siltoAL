@@ -45,7 +45,7 @@
                                     <small id="apellidoHelp" class="form-text text-muted">Diligencie los apellidos del usuario</small>
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label for="telefono">Numero Telefonico</label>
+                                    <label for="telefono"><i class="fa fa-phone" aria-hidden="true"></i> Numero Telefonico</label>
                                     <input type="number" name="telefono" id="telefono" class="form-control" placeholder="Ej: 304123456" required >
                                     <small id="telefonoHelp" class="form-text text-muted">Diligencie el numero de telefono del usuario</small>
                                 </div>
@@ -57,21 +57,21 @@
                                     <small id="whatsappHelp" class="form-text text-muted">Confirme si tiene whatsapp el numero telefonico ingresado</small>
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label for="email">Email</label>
+                                    <label for="email"><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</label>
                                     <input type="email" name="email" id="email" class="form-control" placeholder="Ej: usuario@gmail.com" required >
                                     <small id="emailHelp" class="form-text text-muted">Diligencie el email del usuario</small>
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label for="pass">Password</label>
+                                    <label for="pass"> <i class="fa fa-key" aria-hidden="true"></i>Password</label>
                                     <input type="password" name="pass" id="pass" class="form-control"required >
                                     <small id="passHelp" class="form-text text-muted">Diligencie la contraseña del email</small>
                                 </div>
 
                                 <div class="form-group col-lg-6">
-                                    <label for="pass">Confirme Password</label>
+                                    <label for="pass"><i class="fa fa-key" aria-hidden="true"></i> Confirme Password</label>
                                     <input type="password" name="pass2" id="passy" class="form-control"required >
                                     <small id="passHelp" class="form-text text-muted">Repita la contraseña del email</small>
-                                    <input type="checkbox" onclick="verPassword()"> Ver Password
+                                    <input type="checkbox" onclick="verPassword()"><i class="fa fa-eye" aria-hidden="true"></i> Ver Password
                                 </div>
                                 <!-- Campo para generar alerta cuando los password no coinciden -->
                                 <div class="text-center" id="alerta"></div>

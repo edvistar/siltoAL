@@ -37,7 +37,7 @@
                                     <small id="apellidoHelp" class="form-text text-muted">Diligencie los apellidos del usuario</small>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="telefono">Numero Telefonico</label>
+                                    <label for="telefono"><i class="fa fa-phone" aria-hidden="true"></i> Numero Telefonico</label>
                                     <input type="number" name="telefono" id="telefono" class="form-control" value="<?php echo $this->usuario->telefono; ?>" placeholder="Ej: 3040000000" required>
                                     <small id="telefonoHelp" class="form-text text-muted">Diligencie el numero de telefono del usuario</small>
                                 </div>
@@ -50,7 +50,7 @@
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="email">Email</label>
+                                    <label for="email"><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</label>
                                     <input type="email" name="email" id="email" class="form-control" value="<?php echo $this->usuario->email; ?>" placeholder="Ej: usuario@gmail.com" required>
                                     <small id="emailHelp" class="form-text text-muted">Diligencie el email del usuario</small>
                                 </div>

@@ -85,7 +85,7 @@
 
                         
                         <div class="form-group col-md-6">
-                            <label for="whatsapp">gps</label><br>
+                            <label for="whatsapp">GPS</label><br>
                             <input class="custom-control-input"required type="radio" name="gps" id="gps1" value="SI" checked>SI
                             <input class="custom-control-input" type="radio" name="gps" id="gps0" value="NO">NO<br>
                             <small id="gpsHelp" class="form-text text-muted">Confirme si tiene whatsapp el numero de telefono ingresado</small>

@@ -47,7 +47,7 @@ if ($_SESSION['cargo'] != "administrador") {
                         </div>
                         <div class="text-center">
                             <button class="btn btn-info">Registrar producto</button>
-                            <button class="btn btn-danger">Cancel</button>
+                            <button class="btn btn-danger">Cancelar</button>
                         </div>
                     </form>
                 </div>

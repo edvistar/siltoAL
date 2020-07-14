@@ -31,7 +31,7 @@ cellColor('A3:I3','bf4914');
 
 //combinar celdas 
 $objPHPExcel->setActiveSheetIndex(0) ->mergeCells('A1:I1') 
-->setCellValue('A1', 'Listado de Rutas');
+->setCellValue('A1', 'Listado de Vehìculos');
 
 //centrar texto lateral  del titulo
 $objPHPExcel->setActiveSheetIndex(0)

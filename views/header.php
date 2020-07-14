@@ -36,12 +36,9 @@
                                     <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
                                         <div class="header-top-menu tabl-d-n">
                                             <ul class="nav navbar-nav mai-top-nav">
-                                            <li>
+                                                <li>
                                                     <a href="<?php echo constant('URL'); ?>perfil">
                                                     <span class="fa fa-user author-log-ic"> Perfil</span></a>
-                                                </li>
-                                                <li>
-                                                    <a href="<?php echo constant('URL'); ?>index/logout"><span ></span> Salir</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -73,13 +70,13 @@
                                                                 }
                                                             ?>
                                                         </span>
-                                                        <i class="fa fa-angle-down adminpro-icon adminpro-down-arrow"></i>
+
                                                     </a>
-                                                   
+
                                                 </li>
-                                                
+
                                                 <li class="nav-item nav-setting-open">
-                                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-tasks"></i></a>
+                                                <a href="<?php echo constant('URL'); ?>index/logout"><span ></span> <i class="fa fa-power-off" aria-hidden="true"></i></a>
                                                 <div role="menu" ></div>
                                                 </li>
                                             </ul>

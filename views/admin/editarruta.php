@@ -45,8 +45,9 @@
                                 <select class="form-control" value="<?php echo $this->ruta->tipo_ruta; ?>" id="tipo_ruta" name="tipo_ruta" style="width:100%" required >
                                     <option value="Acopio">Acopio</option>
                                     <option value="Aeropuerto">Aeropuerto</option>
-                                <small id="tipo_rutaHelp" class="form-text text-muted">Diligencie el tipo de ruta</small>
+                                
                                 </select>
+                                <small id="tipo_rutaHelp" class="form-text text-muted">Diligencie el tipo de ruta</small>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="precinto">Precinto</label>
@@ -54,8 +55,61 @@
                                 <small id="precintoHelp" class="form-text text-muted">Precinto </small>
                             </div>
                             <div class="form-group col-md-4">
+                                <label for="id_solicitud">Descripción de Solicitud</label>
+                                <select class="form-control" id="id_solicitud" name="id_solicitud" required>
+                                <option selected value="<?php echo $this->ruta->id_solicitud;?>"><?php echo $this->ruta->id_solicitud;?></option>
+                                        <?php
+                                            include_once 'models/solicitud.php';
+
+                                            if(count($this->ddl_solicitudes)>0){
+                                                foreach ($this->ddl_solicitudes as $solicitud) {
+                                                $ddl_solicitud = new SolicitudDAO();
+                                                $ddl_solicitud = $solicitud;
+                                                if($this->ruta->id_solicitud==$solicitud->id_solicitud){
+                                                    $seleccionado = "selected";
+                                                }else{
+                                                    $seleccionado = '';
+                                                }
+                                        ?>
+                                                <option <?php echo $seleccionado;?> value="<?php echo $ddl_solicitud->id_solicitud;?>"><?php echo $ddl_solicitud->descripcion;?>
+                                            </option>
+                                                <?php
+                                                }
+                                            }
+                                                ?>
+                                </select>
+                                <small id="id_solicitudHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="id_centro">Centro Solicitante</label>
+                                <select class="form-control" id="id_centro" name="id_centro"  required>
+                                <option selected value="<?php echo $this->ruta->id_centro;?>"><?php echo $this->ruta->id_centro;?></option>
+                                        <?php
+                                            include_once 'models/centro.php';
+
+                                            if(count($this->ddl_centros)>0){
+                                                foreach ($this->ddl_centros as $centro) {
+                                                $ddl_centro = new CentroDAO();
+                                                $ddl_centro = $centro;
+                                                $seleccionado = '';
+                                                if($this->ruta->id_centro==$centro->id_centro){
+                                                    $seleccionado = "selected";
+                                                }else{
+                                                    $seleccionado = '';
+                                                }
+                                        ?>
+                                                <option  <?php echo $seleccionado; ?> value="<?php echo $ddl_centro->id_centro;?>"><?php echo $ddl_centro->nombre;?>
+                                            </option>
+                                                <?php
+                                                }
+                                            }
+                                                ?>
+                                </select>
+                                <small id="id_centroHelp" class="form-text text-muted">Diligencie el centro solicitante.</small>
+                            </div>
+                            <div class="form-group col-md-4">
                                 <label for="identificacion">Encargado de la Solicitud</label>
-                                <select class="form-control" id="identificacion" name="identificacion" style="width:100%" required>
+                                <select class="form-control" id="identificacion" name="identificacion"  required>
 
                                     <option selected value="<?php echo $this->ruta->identificacion;?>"><?php echo $this->ruta->identificacion;?></option>
                                         <?php
@@ -82,7 +136,7 @@
 
                             <div class="form-group col-md-4">
                                 <label for="placa">Vehículo Asignado</label>
-                                <select class="form-control" id="placa" name="placa" style="width:100%" required>
+                                <select class="form-control" id="placa" name="placa"  required>
                                     <option selected value="<?php echo $this->ruta->placa;?>"><?php echo $this->ruta->placa;?></option>
                                         <?php
                                             include_once 'models/vehiculo.php';
@@ -106,66 +160,16 @@
                                 </select>
                                 <small id="placaHelp" class="form-text text-muted">Diligencie la placa del vehiculo</small>
                             </div>
-                            <div class="form-group col-md-4">
-                                <label for="id_centro">Centro Solicitante</label>
-                                <select class="form-control" id="id_centro" name="id_centro" style="width:100%" required>
-                                <option selected value="<?php echo $this->ruta->id_centro;?>"><?php echo $this->ruta->id_centro;?></option>
-                                        <?php
-                                            include_once 'models/centro.php';
-
-                                            if(count($this->ddl_centros)>0){
-                                                foreach ($this->ddl_centros as $centro) {
-                                                $ddl_centro = new CentroDAO();
-                                                $ddl_centro = $centro;
-                                                $seleccionado = '';
-                                                if($this->ruta->id_centro==$centro->id_centro){
-                                                    $seleccionado = "selected";
-                                                }else{
-                                                    $seleccionado = '';
-                                                }
-                                        ?>
-                                                <option  <?php echo $seleccionado; ?> value="<?php echo $ddl_centro->id_centro;?>"><?php echo $ddl_centro->nombre;?>
-                                            </option>
-                                                <?php
-                                                }
-                                            }
-                                                ?>
-                                </select>
-                                <small id="id_centroHelp" class="form-text text-muted">Diligencie el centro solicitante.</small>
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="id_solicitud">Descripción de Solicitud</label>
-                                <select class="form-control" id="id_solicitud" name="id_solicitud" style="width:100%" required>
-                                <option selected value="<?php echo $this->ruta->id_solicitud;?>"><?php echo $this->ruta->id_solicitud;?></option>
-                                        <?php
-                                            include_once 'models/solicitud.php';
-
-                                            if(count($this->ddl_solicitudes)>0){
-                                                foreach ($this->ddl_solicitudes as $solicitud) {
-                                                $ddl_solicitud = new SolicitudDAO();
-                                                $ddl_solicitud = $solicitud;
-                                                if($this->ruta->id_solicitud==$solicitud->id_solicitud){
-                                                    $seleccionado = "selected";
-                                                }else{
-                                                    $seleccionado = '';
-                                                }
-                                        ?>
-                                                <option <?php echo $seleccionado;?> value="<?php echo $ddl_solicitud->id_solicitud;?>"><?php echo $ddl_solicitud->descripcion;?>
-                                            </option>
-                                                <?php
-                                                }
-                                            }
-                                                ?>
-                                </select>
-                                <small id="id_solicitudHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
-                            </div>
+                            
+                            
                             <div class="form-group col-md-4">
                                 <label for="estado">Estado de la ruta</label>
-                                <select class="form-control" value="<?php echo $this->ruta->estado;?>" id="estado" name="estado" style="width:100%" required >
+                                <select class="form-control" value="<?php echo $this->ruta->estado;?>" id="estado" name="estado"  required >
                                     <option value="activo">Activo</option>
                                     <option value="cancelada">Cancelada</option>
-                                <small id="estadoHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                                
                                 </select>
+                                <small id="estadoHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
                             </div>
 
                                 <?php 
@@ -209,7 +213,7 @@
                         </div>
                         <div class="text-center ">
                             <button class="btn btn-info">Editar ruta</button>
-                            <button class="btn btn-danger">Cancel</button>
+                            <button class="btn btn-danger">Cancelar</button>
                         </div>
                     </form>
                 </div>

@@ -23,7 +23,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                 <div id="respuesta"><?php echo $this->mensaje; ?></div>
                                 <h1 class="text-center"><i class="fa fa-eye" aria-hidden="true"></i> Listado de Centros de Acopio</h1>
                                 <div class="row">
-                                <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>/centro/crear")'>Crear Centro</button>
+                                <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>centro/crear")'>Crear Centro</button>
                                 <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/pdf/centro.php")'>PDF</button>
                                 <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/excel/functions/centro/createExcel.php")'>EXCEL</button>
                                 </div><br>
@@ -72,7 +72,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                         }
                                     }else{
                                 ?>
-                                    <tr><td colspan="6" class="text-center">NO HAY CENTROS PROGRAMAS DISPONIBLES</td></tr>
+                                    <tr><td colspan="12" class="text-center">NO HAY CENTROS PROGRAMAS DISPONIBLES</td></tr>
                                 <?php
                                     }
                                 ?>
