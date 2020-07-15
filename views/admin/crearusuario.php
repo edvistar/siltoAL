@@ -62,7 +62,7 @@
                                     <small id="emailHelp" class="form-text text-muted">Diligencie el email del usuario</small>
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label for="pass"> <i class="fa fa-key" aria-hidden="true"></i>Password</label>
+                                    <label for="pass"><i class="fa fa-key" aria-hidden="true"></i>Password</label>
                                     <input type="password" name="pass" id="pass" class="form-control"required >
                                     <small id="passHelp" class="form-text text-muted">Diligencie la contraseña del email</small>
                                 </div>

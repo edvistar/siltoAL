@@ -34,7 +34,7 @@ if ($_SESSION['cargo'] != "administrador") {
                             <div class="form-group col-md-6">
                                 <label for="id_centro">Centro Solicitante</label>
                                 <select class="form-control" id="id_centro" name="id_centro" style="width:100%" required >
-                                    <option selected value="">seleccione...</option>
+                                    <option selected value="">Seleccione...</option>
                                         <?php
                                             include_once 'models/centro.php';
 
@@ -55,7 +55,7 @@ if ($_SESSION['cargo'] != "administrador") {
                             <div class="form-group col-md-6">
                                 <label for="identificacion">Encargado de centro</label>
                                 <select class="form-control" id="identificacion" name="identificacion" style="width:100%" required >
-                                    <option selected value="">seleccione...</option>
+                                    <option selected value="">Seleccione...</option>
                                         <?php
                                             include_once 'models/usuario.php';
 

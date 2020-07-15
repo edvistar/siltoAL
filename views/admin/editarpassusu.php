@@ -9,9 +9,9 @@
 
     <?php require 'views/header.php'; ?>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
-            <div class="col-md-8 col-md-8 col-sm-8 col-xs-12">
+        <div class="row container">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="text-center custom-login">
                     <h3><i class="fa fa-user" aria-hidden="true"></i> Reestablecer el password </h3>
                     <p>Todos los campos son obligatorios</p>
@@ -22,7 +22,6 @@
                     <div class="panel-body">
                         <form action="<?php echo constant('URL'); ?>pass_usu/editar" method="POST" enctype="multipart/form-data" id="formulariopass">
                             <div class="row">
-
                                 <input type="hidden" class="form-control" value="<?php echo $this->usuario->identificacion; ?>" name="identificacion" id="identificacion" readonly>
 
                                 <input type="hidden" name="nombre" id="nombre" class="form-control" value="<?php echo $this->usuario->nombre; ?>">
@@ -42,34 +41,33 @@
                                 <input type="hidden" name="fotoriginal" value="<?php echo $this->usuario->foto; ?>">
 
 
-                                <div class="form-group">
+                                <div class="form-group col-md-12">
                                     <label for="pass">Nuevo Password</label>
                                     <input type="password" name="pass" id="pass"  class="form-control" placeholder="*****" required>
                                     <small id="passHelp" class="form-text text-muted">Digite el nuevo Password a asignar</small>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group col-md-12">
                                     <label for="pass">Confirme Password</label>
                                     <input type="password" name="passy" id="passy"  class="form-control" placeholder="*****" required>
                                     <small id="passHelp" class="form-text text-muted">Confirme el nuevo Password</small><br>
                                     <input type="checkbox" onclick="verPassword2()"> Ver Password
                                 </div>
-                            </div>
+                                <!-- Campo para generar alerta cuando los password no coinciden -->
+                                <div class="text-center" id="alerta"></div>
 
-                            <!-- Campo para generar alerta cuando los password no coinciden -->
-                            <div class="text-center" id="alerta"></div>
-
-                            <div class="text-center">
-                                <input type="submit" class="btn btn-info" value="Actualizar Password" onclick="validapassword();">
-                                <input type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL') . 'usuario/leer/' . $_SESSION['usuactual']; ?>")' value="Cancelar">
+                                <div class="text-center col-md-12">
+                                    <input type="submit" class="btn btn-info" value="Actualizar Password" onclick="validapassword();">
+                                    <input type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL') . 'usuario/leer/' . $_SESSION['usuactual']; ?>")' value="Cancelar">
+                                </div>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
         </div>
-    </div>
+    </div><br>
     <?php require 'views/footer.php'; ?>
 </body>
 

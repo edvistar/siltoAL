@@ -62,7 +62,7 @@ if ($_SESSION['cargo'] != "administrador") {
                             <div class="form-group col-md-4">
                                 <label for="id_solicitud">Descripción de Solicitud</label>
                                 <select class="form-control" id="id_solicitud" name="id_solicitud" required >
-                                    <option selected value="">seleccione...</option>
+                                    <option selected value="">Seleccione...</option>
                                     <?php    
                                             include_once 'models/solicitud.php';
 
@@ -84,7 +84,7 @@ if ($_SESSION['cargo'] != "administrador") {
                             <div class="form-group col-md-4">
                                 <label for="id_centro">Centro Solicitante</label>
                                 <select class="form-control" id="id_centro" name="id_centro" required >
-                                    <option selected value="">seleccione...</option>
+                                    <option selected value="">Seleccione...</option>
                                         <?php
                                             include_once 'models/centro.php';
 
@@ -105,7 +105,7 @@ if ($_SESSION['cargo'] != "administrador") {
                             <div class="form-group col-md-4">
                                 <label for="identificacion">Encargado del centro</label>
                                 <select class="form-control" id="identificacion" name="identificacion"  required >
-                                    <option selected value="">seleccione...</option>
+                                    <option selected value="">Seleccione...</option>
                                         <?php
                                             include_once 'models/usuario.php';
 
@@ -126,7 +126,7 @@ if ($_SESSION['cargo'] != "administrador") {
                             <div class="form-group col-md-4">
                                 <label for="placa">Asignar Vehículo</label>
                                 <select class="form-control" id="placa" name="placa"  required >
-                                    <option selected value="">seleccione...</option>
+                                    <option selected value="">Seleccione...</option>
                                         <?php
                                             include_once 'models/vehiculo.php';
 
@@ -184,7 +184,7 @@ if ($_SESSION['cargo'] != "administrador") {
                             <div class="form-group col-md-12">
                                 <label for="observaciones">Observaciones</label>
                                 <textarea  class="form-control" name="observaciones" id="observaciones" cols="30" rows="10" required ></textarea>
-                                <small id="observacionesHelp" class="form-text text-muted">Observaciones</small>
+                                <small id="observacionesHelp" class="form-text text-muted">Observaciones de la ruta creada</small>
                             </div>
                         </div>
                         <div class="text-center ">

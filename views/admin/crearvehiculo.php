@@ -73,7 +73,7 @@ if ($_SESSION['cargo'] != "administrador") {
                         <div class="form-group col-md-6">
                                 <label for="identificacion">Conductor</label>
                                 <select class="form-control" id="identificacion" name="identificacion" style="width:100%" required >
-                                    <option selected value="">seleccione...</option>
+                                    <option selected value="">Seleccione...</option>
                                                 
                                         <?php
                                             include_once 'models/usuario.php';

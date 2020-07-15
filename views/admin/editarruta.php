@@ -38,14 +38,13 @@
                             <div class="form-group col-md-4">
                                 <label for="hora_llegada">Hora Llegada</label>
                                 <input type="time" class="form-control" value="<?php echo $this->ruta->hora_llegada; ?>"   name="hora_llegada" id="hora_llegada" required>
-                                <small id="hora_llegadaHelp" class="form-text text-muted">Diligencie la hora de llegada</small>
+                                <small id="hora_llegadaHelp" class="form-text text-muted">Hora de llegada de la ruta</small>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="tipo_ruta">Tipo de la ruta</label>
-                                <select class="form-control" value="<?php echo $this->ruta->tipo_ruta; ?>" id="tipo_ruta" name="tipo_ruta" style="width:100%" required >
+                                <select class="form-control" value="<?php echo $this->ruta->tipo_ruta; ?>" id="tipo_ruta" name="tipo_ruta"  required >
                                     <option value="Acopio">Acopio</option>
                                     <option value="Aeropuerto">Aeropuerto</option>
-                                
                                 </select>
                                 <small id="tipo_rutaHelp" class="form-text text-muted">Diligencie el tipo de ruta</small>
                             </div>
@@ -160,14 +159,13 @@
                                 </select>
                                 <small id="placaHelp" class="form-text text-muted">Diligencie la placa del vehiculo</small>
                             </div>
-                            
-                            
+
                             <div class="form-group col-md-4">
                                 <label for="estado">Estado de la ruta</label>
                                 <select class="form-control" value="<?php echo $this->ruta->estado;?>" id="estado" name="estado"  required >
                                     <option value="activo">Activo</option>
                                     <option value="cancelada">Cancelada</option>
-                                
+
                                 </select>
                                 <small id="estadoHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
                             </div>
@@ -208,7 +206,7 @@
                             <div class="form-group col-md-12">
                                 <label for="observaciones">Observaciones</label>
                                 <textarea  class="form-control" name="observaciones" id="observaciones" cols="30" rows="10"  required value="<?php echo $this->ruta->observaciones; ?>" ><?php echo $this->ruta->observaciones; ?></textarea>
-                                <small id="observacionesHelp" class="form-text text-muted">Observaciones</small>
+                                <small id="observacionesHelp" class="form-text text-muted">Observaciones de la creación de la ruta</small>
                             </div>
                         </div>
                         <div class="text-center ">
@@ -224,6 +222,5 @@
 </div><br>
 
     <?php require 'views/footer.php'; ?>
-    
 </body>
 </html>
