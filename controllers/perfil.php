@@ -32,7 +32,6 @@ class Perfil extends Controller{
             $usuario->nombre         = $_POST['nombre'];
             $usuario->apellido       = $_POST['apellido'];
             $usuario->email          = $_POST['email'];
-            $usuario->pass           = $_POST['pass'];
             $usuario->telefono       = $_POST['telefono'];
             $usuario->whatsapp       = $_POST['whatsapp'];
             $usuario->cargo          = $_POST['cargo'];

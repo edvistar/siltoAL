@@ -1,16 +1,10 @@
 <?php
-require_once '../excel.php';
-
-activeErrorReporting(); 
-
-noCli();
 
 require_once '../../Classes/PHPExcel.php';
 require '../conexion.php';
 require '../modulos.php';
 
 $objPHPExcel = new PHPExcel();
-
 
 $objPHPExcel->getProperties()->setCreator("SILTO")
                ->setLastModifiedBy("Maarten Balliauw")
@@ -23,19 +17,89 @@ $objPHPExcel->getProperties()->setCreator("SILTO")
 $objPHPExcel->getDefaultStyle()->getFont()->setName('Arial Narrow Bold')->setSize(15);  
 
 
+//MODIFICACIONES
+function cellColor($cells,$color){
+  global $objPHPExcel;
+
+  $objPHPExcel->setActiveSheetIndex(0)->getStyle($cells)->getFill()->applyFromArray(array(
+      'type' => PHPExcel_Style_Fill::FILL_SOLID,
+      'startcolor' => array(
+           'rgb' => $color
+      )
+  ));
+}
+cellColor('A3:J3','bf4914');
+
+$objPHPExcel->setActiveSheetIndex(0) ->mergeCells('A1:J1') 
+->setCellValue('A1', ' Listado De Centros ');
 
 $objPHPExcel->setActiveSheetIndex(0)
-            ->setCellValue('A1', 'id_centro')
-            ->setCellValue('B1', 'nombrecentro')
-            ->setCellValue('C1', 'email')
-            ->setCellValue('D1', 'telefono')
-            ->setCellValue('E1', 'whatsapp')
-            ->setCellValue('F1', 'departamento')
-            ->setCellValue('G1', 'ciudad')
-            ->setCellValue('H1', 'nombreusuario')
-            ->setCellValue('I1', 'lugar');
- $informe = getcentro();
- $i = 2; 
+->getStyle('A1:J1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+
+
+
+//color de texto
+$objPHPExcel->setActiveSheetIndex(0)
+->getStyle('A1:J1')->getFont()->getColor()->setARGB('bf4914');
+
+
+//color de texto
+$objPHPExcel->setActiveSheetIndex(0)
+->getStyle('A3:J3')->getFont()->getColor()->setARGB(PHPExcel_Style_Color::COLOR_WHITE);
+
+$objPHPExcel->getDefaultStyle()->getFont('A3:I3')->setName('Arial Narrow Bold')->setSize(13); 
+
+//ANCHO DE 
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('A')->setWidth(10,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('B')->setWidth(14,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('C')->setWidth(30,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('D')->setWidth(15,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('E')->setWidth(13,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('F')->setWidth(20,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('G')->setWidth(14,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('H')->setWidth(20,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('I')->setWidth(15,78);
+
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('J')->setWidth(25,78);
+//FIN DE MODIFICACIONES
+
+//FIN DE MODIFICACIONES
+
+
+
+$objPHPExcel->setActiveSheetIndex(0)
+            ->setCellValue('A3', 'Id Centro')
+            ->setCellValue('B3', 'Nombre')
+            ->setCellValue('C3', 'Email')
+            ->setCellValue('D3', 'Telefono')
+            ->setCellValue('E3', 'Whatsapp')
+            ->setCellValue('F3', 'Departamento')
+            ->setCellValue('G3', 'Ciudad')
+            ->setCellValue('H3', 'Encargado')
+            ->setCellValue('I3', 'Tipo Centro')
+            ->setCellValue('J3', 'Direccion');
+ 
+$informe = getcentro();
+ $i = 4; 
    while($row = $informe->fetch_array(MYSQLI_ASSOC))
             {
                 $objPHPExcel->setActiveSheetIndex(0)
@@ -47,18 +111,21 @@ $objPHPExcel->setActiveSheetIndex(0)
                 ->setCellValue("F$i", $row['departamento'])
                 ->setCellValue("G$i", $row['ciudad'])
                 ->setCellValue("H$i", $row['nombreusuario'])
-                ->setCellValue("I$i", $row['lugar']);
+                ->setCellValue("I$i", $row['tipo_centro'])
+                ->setCellValue("J$i", $row['direccion']);
 
     $i++;
             }
   $objPHPExcel->getActiveSheet()->setTitle('Informe de producto');
 
 
-            
+
 $objPHPExcel->setActiveSheetIndex(0);
 
-getHeaders();
-
-$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+header('Content-Type: application/vnd.ms-excel; charset=UTF-8');
+header('Content-Disposition: attachment;filename="Centros.xls"'); //nombre del documento
+header('Cache-Control: max-age=0');
+	
+$objWriter=PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
 $objWriter->save('php://output');
 exit;

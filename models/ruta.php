@@ -12,6 +12,7 @@
         public $id_centro;
         public $variedad_productos;
         public $id_solicitud;
+        public $estado;
         public $observaciones;
     }
 

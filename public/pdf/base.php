@@ -1,4 +1,5 @@
 <?php
-    $mysqli = new mysqli("localhost", "root", "", "silto");
+include '../../config/config.php';
+    $mysqli = new mysqli(constant('HOST'),constant('USER'), constant('PASSWORD'), constant('DB'));
 
 ?>

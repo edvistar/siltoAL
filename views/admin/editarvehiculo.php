@@ -31,19 +31,19 @@
                         <div class="form-group col-md-6">
                             <label for="capacidad"> Capacidad del vehículo</label>
                             <input type="text" class="form-control" value="<?php echo $this->vehiculo->capacidad; ?>" name="capacidad" id="capacidad" required>
-                            <small id="capadidadHelp" class="form-text text-muted">Capacidad de carga del vehiculo</small>
+                            <small id="capadidadHelp" class="form-text text-muted">Digite  fecha de vencimiento de la poliza del seguro</small>
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="seguro">Seguro del vehículo</label>
+                            <label for="seguro">Vencimiento seguro del vehículo</label>
                             <input type="date" class="form-control" value="<?php echo $this->vehiculo->seguro; ?>" name="seguro" id="seguro" required>
                             <small id="seguroHelp" class="form-text text-muted">Digite numero de la poliza del seguro</small>
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="tecnomecanica">Tecnomecanica del vehículo</label>
+                            <label for="tecnomecanica">Vencimiento tecnomecánica del vehículo</label>
                             <input type="date" class="form-control" value="<?php echo $this->vehiculo->tecnomecanica; ?>" name="tecnomecanica" id="tecnomecanica" required>
-                            <small id="tecnomecanicaHelp" class="form-text text-muted">Fecha de vencimiento del la tecnomecanica del vehículo</small>
+                            <small id="tecnomecanicaHelp" class="form-text text-muted"> Digite la fecha de vencimiento del la tecnomecánica del vehículo</small>
                         </div>
 
                         <div class="form-group col-md-6">
@@ -56,14 +56,11 @@
                             </select>
                             <small id="tipo_vehiculoHelp" class="form-text text-muted">Tipo de vehículo</small>
                         </div>
-
-
-
-                        <div class="form-group col-md-6">
-                                <label for="identificacion">Encargado</label>
+                        <div class="form-group col-md-4">
+                                <label for="identificacion">Conductor</label>
                                 <select class="form-control" id="identificacion" name="identificacion" style="width:100%" required>
-                                <option selected value="<?php echo $this->vehiculo->identificacion; ?>"><?php echo $this->vehiculo->identificacion; ?></option>
-                                
+
+                                    <option selected value="<?php echo $this->vehiculo->identificacion;?>"><?php echo $this->vehiculo->identificacion;?></option>
                                         <?php
                                             include_once 'models/usuario.php';
 
@@ -71,19 +68,24 @@
                                                 foreach ($this->ddl_usuarios as $usuario) {
                                                 $ddl_usuario = new UsuarioDAO();
                                                 $ddl_usuario = $usuario;
+                                                if($this->vehiculo->identificacion==$usuario->identificacion){
+                                                    $seleccionado = "selected";
+                                                }else{
+                                                    $seleccionado = '';
+                                                }
                                         ?>
-                                                <option  value="<?php echo $ddl_usuario->identificacion;?>"><?php echo $ddl_usuario->identificacion;?>-<?php echo $ddl_usuario->nombre;?>-<?php echo $ddl_usuario->apellido; ?>-<?php echo $ddl_usuario->cargo; ?></option>
+                                                <option <?php echo $seleccionado; ?>  value="<?php echo $ddl_usuario->identificacion; ?>"><?php echo $ddl_usuario->identificacion; ?>-<?php echo $ddl_usuario->nombre; ?>-<?php echo $ddl_usuario->apellido; ?>-<?php echo $ddl_usuario->cargo; ?></option>
                                                 <?php
                                                 }
                                             }
                                                 ?>
                                 </select>
-                                <small id="identificacionHelp" class="form-text text-muted">Debe elegir nuevamente el encargado del centro</small>
+                                <small id="identificacionHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
                             </div>
 
                         
                         <div class="form-group col-md-6">
-                            <label for="whatsapp">gps</label><br>
+                            <label for="whatsapp">GPS</label><br>
                             <input class="custom-control-input"required type="radio" name="gps" id="gps1" value="SI" checked>SI
                             <input class="custom-control-input" type="radio" name="gps" id="gps0" value="NO">NO<br>
                             <small id="gpsHelp" class="form-text text-muted">Confirme si tiene whatsapp el numero de telefono ingresado</small>

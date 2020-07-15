@@ -1,10 +1,4 @@
 <?php
-require_once '../excel.php';
-
-activeErrorReporting(); 
-
-noCli();
-
 require_once '../../Classes/PHPExcel.php';
 require '../conexion.php';
 require '../modulos.php';
@@ -22,21 +16,80 @@ $objPHPExcel->getProperties()->setCreator("SILTO")
 
 $objPHPExcel->getDefaultStyle()->getFont('A1:I1')->setName('Arial Narrow Bold')->setSize(15);  
 
-
+//MODIFICACIONES
+//FUCION DEL COLOR DE LAS CELDAS
+function cellColor($cells,$color){
+  global $objPHPExcel;
+  $objPHPExcel->setActiveSheetIndex(0)->getStyle($cells)->getFill()->applyFromArray(array(
+      'type' => PHPExcel_Style_Fill::FILL_SOLID,
+      'startcolor' => array(
+           'rgb' => $color
+      )
+  ));
+}
+cellColor('A3:I3','bf4914');
+//COMBINAR CELDAS 
+$objPHPExcel->setActiveSheetIndex(0) ->mergeCells('A1:I1') 
+->setCellValue('A1', 'Listado de Usuarios');
 
 $objPHPExcel->setActiveSheetIndex(0)
-            ->setCellValue('A1', 'Identificacion')
-            ->setCellValue('B1', 'Nombre')
-            ->setCellValue('C1', 'Apellido')
-            ->setCellValue('D1', 'Email')
-            ->setCellValue('E1', 'telefono')
-            ->setCellValue('F1', 'whatsapp')
-            ->setCellValue('G1', 'cargo')
-            ->setCellValue('H1', 'estado')
-            ->setCellValue('I1', 'Fecha de ingreso');
+->getStyle('A1:I1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+
+//color de texto
+$objPHPExcel->setActiveSheetIndex(0)
+->getStyle('A1:I1')->getFont()->getColor()->setARGB('bf4914');
+
+
+//color de texto
+$objPHPExcel->setActiveSheetIndex(0)
+->getStyle('A3:I3')->getFont()->getColor()->setARGB(PHPExcel_Style_Color::COLOR_WHITE);
+
+$objPHPExcel->getDefaultStyle()->getFont('A3:I3')->setName('Arial Narrow Bold')->setSize(13); 
+
+//ANCHO DE 
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('A')->setWidth(14,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('B')->setWidth(30,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('C')->setWidth(30,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('D')->setWidth(35,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('E')->setWidth(14,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('F')->setWidth(14,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('G')->setWidth(14,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('H')->setWidth(10,78);
+
+$objPHPExcel->setActiveSheetIndex(0)
+->getColumnDimension('I')->setWidth(18,78);
+//FIN DE MODIFICACIONES
+
+
+
+$objPHPExcel->setActiveSheetIndex(0) 
+            ->setCellValue('A3', 'Identificacion')
+            ->setCellValue('B3', 'Nombre')
+            ->setCellValue('C3', 'Apellido')
+            ->setCellValue('D3', 'Email')
+            ->setCellValue('E3', 'Telefono')  
+            ->setCellValue('F3', 'Whatsapp')  
+            ->setCellValue('G3', 'Cargo')  
+            ->setCellValue('H3', 'Estado')  
+            ->setCellValue('I3', 'Fecha de ingreso');
 
  $informe = getusuario();
- $i = 2; 
+ $i = 4; 
    while($row = $informe->fetch_array(MYSQLI_ASSOC))
             {
                 $objPHPExcel->setActiveSheetIndex(0)
@@ -59,8 +112,10 @@ $objPHPExcel->setActiveSheetIndex(0)
             
 $objPHPExcel->setActiveSheetIndex(0);
 
-getHeaders();
-
-$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+header('Content-Type: application/vnd.ms-excel; charset=UTF-8');
+header('Content-Disposition: attachment;filename="Usuarios.xls"'); //nombre del documento
+header('Cache-Control: max-age=0');
+	
+$objWriter=PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
 $objWriter->save('php://output');
 exit;

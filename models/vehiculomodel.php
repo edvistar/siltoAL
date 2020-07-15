@@ -43,7 +43,7 @@
         public function cargarEncargado(){
             $items = [];
             try {
-                $query = $this->db->connect()->query('SELECT identificacion, nombre, apellido, cargo FROM usuario');
+                $query = $this->db->connect()->query('SELECT identificacion, nombre, apellido, cargo FROM usuario where cargo="conductor"');
                 include_once('models/usuario.php');
                 while ($row = $query->fetch()) {
                     $item = new UsuarioDAO();
@@ -66,7 +66,7 @@
             $items = [];
             try{
                 $query = $this->db->connect()->query('SELECT  veh.placa, veh.capacidad, veh.seguro, veh.tecnomecanica,
-                veh.tipo_vehiculo,   veh.gps,  veh.fecha_registro, usu.nombre as nombreconductor, veh.estado
+                veh.tipo_vehiculo,   veh.gps,  veh.fecha_registro as registro, usu.nombre as nombreconductor, veh.estado
                 FROM vehiculo as veh
                 INNER JOIN usuario as usu on usu.identificacion=veh.identificacion
 
@@ -83,7 +83,7 @@
                     $item->gps             = $row['gps'];
                     $item->estado          = $row['estado'];
                     $item->identificacion  = $row['nombreconductor'];
-                    $item->fecha_registro  = $row['fecha_registro'];
+                    $item->fecha_registro  = $row['registro'];
 
                     array_push($items, $item);
                 }
@@ -99,11 +99,9 @@
         public function readById($id){
             $item = new vehiculoDAO();
             try{
-                $query = $this->db->connect()->prepare('SELECT veh.placa, veh.capacidad, veh.seguro, veh.tecnomecanica,
-                veh.tipo_vehiculo,   veh.gps,  veh.fecha_registro, usu.nombre as nombreconductor, veh.estado as estadovehiculo
-                FROM vehiculo as veh
-                INNER JOIN usuario as usu on usu.identificacion=veh.identificacion
-                 WHERE placa = :id'); //campo placa sera igual a uvardiale id
+                $query = $this->db->connect()->prepare('SELECT placa, capacidad, seguro, tecnomecanica,
+                tipo_vehiculo, gps, fecha_registro, identificacion, estado
+                FROM vehiculo WHERE placa = :id'); //campo placa sera igual a uvardiale id
 
                 $query->execute(['id' => $id]);
 
@@ -114,8 +112,8 @@
                     $item->tecnomecanica   = $row['tecnomecanica'];
                     $item->tipo_vehiculo   = $row['tipo_vehiculo'];
                     $item->gps             = $row['gps'];
-                    $item->estado          = $row['estadovehiculo'];
-                    $item->identificacion  = $row['nombreconductor'];
+                    $item->estado          = $row['estado'];
+                    $item->identificacion  = $row['identificacion'];
                     $item->fecha_registro  = $row['fecha_registro'];
                 }
                 return $item;

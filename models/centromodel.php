@@ -9,7 +9,7 @@
         public function create($datos = null){
             // insertar
             //if(!isset($datos)){
-                $sentenceSQL="INSERT INTO centro( id_centro, nombre, email, telefono, whatsapp, departamento, ciudad, identificacion, lugar) VALUES( :id_centro, :nombre, :email, :telefono, :whatsapp, :departamento, :ciudad, :identificacion, :lugar)";
+                $sentenceSQL="INSERT INTO centro( id_centro, nombre, email, telefono, whatsapp, departamento, ciudad, identificacion, tipo_centro, direccion) VALUES( :id_centro, :nombre, :email, :telefono, :whatsapp, :departamento, :ciudad, :identificacion, :tipo_centro, :direccion)";
                 $connexionDB=$this->db->connect();
                 $query = $connexionDB->prepare($sentenceSQL);
 
@@ -23,7 +23,8 @@
                                     'departamento'    => $datos['departamento'],
                                     'ciudad'          => $datos['ciudad'],
                                     'identificacion'  => $datos['identificacion'],
-                                    'lugar'           => $datos['lugar']
+                                    'tipo_centro'           => $datos['tipo_centro'],
+                                    'direccion'           => $datos['direccion']
 
                     ]);
                     return true;
@@ -42,7 +43,7 @@
         public function read(){
             $items = [];
             try{
-                $query = $this->db->connect()->query('SELECT cent.id_centro, cent.nombre as nombrecentro, cent.email, cent.telefono, cent.whatsapp, depa.departamento, ciud.ciudad, usu.nombre as nombreusuario, cent.lugar 
+                $query = $this->db->connect()->query('SELECT cent.id_centro, cent.nombre as nombrecentro, cent.email, cent.telefono, cent.whatsapp, depa.departamento, ciud.ciudad, usu.nombre as nombreusuario, cent.tipo_centro, cent.direccion 
                 FROM centro as cent
                 INNER JOIN departamentos as depa on depa.idDepa=cent.departamento
                 INNER JOIN ciudades as ciud on ciud.idCiud=cent.ciudad
@@ -60,7 +61,8 @@
                     $item->departamento     = $row['departamento'];
                     $item->ciudad           = $row['ciudad'];
                     $item->identificacion   = $row['nombreusuario'];
-                    $item->lugar            = $row['lugar'];
+                    $item->tipo_centro      = $row['tipo_centro'];
+                    $item->direccion        = $row['direccion'];
 
                     array_push($items, $item);
                 }
@@ -75,26 +77,26 @@
         public function readById($id){
             $item = new CentroDAO();
             try{
-                $query = $this->db->connect()->prepare('SELECT cent.id_centro, cent.nombre as nombrecentro, cent.email, cent.telefono, cent.whatsapp, depa.departamento, ciud.ciudad, usu.nombre as nombreusuario, cent.lugar 
+                $query = $this->db->connect()->prepare('SELECT  cent.id_centro, cent.nombre ,  cent.email,  cent.telefono,  cent.whatsapp, depa.departamento, ciud.ciudad, cent.identificacion, cent.tipo_centro, cent.direccion 
                 FROM centro as cent
                 INNER JOIN departamentos as depa on depa.idDepa=cent.departamento
                 INNER JOIN ciudades as ciud on ciud.idCiud=cent.ciudad
-                INNER JOIN usuario as usu on usu.identificacion=cent.identificacion
-                
+
                 WHERE id_centro = :id');
 
                 $query->execute(['id' => $id]);
 
                 while($row = $query->fetch()){
                     $item->id_centro       = $row['id_centro'];
-                    $item->nombre          = $row['nombrecentro'];
+                    $item->nombre          = $row['nombre'];
                     $item->email           = $row['email'];
                     $item->telefono        = $row['telefono'];
                     $item->whatsapp        = $row['whatsapp'];
                     $item->departamento    = $row['departamento'];
                     $item->ciudad          = $row['ciudad'];
-                    $item->identificacion  = $row['nombreusuario'];
-                    $item->lugar           = $row['lugar'];
+                    $item->identificacion  = $row['identificacion'];
+                    $item->tipo_centro           = $row['tipo_centro'];
+                    $item->direccion           = $row['direccion'];
                 }
                 return $item;
             }catch(PDOException $e){
@@ -105,7 +107,7 @@
             }
         }
         public function update($item){
-            $query = $this->db->connect()->prepare('UPDATE centro SET  email = :email, telefono = :telefono, whatsapp = :whatsapp, identificacion = :identificacion, lugar = :lugar WHERE id_centro = :id_centro');
+            $query = $this->db->connect()->prepare('UPDATE centro SET  email = :email, telefono = :telefono, whatsapp = :whatsapp, identificacion = :identificacion, tipo_centro = :tipo_centro, direccion = :direccion WHERE id_centro = :id_centro');
             try{
                 $query->execute([
                     'id_centro'      => $item['id_centro'],
@@ -116,7 +118,8 @@
                     //'departamento'   => $item['departamento'],
                     //'ciudad'         => $item['ciudad'],
                     'identificacion' => $item['identificacion'],
-                    'lugar'          => $item['lugar']
+                    'tipo_centro'          => $item['tipo_centro'],
+                    'direccion'          => $item['direccion']
                 ]);
                 return true;
             }catch(PDOException $e){
@@ -144,7 +147,8 @@
         public function cargarEncargado(){
             $items = [];
             try {
-                $query = $this->db->connect()->query('SELECT identificacion, nombre, apellido, cargo FROM usuario');
+                $query = $this->db->connect()->query('SELECT identificacion, nombre, apellido, cargo FROM usuario where cargo = "bodeguero"');
+                
                 include_once('models/usuario.php');
                 while ($row = $query->fetch()) {
                     $item = new UsuarioDAO();

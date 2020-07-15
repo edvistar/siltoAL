@@ -23,7 +23,7 @@ if ($_SESSION['cargo'] != "administrador") {
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
         <div class="col-md-6 col-md-6 col-sm-6 col-xs-12">
             <div class="text-center custom-login mt-20px">
-                <h3><i class="fa fa-edit" aria-hidden="true"></i> Registro Solicitud</h3>
+                <h3><i class="fa fa-edit" aria-hidden="true"></i> Registro de Solicitud de Vehículo</h3>
                 <p>Todos los campos son obligatorios</p>
             </div>
             <div class="center"><?php echo $this->mensaje;?></div>
@@ -34,7 +34,7 @@ if ($_SESSION['cargo'] != "administrador") {
                             <div class="form-group col-md-6">
                                 <label for="id_centro">Centro Solicitante</label>
                                 <select class="form-control" id="id_centro" name="id_centro" style="width:100%" required >
-                                    <option selected value="">seleccione...</option>
+                                    <option selected value="">Seleccione...</option>
                                         <?php
                                             include_once 'models/centro.php';
 
@@ -55,7 +55,7 @@ if ($_SESSION['cargo'] != "administrador") {
                             <div class="form-group col-md-6">
                                 <label for="identificacion">Encargado de centro</label>
                                 <select class="form-control" id="identificacion" name="identificacion" style="width:100%" required >
-                                    <option selected value="">seleccione...</option>
+                                    <option selected value="">Seleccione...</option>
                                         <?php
                                             include_once 'models/usuario.php';
 

@@ -19,27 +19,30 @@ if ($_SESSION['cargo'] != "administrador") {
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="product-status-wrap">
-                        <div id="main" class="container">
-                            <div><?php echo $this->mensaje; ?></div>
+                        <div id="main" class="container-fluid">
+                            <div id="respuesta"><?php echo $this->mensaje; ?></div>
                             <h1 class="text-center"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Listado de Productos </h1>
                             <div class=" row">
                             <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>producto/crear")'>Crear Producto</button>
                             <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/pdf/producto.php")'>PDF</button>
                             <button type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>public/excel/functions/productos/createExcel.php")'>EXCEL</button>
-                            <br>
-                            </div>
+                           
+                            </div> <br>
+                            <div class="row">
                             
 
-                            <table id="tabla" class="table table-hover">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th  scope="col">Id</th>
+                            <table id="tabla" class="table table-hover table table-bordered" >
+                                <thead >
+                                    <tr class="text-center btn-warning">
+                                        <th  scope="col">Código Producto</th>
                                         <th  scope="col">Nombre</th>
                                         <th  scope="col">Costo</th>
-                                        <th  scope="col" colspan="2" class="text-center">Acciones</th>
+                                        <th  scope="col">Editar</th>
+                                        <th  scope="col"><b class="text-center">Eliminar</b></th>
+                                        
                                     </tr>
                                 </thead>
-                                <tbody id="tbody-data">
+                                <tbody id="tbody-data" class="table table-sm">
                             <?php
                                 include_once 'models/producto.php';
                                 if(count($this->productos)>0){
@@ -51,8 +54,8 @@ if ($_SESSION['cargo'] != "administrador") {
                                             <td><?php echo $producto->id_producto; ?>
                                             <td><?php echo $producto->nombre; ?>
                                             <td><?php echo $producto->costo; ?>
-                                            <td><a href="<?php echo constant('URL') . 'producto/leer/' . $producto->id_producto; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a></td>
-                                            <td><button class="bEliminar" data-controlador="producto" data-accion="eliminar" data-id="<?php echo $producto->id_producto; ?>"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</button></td>
+                                            <td><button class="btn-info text-center"><a href="<?php echo constant('URL') . 'producto/leer/' . $producto->id_producto; ?>" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></button></td>
+                                            <td><button class="bEliminar btn-danger" data-url="<?php echo constant('URL');?>" data-controlador="producto" data-accion="eliminar" data-id="<?php echo $producto->id_producto; ?>"><i class="fa fa-trash-o" aria-hidden="true"></button></td>
                                         </tr>
                             <?php
                                     }
@@ -75,6 +78,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                         <li class="page-item"><a class="page-link" href="">Next</a></li>
                                     </ul>
                                 </nav>
+                            </div>
                             </div>
                         </div>
                     </div>

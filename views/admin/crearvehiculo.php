@@ -20,7 +20,7 @@ if ($_SESSION['cargo'] != "administrador") {
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
         <div class="col-md-8 col-md-8 col-sm-8 col-xs-12">
             <div class="text-center custom-login mt-20px">
-                <h3><i class="fa fa-truck" aria-hidden="true"></i> Registro Vehiculo</h3>
+                <h3><i class="fa fa-truck" aria-hidden="true"></i> Registro Vehìculo</h3>
                 <p>Todos los campos son obligatorios</p>
             </div>
             <div class="center"><?php echo $this->mensaje;?></div>
@@ -40,23 +40,23 @@ if ($_SESSION['cargo'] != "administrador") {
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="seguro">Seguro del vehículo</label>
+                            <label for="seguro">Vencimiento seguro del vehículo</label>
                             <input type="date" class="form-control" name="seguro" id="seguro" required >
-                            <small id="seguroHelp" class="form-text text-muted">Digite datos de la poliza del seguro</small>
+                            <small id="seguroHelp" class="form-text text-muted">Digite  fecha de vencimiento de la poliza del seguro</small>
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="tecnomecanica">Tecnomecánica del vehículo</label>
+                            <label for="tecnomecanica">Vencimiento tecnomecánica del vehículo</label>
                             <input type="date" class="form-control" name="tecnomecanica" id="tecnomecanica" required >
-                            <small id="tecnomecanicaHelp" class="form-text text-muted">Fecha de vencimiento del la tecnomecánica del vehículo</small>
+                            <small id="tecnomecanicaHelp" class="form-text text-muted"> Digite la fecha de vencimiento de la tecnomecánica del vehículo</small>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="tipo_vehiculo">Tipo de vehículo</label>
                             <select  class="form-control" name="tipo_vehiculo" id="tipo_vehiculo"  required >
-                                <option selected value="">Seleccione tipo de vehiculo</option>
-                                <option value="furgon">Furgon</option>
-                                <option value="tractocaminon">Tractocamion</option>
-                                <option value="estaca">Estacas</option>
+                                <option selected value="">Seleccione tipo de vehículo</option>
+                                <option value="Furgon">Furgon</option>
+                                <option value="Tractocamión">Tractocamion</option>
+                                <option value="Estaca">Estacas</option>
                             </select>
                             <small id="tipo_vehiculoHelp" class="form-text text-muted">Tipo de vehículo</small>
                         </div>
@@ -67,13 +67,13 @@ if ($_SESSION['cargo'] != "administrador") {
                                 <option value="contratista">Contratista</option>
                                 <option value="propiedad">Propiedad</option>
                             </select>
-                            <small id="estadopHelp" class="form-text text-muted">Diligencie el el estado del vehiculo en la empresa</small>
+                            <small id="estadopHelp" class="form-text text-muted">Diligencie el el estado del vehículo en la empresa</small>
                         </div>
 
                         <div class="form-group col-md-6">
                                 <label for="identificacion">Conductor</label>
                                 <select class="form-control" id="identificacion" name="identificacion" style="width:100%" required >
-                                    <option selected value="">seleccione...</option>
+                                    <option selected value="">Seleccione...</option>
                                                 
                                         <?php
                                             include_once 'models/usuario.php';
@@ -91,7 +91,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                 </select>
                                 <small id="identificacionHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
                             </div>
-
+                           
                         <div class="form-group col-md-6">
                             <label for="gps" >GPS</label><br>
                             <input class="custom-control-input"required type="radio" name="gps" id="gps1" value="si" checked>SI
@@ -99,6 +99,7 @@ if ($_SESSION['cargo'] != "administrador") {
                             <small id="whatsappHelp" class="form-text text-muted">Diligencie si el vehiculo tiene gps</small>
                         </div>
                     </div>
+                    
                     <div class="text-center ">
                         <button type="submit" class="btn btn-info">Registrar vehículo</button>
                         <button class="btn btn-danger">Cancelar</button>

@@ -9,7 +9,7 @@
                     <li class="active">
                         <a class="has-arrow" href="index.php">
                             <i class="fa big-icon fa-home icon-wrap"></i>
-                            <span class="mini-click-non"><?php echo $_SESSION['cargo']; ?></span>
+                            <span class="mini-click-non" style=" text-transform: uppercase;"><?php echo $_SESSION['cargo']; ?></span>
                         </a>
                         <ul class="submenu-angle" aria-expanded="true">
 
@@ -26,8 +26,8 @@
                                 <li><a title="Registro Centro" href="<?php echo constant('URL'); ?>centro/crear"><i class="fa fa-edit" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Centros</span></a></li>
                                 <li><a title="Lista Centros" href="<?php echo constant('URL'); ?>centro"><i class="fa fa-eye nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Centros</span></a></li>
                                 <!-- crud vehiculo -->
-                                <li><a title="Registro Vehiculo" href="<?php echo constant('URL'); ?>vehiculo/crear"><i class="fa fa-truck" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Vehiculo</span></a></li>
-                                <li><a title="Lista Vehiculos" href="<?php echo constant('URL'); ?>vehiculo"><i class="fa fa-car nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Vehiculos</span></a></li>
+                                <li><a title="Registro Vehìculo" href="<?php echo constant('URL'); ?>vehiculo/crear"><i class="fa fa-truck" aria-hidden="true"></i> <span class="mini-sub-pro">Registrar Vehìculo</span></a></li>
+                                <li><a title="Lista Vehiculos" href="<?php echo constant('URL'); ?>vehiculo"><i class="fa fa-car nav-icon" aria-hidden="true"></i> <span class="mini-sub-pro">Lista Vehìculos</span></a></li>
 
 
                                 <!-- crud producto -->

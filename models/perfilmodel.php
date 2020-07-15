@@ -28,6 +28,8 @@ class PerfilModel extends Model{
                 $item->foto              = $row['foto'];
               
                 array_push($items, $item);
+                $_SESSION['upd_nomb'] = $row['nombre'];
+                $_SESSION['upd_foto'] = $row['foto'];
             }
             return $items;
         }catch(PDOException $e){
@@ -58,6 +60,9 @@ class PerfilModel extends Model{
                 $item->estado           = $row['estado'];
                 $item->fecha_ingreso    = $row['fecha_ingreso'];
                 $item->foto             = $row['foto'];
+
+                $_SESSION['upd_nomb'] = $row['nombre'];
+                $_SESSION['upd_foto'] = $row['foto'];
             }
             return $item;
         }catch(PDOException $e){
@@ -70,7 +75,7 @@ class PerfilModel extends Model{
 
 
     public function update($item){
-        $query = $this->db->connect()->prepare('UPDATE usuario SET nombre = :nombre, apellido = :apellido, email = :email, pass = :pass, telefono = :telefono, whatsapp = :whatsapp, cargo = :cargo, estado = :estado, foto = :foto WHERE identificacion = :identificacion');
+        $query = $this->db->connect()->prepare('UPDATE usuario SET nombre = :nombre, apellido = :apellido, email = :email, telefono = :telefono, whatsapp = :whatsapp, cargo = :cargo, estado = :estado, foto = :foto WHERE identificacion = :identificacion');
 
         $foto = $_FILES['foto']['name'];
         $fotoriginal=$_POST['fotoriginal'];
@@ -82,15 +87,6 @@ class PerfilModel extends Model{
             move_uploaded_file($_FILES["foto"]["tmp_name"], $foto);
             unlink($fotoriginal);
         }
-
-        $passnuevo = $_POST['pass'];
-        $passantiguo = $_POST['passoriginal'];
-
-        if ($passnuevo != $passantiguo) {
-            $passnuevo = md5($item['pass']);
-        }else {
-            $passnuevo == $passantiguo;
-        }
         
         try{
             $query->execute([
@@ -99,7 +95,6 @@ class PerfilModel extends Model{
                 'nombre'          => $item['nombre'],
                 'apellido'        => $item['apellido'],
                 'email'           => $item['email'],
-                'pass'            => $passnuevo, 
                 'telefono'        => $item['telefono'],
                 'whatsapp'        => $item['whatsapp'],
                 'cargo'           => $item['cargo'],
@@ -115,4 +110,3 @@ class PerfilModel extends Model{
         }
     }
 }
-?>

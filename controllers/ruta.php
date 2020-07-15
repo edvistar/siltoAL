@@ -72,6 +72,7 @@
                 $ruta->id_centro          = $_POST['id_centro'];
                // $ruta->variedad_productos = $_POST['variedad_productos'];          
                 $ruta->id_solicitud       = $_POST['id_solicitud'];
+                $ruta->estado       = $_POST['estado'];
                // $ruta->obervaciones       = $_POST['obervaciones'];
 
                 $this->view->ruta = $ruta;

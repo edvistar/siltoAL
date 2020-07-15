@@ -1,17 +1,9 @@
 -- phpMyAdmin SQL Dump
-<<<<<<< HEAD
-<<<<<<< HEAD
--- version 4.8.5
-=======
--- version 5.0.2
->>>>>>> wapv
-=======
 -- version 4.9.0.1
->>>>>>> wapv
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-06-2020 a las 19:01:16
+-- Tiempo de generación: 07-07-2020 a las 02:41:43
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.7
 
@@ -56,9 +48,18 @@ CREATE TABLE `centro` (
   `whatsapp` varchar(2) COLLATE utf8_spanish2_ci DEFAULT NULL COMMENT 'Whatsapp de centro',
   `departamento` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Departamento de centro',
   `ciudad` varchar(25) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Ciudad de centro',
-  `lugar` varchar(15) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Lugar de centro o bodega',
+  `tipo_centro` varchar(15) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'centro o bodega',
+  `direccion` varchar(30) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'direccion del centro o Bodega',
   `identificacion` bigint(12) NOT NULL COMMENT 'Encargado de centro'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `centro`
+--
+
+INSERT INTO `centro` (`id_centro`, `nombre`, `email`, `telefono`, `whatsapp`, `departamento`, `ciudad`, `tipo_centro`, `direccion`, `identificacion`) VALUES
+(1, 'OcatiCotas', 'ocaticotas@gmail.com', 3138252764, 'SI', '5', '1', 'Acopio', 'Calle 89b # 116a-10', 22656626),
+(2, 'La palma', 'lapalma@gmail.com', 3138252764, 'SI', '25', '211', 'Acopio', 'Carrera 16 #30-17', 22656626);
 
 -- --------------------------------------------------------
 
@@ -1274,54 +1275,20 @@ CREATE TABLE `rutas` (
   `placa` varchar(11) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Numero de placa de vehiculo.',
   `id_centro` int(11) NOT NULL COMMENT 'Id de centro dirigido la ruta.',
   `variedad_productos` varchar(250) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'productos en ruta',
-<<<<<<< HEAD
-  `id_solicitud` int(11) NOT NULL COMMENT 'id de solicitud'
-=======
   `id_solicitud` int(11) NOT NULL COMMENT 'id de solicitud',
+  `estado` varchar(10) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'activa o cancelada',
   `observaciones` varchar(250) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Observaciones de la ruta'
->>>>>>> wapv
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
-<<<<<<< HEAD
 --
 -- Volcado de datos para la tabla `rutas`
 --
 
-<<<<<<< HEAD
-INSERT INTO `rutas` (`id_ruta`, `fecha_ruta`, `hora_salida`, `hora_llegada`, `descripcion`, `tipo_ruta`, `precinto`, `identificacion`, `placa`, `id_centro`, `variedad_productos`, `id_solicitud`) VALUES
-(13, '2020-06-14', '02:52:00', '02:52:00', 'Viaje commpleto', 'Nacional', '55556', 22656626, 'AD343', 34545, '-arandanos-freijoa', 1),
-(14, '2020-06-14', '02:52:00', '02:52:00', 'Tarjeta de Identidad', 'Nacional', '346454', 1078371526, 'AD343', 34545, '-tamarillo-babybanana', 1);
-=======
-INSERT INTO `rutas` (`id_ruta`, `fecha_ruta`, `hora_salida`, `hora_llegada`, `tipo_ruta`, `precinto`, `identificacion`, `placa`, `id_centro`, `variedad_productos`, `id_solicitud`, `observaciones`) VALUES
-<<<<<<< HEAD
-(15, '2020-06-14', '20:33:00', '08:33:00', 'Nacional', '123456', 20199375, 'AD343', 34545, '-uchuba-chulupa-freijoa-tamarillo', 1, 'la papaya');
->>>>>>> wapv
-=======
-(22, '2020-06-17', '15:56:00', '15:56:00', 'Nacional', '5555', 22656626, 'ADM435', 34545, '-uchuba-lulo-tamarillo', 12, 'Full');
->>>>>>> wapv
+INSERT INTO `rutas` (`id_ruta`, `fecha_ruta`, `hora_salida`, `hora_llegada`, `tipo_ruta`, `precinto`, `identificacion`, `placa`, `id_centro`, `variedad_productos`, `id_solicitud`, `estado`, `observaciones`) VALUES
+(21, '2020-07-22', '18:50:00', '18:50:00', 'Acopio', '9', 16838095, 'NKZ123', 1, '-uchuva-guanabana', 11, 'activo', '300 vacias'),
+(22, '2020-07-06', '19:35:00', '19:35:00', 'Acopio', '10', 22656626, 'NKZ123', 1, '-pitaya-lulo', 12, 'activo', '200 vacias'),
+(23, '2020-07-06', '19:37:00', '19:37:00', 'Acopio', '11', 16838095, 'NKZ123', 1, '-gulupa', 13, 'activo', '100 vacias');
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `sectores`
---
-
-CREATE TABLE `sectores` (
-  `idSect` int(5) NOT NULL,
-  `sector` varchar(50) NOT NULL,
-  `idCiud` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `sectores`
---
-
-INSERT INTO `sectores` (`idSect`, `sector`, `idCiud`) VALUES
-(1, 'chia', 1),
-(2, 'Cerca de Piedra', 1);
-
-=======
->>>>>>> wapv
 -- --------------------------------------------------------
 
 --
@@ -1336,6 +1303,15 @@ CREATE TABLE `solicitud` (
   `identificacion` bigint(12) NOT NULL COMMENT 'Nombre del encargado de centro.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `solicitud`
+--
+
+INSERT INTO `solicitud` (`id_solicitud`, `fecha_solicitud`, `descripcion`, `id_centro`, `identificacion`) VALUES
+(11, '2020-07-07', 'Vehiculo, Martes 07-07. 3000 kl', 0, 22656626),
+(12, '2020-07-07', 'vehiculo 4000 kl', 1, 22656626),
+(13, '2020-07-07', 'vehiculo 2000 kl', 1, 16838095);
+
 -- --------------------------------------------------------
 
 --
@@ -1349,29 +1325,11 @@ CREATE TABLE `usuario` (
   `email` varchar(38) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Email usuario',
   `telefono` varchar(14) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Numero de celular',
   `whatsapp` varchar(2) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Whatsapp',
-<<<<<<< HEAD
-<<<<<<< HEAD
-  `cargo` varchar(15) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Rol de user',
-  `estado` text COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Estado del User',
-  `fecha_ingreso` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha de ingreso user',
-  `foto` varchar(300) COLLATE utf8_spanish2_ci NOT NULL,
-  `pass` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL COMMENT 'password',
-  `id` int(2) NOT NULL
-=======
-  `cargo` varchar(12) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Rol de usuario',
-  `estado` varchar(9) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Estado del Usuario',
-  `fecha_ingreso` date NOT NULL DEFAULT current_timestamp() COMMENT 'Fecha de ingreso usuario.',
-  `foto` varchar(300) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Foto de usuario',
-  `pass` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL COMMENT 'Clave de email.',
-  `id` int(2) NOT NULL COMMENT 'Rol de usuario'
->>>>>>> wapv
-=======
   `cargo` varchar(13) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Rol de usuario',
   `estado` varchar(9) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Estado del Usuario',
   `fecha_ingreso` date NOT NULL DEFAULT current_timestamp() COMMENT 'Fecha de ingreso usuario.',
   `foto` varchar(300) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Foto de usuario',
   `pass` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL COMMENT 'Clave de email.'
->>>>>>> wapv
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
@@ -1379,7 +1337,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`identificacion`, `nombre`, `apellido`, `email`, `telefono`, `whatsapp`, `cargo`, `estado`, `fecha_ingreso`, `foto`, `pass`) VALUES
-(16838095, 'Victor Eduardo', 'Hoyos Sandoval', 'victorhoyoscolombia@gmail.com', '3138252764', 'Si', 'administrador', 'activo', '2020-06-26', 'public/img/usuarios/fotodigital.png', 'fcea920f7412b5da7be0cf42b8c93759');
+(16838095, 'Victor Eduardo', 'Hoyos Sandoval', 'victorhoyoscolombia@gmail.com', '3138252764', 'Si', 'administrador', 'activo', '2020-06-26', 'public/img/usuarios/fotodigital.png', 'fcea920f7412b5da7be0cf42b8c93759'),
+(22656626, 'eduardo', 'sando', 'lavaca@gmail.com', '3138252764', 'SI', 'bodeguero', 'activo', '2020-06-30', 'public/img/usuarios/20200312_083547.jpg', 'fcea920f7412b5da7be0cf42b8c93759');
 
 -- --------------------------------------------------------
 
@@ -1396,8 +1355,16 @@ CREATE TABLE `vehiculo` (
   `gps` varchar(2) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'GPS de vehiculo',
   `estado` varchar(11) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Estao de vehiculo en la empresa propiedad o contratista.',
   `identificacion` bigint(20) NOT NULL COMMENT 'Nombre de conductor.',
-  `fecha_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha del registro'
+  `fecha_registro` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'Fecha del registro'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `vehiculo`
+--
+
+INSERT INTO `vehiculo` (`placa`, `capacidad`, `seguro`, `tecnomecanica`, `tipo_vehiculo`, `gps`, `estado`, `identificacion`, `fecha_registro`) VALUES
+('AD3435', '10', '2020-06-17', '2020-06-28', 'furgon', 'si', 'contratista', 16838095, '2020-06-28 23:42:50'),
+('NKZ123', '20', '2020-07-05', '2020-07-05', 'furgon', 'SI', 'contratista', 22656626, '2020-07-06 07:02:24');
 
 --
 -- Índices para tablas volcadas
@@ -1433,8 +1400,8 @@ ALTER TABLE `producto`
 --
 ALTER TABLE `rutas`
   ADD PRIMARY KEY (`id_ruta`),
-  ADD UNIQUE KEY `id_centro` (`id_centro`),
-  ADD UNIQUE KEY `id_solicitud` (`id_solicitud`);
+  ADD UNIQUE KEY `id_solicitud` (`id_solicitud`),
+  ADD KEY `rutas_ibfk_2` (`id_centro`);
 
 --
 -- Indices de la tabla `solicitud`
@@ -1475,25 +1442,13 @@ ALTER TABLE `departamentos`
 -- AUTO_INCREMENT de la tabla `rutas`
 --
 ALTER TABLE `rutas`
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  MODIFY `id_ruta` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificación de ruta', AUTO_INCREMENT=15;
-=======
-  MODIFY `id_ruta` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificación de ruta', AUTO_INCREMENT=16;
->>>>>>> wapv
-=======
-  MODIFY `id_ruta` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificación de ruta', AUTO_INCREMENT=23;
->>>>>>> wapv
-=======
   MODIFY `id_ruta` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificación de ruta', AUTO_INCREMENT=24;
->>>>>>> wapv
 
 --
 -- AUTO_INCREMENT de la tabla `solicitud`
 --
 ALTER TABLE `solicitud`
-  MODIFY `id_solicitud` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id de la solicitud para la ruta.', AUTO_INCREMENT=13;
+  MODIFY `id_solicitud` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id de la solicitud para la ruta.', AUTO_INCREMENT=14;
 
 --
 -- Restricciones para tablas volcadas
@@ -1503,8 +1458,8 @@ ALTER TABLE `solicitud`
 -- Filtros para la tabla `rutas`
 --
 ALTER TABLE `rutas`
-  ADD CONSTRAINT `rutas_ibfk_1` FOREIGN KEY (`id_centro`) REFERENCES `centro` (`id_centro`),
-  ADD CONSTRAINT `rutas_ibfk_2` FOREIGN KEY (`id_solicitud`) REFERENCES `solicitud` (`id_solicitud`);
+  ADD CONSTRAINT `rutas_ibfk_2` FOREIGN KEY (`id_centro`) REFERENCES `centro` (`id_centro`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `rutas_ibfk_3` FOREIGN KEY (`id_solicitud`) REFERENCES `solicitud` (`id_solicitud`);
 
 --
 -- Filtros para la tabla `vehiculo`

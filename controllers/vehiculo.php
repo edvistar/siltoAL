@@ -51,7 +51,7 @@
                 $vehiculo = new VehiculoDao();
 
                 $vehiculo->placa = $id;
-               // $vehiculo->placa = $_POST['placa'];
+               //$vehiculo->placa = $_POST['placa'];
                 $vehiculo->capacidad = $_POST['capacidad'];
                 $vehiculo->seguro = $_POST['seguro'];
                 $vehiculo->tecnomecanica = $_POST['tecnomecanica'];
@@ -64,7 +64,7 @@
                 $this->view->vehiculo = $vehiculo;
                 $this->view->mensaje = "vehiculo actualizado correctamente";
             }else{
-                $this->view->mensaje = "No se pudo actualizar al centro";
+                $this->view->mensaje = "No se pudo actualizar el vehiculo";
             }
             $vehiculos = $this->view->datos = $this->model->read();
             $this->view->vehiculos = $vehiculos;

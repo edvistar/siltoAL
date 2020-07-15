@@ -25,10 +25,10 @@
                     <div class="col-lg-9">
                         <ul class="text-center">
                         <li><a href="<?php echo constant('URL'); ?>index.php">Inicio</a></li>
-                            <li><a href="<?php echo constant('URL'); ?>#quehacemos">Que Hacemos</a></li>
-                            <li><a href="<?php echo constant('URL'); ?>#Servicios">Servicios</a></li>
-                            <li><a href="<?php echo constant('URL'); ?>#Equipo">Equipo</a></li>
-                            <li><a href="<?php echo constant('URL'); ?>#Contacto">Contacto</a></li>
+                            <li><a data-scroll href="#quehacemos">Que Hacemos</a></li>
+                            <li><a data-scroll href="#servicios">Servicios</a></li>
+                            <li><a data-scroll href="#equipo">Equipo</a></li>
+                            <li><a data-scroll href="#contacto">Contacto</a></li>
                             <li><a href="<?php echo constant('URL'); ?>index/Autenticar?auth=1">Ingreso</a></li>
                         </ul>
                     </div>
@@ -53,14 +53,14 @@
                                 </h2>
                             </div>
                             </div>
-                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <!-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                             </a>
                             <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
-                            </a>
+                            </a> -->
                         </div>
                     </div>
 
@@ -90,7 +90,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="mision-vision">
-                            <img  width="500" height="300" src="public/img/64857.jpg" alt="imagen Misión">
+                            <img src="public/img/onepage/mision.jpg" alt="imagen Misión">
                             <h1 class="h1">
                                 MISIÓN
                             </h1>
@@ -101,7 +101,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="mision-vision">
-                            <img  width="500" height="300" src="public/img/logistica.jpg" alt="imagen Misión">
+                            <img src="public/img/onepage/vision.png" alt="imagen Misión">
                             <h1 class="h1">
                                 VISIÓN
                             </h1>
@@ -120,18 +120,18 @@
                 <!--rol-->
                 <div class="col-lg-6 text-center">
                     <a class="btn " data-toggle="collapse" href="#rol" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Cargo Usuario</h1>
-                        <img class="tama" src="public/img/oper.png" alt="imagen Misión"></a>
+                        <img class="tama" src="public/img/onepage/cargo.png" alt="imagen Misión"></a>
                     <div class="collapse " id="rol">
                         <div class="card card-body">
                         <strong>
-                            <p class="">La plataforma tendra diferentes cargos para los usuarios en los cuales se encuentran los siguientes: <br>1. Administrador es el encargado del sistema y tendra los permisos para el manejo de la plataforma. <br>2. Coordinador es el encargado de las solicitudes de los bodegueros y las rutas. <br>3. Bodeguero es el encargado de realizar solicitudes y llenar registros de las rutas en los centro de acopio y bodega principal.</p>
+                            <p class="">La plataforma tendra diferentes cargos para los usuarios en los cuales se encuentran los siguientes: <br>1. Administrador es el encargado del sistema y tendra los permisos para el manejo de la plataforma. <br>2. El supervisor es el encargado de las solicitudes de los bodegueros y las rutas. <br>3. Bodeguero es el encargado de realizar solicitudes de los centro de acopio y bodega principal.</p>
                             </strong>
                         </div>
                     </div>
                 </div>
                 <!--solicitud-->
                 <div class="col-lg-6 text-center">
-                    <a class="btn " data-toggle="collapse" href="#solicitud" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Solicitud de Pedidos</h1><img  class="tama" src="public/img/8869.jpg" alt="imagen Misión"></a>
+                    <a class="btn " data-toggle="collapse" href="#solicitud" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Solicitud de Pedidos</h1><img  class="tama" src="public/img/onepage/solicitud.png" alt="imagen Misión"></a>
                     <div class="collapse " id="solicitud">
                         <div class="card card-body">
                             <p><b>La solicitud de las rutas  es realizada apartir de pedidos de los centros de acopio, oficinas para el trasporte de mercancioa o de documentacion de la empresa, o de personal solicitado en diferentes puntos.</b>
@@ -144,11 +144,11 @@
             <div class="row">
                 <div class="col-lg-6">
                     <a class="btn " data-toggle="collapse" href="#planeamiento" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Planeamiento</h1>
-                    <img class="tama" src="public/img/subcontratacion-servicios-logistica-770x367m.jpg" alt="imagen Misión"></a>
+                    <img class="tama" src="public/img/onepage/planeamiento.png" alt="imagen Misión"></a>
                     <div class="collapse " id="planeamiento">
                         <div class="card card-body">
                                 <p>
-                               <b> El planeamiento es realizado apartir de las solicitudes que se encuentren activas en la plataforma y asi la coordinadora podra planear la logistica para que se cumplan a totalidad las solicitudes realizadas anteriormente.</b>
+                               <b> El planeamiento es realizado apartir de las solicitudes que se encuentren activas en la plataforma y asi el supervisor podra planear la logistica para que se cumplan a totalidad las solicitudes realizadas anteriormente.</b>
                                 </p>
                         </div>
                     </div>
@@ -156,7 +156,7 @@
             <!--rutas-->
                 <div class="col-lg-6">
                     <a class="btn " data-toggle="collapse" href="#ruta" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><h1 class="leter">Rutas</h1>
-                    <img class="tama" src="public/img/camion-carretera-contenedor-importacion-exportacion-transporte-logistico_42493-29.jpg" alt="imagen Misión"></a>
+                    <img class="tama" src="public/img/onepage/rutas.png" alt="imagen Misión"></a>
                     <div class="collapse " id="ruta">
                         <div class="card card-body">
                             <strong>
@@ -178,7 +178,7 @@
                     <div class="modal-bootstrap">
                             <div class="modal-area-button">
                                 <a class="Primary mg-b-10" href="#" data-toggle="modal" data-target="#castro"><h3 class="equipoN">Alexandra Castro </h3>
-                                <img class="avatar"src="public/img/fotoAle.png"></a>
+                                <img class="avatar"src="public/img/onepage/fotoAle.png"></a>
                             </div>
                         </div>
                     </div>
@@ -186,7 +186,7 @@
                 <div class="col-md-4">
                     <div class="modal-bootstrap">
                         <div class="modal-area-button">
-                            <a class="Information Information-color mg-b-10" href="#" data-toggle="modal" data-target="#lopez"><h3 class="equipoN">Jhonatan Lopez</h3><img class="avatar" src="public/img/jhonatan.png"></a>
+                            <a class="Information Information-color mg-b-10" href="#" data-toggle="modal" data-target="#lopez"><h3 class="equipoN">Jhonatan Lopez</h3><img class="avatar" src="public/img/onepage/jhonatan.png"></a>
                         </div>
                     </div>
                 </div>
@@ -194,7 +194,7 @@
                 <div class="col-md-4">
                     <div class="modal-bootstrap">
                         <div class="modal-area-button">
-                            <a class="Primary mg-b-10" href="#" data-toggle="modal" data-target="#lara"><h3 class="equipoN">Lida Patricia Lara</h3><img class="avatar" src="public/img/lida.jpg"></a>
+                            <a class="Primary mg-b-10" href="#" data-toggle="modal" data-target="#lara"><h3 class="equipoN">Lida Patricia Lara</h3><img class="avatar" src="public/img/onepage/lida.jpg"></a>
                         </div>
                     </div>
                 </div>
@@ -205,7 +205,7 @@
                 <div class="col-md-4">
                     <div class="modal-bootstrap">
                         <div class="modal-area-button">
-                            <a class="Primary mg-b-10" href="#" data-toggle="modal" data-target="#alarcon"><h3 class="equipoN">Mauricio Alarcon </h3><img class="avatar" src="public/img/mauro.png"></a>
+                            <a class="Primary mg-b-10" href="#" data-toggle="modal" data-target="#alarcon"><h3 class="equipoN">Mauricio Alarcon </h3><img class="avatar" src="public/img/onepage/mauro.png"></a>
                         </div>
                     </div>
                 </div>
@@ -213,7 +213,7 @@
                 <div class="col-md-4">
                     <div class="modal-bootstrap">
                         <div class="modal-area-button">
-                            <a class="Primary mg-b-10" href="#" data-toggle="modal" data-target="#hoyos"><h3 class="equipoN">Victor Hoyos</h3><img class="avatar" src="public/img/victor.jpg"></a>
+                            <a class="Primary mg-b-10" href="#" data-toggle="modal" data-target="#hoyos"><h3 class="equipoN">Victor Hoyos</h3><img class="avatar" src="public/img/onepage/victor.jpg"></a>
                         </div>
                     </div>
                 </div>
@@ -235,10 +235,10 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d127257.47050688774!2d-74.066258!3d4.630461!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1589858547133!5m2!1ses!2sco" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                 </div>
                 <div class="col-md-5">
-                    <div class="contacto">
+                    <div class="contacto" id="contacto">
                         <h2 >CONTACTO </h2>
-                        <p><h3>Tel: 1234567890 ext 000<br>
-                        Direccion: CDA Chia Sena <br>
+                        <p><h3>Tel: 3138252764<br>
+                        Direccion: CDA Chía Sena <br>
                         Correo: siltoadsi@gmail.com</h3>
                         </p>
 
@@ -249,15 +249,15 @@
                     <div>
                         <ul>
                             <li><a href="https://twitter.com/Silto16">
-                                    <img width="50" height="50" src="public/img/043-twitter.png" alt="imagen de twitter">
+                                    <img width="50" height="50" src="public/img/redes/043-twitter.png" alt="imagen de twitter">
                                 </a>
                             </li>
                             <li><a href="https://www.facebook.com/groups/1653448328150890/?ref=share">
-                                    <img width="50" height="50" src="public/img/021-facebook.png" alt="imagen de facebook">
+                                    <img width="50" height="50" src="public/img/redes/021-facebook.png" alt="imagen de facebook">
                                 </a>
                             </li>
-                            <li><a href="https://api.whatsapp.com/send?phone=573122734752&text=hola%20amor%20">
-                                    <img  width="50" height="50" src="public/img/035-whatsapp.png" alt="imagen de whatsapp">
+                            <li><a href="https://api.whatsapp.com/send?phone=573138252764">
+                                    <img  width="50" height="50" src="public/img/redes/035-whatsapp.png" alt="imagen de whatsapp">
                                 </a>
                             </li>
 
@@ -281,10 +281,10 @@
             </div>
             <div class="modal-body">
                 <i class="fa fa-check modal-check-pro"></i>
-                <img class="avatar" src="public/img/fotoAle.png">
+                <img class="avatar" src="public/img/onepage/fotoAle.png">
                 <h4>Tecnologa ADSI</h4>
-                <p>Analista de sistemas bases de datos, programadora PHP, HTML5, Bootstrap 4, desarrolladora encargada del FROND-END de aplicación y colaboración en el BACK-END de la misma.<br>
-                Contacto<br>
+                <p>Analista de sistemas, bases de datos, programadora PHP, HTML5, Bootstrap 4, desarrolladora encargada del FROND-END de aplicación y colaboración en el BACK-END de la misma.<br>
+                <b> Contacto</b><br>
                 Email: jacastro9087@misena.edu.co<br>
                 Email: laflacalex9@gmail.com<br>
                 Cel:312 317 3124<br>
@@ -307,9 +307,14 @@
                 </div>
             </div>
             <div class="modal-body">
-                <img class="avatar" src="public/img/jhonatan.png">
+                <img class="avatar" src="public/img/onepage/jhonatan.png">
                 <h4>Tecnologo ADSI</h4>
-                <p>Desarrollador frond-end apoyo en back-end de la aplicacion.</p>
+                <p>Analista, programador PHP, HTML5, Bootstrap 4, desarrollador apoyo del FROND-END de aplicación y colaboración en el BACK-END de la misma.<br>
+                <b> Contacto</b><br>
+                Email: jrlopez62@misena.edu.co<br>
+                Email: ccl.ticlopez@gmail.com<br>
+                Cel:312 273 4752<br>
+                </p>
             </div>
             <div class="modal-footer">
                 <a data-dismiss="modal" href="#">Cerrar</a>
@@ -328,9 +333,13 @@
                 </div>
             </div>
             <div class="modal-body">
-                <img class="avatar" src="public/img/lida.jpg">
+                <img class="avatar" src="public/img/onepage/lida.jpg">
                 <h4>Tecnologa ADSI</h4>
-                <p></p>
+                <p>Tecnologo en analisis  y desarrollo  de informacion enfasis en analisis y levantamiento de requerimientos y documentacion de la aplicacion.<br>
+                Contacto<br>
+                Email: lplara67@misena.edu.co<br>
+                Email: lucianajoh1113@gmail.com<br>
+                Cel:322 243 5548<br>
             </div>
             <div class="modal-footer">
                 <a data-dismiss="modal" href="#">Cerrar</a>
@@ -349,9 +358,12 @@
                 </div>
             </div>
             <div class="modal-body">
-                <img class="avatar" src="public/img/mauro.png">
-                <h4>Tecnologo ADSI</h4>
-                <p>Analista y desarrollador, apoyo de con el desarrollo  BACK-END  de la aplicacion.</p>
+                <img class="avatar" src="public/img/onepage/mauro.png">
+                <h4>Tecnólogo ADSI</h4>
+                <p>Analista y desarrollador de sistemas informáticos, con conocimientos en lenguajes HTML, PHP.  Elaboración de diagramas UML . Colaborador del BACK-END de la aplicación.
+                <b>Contacto</b><br>
+                Email: cmalarcon82@misena.edu.co <br>
+                Celular: 3214050655</p>
             </div>
             <div class="modal-footer">
                 <a data-dismiss="modal" href="#">Cerrar</a>
@@ -370,9 +382,11 @@
                 </div>
             </div>
             <div class="modal-body">
-                <img class="avatar" src="public/img/victor.jpg">
+                <img class="avatar" src="public/img/onepage/victor.jpg">
                 <h4>Tecnologo ADSI</h4>
-                <p>Analista y desarrollador, encargado del BACK-END de la aplicacion. Lider de proyecto a cargo de la aplicaciòn.</p>
+                <p>Analista y desarrollador con conocimientos de HTML y PHP, Encargado del BACK-END de la aplicacion. Lider de proyecto a cargo de la aplicaciòn.</p>
+                <p><b>Contacto</b></p>
+                <p>Email: victorhoyoscolombia@gmail.com <br>Celular: 313 8252764</p>
             </div>
             <div class="modal-footer">
                 <a data-dismiss="modal" href="#">Cerrar</a>
@@ -401,5 +415,7 @@ function carousel() {
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- <script src="<?php echo constant('URL'); ?>public/js/dist/smooth-scroll.min.js"></script> -->
+
 </body>
 </html>

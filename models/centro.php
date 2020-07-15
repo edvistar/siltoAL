@@ -9,6 +9,7 @@
         public $departamento;
         public $ciudad;
         public $identificacion;
-        public $lugar;
+        public $tipo_centro;
+        public $direccion;
     }
 ?>
