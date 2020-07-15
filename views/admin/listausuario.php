@@ -37,11 +37,11 @@
 
                                 <thead class="thead-dark">
                                     <tr class="text-center btn-warning">
-                                        <th scope="col">Identificacion</th>
+                                        <th scope="col">Identificación</th>
                                         <th scope="col">Nombres</th>
                                         <th scope="col">Apellidos</th>
                                         <th scope="col">Email</th>
-                                        <th scope="col">Telefono</th>
+                                        <th scope="col">Teléfono</th>
                                         <th scope="col">Whatsapp</th>
                                         <th scope="col">Cargo</th>
                                         <th scope="col">Estado</th>

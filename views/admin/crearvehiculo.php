@@ -48,15 +48,15 @@ if ($_SESSION['cargo'] != "administrador") {
                         <div class="form-group col-md-6">
                             <label for="tecnomecanica">Vencimiento tecnomecánica del vehículo</label>
                             <input type="date" class="form-control" name="tecnomecanica" id="tecnomecanica" required >
-                            <small id="tecnomecanicaHelp" class="form-text text-muted"> Digite la fecha de vencimiento del la tecnomecánica del vehículo</small>
+                            <small id="tecnomecanicaHelp" class="form-text text-muted"> Digite la fecha de vencimiento de la tecnomecánica del vehículo</small>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="tipo_vehiculo">Tipo de vehículo</label>
                             <select  class="form-control" name="tipo_vehiculo" id="tipo_vehiculo"  required >
-                                <option selected value="">Seleccione tipo de vehiculo</option>
-                                <option value="furgon">Furgon</option>
-                                <option value="tractocaminon">Tractocamion</option>
-                                <option value="estaca">Estacas</option>
+                                <option selected value="">Seleccione tipo de vehículo</option>
+                                <option value="Furgon">Furgon</option>
+                                <option value="Tractocamión">Tractocamion</option>
+                                <option value="Estaca">Estacas</option>
                             </select>
                             <small id="tipo_vehiculoHelp" class="form-text text-muted">Tipo de vehículo</small>
                         </div>
@@ -67,7 +67,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                 <option value="contratista">Contratista</option>
                                 <option value="propiedad">Propiedad</option>
                             </select>
-                            <small id="estadopHelp" class="form-text text-muted">Diligencie el el estado del vehiculo en la empresa</small>
+                            <small id="estadopHelp" class="form-text text-muted">Diligencie el el estado del vehículo en la empresa</small>
                         </div>
 
                         <div class="form-group col-md-6">

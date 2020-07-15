@@ -11,7 +11,7 @@
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
         <div class="col-md-8 col-md-8 col-sm-8 col-xs-12">
             <div class="text-center custom-login mt-20px">
-                <h3><i class="fa fa-edit" aria-hidden="true"></i> Actualizacion de Centro o Bodega</h3>
+                <h3><i class="fa fa-edit" aria-hidden="true"></i>Editar Centro o Bodega</h3>
                 <p>Todos los campos son obligatorios</p>
             </div>
             <div class="center"><?php echo $this->mensaje;?></div>
@@ -36,15 +36,15 @@
                                 <small id="emailHelp" class="form-text text-muted">Diligencie el email del Centro</small>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="telefono"><i class="fa fa-phone" aria-hidden="true"></i> Telefono</label>
+                                <label for="telefono"><i class="fa fa-phone" aria-hidden="true"></i> Teléfono</label>
                                 <input type="number" class="form-control" value="<?php echo $this->centro->telefono; ?>" name="telefono" id="telefono" required>
-                                <small id="telefonoHelp" class="form-text text-muted">Diligencie el numero de telefono del Centro</small>
+                                <small id="telefonoHelp" class="form-text text-muted">Diligencie el número de teléfono del Centro</small>
                             </div>
                             <div class="form-group col-md-6">
                             <label for="whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i> Whatsapp</label><br>
                                 <input class="custom-control-input"required type="radio" name="whatsapp" id="whatsapp1" value="SI" checked>SI
                                 <input class="custom-control-input" type="radio" name="whatsapp" id="whatsapp0" value="NO">NO<br>
-                                <small id="whatsappHelp" class="form-text text-muted">Confirme si tiene whatsapp el numero de telefono ingresado</small>
+                                <small id="whatsappHelp" class="form-text text-muted">Confirme si tiene whatsapp el número de teléfono ingresado</small>
                             </div>
                             <div class="form-group col-lg-6">
                                 <label for="tipo_centro">Tipo de Centro</label>
@@ -53,7 +53,7 @@
                                     <option  value="Acopio">Centro Acopio</option>
                                     <option  value="Bodega">Bodega Principal</option>
                                 </select>
-                                <small id="tipo_centroHelp" class="form-text text-muted">tipo_centro de ubicacion</small>
+                                <small id="tipo_centroHelp" class="form-text text-muted">tipo de centro</small>
 
                             </div>
                             <div class="col-lg-12">
@@ -82,12 +82,12 @@
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="direccion">Direccion</label>
+                                <label for="direccion">Dirección</label>
                                 <input type="text" class="form-control" value="<?php echo $this->centro->direccion; ?>" name="direccion" id="direccion" required>
-                                <small id="direccionHelp" class="form-text text-muted">Diligencie la direccion del Centro</small>
+                                <small id="direccionHelp" class="form-text text-muted">Diligencie la dirección del Centro</small>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="identificacion">Encargado de la Centro</label>
+                                <label for="identificacion">Encargado del Centro</label>
                                 <select class="form-control" id="identificacion" name="identificacion"  required>
 
                                     <option selected value="<?php echo $this->centro->identificacion;?>"><?php echo $this->centro->identificacion;?></option>

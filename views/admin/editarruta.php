@@ -23,7 +23,7 @@
                         <div class="form-group col-md-4">
                                 <label for="id_ruta">Código de Ruta</label>
                                 <input type="number" class="form-control" value="<?php echo $this->ruta->id_ruta; ?>" name="id_ruta" id="id_ruta" readonly>
-                                <small id="id_rutaHelp" class="form-text text-muted">Diligencie la fecha de la ruta</small>
+                                <small id="id_rutaHelp" class="form-text text-muted">Número de identificación de la ruta</small>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="fecha_ruta">Fecha Ruta</label>
@@ -77,7 +77,7 @@
                                             }
                                                 ?>
                                 </select>
-                                <small id="id_solicitudHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                                <small id="id_solicitudHelp" class="form-text text-muted">Seleccione la solicitud </small>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="id_centro">Centro Solicitante</label>
@@ -163,8 +163,8 @@
                             <div class="form-group col-md-4">
                                 <label for="estado">Estado de la ruta</label>
                                 <select class="form-control" value="<?php echo $this->ruta->estado;?>" id="estado" name="estado"  required >
-                                    <option value="activo">Activo</option>
-                                    <option value="cancelada">Cancelada</option>
+                                    <option value="Activo">Activo</option>
+                                    <option value="Cancelada">Cancelada</option>
 
                                 </select>
                                 <small id="estadoHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
@@ -210,7 +210,7 @@
                             </div>
                         </div>
                         <div class="text-center ">
-                            <button class="btn btn-info">Editar ruta</button>
+                            <button class="btn btn-info">Actualizar ruta</button>
                             <button class="btn btn-danger">Cancelar</button>
                         </div>
                     </form>

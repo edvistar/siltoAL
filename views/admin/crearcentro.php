@@ -47,7 +47,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                     <small id="emailHelp" class="form-text text-muted">Diligencie el email del Centro</small>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="telefono"><i class="fa fa-phone" aria-hidden="true"></i>      Telefono</label>
+                                    <label for="telefono"><i class="fa fa-phone" aria-hidden="true"></i>Teléfono</label>
                                     <input type="number" class="form-control" name="telefono" id="telefono" required>
                                     <small id="telefonoHelp" class="form-text text-muted">Diligencie el numero del Centro</small>
                                 </div>
@@ -91,7 +91,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="direccion">Direccion</label>
+                                    <label for="direccion">Dirección</label>
                                     <input type="text" class="form-control" name="direccion" id="direccion" required>
                                     <small id="direccionHelp" class="form-text text-muted">Diligencie la direccion del Centro</small>
                                 </div>

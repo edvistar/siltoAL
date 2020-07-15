@@ -52,7 +52,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                     <option value="Aeropuerto">Aeropuerto</option>
                                 
                                 </select>
-                                <small id="tipo_rutaHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                                <small id="tipo_rutaHelp" class="form-text text-muted">Seleccione el Tipo de Ruta</small>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="precinto">Precinto</label>
@@ -78,7 +78,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                             }
                                                 ?>
                                 </select>
-                                <small id="id_solicitudHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                                <small id="id_solicitudHelp" class="form-text text-muted">Seleccione la solicitud</small>
                                         
                             </div>
                             <div class="form-group col-md-4">
@@ -100,7 +100,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                             }
                                                 ?>
                                 </select>
-                                <small id="id_centroHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                                <small id="id_centroHelp" class="form-text text-muted">Seleccione el centro solicitante</small>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="identificacion">Encargado del centro</label>
@@ -120,7 +120,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                             }
                                                 ?>
                                 </select>
-                                <small id="identificacionHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                                <small id="identificacionHelp" class="form-text text-muted">Seleccione el encargado de la solicitud</small>
                             </div>
 
                             <div class="form-group col-md-4">
@@ -148,21 +148,21 @@ if ($_SESSION['cargo'] != "administrador") {
                             <div class="form-group col-md-4">
                                 <label for="estado">Estado de la ruta</label>
                                 <select class="form-control" id="estado" name="estado" required >
-                                    <option value="activo">Activo</option>
-                                    <option value="cancelada">Cancelada</option>
+                                    <option value="Activo">Activo</option>
+                                    <option value="Cancelada">Cancelada</option>
                                 </select>
-                                <small id="estadoHelp" class="form-text text-muted">Diligencie el encargado de la solicitud.</small>
+                                <small id="estadoHelp" class="form-text text-muted">Seleccione el Estado de la ruta</small>
                             </div>
                             <div class="form-group col-md-12">
                                 <label class="form-text text-muted">Productos en la ruta</label><br>
                                 <input type="checkbox" id="producto_0" name="productos[0]" value="uchuva" class="form-check-input">
                                 <label class="form-check-label" for="producto_0">Uchuva</label>
                                 <input type="checkbox" id="producto_1" name="productos[1]" value="maracuya" class="form-check-input">
-                                <label class="form-check-label" for="producto_1">Maracuya</label>
+                                <label class="form-check-label" for="producto_1">Maracuyá</label>
                                 <input type="checkbox" id="producto_2" name="productos[2]" value="gulupa" class="form-check-input">
                                 <label class="form-check-label" for="producto_2">Gulupa</label>
                                 <input type="checkbox" id="producto_3" name="productos[3]" value="arandanos" class="form-check-input">
-                                <label class="form-check-label" for="producto_3">Arandanos</label>
+                                <label class="form-check-label" for="producto_3">Arándanos</label>
                                 <input type="checkbox" id="producto_4" name="productos[4]" value="pitaya" class="form-check-input">
                                 <label class="form-check-label" for="producto_4">Pitaya</label><br>
                                 <input type="checkbox" id="producto_5" name="productos[5]" value="granadilla" class="form-check-input">

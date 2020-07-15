@@ -37,7 +37,7 @@
                                     <small id="apellidoHelp" class="form-text text-muted">Diligencie los apellidos del usuario</small>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="telefono"><i class="fa fa-phone" aria-hidden="true"></i> Numero Telefónico</label>
+                                    <label for="telefono"><i class="fa fa-phone" aria-hidden="true"></i>Número Telefónico</label>
                                     <input type="number" name="telefono" id="telefono" class="form-control" value="<?php echo $this->usuario->telefono; ?>" placeholder="Ej: 3040000000" required>
                                     <small id="telefonoHelp" class="form-text text-muted">Diligencie el numero de telefono del usuario</small>
                                 </div>
@@ -57,8 +57,8 @@
 
                                 <!-- Boton cambio password -->
                                 <div class="form-group col-md-5 ">
-                                    <label for="pass"><i class="fa fa-key" aria-hidden="true"></i> Password</label>
-                                    <button type="button" class="btn btn-info form-control" onClick='window.location.assign("<?php echo constant('URL') . 'pass_usu/leer/' . $this->usuario->identificacion; ?>") '>Reestablecer Password</button>
+                                    <label for="pass"><i class="fa fa-key" aria-hidden="true"></i>Contraseña</label>
+                                    <button type="button" class="btn btn-info form-control" onClick='window.location.assign("<?php echo constant('URL') . 'pass_usu/leer/' . $this->usuario->identificacion; ?>") '>Reestablecer Contraseña</button>
                                     <small  id="passHelp" class="form-text text-muted"> Solo para reestablecer la contraseña</small>
                                 </div>
 
