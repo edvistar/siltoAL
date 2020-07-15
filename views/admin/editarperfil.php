@@ -59,16 +59,16 @@
                                     <label for="whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i> Whatsapp</label><br>
                                     <input class="custom-control-input" required type="radio" name="whatsapp" id="whatsapp1" value="SI" checked>SI
                                     <input class="custom-control-input" type="radio" name="whatsapp" id="whatsapp0" value="NO">NO<br>
-                                    <small id="whatsappHelp" class="form-text text-muted">Confirme whatsapp el numero de telefono ingresado</small>
+                                    <small id="whatsappHelp" class="form-text text-muted">Confirme whatsapp del telefono ingresado</small>
                                 </div>
                                 <!-- Contenedor Seccion foto -->
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-7">
                                     <label for="foto">Cambiar Foto de perfil</label>
                                     <input type="file" name="foto" id="foto" class="form-control" accept=".jpg, .png, .jpeg">
                                     <small id="fotoHelp" class="form-text text-muted"> Seleccione  imagen si desea cambiar la foto</small>
                                 </div>
 
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-5">
                                     <label for="foto">Foto de Perfil Actual</label><br>
                                     <input type="hidden" name="fotoriginal" value="<?php echo $this->usuario->foto; ?>">
                                     <img src="<?php echo constant('URL') . $this->usuario->foto; ?>" alt="imagen usuario" width="80" height="80">

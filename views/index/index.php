@@ -237,8 +237,8 @@
                 <div class="col-md-5">
                     <div class="contacto" id="contacto">
                         <h2 >CONTACTO </h2>
-                        <p><h3>Tel: 1234567890 ext 000<br>
-                        Direccion: CDA Chia Sena <br>
+                        <p><h3>Tel: 3138252764<br>
+                        Direccion: CDA Chía Sena <br>
                         Correo: siltoadsi@gmail.com</h3>
                         </p>
 
@@ -256,7 +256,7 @@
                                     <img width="50" height="50" src="public/img/redes/021-facebook.png" alt="imagen de facebook">
                                 </a>
                             </li>
-                            <li><a href="https://api.whatsapp.com/send?phone=573122734752&text=hola%20amor%20">
+                            <li><a href="https://api.whatsapp.com/send?phone=573138252764">
                                     <img  width="50" height="50" src="public/img/redes/035-whatsapp.png" alt="imagen de whatsapp">
                                 </a>
                             </li>
@@ -283,8 +283,8 @@
                 <i class="fa fa-check modal-check-pro"></i>
                 <img class="avatar" src="public/img/onepage/fotoAle.png">
                 <h4>Tecnologa ADSI</h4>
-                <p>Analista de sistemas bases de datos, programadora PHP, HTML5, Bootstrap 4, desarrolladora encargada del FROND-END de aplicación y colaboración en el BACK-END de la misma.<br>
-                Contacto<br>
+                <p>Analista de sistemas, bases de datos, programadora PHP, HTML5, Bootstrap 4, desarrolladora encargada del FROND-END de aplicación y colaboración en el BACK-END de la misma.<br>
+                <b> Contacto</b><br>
                 Email: jacastro9087@misena.edu.co<br>
                 Email: laflacalex9@gmail.com<br>
                 Cel:312 317 3124<br>
@@ -310,7 +310,7 @@
                 <img class="avatar" src="public/img/onepage/jhonatan.png">
                 <h4>Tecnologo ADSI</h4>
                 <p>Analista, programador PHP, HTML5, Bootstrap 4, desarrollador apoyo del FROND-END de aplicación y colaboración en el BACK-END de la misma.<br>
-                Contacto<br>
+                <b> Contacto</b><br>
                 Email: jrlopez62@misena.edu.co<br>
                 Email: ccl.ticlopez@gmail.com<br>
                 Cel:312 273 4752<br>
@@ -335,7 +335,7 @@
             <div class="modal-body">
                 <img class="avatar" src="public/img/onepage/lida.jpg">
                 <h4>Tecnologa ADSI</h4>
-                <p>Tecnologo en analisis  y desarrollo  de informacion enfacisi en analisis y levantamiento de requerimientos.<br>
+                <p>Tecnologo en analisis  y desarrollo  de informacion enfasis en analisis y levantamiento de requerimientos y documentacion de la aplicacion.<br>
                 Contacto<br>
                 Email: lplara67@misena.edu.co<br>
                 Email: lucianajoh1113@gmail.com<br>
@@ -360,10 +360,10 @@
             <div class="modal-body">
                 <img class="avatar" src="public/img/onepage/mauro.png">
                 <h4>Tecnólogo ADSI</h4>
-                <p>Analista y desarrollador de sistemas informáticos, con conocimientos en lenguajes HTML, C++ y PHP. Bases de datos, elaboración de diagramas UML y diseño con Bootstrap. Colaborador del BACK-END y FRONT-END de la aplicación.</p>
-                <p><b>Contacto</b></p>
-                <p>Email: cmalarcon82@misena.edu.co <br>Celular: 3214050655</p>
-                
+                <p>Analista y desarrollador de sistemas informáticos, con conocimientos en lenguajes HTML, PHP.  Elaboración de diagramas UML . Colaborador del BACK-END de la aplicación.
+                <b>Contacto</b><br>
+                Email: cmalarcon82@misena.edu.co <br>
+                Celular: 3214050655</p>
             </div>
             <div class="modal-footer">
                 <a data-dismiss="modal" href="#">Cerrar</a>
@@ -384,7 +384,9 @@
             <div class="modal-body">
                 <img class="avatar" src="public/img/onepage/victor.jpg">
                 <h4>Tecnologo ADSI</h4>
-                <p>Analista y desarrollador, encargado del BACK-END de la aplicacion. Lider de proyecto a cargo de la aplicaciòn.</p>
+                <p>Analista y desarrollador con conocimientos de HTML y PHP, Encargado del BACK-END de la aplicacion. Lider de proyecto a cargo de la aplicaciòn.</p>
+                <p><b>Contacto</b></p>
+                <p>Email: victorhoyoscolombia@gmail.com <br>Celular: 313 8252764</p>
             </div>
             <div class="modal-footer">
                 <a data-dismiss="modal" href="#">Cerrar</a>
