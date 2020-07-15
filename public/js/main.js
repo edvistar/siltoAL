@@ -71,10 +71,32 @@ function httpRequest(url, callback){
 // }
 
 
-// Permitir ver el contenido de los campos password de usuario
+
+// Permitir ver el contenido de los campos password del perfil
 function verPassword() {
+    var z = document.getElementById("passant");
     var x = document.getElementById("pass");
     var y = document.getElementById("passy");
+    
+    if (x.type === "password" && y.type === "password" && z.type === "password") {
+      x.type = "text";
+      y.type = "text";
+      z.type = "text";
+    } else {
+      x.type = "password";
+      y.type = "password";
+      z.type = "password";
+    }
+}
+
+
+// Permitir ver el contenido de los campos password de usuario formulario editar pass usuario
+function verPassword2() {
+    // console.log("pass2ej");
+
+    var x = document.getElementById("pass");
+    var y = document.getElementById("passy");
+    
     if (x.type === "password" && y.type === "password") {
       x.type = "text";
       y.type = "text";
@@ -99,7 +121,5 @@ function validapassword() {
       }else{
           document.getElementById("alerta").innerHTML = "";
   
-    }
-    
+    }  
 }
-

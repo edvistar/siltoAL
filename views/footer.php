@@ -3,7 +3,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="footer-copy-right">
-                        <p>Realizacion SENA  CDA Chia <a href="#">WAPV </a> All rights reserved.</p>
+                        <p>Realización SENA  CDA Chía <a href="#">WAPV </a> All rights reserved.</p>
                     </div>
                 </div>
             </div>

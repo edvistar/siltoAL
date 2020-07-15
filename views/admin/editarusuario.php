@@ -37,7 +37,7 @@
                                     <small id="apellidoHelp" class="form-text text-muted">Diligencie los apellidos del usuario</small>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="telefono"><i class="fa fa-phone" aria-hidden="true"></i> Numero Telefonico</label>
+                                    <label for="telefono"><i class="fa fa-phone" aria-hidden="true"></i>Numero Telefónico</label>
                                     <input type="number" name="telefono" id="telefono" class="form-control" value="<?php echo $this->usuario->telefono; ?>" placeholder="Ej: 3040000000" required>
                                     <small id="telefonoHelp" class="form-text text-muted">Diligencie el numero de telefono del usuario</small>
                                 </div>
@@ -54,24 +54,6 @@
                                     <input type="email" name="email" id="email" class="form-control" value="<?php echo $this->usuario->email; ?>" placeholder="Ej: usuario@gmail.com" required>
                                     <small id="emailHelp" class="form-text text-muted">Diligencie el email del usuario</small>
                                 </div>
-                                <div class="form-group col-lg-6">
-                                    <label for="pass">Password</label>
-                                    <input type="password" name="pass" id="pass" class="form-control" value="<?php echo $this->usuario->pass; ?>" onclick="this.value=''" required>
-                                    <small id="passHelp" class="form-text text-muted">Diligencie la contraseña del email</small>
-                                </div>
-
-                                <div class="form-group col-lg-6">
-                                    <label for="pass">Confirme Password</label>
-                                    <input type="password" name="pass2" id="passy" class="form-control" value="<?php echo $this->usuario->pass; ?>" onclick="this.value=''" required>
-                                    <small id="passHelp" class="form-text text-muted">Repita la contraseña del email</small>
-                                    <input type="checkbox" onclick="verPassword()"> Ver Password
-                                </div>
-
-                                <!-- Password antiguo -->
-                                <input type="hidden" name="passoriginal" id="passoriginal" class="form-control" value="<?php echo $this->usuario->pass; ?>" required>
-
-                                <!-- Campo para generar alerta cuando los password no coinciden -->
-                                <div class="text-center" id="alerta"></div>
 
                                 <div id="cargo" name="cargo" class="form-group col-md-6">
                                     <label for="cargo">Cargo</label>
@@ -95,25 +77,34 @@
                                     <small id="estadopHelp" class="form-text text-muted">Estado en la aplicación</small>
                                 </div>
 
-                                <div class="form-group col-md-6">
-                                    <label for="foto">Cambiar Foto de perfil</label>
-                                    <input type="file" name="foto" id="foto" accept=".jpg, .png, .jpeg">
-                                    <br>
-                                    <small id="foto" class="form-text text-muted"> Seleccione de su equipo una imagen nueva si desea cambiar su foto</small>
-                                </div>
+                                <!-- contenedor seccion foto -->
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="foto">Cambiar Foto de perfil</label>
+                                        <input type="file" name="foto" id="foto" accept=".jpg, .png, .jpeg">
+                                        <br>
+                                        <small id="foto" class="form-text text-muted"> Seleccione de su equipo una imagen nueva si desea cambiar su foto</small>
+                                    </div>
 
-                                <div class="form-group col-md-6">
-                                    <label for="foto">Foto de Perfil Actual</label>
-                                    <div>
-                                        <input type="hidden" name="fotoriginal" value="<?php echo $this->usuario->foto; ?>">
-                                        <img src="<?php echo '../../' . $this->usuario->foto; ?>" alt="imagen usuario" width="100" height="100">
+                                    <div class="form-group col-md-6">
+                                        <label for="foto">Foto de Perfil Actual</label>
+                                        <div>
+                                            <input type="hidden" name="fotoriginal" value="<?php echo $this->usuario->foto; ?>">
+                                            <img src="<?php echo constant('URL') . $this->usuario->foto; ?>" alt="imagen usuario" width="100" height="100">
+                                        </div>
                                     </div>
                                 </div>
+
+                                <!-- Boton cambio password -->
+                                <button type="button" class="btn btn-success loginbtn" onClick='window.location.assign("<?php echo constant('URL') . 'pass_usu/leer/' . $this->usuario->identificacion; ?>") '>Reestablecer Password</button>
+                                <br>
+                                <small class="form-text text-muted">Has clic solo si desea reestablecer el password del usuario</small>
+                                <br><br>
 
                             </div>
 
                             <div class="text-center">
-                                <input type="submit" onclick="validapassword();" class="btn btn-info" value="Actualizar Usuario">
+                                <input type="submit" class="btn btn-info" value="Actualizar Usuario">
                                 <input type="button" class="btn btn-danger" onClick='window.location.assign("<?php echo constant('URL'); ?>usuario")' value="Cancelar">
                             </div>
                         </form>

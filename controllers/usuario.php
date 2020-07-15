@@ -51,7 +51,7 @@ class Usuario extends Controller{
             $usuario->nombre         = $_POST['nombre'];
             $usuario->apellido       = $_POST['apellido'];
             $usuario->email          = $_POST['email'];
-            $usuario->pass           = $_POST['pass'];
+            // $usuario->pass           = $_POST['pass'];
             $usuario->telefono       = $_POST['telefono'];
             $usuario->whatsapp       = $_POST['whatsapp'];
             $usuario->cargo          = $_POST['cargo'];
@@ -59,12 +59,15 @@ class Usuario extends Controller{
 
             $this->view->usuario = $usuario;
             $this->view->mensaje = "Usuario actualizado correctamente";
+            // echo "<script>alert('Usuario Actualizado');</script>";
         }else{
             $this->view->mensaje = "No se pudo actualizar el Usuario";
         }
         $usuarios = $this->view->datos = $this->model->read();
         $this->view->usuarios = $usuarios;
         $this->view->render('admin/listausuario');
+        // header("location: ../usuario");
+        // echo "<script>alert('Usuario Actualizado');</script>";
     }
 
 
@@ -77,7 +80,7 @@ class Usuario extends Controller{
             $mensaje = "No se pudo eliminar el Usuario";
         }
         echo $mensaje;
-    }   
-}
+    }
+    
 
-?>
+}

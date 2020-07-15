@@ -359,8 +359,11 @@
             </div>
             <div class="modal-body">
                 <img class="avatar" src="public/img/onepage/mauro.png">
-                <h4>Tecnologo ADSI</h4>
-                <p>Analista y desarrollador, apoyo de con el desarrollo  BACK-END  de la aplicacion.</p>
+                <h4>Tecnólogo ADSI</h4>
+                <p>Analista y desarrollador de sistemas informáticos, con conocimientos en lenguajes HTML, C++ y PHP. Bases de datos, elaboración de diagramas UML y diseño con Bootstrap. Colaborador del BACK-END y FRONT-END de la aplicación.</p>
+                <p><b>Contacto</b></p>
+                <p>Email: cmalarcon82@misena.edu.co <br>Celular: 3214050655</p>
+                
             </div>
             <div class="modal-footer">
                 <a data-dismiss="modal" href="#">Cerrar</a>

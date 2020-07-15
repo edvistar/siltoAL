@@ -10,12 +10,12 @@
 
     <div class="container text-center">
         <h1 class="h1">Mi Perfil</h1>
-        <br>
-        <br>
-        <br>
+        <br><br><br>
 
         <div class="container">
             <div class="row">
+
+                <!--Div Lista-->
                 <div class="col-lg-3">
                     <ul>
                         <?php
@@ -26,7 +26,7 @@
                                 $usuario = $row;
                         ?>
                                 <li>
-                                    <p><b>identificación: </b><?php echo $usuario->identificacion; ?></p>
+                                    <p><b>Identificación: </b><?php echo $usuario->identificacion; ?></p>
                                 </li>
                                 <li>
                                     <p><b>Nombres: </b><?php echo $usuario->nombre; ?></p>
@@ -38,17 +38,14 @@
                                     <p><b>Email: </b><?php echo $usuario->email; ?></p>
                                 </li>
                                 <li>
-                                    <p><b>Telefono: </b><?php echo $usuario->telefono; ?></p>
+                                    <p><b>Teléfono: </b><?php echo $usuario->telefono; ?></p>
                                 </li>
                                 <li>
-                                    <p><b>¿Tiene Whatsapp?: </b><?php echo $usuario->whatsapp; ?></p>
+                                    <p><b>¿Tiene WhatsApp?: </b><?php echo $usuario->whatsapp; ?></p>
                                 </li>
                                 <li>
                                     <a href="<?php echo constant('URL') . 'perfil/leer/' . $usuario->identificacion; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a>
-                                    <!--url/controlador/metodo-->
-
                                 </li>
-
                             <?php
                             }
                         } else {
@@ -60,33 +57,20 @@
                         }
                         ?>
                     </ul>
-
-
                 </div>
-                <!--Div Lista-->
-
+                
+                <!--Div Foto-->
                 <div class="col-lg-6">
                     <td><img src="<?php echo constant('URL') . $usuario->foto; ?>" alt="imagen usuario" width="100" height="100"> </td>
-
                 </div>
-                <!--Div Foto-->
-
-                <div class="col-lg-1">
-
-                </div>
-
+                
+                <div class="col-lg-1"></div>
 
             </div>
         </div>
-
-
-
     </div>
-
-    <br>
-    <br>
+    <br><br>
 
     <?php require 'views/footer.php'; ?>
 </body>
-
 </html>

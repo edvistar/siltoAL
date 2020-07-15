@@ -1,20 +1,23 @@
 <?php
 include_once('models/perfil.php');
 
-class PerfilModel extends Model{
-    public function __construct(){
+class PassModel extends Model
+{
+    public function __construct()
+    {
         parent::__construct();
     }
 
 
-    public function read(){
+    public function read()
+    {
         $items = [];
         $id = $_SESSION['identificacion'];
 
-        try{
+        try {
             $query = $this->db->connect()->query("SELECT * FROM usuario WHERE identificacion = '$id'");
 
-            while($row = $query->fetch()){
+            while ($row = $query->fetch()) {
                 $item = new PerfilDAO();
                 $item->identificacion    = $row['identificacion'];
                 $item->nombre     = $row['nombre'];
@@ -26,29 +29,30 @@ class PerfilModel extends Model{
                 $item->estado            = $row['estado'];
                 $item->fecha_ingreso     = $row['fecha_ingreso'];
                 $item->foto              = $row['foto'];
-              
+
                 array_push($items, $item);
                 $_SESSION['upd_nomb'] = $row['nombre'];
                 $_SESSION['upd_foto'] = $row['foto'];
             }
             return $items;
-        }catch(PDOException $e){
-           if(constant("DEBUG")){
-               echo $e->getMessage();
-           }
+        } catch (PDOException $e) {
+            if (constant("DEBUG")) {
+                echo $e->getMessage();
+            }
             return [];
         }
     }
 
 
-    public function readById($id){
+    public function readById($id)
+    {
         $item = new PerfilDAO();
-        try{
+        try {
             $query = $this->db->connect()->prepare('SELECT * FROM usuario WHERE identificacion = :id');
 
             $query->execute(['id' => $id]);
-            
-            while($row = $query->fetch()){
+
+            while ($row = $query->fetch()) {
                 $item->identificacion   = $row['identificacion'];
                 $item->nombre           = $row['nombre'];
                 $item->apellido         = $row['apellido'];
@@ -65,8 +69,8 @@ class PerfilModel extends Model{
                 $_SESSION['upd_foto'] = $row['foto'];
             }
             return $item;
-        }catch(PDOException $e){
-            if(constant("DEBUG")){
+        } catch (PDOException $e) {
+            if (constant("DEBUG")) {
                 echo $e->getMessage();
             }
             return null;
@@ -74,38 +78,41 @@ class PerfilModel extends Model{
     }
 
 
-    public function update($item){
-        $query = $this->db->connect()->prepare('UPDATE usuario SET nombre = :nombre, apellido = :apellido, email = :email, telefono = :telefono, whatsapp = :whatsapp, cargo = :cargo, estado = :estado, foto = :foto WHERE identificacion = :identificacion');
+    public function update($item)
+    {
+        $query = $this->db->connect()->prepare('UPDATE usuario SET nombre = :nombre, apellido = :apellido, email = :email, pass = :pass, telefono = :telefono, whatsapp = :whatsapp, cargo = :cargo, estado = :estado, foto = :foto WHERE identificacion = :identificacion');
 
-        $foto = $_FILES['foto']['name'];
-        $fotoriginal=$_POST['fotoriginal'];
+        $fotoriginal = $_POST['fotoriginal'];
+        $foto = $fotoriginal;
 
-        if (empty($foto)) {
-            $foto = $fotoriginal;
-        } else {
-            $foto="public/img/usuarios/".$foto;
-            move_uploaded_file($_FILES["foto"]["tmp_name"], $foto);
-            unlink($fotoriginal);
-        }
-        
-        try{
-            $query->execute([
+        $passantiguo = $_POST['passant'];
+        $passoriginal = $_POST['passoriginal'];
+        $passantiguo = md5($passantiguo);
 
-                'identificacion'  => $item['identificacion'],
-                'nombre'          => $item['nombre'],
-                'apellido'        => $item['apellido'],
-                'email'           => $item['email'],
-                'telefono'        => $item['telefono'],
-                'whatsapp'        => $item['whatsapp'],
-                'cargo'           => $item['cargo'],
-                'estado'          => $item['estado'],
-                'foto'            => $foto,
-            ]);
-            return true;
-        }catch(PDOException $e){
-            if(constant("DEBUG")){
-                echo $e->getMessage();
+        if ($passantiguo == $passoriginal) {
+
+            try {
+                $query->execute([
+
+                    'identificacion'  => $item['identificacion'],
+                    'nombre'          => $item['nombre'],
+                    'apellido'        => $item['apellido'],
+                    'email'           => $item['email'],
+                    'pass'           => md5($item['pass']),
+                    'telefono'        => $item['telefono'],
+                    'whatsapp'        => $item['whatsapp'],
+                    'cargo'           => $item['cargo'],
+                    'estado'          => $item['estado'],
+                    'foto'            => $foto,
+                ]);
+                return true;
+            } catch (PDOException $e) {
+                if (constant("DEBUG")) {
+                    echo $e->getMessage();
+                }
+                return false;
             }
+        } else {
             return false;
         }
     }
