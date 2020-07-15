@@ -176,7 +176,9 @@ if ($_SESSION['cargo'] != "administrador") {
                                 <input type="checkbox" id="producto_9" name="productos[9]" value="tamarillo" class="form-check-input">
                                 <label class="form-check-label" for="producto_9">Tamarillo</label>
                                 <input type="checkbox" id="producto_10" name="productos[10]" value="babybanana" class="form-check-input">
-                                <label class="form-check-label" for="producto_10">Babybanana</label>
+                                <label class="form-check-label" for="producto_10">Babybanana</label><br>
+
+                                <small id="productosHelp" class="form-text text-muted">Diligencie los productos que pide la solicitud</small>
 
                             </div>
                             <div class="form-group col-md-12">

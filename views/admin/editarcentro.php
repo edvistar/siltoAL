@@ -56,37 +56,39 @@
                                 <small id="tipo_centroHelp" class="form-text text-muted">tipo_centro de ubicacion</small>
 
                             </div>
-                             <div class="col-lg-12">
+                            <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-header">
                                     Seleccione Departamento y Ciudad
                                     </div>
-                                        <div class="card-body">
+                                    <div class="card-body">
                                         <div class="row">
-                                                <div class="col-md-6">
-                                                    <label for="">Departamento</label>
-                                                    <select class="form-control" name="departamento"  id="departamentos_editar" style="width: 100%;" readonly>
-                                                    <option selected value="<?php echo $this->centro->departamento;?>"><?php echo $this->centro->departamento; ?></option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-6">
+                                            <div class="col-md-6">
+                                                <label for="">Departamento</label>
+                                                <select class="form-control" name="departamento"  id="departamentos_editar"  readonly>
+                                                <option selected value="<?php echo $this->centro->departamento;?>"><?php echo $this->centro->departamento; ?></option>
+                                                </select>
+                                                <small id="tipo_centroHelp" class="form-text text-muted">Ingrese el departamento de centro </small>
+                                            </div>
+                                            <div class="col-md-6">
                                                 <label for="ciudades">Ciudad</label>
-                                                <select class="form-control" name="ciudad" id="ciudades_editar" style="width: 100%;" readonly>
+                                                <select class="form-control" name="ciudad" id="ciudades_editar"  readonly>
                                                 <option selected value="<?php echo $this->centro->ciudad; ?>"><?php echo $this->centro->ciudad; ?></option>
                                                 </select>
+                                                <small id="tipo_centroHelp" class="form-text text-muted">Ingrese ciudad de Centro</small>
                                             </div>
-                                        </div>
+                                        </div><br>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
-                                    <label for="direccion">Direccion</label>
-                                    <input type="text" class="form-control" value="<?php echo $this->centro->direccion; ?>" name="direccion" id="direccion" required>
-                                    <small id="direccionHelp" class="form-text text-muted">Diligencie la direccion del Centro</small>
-                                </div>
+                                <label for="direccion">Direccion</label>
+                                <input type="text" class="form-control" value="<?php echo $this->centro->direccion; ?>" name="direccion" id="direccion" required>
+                                <small id="direccionHelp" class="form-text text-muted">Diligencie la direccion del Centro</small>
+                            </div>
                             <div class="form-group col-md-4">
                                 <label for="identificacion">Encargado de la Centro</label>
-                                <select class="form-control" id="identificacion" name="identificacion" style="width:100%" required>
+                                <select class="form-control" id="identificacion" name="identificacion"  required>
 
                                     <option selected value="<?php echo $this->centro->identificacion;?>"><?php echo $this->centro->identificacion;?></option>
                                         <?php

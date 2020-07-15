@@ -202,9 +202,9 @@
                                 <input type="checkbox" id="producto_9" name="productos[9]" <?php echo (isset($producto["tamarillo"])?$producto["tamarillo"]:""); ?>  value="tamarillo" class="form-check-input">
                                 <label class="form-check-label" for="productos_9">Tamarillo</label>
                                 <input type="checkbox" id="producto_10" name="productos[10]" <?php echo (isset($producto["babybanana"])?$producto["babybanana"]:""); ?> value="babybanana" class="form-check-input">
-                                <label class="form-check-label" for="productos_10">Babybanana</label>
+                                <label class="form-check-label" for="productos_10">Babybanana</label><br>
+                                <small id="productosHelp" class="form-text text-muted">Diligencie los productos que pide la solicitud</small>
                             </div>
-                            
                             <div class="form-group col-md-12">
                                 <label for="observaciones">Observaciones</label>
                                 <textarea  class="form-control" name="observaciones" id="observaciones" cols="30" rows="10"  required value="<?php echo $this->ruta->observaciones; ?>" ><?php echo $this->ruta->observaciones; ?></textarea>

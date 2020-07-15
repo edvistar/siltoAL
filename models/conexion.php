@@ -1,15 +1,16 @@
 <?php
-	class conexion{
+include '../config/config.php';
+	class Conexion{
 		private $servidor;
 		private $usuario;
 		private $contrasena;
 		private $basedatos;
 		public $conexion;
 		public function __construct(){
-			$this->servidor = $GLOBALS['HOST'];
-			$this->usuario = $GLOBALS['USER'];
-			$this->contrasena = $GLOBALS['PASSWORD'];
-			$this->basedatos = $GLOBALS['DB'];
+			$this->servidor   = constant('HOST');
+			$this->usuario    = constant('USER');
+			$this->contrasena = constant('PASSWORD');
+			$this->basedatos  = constant('DB');
 		}
 		function conectar(){
 			$this->conexion = new mysqli($this->servidor,$this->usuario,$this->contrasena,$this->basedatos);
@@ -19,4 +20,4 @@
 			$this->conexion->close();
 		}
 	}
-?> 
+?>

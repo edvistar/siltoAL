@@ -76,15 +76,17 @@ if ($_SESSION['cargo'] != "administrador") {
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <label for="departamentos">Departamento</label>
-                                                    <select class="form-control" name="departamento" id="departamentos" style="width: 100%;">
+                                                    <select class="form-control" name="departamento" id="departamentos" >
                                                     </select>
+                                                    <small id="tipo_centroHelp" class="form-text text-muted">Ingrese el departamento de centro </small>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="ciudades">Ciudad</label>
-                                                    <select class="form-control" name="ciudad" id="ciudades" style="width: 100%;">
+                                                    <select class="form-control" name="ciudad" id="ciudades" >
                                                     </select>
+                                                    <small id="tipo_centroHelp" class="form-text text-muted">Ingrese ciudad de Centro</small>
                                                 </div>
-                                            </div>
+                                            </div><br>
                                         </div>
                                     </div>
                                 </div>
@@ -97,7 +99,6 @@ if ($_SESSION['cargo'] != "administrador") {
                                     <label for="identificacion">Encargado del Centro</label>
                                     <select class="form-control" id="identificacion" name="identificacion" style="width:100%" required alt="Nombre  encargado de centro">
                                         <option selected value="">seleccione...</option>
-                                        <small id="identificacionHelp" class="form-text text-muted">Diligencie el encargado de la centro.</small>
                                         <?php
                                         include_once 'models/usuario.php';
 
@@ -112,6 +113,7 @@ if ($_SESSION['cargo'] != "administrador") {
                                         }
                                         ?>
                                     </select>
+                                    <small id="identificacionHelp" class="form-text text-muted">Diligencie el encargado de la centro.</small>
                                 </div>
                             </div>
                             <div class="text-center ">
