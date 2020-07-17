@@ -24,6 +24,8 @@
             }else{
                 $usuarios = $this->view->datos['ddl_usuarios'] = $this->model->cargarEncargado();
                 $this->view->ddl_usuarios = $usuarios;
+                $departamentos = $this->view->datos['ddl_departamentos'] = $this->model->cargarDepartamento();
+                $this->view->ddl_departamentos = $departamentos;
                
                 $this->view->render('admin/crearcentro');
             }
@@ -36,6 +38,8 @@
             $_SESSION["id_verCentro"] = $centro->id_centro;
             $usuarios = $this->view->datos['ddl_usuarios'] = $this->model->cargarEncargado();
             $this->view->ddl_usuarios = $usuarios;
+            $departamentos = $this->view->datos['ddl_departamentos'] = $this->model->cargarDepartamento();
+            $this->view->ddl_departamentos = $departamentos;
             $this->view->centro = $centro;
             $this->view->render('admin/editarcentro');
         }
@@ -53,8 +57,8 @@
                 $centro->email         = $_POST['email'];
                 $centro->telefono      = $_POST['telefono'];
                 $centro->whatsapp      = $_POST['whatsapp'];
-                //$centro->departamento  = $_POST['departamento'];
-                //$centro->ciudad        = $_POST['ciudad'];
+                $centro->departamento  = $_POST['departamento'];
+                $centro->ciudad        = $_POST['ciudad'];
                 $centro->identificacion = $_POST['identificacion'];
                 $centro->tipo_centro         = $_POST['tipo_centro'];
                 $centro->direccion         = $_POST['direccion'];

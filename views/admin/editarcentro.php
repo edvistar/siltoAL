@@ -58,27 +58,36 @@
                             </div>
                             <div class="col-lg-12">
                                 <div class="card">
-                                    <div class="card-header">
-                                    Seleccione Departamento y Ciudad
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label for="">Departamento</label>
-                                                <select class="form-control" name="departamento"  id="departamentos_editar"  readonly>
-                                                <option selected value="<?php echo $this->centro->departamento;?>"><?php echo $this->centro->departamento; ?></option>
-                                                </select>
-                                                <small id="tipo_centroHelp" class="form-text text-muted">Ingrese el departamento de centro </small>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="ciudades">Ciudad</label>
-                                                <select class="form-control" name="ciudad" id="ciudades_editar"  readonly>
-                                                <option selected value="<?php echo $this->centro->ciudad; ?>"><?php echo $this->centro->ciudad; ?></option>
-                                                </select>
-                                                <small id="tipo_centroHelp" class="form-text text-muted">Ingrese ciudad de Centro</small>
-                                            </div>
-                                        </div><br>
-                                    </div>
+                                <div class="form-group col-md-6">
+                                    <label for="departamento">Seleccione Departamento</label>
+                                    <select class="form-control" id="departamento" name="departamento" style="width:100%" required alt="Departamento">
+                                    <option selected value="<?php echo $this->centro->departamento; ?>"><?php echo $this->centro->departamento; ?></option>
+                                        <?php
+                                        include_once 'models/departament.php';
+
+                                        if (count($this->ddl_departamentos) > 0) {
+                                            foreach ($this->ddl_departamentos as $departamento) {
+                                                $ddl_departamento = new DepartamentDAO();
+                                                $ddl_departamento = $departamento;
+                                                if($this->centro->departamento==$departamento->idDepa){
+                                                    $seleccionado = "selected";
+                                                }else{
+                                                    $seleccionado = '';
+                                                }
+                                        ?>
+                                                <option <?php echo $seleccionado; ?> value="<?php echo $ddl_departamento->idDepa; ?>"><?php echo $ddl_departamento->departamento; ?></option>
+                                        <?php
+                                            }
+                                        }
+                                        ?>
+                                    </select>
+                                    <small id="identificacionHelp" class="form-text text-muted">Diligencie el Departamento de la centro.</small>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="ciudad">Ingrese la Ciudad</label>
+                                    <input type="text" class="form-control" value="<?php echo $this->centro->ciudad; ?>"  name="ciudad" id="ciudad" required>
+                                    <small id="ciudadHelp" class="form-text text-muted">Diligencie el ciudad del Centro</small>
+                                </div>
                                 </div>
                             </div>
                             <div class="form-group col-md-6">

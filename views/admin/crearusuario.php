@@ -71,7 +71,7 @@
                                     <label for="pass"><i class="fa fa-key" aria-hidden="true"></i> Confirme Contraseña</label>
                                     <input type="password" name="pass2" id="passy" class="form-control"required >
                                     <small id="passHelp" class="form-text text-muted">Repita la contraseña del email</small>
-                                    <input type="checkbox" onclick="verPassword()"><i class="fa fa-eye" aria-hidden="true"></i> Ver Contraseña
+                                    <input type="checkbox" onclick="verPassword2()"><i class="fa fa-eye" aria-hidden="true"></i> Ver Contraseña
                                 </div>
                                 <!-- Campo para generar alerta cuando los password no coinciden -->
                                 <div class="text-center" id="alerta"></div>
